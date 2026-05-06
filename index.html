@@ -9,6 +9,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
+  <link rel="icon" type="image/png" href="mono.png">
+  <link rel="apple-touch-icon" href="mono.png">
   <style>
     *,
     *::before,
@@ -74,23 +76,35 @@
       top: 16px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 500;
+      z-index: 1000; /* Increased to ensure it's on top */
       width: calc(100% - 48px);
       max-width: 1100px;
-      background: rgba(249, 247, 243, .92);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(28, 28, 28, .1);
+      background: rgba(255, 255, 255, 0.4); /* Glass effect */
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 10px 10px 22px;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, .06);
-      transition: all .3s;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #nav:hover {
+      background: rgba(255, 255, 255, 1); /* Shifts to white on hover */
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      border-color: rgba(28, 28, 28, 0.05);
     }
 
     #nav.scrolled {
-      box-shadow: 0 4px 32px rgba(0, 0, 0, .1);
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    #nav.scrolled:hover {
+      background: rgba(255, 255, 255, 1);
     }
 
     .nav-brand {
@@ -193,10 +207,11 @@
 
     .htb-tag {
       font-family: 'Courier Prime', monospace;
-      font-size: .68rem;
-      color: rgba(255, 255, 255, .45);
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .6);
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .htb-right {
@@ -401,14 +416,15 @@
 
     .label {
       font-family: 'Courier Prime', monospace;
-      font-size: .62rem;
-      letter-spacing: 2px;
+      font-size: .85rem;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--b);
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-weight: 700;
     }
 
     .label::before {
@@ -1112,11 +1128,13 @@
 
     .ne-img {
       overflow: hidden;
-      height: 105px;
+      height: 130px;
     }
 
     .ne-img img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
       transition: transform .4s ease;
     }
 
@@ -1140,17 +1158,17 @@
 
     .ne-body h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: var(--ink);
-      line-height: 1.4;
-      margin-bottom: 4px;
+      line-height: 1.3;
+      margin-bottom: 6px;
     }
 
     .ne-body p {
-      font-size: .78rem;
+      font-size: .95rem;
       color: var(--mid);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .news-side {
@@ -1171,15 +1189,15 @@
 
     .ns-header h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.6rem;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
     .ns-header p {
-      font-size: .75rem;
-      color: rgba(255, 255, 255, .35);
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .45);
       font-style: italic;
     }
 
@@ -1212,10 +1230,10 @@
     }
 
     .ns-item h5 {
-      font-size: .82rem;
+      font-size: .95rem;
       font-weight: 500;
-      color: rgba(255, 255, 255, .75);
-      line-height: 1.45;
+      color: rgba(255, 255, 255, .8);
+      line-height: 1.5;
     }
 
     .monitor-strip {
@@ -1308,6 +1326,15 @@
       background: var(--bp);
       border-color: rgba(29, 110, 181, .2);
       transform: translateY(-2px);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--ink);
+      background: var(--paper);
+      overflow-x: hidden;
     }
 
     .ost-n {
@@ -1408,12 +1435,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: #fff;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      padding: 8px;
+      /* Safe area to prevent edge touching */
     }
 
     .pnet-abbr img {
       max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
-      max-height: 64px;
+      object-fit: contain;
       display: block;
     }
 
@@ -1804,6 +1841,8 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#pillars">Our Work</a></li>
+      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
+      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#partners">Partners</a></li>
@@ -2132,27 +2171,15 @@
       <h2 class="sh">PRIED's Approach to <em> <br>Media and Public Discourse</em></h2>
       <div class="out-layout">
         <div class="out-text rv">
-          <p>For PRIED, media relations are integral to how the organisation works, deliberately woven within its
-            programmes and departmental structure. The mission is to ensure economic, social, and climatic justice
-            during Pakistan's energy transition, and that cannot be advanced through research alone. Policy changes when
-            public discourse shifts, when journalists ask the right questions, and when decision-makers feel pressure
-            from an informed citizenry. For communities on the periphery of national debate, whether living next to coal
-            mines or absorbing repeated subsidy cuts, the media is not just a channel for dissemination. It is a
-            mechanism of accountability.</p>
-          <p>That conviction shows up in how PRIED actually operates. Recognising that energy transition, coal
-            dependency, and climate justice are frequently underreported or technically misrepresented, the organisation
-            has invested systematically in closing that gap. It has trained over a hundred journalists and content
-            creators on energy reporting, partnered with traditional outlets and digital startups alike, and built
-            internal editorial capacity to support it all. Journalism fellowships, summer schools, and long-term
-            institutional partnerships have helped generate more than 300 media pieces, from op-eds to investigative
-            reports to multimedia content, all grounded in PRIED's research.</p>
-          <p>PRIED also runs three monitors that track how Pakistan's press covers energy and climate. The weekly media
-            monitor is the most active, with editions published every week and an archive stretching back through 2025
-            and 2026. It is a curated record of which stories are getting coverage and which are falling through the
-            cracks. The quarterly energy monitor takes a longer view, assessing sector-wide trends over time. The
-            climate monitor is the most specialised, focusing on Pakistan's climate commitments, with its most recent
-            edition covering the country's updated NDCs 3.0. Together, they function as both a resource for media and
-            researchers, and a quiet form of accountability.</p>
+          <p>For PRIED, media relations are woven into its programmes because research alone can't deliver economic,
+            social,
+            and climatic justice in Pakistan's energy transition. Policy shifts when discourse shifts, when journalists
+            ask the right questions, and when an informed public pressures decision-makers.</p>
+          <p>To this end, PRIED has trained 100+ journalists and creators, partnered with outlets and digital startups,
+            and run fellowships and summer schools that have produced 300+ media pieces grounded in its research.</p>
+          <p>Additionally, it runs three specialised monitors that serve both a resource for media and researchers and a
+            quiet check on whether energy and climate issues are reported well, reported at all, or falling through the
+            cracks.</p>
         </div>
         <div class="out-photos-and-stats rv d1">
           <div class="out-photo">
@@ -2193,19 +2220,13 @@
         </div>
       </div>
       <div class="out-text rv">
-        <p>PRIED runs three distinct monitors, and they are worth knowing about separately.
-          The weekly media monitor is the most active of the three. It tracks how Pakistan's press is covering energy
-          and climate issues on a rolling basis, with new editions published every week. The archive going back through
-          2025 and into 2026 suggests this has become a consistent, institutionalised output rather than an occasional
-          project.
-          The energy monitor takes a longer view, published quarterly, stepping back from the week's headlines to assess
-          broader trends in the sector over time. And the climate monitor, the most specialised of the three, focuses
-          specifically on Pakistan's climate commitments and related policy developments -- the most recent edition
-          covers Pakistan's NDCs 3.0, the country's updated national climate targets.
-          Taken together, the monitors serve a dual purpose. For journalists and researchers, it is essentially a
-          curated record of how the national conversation on energy has evolved week by week, which topics are getting
-          attention, and which are being ignored. They are also a quiet form of accountability; a running record of
-          whether these issues are being reported well, reported at all, or falling through the cracks.</p>
+        <p>PRIED runs three monitors: a weekly media monitor tracking how Pakistan’s press covers energy and climate,
+          now
+          an institutionalised output with archives through 2025 and 2026; a quarterly energy monitor assessing broader
+          sector trends; and a specialised climate monitor focused on policy commitments.
+          Together they give journalists and researchers a curated record of how the national energy conversation
+          evolves — what gets attention, what’s ignored — and serve as quiet accountability for whether these issues are
+          reported well, reported at all, or falling through the cracks.</p>
       </div>
       <div class="res-featured-block rv">
         <div class="rfb-main">
@@ -2388,6 +2409,14 @@
           </div>
         </div>
         <div class="pt-right rv d1">
+          <div class="pnet-row">
+            <div class="pnet-abbr"><img src="pfee-logo.jpg" alt="PFEE Logo" loading="lazy"></div>
+            <div class="pnet-body">
+              <h4>Parliamentary Forum on Energy and Economy</h4>
+              <p>A bipartisan Parliamentary Forum on Economy and Energy dedicated to analyzing the energy-economy nexus
+                through collaboration with experts and think tanks.</p>
+            </div>
+          </div>
           <div class="pnet-row">
             <div class="pnet-abbr"><img src="acjce-logo.png" alt="ACJCE Logo" loading="lazy"></div>
             <div class="pnet-body">
