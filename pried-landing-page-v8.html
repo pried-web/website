@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRIED — Building Pakistan's Just Energy Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f7f3;
+      color: #1c1c1c;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --b: #1D6EB5;
+      --bd: #0d3d68;
+      --bm: #2882cc;
+      --bl: #5aaad8;
+      --bp: #deeef9;
+      --paper: #f9f7f3;
+      --cream: #f2ede4;
+      --warm: #ede7dc;
+      --ink: #1c1c1c;
+      --mid: #555;
+      --rule: rgba(28, 28, 28, .1);
+      --gold: #c8950c;
+      --sand: #d4c9b4;
+    }
+
+    /* ── PROGRESS ── */
+    #pgb {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      z-index: 999;
+      background: var(--b);
+    }
+
+    /* ── FLOATING NAV ── */
+    #nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 500;
+      width: calc(100% - 48px);
+      max-width: 1100px;
+      background: rgba(249, 247, 243, .92);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(28, 28, 28, .1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 10px 10px 22px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, .06);
+      transition: all .3s;
+    }
+
+    #nav.scrolled {
+      box-shadow: 0 4px 32px rgba(0, 0, 0, .1);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      height: 38px;
+      width: auto;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-logo:hover {
+      opacity: 1;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      padding: 7px 13px;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--mid);
+      border-radius: 8px;
+      transition: all .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--b);
+      background: var(--bp);
+    }
+
+    .nav-end {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta {
+      background: var(--b);
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 9px;
+      font-size: .78rem;
+      font-weight: 600;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--bd);
+      box-shadow: 0 3px 12px rgba(29, 110, 181, .35);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      padding: 120px 48px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('hero-bg-painting.jpg') center/cover no-repeat;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13, 61, 104, .5) 0%, rgba(13, 61, 104, .65) 60%, rgba(13, 61, 104, .85) 100%);
+    }
+
+    .hero-top-bar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .htb-tag {
+      font-family: 'Courier Prime', monospace;
+      font-size: .68rem;
+      color: rgba(255, 255, 255, .45);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .htb-right {
+      display: flex;
+      gap: 16px;
+    }
+
+    .htb-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: .68rem;
+      font-weight: 500;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: rgba(255, 255, 255, .6);
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    .hero-main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: flex-end;
+    }
+
+    .hero-headline h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.6rem, 7vw, 6.5rem);
+      font-weight: 300;
+      line-height: .98;
+      letter-spacing: -2px;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+
+    .hero-headline h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #82c4f0;
+    }
+
+    .hero-headline h1 strong {
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, .65);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hbtn-main {
+      background: #fff;
+      color: var(--bd);
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .25s;
+    }
+
+    .hbtn-main:hover {
+      background: #82c4f0;
+    }
+
+    .hbtn-ghost {
+      background: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .7);
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, .15);
+      transition: all .25s;
+    }
+
+    .hbtn-ghost:hover {
+      background: rgba(255, 255, 255, .15);
+      color: #fff;
+    }
+
+    .hero-card-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-stat-card {
+      background: rgba(255, 255, 255, .09);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 14px;
+      padding: 22px 24px;
+      transition: all .3s;
+    }
+
+    .hero-stat-card:hover {
+      background: rgba(255, 255, 255, .13);
+    }
+
+    .hsc-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -1.5px;
+    }
+
+    .hsc-n sup {
+      font-size: 1.2rem;
+      color: #82c4f0;
+    }
+
+    .hsc-l {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .5);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .hsc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .hsc-mini {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .hsc-mini-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hsc-mini-n sup {
+      font-size: .8rem;
+      color: #82c4f0;
+    }
+
+    .hsc-mini-l {
+      font-size: .65rem;
+      color: rgba(255, 255, 255, .35);
+      margin-top: 3px;
+    }
+
+    .hero-scroll-note {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 32px auto 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Courier Prime', monospace;
+      font-size: .62rem;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .hscroll-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, .08);
+      max-width: 80px;
+    }
+
+    /* ── SECTIONS ── */
+    .sec {
+      padding: 96px 48px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .label {
+      font-family: 'Courier Prime', monospace;
+      font-size: .62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--b);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .label::before {
+      content: '—';
+      opacity: .5;
+    }
+
+    h2.sh {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      letter-spacing: -.5px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    h2.sh em {
+      font-style: italic;
+      color: var(--b);
+    }
+
+    h2.sh strong {
+      font-weight: 700;
+    }
+
+    .sdesc {
+      font-size: .97rem;
+      line-height: 1.85;
+      color: var(--mid);
+      max-width: 560px;
+      margin-top: 12px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 56px;
+    }
+
+    .about-img-group {
+      position: relative;
+    }
+
+    .ai-main {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 400px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, .1);
+    }
+
+    .ai-main img {
+      height: 100%;
+    }
+
+    .ai-sub {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 200px;
+      height: 160px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 5px solid #fff;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .12);
+    }
+
+    .ai-sub img {
+      height: 100%;
+    }
+
+    .ai-badge {
+      position: absolute;
+      top: 24px;
+      left: -16px;
+      background: var(--bd);
+      padding: 14px 18px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(13, 61, 104, .3);
+    }
+
+    .aib-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .aib-n sup {
+      font-size: .8rem;
+      color: #82c4f0;
+    }
+
+    .aib-l {
+      font-size: .65rem;
+      color: rgba(255, 255, 255, .5);
+      margin-top: 3px;
+    }
+
+    .about-text {
+      padding-top: 8px;
+    }
+
+    .about-text p {
+      font-size: .97rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .about-text p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.65;
+      color: var(--bd);
+      border-left: 3px solid var(--b);
+      padding-left: 20px;
+      margin: 24px 0;
+    }
+
+    .at-note {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--bp);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 20px;
+    }
+
+    .at-note-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .at-note p {
+      font-size: .82rem;
+      line-height: 1.7;
+      color: #555;
+      margin: 0;
+    }
+
+    .at-note p strong {
+      color: var(--bd);
+      font-weight: 700;
+    }
+
+    /* ── MISSION ── */
+    #mission {
+      background: var(--cream);
+    }
+
+    .mv-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .mv-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+      transition: all .3s;
+    }
+
+    .mv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .07);
+    }
+
+    .mv-card-top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--b), var(--bl));
+    }
+
+    .mv-ghost-num {
+      position: absolute;
+      top: -8px;
+      right: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 7rem;
+      font-weight: 700;
+      color: rgba(29, 110, 181, .04);
+      line-height: 1;
+      letter-spacing: -4px;
+      pointer-events: none;
+    }
+
+    .mv-icon-ring {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--bp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .mv-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .mv-card p {
+      font-size: .92rem;
+      line-height: 1.85;
+      color: var(--mid);
+    }
+
+    .mv-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mv-right-col {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      height: 100%;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mv-gallery-track {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: scrollGallery 15s ease-in-out infinite alternate;
+    }
+
+    .mv-right-col:hover .mv-gallery-track {
+      animation-play-state: paused;
+    }
+
+    .mv-gallery-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 16px;
+      flex-shrink: 0;
+    }
+
+    @keyframes scrollGallery {
+
+      0%,
+      15% {
+        transform: translateY(0);
+      }
+
+      85%,
+      100% {
+        transform: translateY(-250px);
+      }
+    }
+
+    /* ── PILLARS ── */
+    #pillars {
+      background: var(--bd);
+    }
+
+    .pillars-wrap {
+      margin-top: 52px;
+    }
+
+    .pillar-item {
+      display: grid;
+      grid-template-columns: 56px 220px 1fr;
+      gap: 0;
+      padding: 32px 0;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      transition: all .3s;
+      cursor: default;
+    }
+
+    .pillar-item:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .pillar-item:hover {
+      padding-left: 12px;
+    }
+
+    .pi-num {
+      font-family: 'Courier Prime', monospace;
+      font-size: .65rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .25);
+      letter-spacing: 1px;
+      padding-top: 5px;
+    }
+
+    .pi-meta {
+      padding-right: 32px;
+    }
+
+    .pi-icon {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .pi-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .pi-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+    }
+
+    .pi-tag {
+      font-family: 'Courier Prime', monospace;
+      font-size: .55rem;
+      letter-spacing: .5px;
+      background: rgba(255, 255, 255, .07);
+      color: rgba(255, 255, 255, .4);
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .pi-body {
+      padding-top: 4px;
+    }
+
+    .pi-body p {
+      font-size: .88rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, .55);
+      margin-bottom: 12px;
+    }
+
+    .pi-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── RESEARCH ── */
+    #research {
+      background: #fff;
+    }
+
+    .res-featured-block {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+      margin-top: 52px;
+      align-items: stretch;
+    }
+
+    .rfb-main {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 8px 36px rgba(0, 0, 0, .1);
+    }
+
+    .rfb-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&q=85') center/cover no-repeat;
+      transition: transform 5s ease;
+    }
+
+    .rfb-main:hover .rfb-bg {
+      transform: scale(1.03);
+    }
+
+    .rfb-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 25, 48, .97) 25%, rgba(10, 25, 48, .5) 70%, rgba(10, 25, 48, .1) 100%);
+    }
+
+    .rfb-body {
+      position: relative;
+      z-index: 1;
+      padding: 32px;
+    }
+
+    .rfb-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: .6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rfb-label::before {
+      content: '★';
+    }
+
+    .rfb-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .rfb-body p {
+      font-size: .84rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 20px;
+    }
+
+    .rfb-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--b);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: .8rem;
+      font-weight: 600;
+      transition: all .2s;
+    }
+
+    .rfb-btn:hover {
+      background: #fff;
+      color: var(--bd);
+    }
+
+    .rfb-side {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rfb-side-item {
+      display: flex;
+      gap: 14px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--rule);
+      cursor: pointer;
+      transition: all .2s;
+      align-items: flex-start;
+    }
+
+    .rfb-side-item:last-child {
+      border-bottom: none;
+    }
+
+    .rfb-side-item:hover {
+      background: var(--bp);
+    }
+
+    .rfb-si-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--bp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      flex-shrink: 0;
+    }
+
+    .rfb-si-body h4 {
+      font-size: .87rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+
+    .rfb-si-type {
+      font-family: 'Courier Prime', monospace;
+      font-size: .57rem;
+      color: var(--b);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .rfb-si-arr {
+      color: var(--rule);
+      flex-shrink: 0;
+      margin-top: 3px;
+      font-size: .9rem;
+      transition: all .2s;
+    }
+
+    .rfb-side-item:hover .rfb-si-arr {
+      color: var(--b);
+      transform: translateX(3px);
+    }
+
+    .res-all {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .btn-outline-b {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid var(--b);
+      color: var(--b);
+      padding: 12px 28px;
+      border-radius: 9px;
+      font-size: .88rem;
+      font-weight: 600;
+      transition: all .25s;
+    }
+
+    .btn-outline-b:hover {
+      background: var(--b);
+      color: #fff;
+    }
+
+    /* ── IMPACT BAND ── */
+    .impact-band {
+      background: var(--b);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ib-c {
+      padding: 44px 36px;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+      transition: background .2s;
+    }
+
+    .ib-c:last-child {
+      border-right: none;
+    }
+
+    .ib-c:hover {
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .ib-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -1.5px;
+    }
+
+    .ib-n sup {
+      font-size: 1.2rem;
+      color: #82c4f0;
+    }
+
+    .ib-l {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .45);
+      line-height: 1.55;
+    }
+
+    /* ── NEWS ── */
+    #news {
+      background: var(--paper);
+    }
+
+    .news-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 60px;
+      margin-top: 52px;
+      align-items: start;
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-entry {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      border-top: 1px solid var(--rule);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .news-entry:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .news-entry:hover {
+      background: var(--cream);
+    }
+
+    .ne-img {
+      overflow: hidden;
+      height: 105px;
+    }
+
+    .ne-img img {
+      height: 100%;
+      transition: transform .4s ease;
+    }
+
+    .news-entry:hover .ne-img img {
+      transform: scale(1.05);
+    }
+
+    .ne-body {
+      padding: 16px 0 16px 22px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .ne-tag {
+      font-family: 'Courier Prime', monospace;
+      font-size: .57rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--b);
+      margin-bottom: 6px;
+    }
+
+    .ne-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .ne-body p {
+      font-size: .78rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .news-side {
+      position: sticky;
+      top: 80px;
+    }
+
+    .ns-box {
+      background: var(--bd);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .ns-header {
+      padding: 22px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .ns-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
+    .ns-header p {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+      font-style: italic;
+    }
+
+    .ns-items {
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ns-item {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 8px;
+      padding: 14px;
+      transition: all .2s;
+    }
+
+    .ns-item:hover {
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .ns-itag {
+      font-family: 'Courier Prime', monospace;
+      font-size: .57rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .ns-item h5 {
+      font-size: .82rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.45;
+    }
+
+    .monitor-strip {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .ms-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .ms-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .97rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .ms-body p {
+      font-size: .78rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── OUTREACH ── */
+    #outreach {
+      background: #fff;
+    }
+
+    .out-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 52px;
+    }
+
+    .out-text p {
+      font-size: .97rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
+    .out-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .out-photos-and-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .out-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      height: 240px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .09);
+    }
+
+    .out-photo img {
+      height: 100%;
+    }
+
+    .out-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .ost {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all .3s;
+    }
+
+    .ost:hover {
+      background: var(--bp);
+      border-color: rgba(29, 110, 181, .2);
+      transform: translateY(-2px);
+    }
+
+    .ost-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--b);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .ost-n em {
+      font-size: 1rem;
+      color: var(--bl);
+    }
+
+    .ost-l {
+      font-size: .72rem;
+      color: var(--mid);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ── PARTNERS ── */
+    #partners {
+      background: var(--cream);
+    }
+
+    .partners-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 52px;
+    }
+
+    .pt-left p {
+      font-size: .97rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
+    .pt-left strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .partner-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .pchip {
+      font-size: .75rem;
+      font-weight: 500;
+      background: #fff;
+      border: 1.5px solid var(--rule);
+      color: var(--mid);
+      padding: 6px 14px;
+      border-radius: 100px;
+      transition: all .2s;
+    }
+
+    .pchip:hover {
+      border-color: var(--b);
+      color: var(--b);
+      background: var(--bp);
+    }
+
+    .pt-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pnet-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      padding: 22px 0;
+      border-top: 1px solid var(--rule);
+      transition: all .2s;
+      align-items: center;
+    }
+
+    .pnet-row:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .pnet-row:hover {
+      padding-left: 6px;
+    }
+
+    .pnet-abbr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pnet-abbr img {
+      max-width: 100%;
+      height: auto;
+      max-height: 64px;
+      display: block;
+    }
+
+    .pnet-body h4 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .pnet-body p {
+      font-size: .8rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* ── CTA ── */
+    #cta {
+      background: var(--bd);
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 480px;
+    }
+
+    .cta-left {
+      padding: 72px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .cta-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -.5px;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .cta-left h2 em {
+      font-style: italic;
+      color: #82c4f0;
+    }
+
+    .cta-left p {
+      font-size: .95rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .cb1 {
+      background: var(--gold);
+      color: #3a2400;
+      padding: 12px 26px;
+      border-radius: 9px;
+      font-size: .88rem;
+      font-weight: 600;
+      transition: all .25s;
+    }
+
+    .cb1:hover {
+      background: #e0ab27;
+    }
+
+    .cb2 {
+      background: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .7);
+      padding: 12px 26px;
+      border-radius: 9px;
+      font-size: .88rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, .15);
+      transition: all .25s;
+    }
+
+    .cb2:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, .15);
+    }
+
+    .cta-right {
+      padding: 72px 56px;
+    }
+
+    .cta-right h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+
+    .cc-items {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .cc-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .cc-icon {
+      font-size: .9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #82c4f0;
+    }
+
+    .cc-text strong {
+      display: block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .3px;
+      color: rgba(255, 255, 255, .4);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .cc-text span {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.55;
+    }
+
+    .cta-soc {
+      display: flex;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .csoc {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .3);
+      transition: all .2s;
+    }
+
+    .csoc:hover {
+      background: var(--b);
+      border-color: var(--b);
+      color: #fff;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0b3460;
+      padding: 52px 48px 28px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 44px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .f-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .f-desc {
+      font-size: .8rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, .3);
+      margin-bottom: 16px;
+    }
+
+    .f-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .fci {
+      display: flex;
+      gap: 8px;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+      line-height: 1.5;
+      align-items: flex-start;
+    }
+
+    .fci-icon {
+      color: var(--bl);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .f-col-h {
+      font-family: 'Courier Prime', monospace;
+      font-size: .58rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 14px;
+    }
+
+    .f-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .f-col ul a {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .35);
+      transition: color .2s;
+    }
+
+    .f-col ul a:hover {
+      color: var(--bl);
+    }
+
+    .f-bottom {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .f-bottom p {
+      font-family: 'Courier Prime', monospace;
+      font-size: .58rem;
+      color: rgba(255, 255, 255, .15);
+      letter-spacing: .3px;
+    }
+
+    .f-soc {
+      display: flex;
+      gap: 6px;
+    }
+
+    .fsb {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      color: rgba(255, 255, 255, .25);
+      transition: all .2s;
+    }
+
+    .fsb:hover {
+      background: var(--b);
+      border-color: var(--b);
+      color: #fff;
+    }
+
+    /* ── REVEAL ── */
+    .rv {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .rv.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 {
+      transition-delay: .1s;
+    }
+
+    .d2 {
+      transition-delay: .2s;
+    }
+
+    .d3 {
+      transition-delay: .3s;
+    }
+
+    @media (max-width: 960px) {
+      #nav {
+        width: calc(100% - 24px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      #hero {
+        padding: 100px 24px 60px;
+      }
+
+      .hero-top-bar,
+      .hero-scroll-note {
+        display: none;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .sec {
+        padding: 64px 24px;
+      }
+
+      footer {
+        padding: 48px 24px 24px;
+      }
+
+      .about-grid,
+      .mv-wrap,
+      .res-featured-block,
+      .out-layout,
+      .partners-top,
+      .cta-inner,
+      .news-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .pillar-item {
+        grid-template-columns: 40px 1fr;
+      }
+
+      .pi-meta {
+        display: none;
+      }
+
+      .impact-band {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ai-badge {
+        display: none;
+      }
+
+      .ai-sub {
+        right: 0;
+        bottom: -16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pgb"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-brand">
+      <a href="#" style="display: flex; align-items: center;"><img class="nav-logo" src="pried-logo.png"
+          alt="PRIED Logo"></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#pillars">Our Work</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#partners">Partners</a></li>
+    </ul>
+    <div class="nav-end">
+      <a href="#cta" class="nav-cta">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-main">
+      <div class="hero-headline">
+        <h1>
+          Policy Research<br>
+          Institue for
+          <strong>Equitable</strong><br>
+          Development
+        </h1>
+        <p class="hero-desc">PRIED is an independent public interest think-tank based in Islamabad, Pakistan.
+          PRIED develops evidence-based research to drive Pakistan's transition toward sustainable,
+          renewable, and people-centred energy systems — placing communities at the heart of every decision.</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="sec">
+    <div class="wrap">
+      <div class="label">Who We Are</div>
+      <h2 class="sh">An independent voice for<br><em>equitable development</em></h2>
+      <div class="about-grid">
+        <div class="about-img-group rv">
+          <div class="ai-main">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=85"
+              alt="Solar panels Pakistan" loading="lazy">
+          </div>
+          <div class="ai-sub">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=350&q=80" alt="Policy research"
+              loading="lazy">
+          </div>
+          <div class="ai-badge">
+            <div class="aib-n">2010<sup>s</sup></div>
+            <div class="aib-l">Institutional legacy</div>
+          </div>
+        </div>
+        <div class="about-text rv d1">
+          <p>We started <strong>PRIED</strong> because we believe how a country powers itself is one of the most
+            consequential decisions it can make. That decision should be made with evidence, with fairness, and with
+            every voice at the table.</p>
+          <div class="blockquote">
+            "What that really means, day to day, is that we dig critically into the policies and research that shapes
+            energy and climate policy in Pakistan. And we try to make sure that research actually leads somewhere just."
+          </div>
+          <p>Among the things we do are:</p>
+          <ul
+            style="list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 16px;">
+            <li style="display: flex; align-items: flex-start; gap: 12px;">
+              <svg width="20" height="20" fill="none" stroke="var(--b)" stroke-width="2" viewBox="0 0 24 24"
+                style="flex-shrink: 0; margin-top: 4px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              <span style="font-size: .97rem; line-height: 1.8; color: #444;"><strong>Write and publish
+                  research</strong> that we hope can hold its own in global conversations about transitioning away from
+                fossil fuels, if only because Pakistan deserves a seat at that table, and so do the communities most
+                affected by what comes next.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px;">
+              <svg width="20" height="20" fill="none" stroke="var(--b)" stroke-width="2" viewBox="0 0 24 24"
+                style="flex-shrink: 0; margin-top: 4px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              <span style="font-size: .97rem; line-height: 1.8; color: #444;"><strong>We bring people together</strong>
+                who don't always talk to each other: legislators, policymakers, development organisations, businesses,
+                activists, academics, NGOs. The energy transition touches all of them. It should involve all of
+                them.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px;">
+              <svg width="20" height="20" fill="none" stroke="var(--b)" stroke-width="2" viewBox="0 0 24 24"
+                style="flex-shrink: 0; margin-top: 4px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              <span style="font-size: .97rem; line-height: 1.8; color: #444;"><strong>We offer honest, critical
+                  input</strong> to the people making decisions &mdash; governments, development organisations,
+                international financial institutions. Sometimes that means support. Sometimes it means saying, clearly
+                and respectfully, that a policy needs rethinking.</span>
+            </li>
+          </ul>
+          <p>And perhaps most importantly, we work directly with communities whose lives are shaped by energy policy,
+            helping them connect, share information, and make their voices heard in spaces where they're often absent.
+          </p>
+          <div class="at-note">
+            <span class="at-note-icon">🏛️</span>
+            <p><strong>Institutional Legacy:</strong> PRIED carries forward the work of RDPI — the Rural Development
+              Policy Institute — which spent two decades working across energy, climate justice, local
+              development and disaster mitigation. That history and purpose lives in us; it keeps us
+              grounded and continues to guide us.
+              To this end, PRIED has devised a detailed strategy for its operations, spanning over the next three years.
+              You can read the strategy <a
+                href="https://pried.pk/wp-content/uploads/2025/06/PRIED-Strategy-2025-2027.pdf"
+                target="_blank"><strong>here</strong></a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission" class="sec">
+    <div class="wrap">
+      <div class="mv-wrap rv">
+        <div class="mv-left-col">
+          <div class="label">Our Purpose</div>
+          <h2 class="sh">Mission &amp; <em>Vision</em></h2>
+          <p class="sdesc" style="margin-bottom: 40px; max-width: 100%;">Driven by the conviction that rigorous public
+            interest research can shift Pakistan's energy
+            future toward justice, equity, and sustainability for all.</p>
+          <div class="mv-card">
+            <div class="mv-card-top-line"></div>
+            <div class="mv-ghost-num">01</div>
+            <div class="mv-icon-ring">🎯</div>
+            <h3>What Guides Us</h3>
+            <p>Every Pakistani enjoys equitable access to renewable, reliable, and affordable sources
+              of energy.</p>
+          </div>
+          <div class="mv-card d1">
+            <div class="mv-card-top-line"></div>
+            <div class="mv-ghost-num">02</div>
+            <div class="mv-icon-ring">🌏</div>
+            <h3>What We Are Here For, Why Us, Why Now?</h3>
+            <p>To accelerate Pakistan’s transition from fossil fuels and large hydroelectric projects to
+              renewable sources of energy and to ensure economic, social, and climatic justice during
+              this transition.</p>
+          </div>
+        </div>
+        <div class="mv-right-col">
+          <div class="mv-gallery-track">
+            <img class="mv-gallery-img" src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800&q=80"
+              alt="Gallery image 1" loading="lazy">
+            <img class="mv-gallery-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80"
+              alt="Gallery image 2" loading="lazy">
+            <img class="mv-gallery-img" src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80"
+              alt="Gallery image 3" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section id="pillars" class="sec">
+    <div class="wrap">
+      <div class="label" style="color:rgb(255, 255, 255)">How We Help</div>
+      <h2 class="sh" style="color:#fff">Four pillars of <em>impact</em></h2>
+      <p class="sdesc" style="color:rgba(255,255,255,.5)">From evidence collection to policy corridors to affected
+        communities — PRIED bridges research and real change.</p>
+      <div class="pillars-wrap rv">
+        <div class="pillar-item">
+          <div class="pi-num">01</div>
+          <div class="pi-meta">
+            <div class="pi-icon">🔬</div>
+            <div class="pi-title">The Evidence</div>
+            <div class="pi-tags"><span class="pi-tag">Studies</span><span class="pi-tag">Policy Briefs</span></div>
+          </div>
+          <div class="pi-body">
+            <p>The research we undertake brings forth evidence so others don't have to take our word
+              for it. We look at what Pakistan's energy and climate policies actually do - to
+              communities, to ecosystems, to household budgets - not just what they're meant to do.
+              We've spent time in Thar tracking what coal does to the people living beside it, mapped
+              the obstacles blocking green finance across the country, and explored what mini-grids
+              and solar could mean for communities still waiting for the grid. The work is rigorous
+              because it has to be. Our findings go into reports and briefs designed to shift policy
+              debates toward people-centered outcomes. Our research is independent; our intent,
+              however, is far from neutral.</p>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <div class="pi-num">02</div>
+          <div class="pi-meta">
+            <div class="pi-icon">🤝</div>
+            <div class="pi-title">Building Together</div>
+            <div class="pi-tags"><span class="pi-tag">ACJCE</span><span class="pi-tag">PREC</span><span
+                class="pi-tag">GCEN</span></div>
+          </div>
+          <div class="pi-body">
+            <p>Some of our most important work happens not in offices, but in the field. For example, in
+              Thar — a region where coal development has been underway since 2012-13 – we have
+              been speaking to communities living with its consequences ever since. From the
+              beginning, we've worked together alongside the people most directly affected by energy
+              and climate decisions, helping them find their footing, their voice, and their place in
+              conversations that too often happen without them.</p>
+            <p>This same spirit of collaboration runs through everything we do. We've helped build two
+              networks that we're genuinely proud of: The Alliance for Climate Justice and Clean
+              Energy (ACJCE), which brings together organisations working at the intersection of
+              energy transition and climate justice, and the Pakistan Renewable Energy Coalition
+              (PREC), which advocates for a faster, fairer shift to renewables. Beyond Pakistan, we're
+              part of the Asian People's Movement for Debt and Development (APMDD) and the
+              Global Clean Energy Network (GCEN). We believe the challenges we're working on
+              don't stop at borders, and neither should the people working on them.</p>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <div class="pi-num">03</div>
+          <div class="pi-meta">
+            <div class="pi-icon">📢</div>
+            <div class="pi-title">Taking a Stand</div>
+            <div class="pi-tags"><span class="pi-tag">Parliament</span><span class="pi-tag">MDB Letters</span></div>
+          </div>
+          <div class="pi-body">
+            <p>Producing research and writing white papers means little without advocacy for change. We do
+              this by taking our research to the people who make decisions and push them to act.
+              One of the things we're proud of is helping establish the Parliamentary Forum on Energy
+              and Economy - a cross-party group of parliamentarians who are willing to ask hard questions
+              about the energy-economy relationship from a public interest perspective. Getting
+              legislators from different parties into the same room, focused on the same problem, is no
+              mean feat, by any measure and in any country.</p>
+            <p>Beyond parliament, we regularly sit down with policymakers, government departments, and
+              Pakistan's development partners — bilateral and multilateral — to push for energy and
+              climate policies that work for people, especially those on the margins. When sitting down
+              isn't enough, we write. We send letters to government representatives and multilateral
+              development banks, offering direct, evidence-based critiques of policies and projects we
+              believe need to change. Nobody said it is going to be comfortable, but everybody knows it’s
+              necessary.</p>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <div class="pi-num">04</div>
+          <div class="pi-meta">
+            <div class="pi-icon">🌐</div>
+            <div class="pi-title">Getting the Word Out There</div>
+            <div class="pi-tags"><span class="pi-tag">Media</span><span class="pi-tag">Communities</span></div>
+          </div>
+          <div class="pi-body">
+            <p>Energy transition needs more than good policy; it needs an informed public and a press willing to
+              cover it honestly. That's why we've trained over a hundred journalists and content creators to
+              report on energy transition and climate justice from a public interest perspective. We've partnered
+              with established news outlets and newer startups alike, helping them publish stories on everything
+              from rooftop solar to coal phase-out - stories that might otherwise not find a home in a typical
+              newsroom.</p>
+            <p>What's grown out of that work is something remarkable: an informal, Pakistan-wide community of
+              journalists who keep returning to these issues on their own. They're doing investigative work on the
+              environmental, economic and social impacts of energy projects, on the role of multilateral
+              development banks, on the stories that tend to fall through the cracks. It is one of the things we're
+              very glad to have been part of.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="sec">
+    <div class="wrap">
+      <div
+        style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:52px;">
+        <div>
+          <div class="label">Research &amp; Publications</div>
+          <h2 class="sh">Featured <em>studies</em></h2>
+        </div>
+
+      </div>
+      <div class="res-featured-block rv">
+        <div class="rfb-main">
+          <div class="rfb-bg"></div>
+          <div class="rfb-body">
+            <div class="rfb-label">Featured Report · 2024</div>
+            <h3>The Energy-Economy Nexus in Pakistan: A Vicious Cycle of Crisis</h3>
+            <p>How Pakistan's reliance on imported LNG, petroleum, and coal has created a ₨2.63 trillion circular debt
+              crisis. A comprehensive study with a roadmap toward renewable energy transition.</p>
+            <a href="https://www.priedpk.org" class="rfb-btn">Read Full Report →</a>
+          </div>
+        </div>
+        <div class="rfb-side">
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">🔋</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Study · Nov 2024</div>
+              <h4>Bridging the Energy Gap: Microgrid Potential in Off-Grid Pakistan</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">⚡</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Study · 2023</div>
+              <h4>PLEXOS-Based Least-Cost Power Planning Model for Pakistan</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">⛏️</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Study</div>
+              <h4>Coal Rush: Community Impacts of Coal Power in Thar</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">☀️</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Study</div>
+              <h4>Unlocking Rooftop Solar's Economic Potential in Pakistan</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">💨</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Study</div>
+              <h4>Pakistan's Offshore Wind &amp; Battery Storage Integration</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+        </div>
+      </div>
+      <div class="res-all"><a href="https://www.priedpk.org/studies/" class="btn-outline-b">Browse All Research
+          Publications →</a></div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <div class="impact-band">
+    <div class="ib-c">
+      <div class="ib-n">100<sup>+</sup></div>
+      <div class="ib-l">Journalists trained on energy transition reporting</div>
+    </div>
+    <div class="ib-c">
+      <div class="ib-n">15<sup>+</sup></div>
+      <div class="ib-l">Research studies &amp; policy briefs published</div>
+    </div>
+    <div class="ib-c">
+      <div class="ib-n">4</div>
+      <div class="ib-l">National &amp; global networks co-founded or joined</div>
+    </div>
+    <div class="ib-c">
+      <div class="ib-n">1</div>
+      <div class="ib-l">Parliamentary Forum on Energy &amp; Economy founded</div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <section id="news" class="sec">
+    <div class="wrap">
+      <div class="label">WHAT'S GOING ON</div>
+      <h2 class="sh">Happenings <em>at PRIED</em></h2>
+      <div class="news-layout">
+        <div class="news-list rv">
+          <div class="news-entry">
+            <div class="ne-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=250&q=80"
+                alt="Conference" loading="lazy"></div>
+            <div class="ne-body">
+              <div class="ne-tag">Panel Discussion · ACJCE · 2022</div>
+              <h4>Experts Urge World Bank Not to Sabotage Pakistan's Green Energy Transition</h4>
+              <p>At an ACJCE webinar, experts from Urgewald and Recourse presented research on how $1.4 billion in World
+                Bank DPF pushed Pakistan deeper into coal dependency, threatening 29,000 lives in Thar.</p>
+            </div>
+          </div>
+          <div class="news-entry">
+            <div class="ne-img"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=250&q=80"
+                alt="Solar" loading="lazy"></div>
+            <div class="ne-body">
+              <div class="ne-tag">Research Collaboration · 2025</div>
+              <h4>Shedding Light on Pakistan's Distributed Solar Revolution</h4>
+              <p>Joint analysis with TransitionZero combining satellite imagery with national household survey data —
+                Pakistan's first comprehensive distributed solar adoption estimate.</p>
+            </div>
+          </div>
+          <div class="news-entry">
+            <div class="ne-img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=250&q=80"
+                alt="Meeting" loading="lazy"></div>
+            <div class="ne-body">
+              <div class="ne-tag">Advocacy · Ongoing</div>
+              <h4>Parliamentary Forum on Energy and Economy Established</h4>
+              <p>PRIED played a seminal role in establishing Pakistan's first cross-party parliamentary group dedicated
+                to addressing the energy-economy nexus from a public interest perspective.</p>
+            </div>
+          </div>
+        </div>
+        <div class="news-side rv d1">
+          <div class="ns-box">
+            <div class="ns-header">
+              <h3>PRIED in Press</h3>
+              <p>In the News</p>
+            </div>
+            <div class="ns-items">
+              <div class="ns-item">
+                <div class="ns-itag">Community</div>
+                <h5>Thar community mobilisation &amp; representation at national and international forums</h5>
+              </div>
+              <div class="ns-item">
+                <div class="ns-itag">Research</div>
+                <h5>Decarbonisation of Pakistan's Cement Industry — study in progress</h5>
+              </div>
+              <div class="ns-item">
+                <div class="ns-itag">Advocacy</div>
+                <h5>Letters to MDBs critiquing fossil fuel-linked financing in Pakistan</h5>
+              </div>
+              <div class="ns-item">
+                <div class="ns-itag">Media Training</div>
+                <h5>Ongoing journalist training cohorts on investigative energy reporting</h5>
+              </div>
+            </div>
+          </div>
+          <div class="monitor-strip">
+            <span class="ms-icon">📰</span>
+            <div class="ms-body">
+              <h4>Energy Monitor</h4>
+              <p>Pakistan's only dedicated weekly media tracker for energy &amp; climate coverage — keeping all
+                stakeholders informed and engaged.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEEKLY MONITORS -->
+  <section id="weekly-monitors" class="sec" style="background:#f9f7f3;">
+    <div class="wrap">
+      <div
+        style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:52px;">
+        <div>
+          <div class="label">Weekly Monitors</div>
+          <h2 class="sh">Latest <em>editions</em></h2>
+        </div>
+      </div>
+      <div class="res-featured-block rv">
+        <div class="rfb-main">
+          <div class="rfb-bg"
+            style="background: url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=900&q=85') center/cover no-repeat;">
+          </div>
+          <div class="rfb-body">
+            <div class="rfb-label">Featured Monitor · Week 42</div>
+            <h3>Pakistan Energy Monitor: Accelerating Renewable Deployment</h3>
+            <p>Our latest tracking of Pakistan's media coverage on the energy transition, focusing on the latest grid
+              constraints and shifting policies towards solar and wind infrastructure.</p>
+            <a href="https://www.priedpk.org" class="rfb-btn">Read Full Monitor →</a>
+          </div>
+        </div>
+        <div class="rfb-side">
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">📰</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Monitor · Week 41</div>
+              <h4>Media Tracking: The Circular Debt Debate</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">📰</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Monitor · Week 40</div>
+              <h4>Media Tracking: Financing the Just Transition</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">📰</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Monitor · Week 39</div>
+              <h4>Media Tracking: Coal Phase-out Policies Discussed</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">📰</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Monitor · Week 38</div>
+              <h4>Media Tracking: Hydropower vs Solar Coverage</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+          <div class="rfb-side-item">
+            <div class="rfb-si-icon">📰</div>
+            <div class="rfb-si-body">
+              <div class="rfb-si-type">Monitor · Week 37</div>
+              <h4>Media Tracking: Grid Constraints in Sindh</h4>
+            </div>
+            <div class="rfb-si-arr">→</div>
+          </div>
+        </div>
+      </div>
+      <div class="res-all"><a href="https://www.priedpk.org/studies/" class="btn-outline-b">Browse All Monitors →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTREACH -->
+  <section id="outreach" class="sec">
+    <div class="wrap">
+      <div class="label">Media &amp; Community Outreach</div>
+      <h2 class="sh">Shifting the <em>public narrative</em></h2>
+      <div class="out-layout">
+        <div class="out-text rv">
+          <p>PRIED has trained more than <strong>one hundred journalists and content creators</strong> on how to report
+            about energy transition and climate justice from a public interest perspective.</p>
+          <p>We have partnered with traditional news outlets and news startups to publish content ranging from rooftop
+            solar to coal phaseout — shifting public discourse from fossil fuels toward a <strong>just energy
+              transition</strong>.</p>
+          <p>We have also built a Pakistan-wide informal cohort of journalists who regularly conduct investigative
+            reports on issues usually ignored by newsrooms — including the environmental, economic, and social impacts
+            of energy policies and the role of multilateral development banks in them.</p>
+          <p>We publish the <strong>Energy Monitor</strong> — a weekly media tracking publication surveying Pakistan's
+            energy and climate coverage, keeping all stakeholders informed and engaged.</p>
+        </div>
+        <div class="out-photos-and-stats rv d1">
+          <div class="out-photo">
+            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=85" alt="Wind energy"
+              loading="lazy">
+          </div>
+          <div class="out-stats-row">
+            <div class="ost">
+              <div class="ost-n">100<em>+</em></div>
+              <div class="ost-l">Journalists trained on energy reporting</div>
+            </div>
+            <div class="ost">
+              <div class="ost-n" style="font-size:1.5rem">Weekly</div>
+              <div class="ost-l">Energy Monitor media tracker</div>
+            </div>
+            <div class="ost">
+              <div class="ost-n" style="font-size:1.3rem">2012</div>
+              <div class="ost-l">Thar engagement since coal development began</div>
+            </div>
+            <div class="ost">
+              <div class="ost-n" style="font-size:1.1rem">National</div>
+              <div class="ost-l">Investigative journalist cohort across Pakistan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section id="partners" class="sec">
+    <div class="wrap">
+      <div class="label">Networks &amp; Partners</div>
+      <h2 class="sh">Collaborating <em>for change</em></h2>
+      <div class="partners-top">
+        <div class="pt-left rv">
+          <p>Since its inception, PRIED has been engaged with communities affected by energy policies — particularly in
+            <strong>Thar, where coal development has been ongoing since 2012–13</strong>. We help Thar's communities
+            mobilise and make their voices heard at national and international forums.
+          </p>
+          <p>We regularly engage with policymakers and Pakistan's multilateral and bilateral development partners —
+            arranging public events, seminars, consultations, and in-person meetings to promote <strong>equitable,
+              sustainable, and just developments in the energy and climate sectors</strong>.</p>
+          <p>We also write letters to representatives of the government and multilateral development banks, critiquing
+            their policies, plans, and projects in the energy and climate sectors when they fall short of justice.</p>
+          <div class="partner-cloud">
+            <span class="pchip">TransitionZero</span><span class="pchip">Urgewald</span><span
+              class="pchip">Recourse</span><span class="pchip">Alt. Law Collective</span><span
+              class="pchip">NUST</span><span class="pchip">Parliamentary Forum</span><span class="pchip">Media
+              Partners</span><span class="pchip">Civil Society Orgs</span>
+          </div>
+        </div>
+        <div class="pt-right rv d1">
+          <div class="pnet-row">
+            <div class="pnet-abbr"><img src="acjce-logo.png" alt="ACJCE Logo" loading="lazy"></div>
+            <div class="pnet-body">
+              <h4>Alliance for Climate Justice and Clean Energy</h4>
+              <p>Pakistan-based coalition co-founded by PRIED — working on energy transition, climate justice, and coal
+                phaseout advocacy at national level.</p>
+            </div>
+          </div>
+          <div class="pnet-row">
+            <div class="pnet-abbr"><img src="prec-logo.png" alt="PREC Logo" loading="lazy"></div>
+            <div class="pnet-body">
+              <h4>Pakistan Renewable Energy Coalition</h4>
+              <p>Co-founded by PRIED to advocate for Pakistan's transition to renewable energy and accelerate clean
+                energy deployment and the just phaseout of fossil fuels.</p>
+            </div>
+          </div>
+          <div class="pnet-row">
+            <div class="pnet-abbr"><img src="apmdd-logo.png" alt="APMDD Logo" loading="lazy"></div>
+            <div class="pnet-body">
+              <h4>Asian People's Movement on Debt &amp; Development</h4>
+              <p>Regional network connecting Pakistan's experience with Asia-wide struggles against unjust financial
+                flows and debt-driven development projects.</p>
+            </div>
+          </div>
+          <div class="pnet-row">
+            <div class="pnet-abbr"><img src="gcen-logo.png" alt="GCEN Logo" loading="lazy"></div>
+            <div class="pnet-body">
+              <h4>Global Clean Energy Network</h4>
+              <p>Global coalition connecting Pakistan's energy transition experience to worldwide movements for fossil
+                fuel phaseout and clean energy advocacy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-name">Policy Research Institute for Equitable Development</div>
+        <p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing
+          evidence-based research for a sustainable, equitable, and low-carbon future.</p>
+        <div class="f-contact">
+          <div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz,
+              Islamabad</span></div>
+          <div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div>
+          <div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div>
+        </div>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Our Work</div>
+        <ul>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#pillars">Collaboration</a></li>
+          <li><a href="#pillars">Advocacy</a></li>
+          <li><a href="#outreach">Outreach</a></li>
+          <li><a href="#outreach">Energy Monitor</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Focus Areas</div>
+        <ul>
+          <li><a href="#">Climate Justice</a></li>
+          <li><a href="#">Energy Transition</a></li>
+          <li><a href="#">Renewable Energy</a></li>
+          <li><a href="#">Coal Phaseout</a></li>
+          <li><a href="#">Green Finance</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Networks</div>
+        <ul>
+          <li><a href="#">ACJCE</a></li>
+          <li><a href="#">PREC</a></li>
+          <li><a href="#">APMDD</a></li>
+          <li><a href="#">GCEN</a></li>
+          <li><a href="https://www.priedpk.org/studies/">All Publications</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Policy Research Institute for Equitable Development (PRIED) · Islamabad, Pakistan</p>
+      <div class="f-soc">
+        <a href="https://twitter.com/priedpk" class="fsb">𝕏</a>
+        <a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a>
+        <a href="#" class="fsb">f</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const pgb = document.getElementById('pgb');
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
+      pgb.style.width = (s / t * 100) + '%';
+      nav.classList.toggle('scrolled', s > 40);
+    });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+    }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+  </script>
+</body>
+
+</html>
