@@ -76,10 +76,12 @@
       top: 16px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 1000; /* Increased to ensure it's on top */
+      z-index: 1000;
+      /* Increased to ensure it's on top */
       width: calc(100% - 48px);
       max-width: 1100px;
-      background: rgba(255, 255, 255, 0.4); /* Glass effect */
+      background: rgba(255, 255, 255, 0.4);
+      /* Glass effect */
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -93,7 +95,8 @@
     }
 
     #nav:hover {
-      background: rgba(255, 255, 255, 1); /* Shifts to white on hover */
+      background: rgba(255, 255, 255, 1);
+      /* Shifts to white on hover */
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       border-color: rgba(28, 28, 28, 0.05);
     }
@@ -142,6 +145,79 @@
     }
 
     .nav-links a:hover {
+      color: var(--b);
+      background: var(--bp);
+    }
+
+    /* ── RESEARCH DROPDOWN ── */
+    .nav-item-dropdown {
+      position: relative;
+    }
+
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chevron {
+      font-size: 0.5rem;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.7;
+    }
+
+    .nav-item-dropdown:hover .chevron {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(28, 28, 28, 0.08);
+      border-radius: 10px;
+      min-width: 140px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 6px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1100;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-item-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(4px);
+    }
+
+    .dropdown-menu li {
+      width: 100%;
+      padding: 0 6px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      width: 100%;
+      padding: 8px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--mid);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
       color: var(--b);
       background: var(--bp);
     }
@@ -1843,12 +1919,19 @@
       <li><a href="#pillars">Our Work</a></li>
       <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
       <li><a href="ifi-monitor.html">IFI Monitor</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#news">News</a></li>
+      <li class="nav-item-dropdown">
+        <a href="#" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="pried-inner-pages.html#studies">Studies</a></li>
+          <li><a href="pried-inner-pages.html#briefs">Briefs</a></li>
+          <li><a href="pried-inner-pages.html#news">News</a></li>
+        </ul>
+      </li>
+      <li><a href="pried-inner-pages.html#team">Team</a></li>
       <li><a href="#partners">Partners</a></li>
     </ul>
     <div class="nav-end">
-      <a href="#cta" class="nav-cta">Contact Us</a>
+      <a href="pried-inner-pages.html#contact" class="nav-cta">Contact Us</a>
     </div>
   </nav>
 
@@ -2117,49 +2200,49 @@
           </div>
         </div>
         <div class="rfb-side">
-          <div class="rfb-side-item">
+          <a href="pried-inner-pages.html#studies" class="rfb-side-item">
             <div class="rfb-si-icon">🔋</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Study · Nov 2024</div>
               <h4>Bridging the Energy Gap: Microgrid Potential in Off-Grid Pakistan</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#studies" class="rfb-side-item">
             <div class="rfb-si-icon">⚡</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Study · 2023</div>
               <h4>PLEXOS-Based Least-Cost Power Planning Model for Pakistan</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#studies" class="rfb-side-item">
             <div class="rfb-si-icon">⛏️</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Study</div>
               <h4>Coal Rush: Community Impacts of Coal Power in Thar</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#studies" class="rfb-side-item">
             <div class="rfb-si-icon">☀️</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Study</div>
               <h4>Unlocking Rooftop Solar's Economic Potential in Pakistan</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#studies" class="rfb-side-item">
             <div class="rfb-si-icon">💨</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Study</div>
               <h4>Pakistan's Offshore Wind &amp; Battery Storage Integration</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
+          </a>
         </div>
       </div>
-      <div class="res-all"><a href="https://www.priedpk.org/studies/" class="btn-outline-b">Browse All Research
+      <div class="res-all"><a href="pried-inner-pages.html#studies" class="btn-outline-b">Browse All Research
           Publications →</a></div>
     </div>
   </section>
@@ -2242,49 +2325,49 @@
           </div>
         </div>
         <div class="rfb-side">
-          <div class="rfb-side-item">
+          <a href="pried-inner-pages.html#news" class="rfb-side-item">
             <div class="rfb-si-icon">📰</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Monitor · Week 41</div>
               <h4>Media Tracking: The Circular Debt Debate</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#news" class="rfb-side-item">
             <div class="rfb-si-icon">📰</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Monitor · Week 40</div>
               <h4>Media Tracking: Financing the Just Transition</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#news" class="rfb-side-item">
             <div class="rfb-si-icon">📰</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Monitor · Week 39</div>
               <h4>Media Tracking: Coal Phase-out Policies Discussed</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#news" class="rfb-side-item">
             <div class="rfb-si-icon">📰</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Monitor · Week 38</div>
               <h4>Media Tracking: Hydropower vs Solar Coverage</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
-          <div class="rfb-side-item">
+          </a>
+          <a href="pried-inner-pages.html#news" class="rfb-side-item">
             <div class="rfb-si-icon">📰</div>
             <div class="rfb-si-body">
               <div class="rfb-si-type">Monitor · Week 37</div>
               <h4>Media Tracking: Grid Constraints in Sindh</h4>
             </div>
             <div class="rfb-si-arr">→</div>
-          </div>
+          </a>
         </div>
       </div>
-      <div class="res-all"><a href="https://www.priedpk.org/studies/" class="btn-outline-b">Browse All Monitors →</a>
+      <div class="res-all"><a href="pried-inner-pages.html#news" class="btn-outline-b">Browse All Monitors →</a>
       </div>
     </div>
   </section>
@@ -2472,11 +2555,11 @@
       <div class="f-col">
         <div class="f-col-h">Our Work</div>
         <ul>
-          <li><a href="#research">Research</a></li>
+          <li><a href="pried-inner-pages.html#studies">Research</a></li>
           <li><a href="#pillars">Collaboration</a></li>
           <li><a href="#pillars">Advocacy</a></li>
           <li><a href="#outreach">Outreach</a></li>
-          <li><a href="#outreach">Energy Monitor</a></li>
+          <li><a href="pried-inner-pages.html#news">Energy Monitor</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -2496,7 +2579,7 @@
           <li><a href="#">PREC</a></li>
           <li><a href="#">APMDD</a></li>
           <li><a href="#">GCEN</a></li>
-          <li><a href="https://www.priedpk.org/studies/">All Publications</a></li>
+          <li><a href="pried-inner-pages.html#studies">All Publications</a></li>
         </ul>
       </div>
     </div>
