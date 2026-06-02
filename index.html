@@ -94,6 +94,30 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #243b53;
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    #nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    #nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     #nav:hover {
       background: rgba(255, 255, 255, 1);
       /* Shifts to white on hover */
@@ -1843,7 +1867,65 @@
         width: calc(100% - 24px);
       }
 
+      .nav-toggle {
+        display: flex;
+      }
+
       .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 14px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        padding: 8px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: max-height .3s ease, opacity .25s ease, transform .25s ease;
+      }
+
+      #nav.nav-open .nav-links {
+        max-height: 80vh;
+        overflow-y: auto;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .nav-links>li {
+        width: 100%;
+      }
+
+      .nav-links>li>a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+      }
+
+      .nav-item-dropdown .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        padding: 0 0 6px 14px;
+        min-width: 0;
+        pointer-events: auto;
+      }
+
+      .dropdown-trigger .chevron {
         display: none;
       }
 
@@ -1870,6 +1952,7 @@
       }
 
       .about-grid,
+      .about-top-row,
       .mv-wrap,
       .res-featured-block,
       .out-layout,
@@ -1904,6 +1987,61 @@
         bottom: -16px;
       }
     }
+
+    @media (max-width: 768px) {
+      .about-cards,
+      .hsc-row {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-main {
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .mv-right-col {
+        height: 420px;
+      }
+
+      .cta-inner {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sec {
+        padding: 56px 18px;
+      }
+
+      #hero {
+        padding: 96px 18px 56px;
+      }
+
+      .impact-band,
+      .out-stats-row,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mv-right-col {
+        height: 340px;
+      }
+
+      .nav-cta {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .sec {
+        padding: 48px 14px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -1934,6 +2072,7 @@
     </ul>
     <div class="nav-end">
       <a href="pried-inner-pages.html#contact" class="nav-cta">Contact Us</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -2607,6 +2746,23 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
     }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+    // Mobile hamburger menu
+    const navToggle = document.getElementById('navToggle');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('.nav-links a').forEach(a => {
+        // Keep the dropdown trigger from closing the menu; let real links close it
+        if (a.classList.contains('dropdown-trigger')) return;
+        a.addEventListener('click', () => {
+          nav.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
 </body>
 

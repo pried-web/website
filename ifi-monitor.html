@@ -87,6 +87,15 @@
   .nav-links a:hover { color: var(--accent); }
   .nav-links a:hover::after { width: 100%; }
 
+  .nav-toggle {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    width: 40px; height: 40px; padding: 0; background: none; border: none; cursor: pointer;
+  }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .3s, opacity .3s; }
+  #main-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  #main-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  #main-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   /* ── HERO ── */
   #hero {
     position: relative; height: 100vh; min-height: 600px;
@@ -611,7 +620,23 @@
 
   /* ── MOBILE ── */
   @media (max-width: 900px) {
-    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: fixed; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: rgba(247,245,240,0.98);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: var(--shadow-md);
+      padding: 6px 5vw 14px;
+      max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
+      transform: translateY(-6px);
+      transition: max-height .3s ease, opacity .25s ease, transform .25s ease;
+    }
+    #main-nav.nav-open .nav-links { max-height: 80vh; opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 13px 2px; font-size: 14px; border-bottom: 1px solid var(--rule); }
+    .nav-links li:last-child a { border-bottom: none; }
     .inst-inner { grid-template-columns: 1fr; gap: 40px; }
     .inst-inner.reverse { direction: ltr; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
@@ -622,6 +647,13 @@
     .stat-item .num { font-size: 34px; }
     .footer-grid { grid-template-columns: 1fr; }
     .news-grid { grid-template-columns: 1fr; }
+    .news-card-footer { flex-wrap: wrap; gap: 6px; }
+    .blog-hero { aspect-ratio: 16 / 9; }
+    .blog-body h2 { font-size: 22px; }
+  }
+  @media (max-width: 400px) {
+    .stats-inner { grid-template-columns: 1fr; }
+    section { padding-left: 16px; padding-right: 16px; }
   }
 </style>
 </head>
@@ -640,6 +672,7 @@
     <li><a href="#adb">ADB</a></li>
     <li><a href="#stats">Data</a></li>
   </ul>
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -917,6 +950,21 @@ const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 });
+
+// Mobile hamburger menu
+const navToggle = document.getElementById('navToggle');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // Scroll reveal
 const revealEls = document.querySelectorAll('.reveal');

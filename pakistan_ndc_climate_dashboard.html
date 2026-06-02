@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Climate Commitments Dashboard</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
 
@@ -184,6 +187,31 @@
   .kpi { animation: fadeUp 0.5s both; }
   .kpi:nth-child(1){animation-delay:.05s} .kpi:nth-child(2){animation-delay:.1s} .kpi:nth-child(3){animation-delay:.15s} .kpi:nth-child(4){animation-delay:.2s}
   .card { animation: fadeUp 0.5s both; }
+
+  /* ─────────── RESPONSIVE ─────────── */
+  @media (max-width: 1024px) {
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) {
+    .dashboard { padding: 28px 20px; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .grid-2, .grid-3, .grid-1-2 { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .header > div { align-items: flex-start !important; }
+    .timeline { flex-direction: column; }
+    .timeline-col { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 0; }
+    .timeline-col:last-child { border-bottom: none; padding-bottom: 0; }
+  }
+  @media (max-width: 520px) {
+    .dashboard { padding: 22px 14px; }
+    .kpi-row { grid-template-columns: 1fr; }
+    .header-left h1 { font-size: 1.7rem; }
+    .kpi-val { font-size: 1.7rem; }
+    .card { padding: 18px; }
+    .donut-wrap { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .donut-legend { width: 100%; }
+    .dash-footer { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
@@ -460,7 +488,7 @@
   </div>
 
   <!-- Footer -->
-  <div style="margin-top:8px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+  <div class="dash-footer" style="margin-top:8px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
     <div style="font-size:0.72rem;color:var(--muted)">Source: Pakistan INDCs (2016) · NDCs 2.0 (2021) · NDCs 3.0 (2025)</div>
     <div style="font-size:0.72rem;color:var(--muted)">GHG inventory data · MtCO₂e = Million tonnes CO₂ equivalent</div>
   </div>
