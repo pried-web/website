@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Invoke-WebRequest -Uri \"https://www.priedpk.org/news/\" -OutFile \"$env:TEMP\\\\news.html\" -UseBasicParsing; \\(Get-Item \"$env:TEMP\\\\news.html\"\\).Length)",
+      "Read(//c/Users/mufti/AppData/Local/Temp/**)"
+    ]
+  }
+}
