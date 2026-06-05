@@ -106,6 +106,7 @@
       border: none;
       cursor: pointer;
     }
+
     .nav-toggle span {
       display: block;
       width: 24px;
@@ -114,9 +115,18 @@
       border-radius: 2px;
       transition: transform .3s, opacity .3s;
     }
-    #nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    #nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
-    #nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #nav.nav-open .nav-toggle span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    #nav.nav-open .nav-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #nav.nav-open .nav-toggle span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
     #nav:hover {
       background: rgba(255, 255, 255, 1);
@@ -155,11 +165,14 @@
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 2px;
       list-style: none;
     }
 
     .nav-links a {
+      display: inline-flex;
+      align-items: center;
       padding: 7px 13px;
       font-size: .78rem;
       font-weight: 500;
@@ -1774,10 +1787,10 @@
 
     .f-col-h {
       font-family: 'Courier Prime', monospace;
-      font-size: .58rem;
+      font-size: .82rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, .2);
+      color: #fff;
       margin-bottom: 14px;
     }
 
@@ -1795,7 +1808,7 @@
     }
 
     .f-col ul a:hover {
-      color: var(--bl);
+      color: #fff;
     }
 
     .f-bottom {
@@ -1988,7 +2001,14 @@
       }
     }
 
+    @media (min-width: 961px) and (max-width: 1120px) {
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 7px 9px; font-size: .73rem; }
+      #nav { padding-left: 18px; }
+    }
+
     @media (max-width: 768px) {
+
       .about-cards,
       .hsc-row {
         grid-template-columns: 1fr;
@@ -2056,23 +2076,38 @@
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#pillars">Our Work</a></li>
-      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
-      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
       <li class="nav-item-dropdown">
-        <a href="#" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
+        <a href="#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="pried-inner-pages.html#studies">Studies</a></li>
-          <li><a href="pried-inner-pages.html#briefs">Briefs</a></li>
+          <li><a href="pried-inner-pages.html#events">Events</a></li>
           <li><a href="pried-inner-pages.html#news">News</a></li>
         </ul>
       </li>
+      <li class="nav-item-dropdown">
+        <a href="pried-inner-pages.html#studies" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="pried-inner-pages.html#studies">Studies</a></li>
+          <li><a href="pried-inner-pages.html#briefs">Briefs</a></li>
+        </ul>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="pried-inner-pages.html#monitors" class="dropdown-trigger">Monitor <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="pried-inner-pages.html#media-monitors">Media</a></li>
+          <li><a href="pried-inner-pages.html#energy-monitors">Energy</a></li>
+          <li><a href="pried-inner-pages.html#climate-monitors">Climate</a></li>
+        </ul>
+      </li>
+      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
+      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
       <li><a href="pried-inner-pages.html#team">Team</a></li>
-      <li><a href="#partners">Partners</a></li>
+      <li><a href="#partners">Partner</a></li>
+      <li><a href="pried-inner-pages.html#careers">Career</a></li>
     </ul>
     <div class="nav-end">
       <a href="pried-inner-pages.html#contact" class="nav-cta">Contact Us</a>
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu"
+        aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -2596,14 +2631,7 @@
               </div>
             </div>
           </div>
-          <div class="monitor-strip">
-            <span class="ms-icon">📰</span>
-            <div class="ms-body">
-              <h4>Energy Monitor</h4>
-              <p>Pakistan's only dedicated weekly media tracker for energy &amp; climate coverage — keeping all
-                stakeholders informed and engaged.</p>
-            </div>
-          </div>
+          <a href="pried-inner-pages.html#events" class="btn-outline-b" style="margin-top:14px;width:100%;justify-content:center">View All Events →</a>
         </div>
       </div>
     </div>
@@ -2700,17 +2728,17 @@
           <li><a href="#pillars">Collaboration</a></li>
           <li><a href="#pillars">Advocacy</a></li>
           <li><a href="#outreach">Outreach</a></li>
-          <li><a href="pried-inner-pages.html#news">Energy Monitor</a></li>
+          <li><a href="pried-inner-pages.html#energy-monitors">Energy Monitor</a></li>
         </ul>
       </div>
       <div class="f-col">
         <div class="f-col-h">Focus Areas</div>
         <ul>
-          <li><a href="#">Climate Justice</a></li>
-          <li><a href="#">Energy Transition</a></li>
-          <li><a href="#">Renewable Energy</a></li>
-          <li><a href="#">Coal Phaseout</a></li>
-          <li><a href="#">Green Finance</a></li>
+          <li><a href="pried-inner-pages.html#studies">Climate Justice</a></li>
+          <li><a href="pried-inner-pages.html#studies">Energy Transition</a></li>
+          <li><a href="pried-inner-pages.html#studies">Renewable Energy</a></li>
+          <li><a href="pried-inner-pages.html#studies">Coal Phaseout</a></li>
+          <li><a href="pried-inner-pages.html#studies">Green Finance</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -2755,8 +2783,6 @@
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
       nav.querySelectorAll('.nav-links a').forEach(a => {
-        // Keep the dropdown trigger from closing the menu; let real links close it
-        if (a.classList.contains('dropdown-trigger')) return;
         a.addEventListener('click', () => {
           nav.classList.remove('nav-open');
           navToggle.setAttribute('aria-expanded', 'false');

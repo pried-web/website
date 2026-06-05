@@ -49,52 +49,7 @@
   }
   nav.scrolled { box-shadow: var(--shadow-md); }
 
-  .nav-brand {
-    display: flex; align-items: center; gap: 10px;
-    text-decoration: none;
-  }
-  .nav-logo-mark {
-    width: 34px; height: 34px;
-    border: 2px solid var(--accent);
-    display: grid; place-items: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 14px; font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-  .nav-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px; font-weight: 600;
-    color: var(--ink);
-    letter-spacing: 0.3px;
-  }
-
-  .nav-links {
-    display: flex; gap: 32px; list-style: none;
-  }
-  .nav-links a {
-    font-size: 13px; font-weight: 500; letter-spacing: 0.8px;
-    text-transform: uppercase; color: var(--ink-light);
-    text-decoration: none;
-    position: relative; padding-bottom: 2px;
-    transition: color .2s;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 1px; background: var(--accent);
-    transition: width .25s ease;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links a:hover::after { width: 100%; }
-
-  .nav-toggle {
-    display: none; flex-direction: column; justify-content: center; gap: 5px;
-    width: 40px; height: 40px; padding: 0; background: none; border: none; cursor: pointer;
-  }
-  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .3s, opacity .3s; }
-  #main-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  #main-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
-  #main-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  /* Global navbar styling provided by site-chrome.css */
 
   /* ── HERO ── */
   #hero {
@@ -620,23 +575,6 @@
 
   /* ── MOBILE ── */
   @media (max-width: 900px) {
-    .nav-toggle { display: flex; }
-    .nav-links {
-      position: fixed; top: 64px; left: 0; right: 0;
-      flex-direction: column; gap: 0;
-      background: rgba(247,245,240,0.98);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--rule);
-      box-shadow: var(--shadow-md);
-      padding: 6px 5vw 14px;
-      max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
-      transform: translateY(-6px);
-      transition: max-height .3s ease, opacity .25s ease, transform .25s ease;
-    }
-    #main-nav.nav-open .nav-links { max-height: 80vh; opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .nav-links li { width: 100%; }
-    .nav-links a { display: block; padding: 13px 2px; font-size: 14px; border-bottom: 1px solid var(--rule); }
-    .nav-links li:last-child a { border-bottom: none; }
     .inst-inner { grid-template-columns: 1fr; gap: 40px; }
     .inst-inner.reverse { direction: ltr; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
@@ -656,23 +594,49 @@
     section { padding-left: 16px; padding-right: 16px; }
   }
 </style>
+<link rel="stylesheet" href="site-chrome.css">
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="main-nav">
-  <a class="nav-brand" href="#hero">
-    <div class="nav-logo-mark">IFI</div>
-    <span class="nav-name">Monitor</span>
-  </a>
+<nav id="nav">
+  <div class="nav-brand">
+    <a href="index.html" style="display:flex;align-items:center;"><img class="nav-logo" src="pried-logo.png" alt="PRIED Logo"></a>
+  </div>
   <ul class="nav-links">
-    <li><a href="#news">News</a></li>
-    <li><a href="#imf">IMF</a></li>
-    <li><a href="#worldbank">World Bank</a></li>
-    <li><a href="#adb">ADB</a></li>
-    <li><a href="#stats">Data</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li class="nav-item-dropdown">
+      <a href="index.html#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="pried-inner-pages.html#events">Events</a></li>
+        <li><a href="pried-inner-pages.html#news">News</a></li>
+      </ul>
+    </li>
+    <li class="nav-item-dropdown">
+      <a href="pried-inner-pages.html#studies" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="pried-inner-pages.html#studies">Studies</a></li>
+        <li><a href="pried-inner-pages.html#briefs">Briefs</a></li>
+      </ul>
+    </li>
+    <li class="nav-item-dropdown">
+      <a href="pried-inner-pages.html#monitors" class="dropdown-trigger">Monitor <span class="chevron">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="pried-inner-pages.html#media-monitors">Media</a></li>
+        <li><a href="pried-inner-pages.html#energy-monitors">Energy</a></li>
+        <li><a href="pried-inner-pages.html#climate-monitors">Climate</a></li>
+      </ul>
+    </li>
+    <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
+    <li><a href="ifi-monitor.html">IFI Monitor</a></li>
+    <li><a href="pried-inner-pages.html#team">Team</a></li>
+    <li><a href="index.html#partners">Partner</a></li>
+    <li><a href="pried-inner-pages.html#careers">Career</a></li>
   </ul>
-  <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-end">
+    <a href="pried-inner-pages.html#contact" class="nav-cta">Contact Us</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -885,43 +849,55 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-footer">
   <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand-name">IFI Monitor</div>
-      <p>Independent research and analysis tracking international financial institutions and their programmes in Pakistan.</p>
+    <div>
+      <div class="f-brand-name">Policy Research Institute for Equitable Development</div>
+      <p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p>
+      <div class="f-contact">
+        <div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div>
+        <div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div>
+        <div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Institutions</h4>
+    <div class="f-col">
+      <div class="f-col-h">Our Work</div>
       <ul>
-        <li><a href="#imf">IMF Pakistan</a></li>
-        <li><a href="#worldbank">World Bank</a></li>
-        <li><a href="#adb">Asian Dev. Bank</a></li>
-        <li><a href="#">AIIB</a></li>
+        <li><a href="pried-inner-pages.html#studies">Research</a></li>
+        <li><a href="index.html#pillars">Collaboration</a></li>
+        <li><a href="index.html#pillars">Advocacy</a></li>
+        <li><a href="index.html#outreach">Outreach</a></li>
+        <li><a href="pried-inner-pages.html#energy-monitors">Energy Monitor</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Research</h4>
+    <div class="f-col">
+      <div class="f-col-h">Focus Areas</div>
       <ul>
-        <li><a href="#">Policy Briefs</a></li>
-        <li><a href="#">Data & Statistics</a></li>
-        <li><a href="#">Programme Reviews</a></li>
-        <li><a href="#">Archives</a></li>
+        <li><a href="pried-inner-pages.html#studies">Climate Justice</a></li>
+        <li><a href="pried-inner-pages.html#studies">Energy Transition</a></li>
+        <li><a href="pried-inner-pages.html#studies">Renewable Energy</a></li>
+        <li><a href="pried-inner-pages.html#studies">Coal Phaseout</a></li>
+        <li><a href="pried-inner-pages.html#studies">Green Finance</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>About</h4>
+    <div class="f-col">
+      <div class="f-col-h">Networks</div>
       <ul>
-        <li><a href="#">About IFI Monitor</a></li>
-        <li><a href="#">Methodology</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">ACJCE</a></li>
+        <li><a href="#">PREC</a></li>
+        <li><a href="#">APMDD</a></li>
+        <li><a href="#">GCEN</a></li>
+        <li><a href="pried-inner-pages.html#studies">All Publications</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 IFI Monitor. Independent Policy Research.</span>
-    <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+  <div class="f-bottom">
+    <p>© 2025 Policy Research Institute for Equitable Development (PRIED) · Islamabad, Pakistan</p>
+    <div class="f-soc">
+      <a href="https://twitter.com/priedpk" class="fsb">𝕏</a>
+      <a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a>
+      <a href="#" class="fsb">f</a>
+    </div>
   </div>
 </footer>
 
@@ -946,7 +922,7 @@
 
 <script>
 // Nav scroll effect
-const nav = document.getElementById('main-nav');
+const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 });

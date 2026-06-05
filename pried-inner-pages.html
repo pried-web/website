@@ -145,11 +145,14 @@ a{text-decoration:none;color:inherit}
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2px;
   list-style: none;
 }
 
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
   padding: 7px 13px;
   font-size: .78rem;
   font-weight: 500;
@@ -290,17 +293,17 @@ a{text-decoration:none;color:inherit}
 /* ════════════════════════════════════════
    SHARED: FOOTER
 ════════════════════════════════════════ */
-.v8-footer { background: #0a1624; padding: 52px 48px 28px; margin-top: 80px; }
+.v8-footer { background: #0b3460; padding: 52px 48px 28px; margin-top: 80px; }
 .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.06); }
 .f-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
 .f-desc { font-size: .8rem; line-height: 1.75; color: rgba(255,255,255,.3); margin-bottom: 16px; }
 .f-contact { display: flex; flex-direction: column; gap: 7px; }
 .fci { display: flex; gap: 8px; font-size: .75rem; color: rgba(255,255,255,.35); line-height: 1.5; align-items: flex-start; }
 .fci-icon { color: var(--bl); flex-shrink: 0; margin-top: 1px; }
-.f-col-h { font-family: 'Courier Prime', monospace; font-size: .58rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.2); margin-bottom: 14px; }
+.f-col-h { font-family: 'Courier Prime', monospace; font-size: .82rem; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 14px; }
 .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .f-col ul a { font-size: .82rem; color: rgba(255,255,255,.35); transition: color .2s; }
-.f-col ul a:hover { color: var(--bl); }
+.f-col ul a:hover { color: #fff; }
 .f-bottom { max-width: 1100px; margin: 24px auto 0; display: flex; justify-content: space-between; align-items: center; }
 .f-bottom p { font-family: 'Courier Prime', monospace; font-size: .58rem; color: rgba(255,255,255,.15); letter-spacing: .3px; }
 .f-soc { display: flex; gap: 6px; }
@@ -362,6 +365,19 @@ a{text-decoration:none;color:inherit}
   background: linear-gradient(135deg, var(--cream), var(--warm));
 }
 .study-card-img-placeholder span { font-size: 2.5rem; opacity: .4; }
+/* Document-cover cards (studies, monitors, briefs) — show the full portrait thumbnail, no cropping */
+#page-studies .study-card-img,
+#page-monitors .study-card-img,
+#page-media-monitors .study-card-img,
+#page-energy-monitors .study-card-img,
+#page-climate-monitors .study-card-img,
+.mon-card .study-card-img { height: 320px; background: var(--cream); }
+#page-studies .study-card-img img,
+#page-monitors .study-card-img img,
+#page-media-monitors .study-card-img img,
+#page-energy-monitors .study-card-img img,
+#page-climate-monitors .study-card-img img,
+.mon-card .study-card-img img { object-fit: contain; object-position: center; }
 .study-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
 .sc-type { font-family: 'Courier Prime', monospace; font-size: .57rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--b); margin-bottom: 8px; font-weight: 700; }
 .study-card-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.4; flex: 1; }
@@ -415,8 +431,8 @@ a{text-decoration:none;color:inherit}
 .brief-row:last-child { border-radius: 0 0 var(--r) var(--r); }
 .brief-row:hover { background: var(--bpp); }
 .brief-row:hover { padding-left: 0; }
-.br-img { overflow: hidden; height: 130px; }
-.br-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s ease; }
+.br-img { overflow: hidden; height: 100%; min-height: 200px; background: var(--cream); }
+.br-img img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform .4s ease; }
 .briefs-pagination { grid-column: 2 / 3; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 36px; flex-wrap: nowrap; }
 .pg-btn { min-width: 40px; height: 40px; padding: 0 14px; border: 1px solid var(--rule); background: #fff; border-radius: 8px; font-family: 'Courier Prime', monospace; font-size: .8rem; color: var(--ink); cursor: pointer; transition: all .2s; }
 .pg-btn:hover { border-color: var(--bp); color: var(--b); }
@@ -639,6 +655,39 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
 .as-cta-btn:hover { background: var(--bm); }
 
 /* ── RESPONSIVE ── */
+/* ── RELATED ITEMS (events) ── */
+.ev-ri { margin-top: 32px; }
+.ev-ri-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--ink); margin-bottom: 14px; }
+.ri-acc { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: #fff; }
+.ri-item { border-bottom: 1px solid var(--rule); }
+.ri-item:last-child { border-bottom: none; }
+.ri-head { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 20px; background: #fff; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-size: .92rem; font-weight: 600; color: var(--ink); text-align: left; transition: background .2s; }
+.ri-head:hover { background: var(--bpp); }
+.ri-item.open .ri-head { background: var(--bpp); color: var(--b); }
+.ri-head .ri-count { font-family: 'Courier Prime', monospace; font-size: .62rem; color: var(--lite); margin-left: auto; margin-right: 10px; letter-spacing: 1px; }
+.ri-chev { font-size: .7rem; transition: transform .3s; color: var(--b); }
+.ri-item.open .ri-chev { transform: rotate(180deg); }
+.ri-panel { max-height: 0; overflow: hidden; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
+.ri-item.open .ri-panel { max-height: 6000px; }
+.ri-panel-inner { padding: 18px 20px 22px; }
+.ri-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.ri-img { display: block; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; background: var(--cream); cursor: zoom-in; }
+.ri-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; display: block; }
+.ri-img:hover img { transform: scale(1.06); }
+.ri-video { position: relative; aspect-ratio: 16 / 9; margin-bottom: 14px; border-radius: 8px; overflow: hidden; background: #000; }
+.ri-video:last-child { margin-bottom: 0; }
+.ri-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ri-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.ri-links a { color: var(--b); font-size: .85rem; font-weight: 500; display: inline-flex; gap: 8px; align-items: baseline; line-height: 1.5; transition: color .2s; }
+.ri-links a:hover { color: var(--bd); text-decoration: underline; }
+.ri-empty { color: var(--lite); font-size: .82rem; font-style: italic; }
+.ri-lightbox { position: fixed; inset: 0; z-index: 3000; background: rgba(0,0,0,.88); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+.ri-lightbox.open { display: flex; }
+.ri-lightbox img { max-width: 95vw; max-height: 92vh; border-radius: 8px; box-shadow: 0 16px 70px rgba(0,0,0,.55); }
+.ri-lightbox-close { position: fixed; top: 18px; right: 24px; color: #fff; font-size: 1.6rem; cursor: pointer; opacity: .8; line-height: 1; }
+.ri-lightbox-close:hover { opacity: 1; }
+@media(max-width:700px){ .ri-gallery{grid-template-columns:repeat(2,1fr)} }
+
 @media(max-width:960px){
   #nav{width: calc(100% - 24px);}
   .nav-toggle{display:flex}
@@ -668,11 +717,16 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
   .ra-grid{grid-template-columns:1fr}
   .cf-row{grid-template-columns:1fr}
 }
+@media(min-width:961px) and (max-width:1120px){
+  .nav-links{gap:0}
+  .nav-links a{padding:7px 9px;font-size:.73rem}
+  #nav{padding-left:18px}
+}
 @media(max-width:600px){
   .studies-grid,.team-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .brief-row{grid-template-columns:1fr}
-  .brief-row .br-img{height:180px}
+  .brief-row .br-img{height:300px;min-height:0}
   .nav-cta{padding:8px 14px;font-size:.78rem}
 }
 @media(max-width:400px){
@@ -691,19 +745,33 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
     </div>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#pillars">Our Work</a></li>
-      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
-      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
       <li class="nav-item-dropdown">
-        <a href="#" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
+        <a href="index.html#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="#studies">Studies</a></li>
-          <li><a href="#briefs">Briefs</a></li>
+          <li><a href="#events">Events</a></li>
           <li><a href="#news">News</a></li>
         </ul>
       </li>
+      <li class="nav-item-dropdown">
+        <a href="#studies" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#studies">Studies</a></li>
+          <li><a href="#briefs">Briefs</a></li>
+        </ul>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="#monitors" class="dropdown-trigger">Monitor <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#media-monitors">Media</a></li>
+          <li><a href="#energy-monitors">Energy</a></li>
+          <li><a href="#climate-monitors">Climate</a></li>
+        </ul>
+      </li>
+      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
+      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
       <li><a href="#team">Team</a></li>
-      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="index.html#partners">Partner</a></li>
+      <li><a href="#careers">Career</a></li>
     </ul>
     <div class="nav-end">
       <a href="#contact" class="nav-cta">Contact Us</a>
@@ -970,10 +1038,10 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
   <!-- FOOTER -->
   <footer class="v8-footer">
     <div class="footer-grid">
-      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
-      <div class="f-col"><div class="f-col-h">Research</div><ul><li><a href="#">Research Studies</a></li><li><a href="#">Policy Briefs</a></li><li><a href="#">Energy Monitor</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#">Climate Justice</a></li><li><a href="#">Energy Transition</a></li><li><a href="#">Renewable Energy</a></li><li><a href="#">Coal Phaseout</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Organisation</div><ul><li><a href="#">About PRIED</a></li><li><a href="#">Our Team</a></li><li><a href="#">Networks</a></li><li><a href="#">Contact Us</a></li></ul></div>
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
     </div>
     <div class="f-bottom"><p>© 2025 Policy Research Institute for Equitable Development (PRIED) · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a><a href="https://www.instagram.com/pried.pk/" class="fsb">ig</a></div></div>
   </footer>
@@ -1138,10 +1206,10 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
 
   <footer class="v8-footer">
     <div class="footer-grid">
-      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
-      <div class="f-col"><div class="f-col-h">Research</div><ul><li><a href="#">Research Studies</a></li><li><a href="#">Policy Briefs</a></li><li><a href="#">Energy Monitor</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#">Climate Justice</a></li><li><a href="#">Energy Transition</a></li><li><a href="#">Coal Phaseout</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Organisation</div><ul><li><a href="#">About PRIED</a></li><li><a href="#">Our Team</a></li><li><a href="#">Contact Us</a></li></ul></div>
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
     </div>
     <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
   </footer>
@@ -1319,10 +1387,10 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
 
   <footer class="v8-footer">
     <div class="footer-grid">
-      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
-      <div class="f-col"><div class="f-col-h">Research</div><ul><li><a href="#">Research Studies</a></li><li><a href="#">Policy Briefs</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Organisation</div><ul><li><a href="#">About PRIED</a></li><li><a href="#">Our Team</a></li><li><a href="#">Careers</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Connect</div><ul><li><a href="#">Contact Us</a></li><li><a href="https://twitter.com/priedpk">Twitter</a></li><li><a href="https://pk.linkedin.com/company/priedpk">LinkedIn</a></li></ul></div>
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
     </div>
     <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
   </footer>
@@ -1414,10 +1482,10 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
 
   <footer class="v8-footer" style="margin-top:0">
     <div class="footer-grid">
-      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
-      <div class="f-col"><div class="f-col-h">Research</div><ul><li><a href="#">Research Studies</a></li><li><a href="#">Policy Briefs</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Organisation</div><ul><li><a href="#">About PRIED</a></li><li><a href="#">Our Team</a></li><li><a href="#">Careers</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Connect</div><ul><li><a href="https://twitter.com/priedpk">Twitter</a></li><li><a href="https://pk.linkedin.com/company/priedpk">LinkedIn</a></li><li><a href="https://www.instagram.com/pried.pk/">Instagram</a></li></ul></div>
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
     </div>
     <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
   </footer>
@@ -1583,10 +1651,10 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
 
   <footer class="v8-footer">
     <div class="footer-grid">
-      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
-      <div class="f-col"><div class="f-col-h">Research</div><ul><li><a href="#">Research Studies</a></li><li><a href="#">Policy Briefs</a></li><li><a href="#">Energy Monitor</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#">Climate Justice</a></li><li><a href="#">Energy Transition</a></li><li><a href="#">Coal Phaseout</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Organisation</div><ul><li><a href="#">About PRIED</a></li><li><a href="#">Our Team</a></li><li><a href="#">Contact Us</a></li></ul></div>
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
     </div>
     <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
   </footer>
@@ -1669,19 +1737,395 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
 
   <footer class="v8-footer">
     <div class="footer-grid">
-      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
-      <div class="f-col"><div class="f-col-h">Research</div><ul><li><a href="#">Research Studies</a></li><li><a href="#">Policy Briefs</a></li><li><a href="#">Energy Monitor</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#">Climate Justice</a></li><li><a href="#">Energy Transition</a></li><li><a href="#">Coal Phaseout</a></li></ul></div>
-      <div class="f-col"><div class="f-col-h">Organisation</div><ul><li><a href="#">About PRIED</a></li><li><a href="#">Our Team</a></li><li><a href="#">Contact Us</a></li></ul></div>
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
     </div>
     <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
   </footer>
 </div>
 
+<!-- ══════════════════════════════════════════
+     PAGE: EVENTS (listing)
+══════════════════════════════════════════ -->
+<div id="page-events" class="page">
+
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="index.html#pillars">Home</a> <span>/</span> Our Work <span>/</span> Events</div>
+    <div class="ph-label">Our Work</div>
+    <h1>Events &amp; <em>Engagements</em></h1>
+    <p>PRIED's consultations, webinars, panel discussions and parliamentary engagements — convening experts, legislators, and communities to advance Pakistan's just energy transition and climate agenda.</p>
+  </div>
+
+  <div class="sec" style="padding-top:32px">
+    <div class="studies-grid wrap" id="eventsGrid" style="max-width:1100px;margin:0 auto;padding:0 48px"></div>
+  </div>
+
+  <footer class="v8-footer">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: EVENT (detail — data-driven)
+══════════════════════════════════════════ -->
+<div id="page-event" class="page">
+
+  <div class="page-hero" style="padding-bottom:32px">
+    <div class="ph-breadcrumb"><a href="#events">Home</a> <span>/</span> <a href="#events">Events</a> <span>/</span> <span id="ev-crumb">Event</span></div>
+  </div>
+
+  <div class="article-layout rv">
+    <div class="article-main">
+      <div class="article-hero-img">
+        <img id="ev-hero" src="" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=85'">
+      </div>
+
+      <div class="article-meta-row">
+        <span class="am-tag" id="ev-tag"></span>
+        <span class="am-sep" id="ev-date-sep"></span>
+        <span class="am-date" id="ev-date"></span>
+        <span class="am-sep" id="ev-loc-sep"></span>
+        <span class="am-author" id="ev-loc"></span>
+      </div>
+
+      <h1 id="ev-title"></h1>
+      <div class="article-divider"></div>
+
+      <div class="article-body" id="ev-body"></div>
+
+      <div id="ev-related-items" class="ev-ri"></div>
+
+      <div class="article-tags" id="ev-tags"></div>
+
+      <div class="article-share">
+        <span class="as-label">Share</span>
+        <button class="as-btn" title="Share on X">𝕏</button>
+        <button class="as-btn" title="Share on LinkedIn">in</button>
+        <button class="as-btn" title="Copy link">🔗</button>
+      </div>
+
+      <div class="related-articles">
+        <h3 class="ra-title">More Events</h3>
+        <div class="ra-grid" id="ev-related"></div>
+      </div>
+    </div>
+
+    <div class="article-sidebar d1">
+      <div class="as-cta-box">
+        <div class="ascb-icon">📅</div>
+        <h4>All Events</h4>
+        <p>Browse PRIED's full programme of consultations, webinars, dialogues and parliamentary engagements.</p>
+        <a href="#events" class="as-cta-btn">View All Events →</a>
+      </div>
+
+      <div id="ev-detail-box" style="background:#fff;border:1px solid var(--rule);border-radius:var(--r);padding:18px;margin-top:14px">
+        <div style="font-family:'Courier Prime',monospace;font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--lite);margin-bottom:10px">Event Details</div>
+        <div id="ev-detail-list" style="font-size:.82rem;line-height:1.9;color:var(--mid)"></div>
+      </div>
+
+      <div class="nside-subscribe" style="margin-top:14px">
+        <div class="nsub-title" style="font-size:.95rem">Stay Informed</div>
+        <p class="nsub-desc">Get weekly energy &amp; climate coverage with PRIED's Energy Monitor.</p>
+        <div class="nsub-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="v8-footer">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NEW: MONITORS + CAREERS STYLES
+══════════════════════════════════════════ -->
+<style>
+.mon-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;cursor:pointer}
+.mon-card .sc-dl{color:#fff}
+.mm-pagination{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:34px auto 0;max-width:1100px;padding:0 48px}
+.mm-search{margin-left:auto;min-width:210px;max-width:300px;padding:9px 14px;border:1px solid var(--rule,#e7e2d6);border-radius:8px;font-size:.85rem;font-family:inherit;color:var(--ink,#1a1a1a);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.mm-search:focus{border-color:var(--b,#1d6eb5);box-shadow:0 0 0 3px rgba(29,110,181,.12)}
+.mm-empty{grid-column:1/-1;text-align:center;padding:48px 0;color:var(--mid,#555);font-size:.95rem}
+@media(max-width:600px){.mm-search{margin-left:0;width:100%;max-width:none}}
+.career-card{display:flex;justify-content:space-between;align-items:center;gap:18px;background:#fff;border:1px solid var(--rule,#e7e2d6);border-radius:var(--r,14px);padding:22px 26px;margin-bottom:14px;cursor:pointer;transition:box-shadow .2s,transform .2s}
+.career-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.07);transform:translateY(-2px)}
+.career-card .cc-title{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;margin:0 0 8px;color:#1a1a1a}
+.career-card .cc-meta{display:flex;gap:8px;flex-wrap:wrap}
+.cc-chip{font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:1px;text-transform:uppercase;background:var(--cream,#f5f1e8);border:1px solid var(--rule,#e7e2d6);border-radius:40px;padding:5px 12px;color:var(--mid,#555)}
+.career-card .cc-go{flex:0 0 auto;font-family:'Courier Prime',monospace;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold,#c8a24a);white-space:nowrap}
+.career-apply{background:var(--cream,#f5f1e8);border:1px solid var(--rule,#e7e2d6);border-radius:var(--r,14px);padding:22px 26px}
+.career-apply h3{margin:0 0 8px;font-family:'Fraunces',Georgia,serif;font-size:1.1rem}
+.career-apply p{margin:0;line-height:1.7;color:var(--mid,#555)}
+.job-body h3{font-family:'Fraunces',Georgia,serif;font-size:1.15rem;margin:26px 0 10px;color:#1a1a1a}
+.job-body ul{margin:0 0 16px;padding-left:20px}
+.job-body li{margin-bottom:7px;line-height:1.65}
+@media(max-width:600px){.career-card{flex-direction:column;align-items:flex-start;gap:12px}.mm-pagination{padding:0 20px}}
+</style>
+
+<!-- ══════════════════════════════════════════
+     PAGE: CAREERS
+══════════════════════════════════════════ -->
+<div id="page-careers" class="page">
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a> <span>/</span> Careers</div>
+    <div class="ph-label">Join Us</div>
+    <h1>Work With <em>Us</em></h1>
+    <p>PRIED is growing! Join us if you are passionate about tackling climate change caused by dirty energy and helping local communities negatively affected by Pakistan's energy policies. Watch this space for open positions — and send your CV to hrpried@priedpk.org with the job title as the subject.</p>
+  </div>
+
+  <div class="sec" style="padding-top:32px">
+    <div class="wrap" style="max-width:1000px;margin:0 auto;padding:0 48px">
+      <div class="sc-type" style="margin-bottom:16px;font-size:.95rem">New Openings</div>
+
+      <div class="career-card rv" data-job="graphic-designer">
+        <div><div class="cc-title">Graphic Designer</div><div class="cc-meta"><span class="cc-chip">📍 Islamabad</span><span class="cc-chip">Full-time</span><span class="cc-chip">3–5 yrs experience</span></div></div>
+        <span class="cc-go">View Details →</span>
+      </div>
+
+      <div class="career-card rv d1" data-job="modeling-forecasting-specialist">
+        <div><div class="cc-title">Modeling and Forecasting Specialist</div><div class="cc-meta"><span class="cc-chip">📍 Islamabad</span><span class="cc-chip">Full-time</span><span class="cc-chip">4+ yrs experience</span></div></div>
+        <span class="cc-go">View Details →</span>
+      </div>
+
+      <div class="career-card rv d2" data-job="data-analyst">
+        <div><div class="cc-title">Data Analyst / Econometrician</div><div class="cc-meta"><span class="cc-chip">📍 Islamabad</span><span class="cc-chip">Full-time</span><span class="cc-chip">Energy &amp; Climate</span></div></div>
+        <span class="cc-go">View Details →</span>
+      </div>
+
+      <div class="career-apply rv" style="margin-top:20px">
+        <h3>How to Apply</h3>
+        <p>Send your CV to <a href="mailto:hrpried@priedpk.org" style="color:var(--gold,#c8a24a)">hrpried@priedpk.org</a> with the job title as the subject line. PRIED is an equal-opportunity employer and strongly encourages applications from women, persons with disabilities, and trans and gender-diverse individuals. We are committed to building an inclusive, respectful, and supportive workplace for all.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="v8-footer">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: JOB (detail — data-driven)
+══════════════════════════════════════════ -->
+<div id="page-job" class="page">
+  <div class="page-hero" style="padding-bottom:32px">
+    <div class="ph-breadcrumb"><a href="#careers">Home</a> <span>/</span> <a href="#careers">Careers</a> <span>/</span> <span id="job-crumb">Job</span></div>
+  </div>
+
+  <div class="article-layout rv">
+    <div class="article-main">
+      <div class="article-meta-row">
+        <span class="am-tag" id="job-type"></span>
+        <span class="am-sep">·</span>
+        <span class="am-author" id="job-loc"></span>
+        <span class="am-sep">·</span>
+        <span class="am-date">Apply by <span id="job-deadline"></span></span>
+      </div>
+
+      <h1 id="job-title"></h1>
+      <div class="article-divider"></div>
+
+      <div class="article-body job-body" id="job-body"></div>
+
+      <div class="career-apply" style="margin-top:8px">
+        <h3>How to Apply</h3>
+        <p>Send your CV to <a id="job-apply-email" href="#" style="color:var(--gold,#c8a24a)"></a> with the job title as the subject line. PRIED is an equal-opportunity employer and strongly encourages applications from women, persons with disabilities, and gender-diverse individuals.</p>
+      </div>
+
+      <div class="related-articles">
+        <h3 class="ra-title">More Openings</h3>
+        <div class="ra-grid" id="job-related"></div>
+      </div>
+    </div>
+
+    <div class="article-sidebar d1">
+      <div class="as-cta-box">
+        <div class="ascb-icon">💼</div>
+        <h4>Work With Us</h4>
+        <p>Join a research-driven team advancing climate justice and a just energy transition in Pakistan.</p>
+        <a href="#careers" class="as-cta-btn">All Openings →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="v8-footer">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: MONITORS (landing)
+══════════════════════════════════════════ -->
+<div id="page-monitors" class="page">
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a> <span>/</span> Monitors</div>
+    <div class="ph-label">Monitor</div>
+    <h1>PRIED <em>Monitors</em></h1>
+    <p>PRIED's monitors track Pakistan's energy and climate landscape over time — from week-to-week media coverage of the power sector to in-depth energy analyses and the country's evolving climate commitments.</p>
+  </div>
+
+  <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
+    <a class="study-card mon-card rv" href="#media-monitors">
+      <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/04/Media-Monitors.jpg" alt="Media Monitors" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>📰</span></div></div>
+      <div class="study-card-body"><div class="sc-type">Media Monitors</div><h3>Media Monitors</h3><p style="font-size:.86rem;color:var(--mid,#555);line-height:1.6;margin:0 0 14px">Weekly and six-monthly tracking of how Pakistan's print and digital media cover the energy and climate sectors.</p><div class="sc-footer"><span class="sc-year">Weekly · Six-Monthly</span><span class="sc-dl">Explore →</span></div></div>
+    </a>
+
+    <a class="study-card mon-card rv d1" href="#energy-monitors">
+      <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/07/0144D88B-7531-4531-B8EC-392345A3F581.jpg" alt="Energy Monitors" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>⚡</span></div></div>
+      <div class="study-card-body"><div class="sc-type">Energy Monitors</div><h3>Energy Monitors</h3><p style="font-size:.86rem;color:var(--mid,#555);line-height:1.6;margin:0 0 14px">In-depth analyses of Pakistan's power sector — subsidies, gas, renewables integration and the unfolding solar revolution.</p><div class="sc-footer"><span class="sc-year">Quarterly · Special</span><span class="sc-dl">Explore →</span></div></div>
+    </a>
+
+    <a class="study-card mon-card rv d2" href="#climate-monitors">
+      <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/07/climte_monitors.png" alt="Climate Monitors" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>🌍</span></div></div>
+      <div class="study-card-body"><div class="sc-type">Climate Monitors</div><h3>Climate Monitors</h3><p style="font-size:.86rem;color:var(--mid,#555);line-height:1.6;margin:0 0 14px">Tracking Pakistan's climate commitments, including its Nationally Determined Contributions (NDCs) and progress against them.</p><div class="sc-footer"><span class="sc-year">Climate</span><span class="sc-dl">Explore →</span></div></div>
+    </a>
+  </div>
+
+  <footer class="v8-footer">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: MEDIA MONITORS (weekly + six-monthly, filtered)
+══════════════════════════════════════════ -->
+<div id="page-media-monitors" class="page">
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="#monitors">Monitors</a> <span>/</span> Media Monitors</div>
+    <div class="ph-label">Monitor</div>
+    <h1>Media <em>Monitors</em></h1>
+    <p>PRIED's media monitors track how Pakistan's newspapers and digital outlets cover the energy and climate sectors — published every week, and consolidated into six-monthly reviews. Download any edition as a PDF.</p>
+  </div>
+
+  <div class="studies-filter-bar rv" id="mm-filter">
+    <span class="filter-label">Filter by</span>
+    <button class="filter-chip active" data-mfilter="all">All</button>
+    <button class="filter-chip" data-mfilter="weekly">Weekly</button>
+    <button class="filter-chip" data-mfilter="six">Six-Monthly</button>
+    <input type="search" id="mmSearch" class="mm-search" placeholder="🔍  Search by date…" aria-label="Search media monitors">
+  </div>
+
+  <div class="studies-grid wrap" id="mmGrid" style="max-width:1100px;margin:24px auto 0;padding:0 48px"></div>
+  <div class="mm-pagination" id="mmPagination"></div>
+
+  <footer class="v8-footer" style="margin-top:48px">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: ENERGY MONITORS
+══════════════════════════════════════════ -->
+<div id="page-energy-monitors" class="page">
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="#monitors">Monitors</a> <span>/</span> Energy Monitors</div>
+    <div class="ph-label">Monitor</div>
+    <h1>Energy <em>Monitors</em></h1>
+    <p>In-depth quarterly and special analyses of Pakistan's power sector — covering electricity subsidies, the gas crisis, renewable-energy integration, grid challenges and the country's distributed solar revolution.</p>
+  </div>
+
+  <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
+    <a class="study-card mon-card rv" href="https://www.priedpk.org/wp-content/uploads/2026/04/Energy-Monitor-.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2026/04/media-monitor.jpg" alt="Solar Adoption Patterns" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>☀️</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Solar Adoption Patterns</h3><div class="sc-footer"><span class="sc-year">2026</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv d1" href="https://www.priedpk.org/wp-content/uploads/2026/01/ENERGY-MONITOR-part-1-final-Pakistans-Solar-Revolution_14102025.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2026/01/Thumbnails-09.jpg-scaled.jpeg" alt="Pakistan's Solar Rush" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>⚡</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Pakistan's Solar Rush</h3><div class="sc-footer"><span class="sc-year">2026</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv d2" href="https://www.priedpk.org/wp-content/uploads/2025/10/WHITE-PAPER-Solar-Revolution.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2025/10/Thumbnail.jpg" alt="White Paper – Solar Revolution" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>📄</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor · White Paper</div><h3>White Paper – Solar Revolution</h3><div class="sc-footer"><span class="sc-year">2025</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv" href="https://www.priedpk.org/wp-content/uploads/2024/11/Energy-Monitor.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/11/5.jpg" alt="Strategic Approaches to Pakistan's Power Sector" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>🔌</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Strategic Approaches to Address the Rickety Electricity Sector</h3><div class="sc-footer"><span class="sc-year">2024</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv d1" href="https://www.priedpk.org/wp-content/uploads/2024/05/Energy-monitor-Power-Pulse-R04-1.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/05/4.jpg" alt="Aims vs Priorities" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>📋</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Aims vs Priorities: A Critique of the National Electricity Policy</h3><div class="sc-footer"><span class="sc-year">2024</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv d2" href="https://www.priedpk.org/wp-content/uploads/2024/06/Energy-Monitor-six-monthly-R07-1.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/01/3.jpg" alt="Gridlocked" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>🔋</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Gridlocked: Obstacles in Integrating Variable Renewable Energy</h3><div class="sc-footer"><span class="sc-year">2024</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv" href="https://www.priedpk.org/wp-content/uploads/2023/07/QEM-R03.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/07/2.jpg" alt="Gas Sector in Pakistan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>🔥</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Gas Sector in Pakistan: Deepening Crisis and Way Forward</h3><div class="sc-footer"><span class="sc-year">2023</span><span class="sc-dl">↓ PDF</span></div></div></a>
+
+    <a class="study-card mon-card rv d1" href="https://www.priedpk.org/wp-content/uploads/2023/01/QEM-Electricity-subsidies-in-Pakistan-1.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/01/1.jpg" alt="Electricity Subsidies in Pakistan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>💡</span></div></div><div class="study-card-body"><div class="sc-type">Energy Monitor</div><h3>Electricity Subsidies in Pakistan</h3><div class="sc-footer"><span class="sc-year">2023</span><span class="sc-dl">↓ PDF</span></div></div></a>
+  </div>
+
+  <footer class="v8-footer" style="margin-top:48px">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: CLIMATE MONITORS
+══════════════════════════════════════════ -->
+<div id="page-climate-monitors" class="page">
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="#monitors">Monitors</a> <span>/</span> Climate Monitors</div>
+    <div class="ph-label">Monitor</div>
+    <h1>Climate <em>Monitors</em></h1>
+    <p>Tracking Pakistan's climate commitments and the policy frameworks behind them — including the country's Nationally Determined Contributions (NDCs) under the Paris Agreement.</p>
+  </div>
+
+  <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
+    <a class="study-card mon-card rv" href="https://www.priedpk.org/wp-content/uploads/2026/01/Pakistans-NDCs.pdf" target="_blank" rel="noopener"><div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2025/12/Thumbnails-06-706x1024.png" alt="Pakistan's NDCs 3.0" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="study-card-img-placeholder" style="display:none"><span>🌍</span></div></div><div class="study-card-body"><div class="sc-type">Climate Monitor</div><h3>Pakistan's NDCs 3.0</h3><div class="sc-footer"><span class="sc-year">2026</span><span class="sc-dl">↓ PDF</span></div></div></a>
+  </div>
+
+  <footer class="v8-footer" style="margin-top:48px">
+    <div class="footer-grid">
+      <div><div class="f-brand-name">Policy Research Institute for Equitable Development</div><p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p><div class="f-contact"><div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div><div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div><div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div></div></div>
+      <div class="f-col"><div class="f-col-h">Our Work</div><ul><li><a href="#studies">Research</a></li><li><a href="index.html#pillars">Collaboration</a></li><li><a href="index.html#pillars">Advocacy</a></li><li><a href="index.html#outreach">Outreach</a></li><li><a href="#energy-monitors">Energy Monitor</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Focus Areas</div><ul><li><a href="#studies">Climate Justice</a></li><li><a href="#studies">Energy Transition</a></li><li><a href="#studies">Renewable Energy</a></li><li><a href="#studies">Coal Phaseout</a></li><li><a href="#studies">Green Finance</a></li></ul></div>
+      <div class="f-col"><div class="f-col-h">Networks</div><ul><li><a href="#">ACJCE</a></li><li><a href="#">PREC</a></li><li><a href="#">APMDD</a></li><li><a href="#">GCEN</a></li><li><a href="#studies">All Publications</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><p>© 2025 PRIED · Islamabad, Pakistan</p><div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div></div>
+  </footer>
+</div>
+
+<div id="riLightbox" class="ri-lightbox" aria-hidden="true"><span class="ri-lightbox-close">✕</span><img src="" alt="" id="riLightboxImg"></div>
+
 <script>
 /* ── DYNAMIC NAVIGATION & ROUTING SYSTEM ── */
 function showPage(name, slug) {
-  const validPages = ['studies', 'briefs', 'team', 'contact', 'news', 'article'];
+  const validPages = ['studies', 'briefs', 'team', 'contact', 'news', 'article', 'events', 'event', 'careers', 'job', 'monitors', 'media-monitors', 'energy-monitors', 'climate-monitors'];
   if (!validPages.includes(name)) name = 'studies';
 
   // Update page visibility
@@ -1692,6 +2136,8 @@ function showPage(name, slug) {
   }
 
   if (name === 'article') renderArticle(slug);
+  if (name === 'event') renderEvent(slug);
+  if (name === 'job') renderJob(slug);
 
   // Sync active classes in Navbars
   document.querySelectorAll('.nav-links a').forEach(a => {
@@ -1701,21 +2147,30 @@ function showPage(name, slug) {
       a.classList.add('active');
     } else if (href === '#news' && name === 'article') {
       a.classList.add('active');
+    } else if (href === '#events' && name === 'event') {
+      a.classList.add('active');
+    } else if (href === '#careers' && name === 'job') {
+      a.classList.add('active');
     }
   });
 
-  // Highlight dropdown trigger if subpage is active
-  const dropTrigger = document.querySelector('.dropdown-trigger');
-  if (dropTrigger) {
-    if (['studies', 'briefs', 'news', 'article'].includes(name)) {
-      dropTrigger.classList.add('active');
-    } else {
-      dropTrigger.classList.remove('active');
-    }
+  // Highlight only the dropdown trigger whose submenu contains the active section
+  const activeHashes = ['#' + name];
+  if (name === 'article') activeHashes.push('#news');
+  if (name === 'event') activeHashes.push('#events');
+  if (['monitors', 'media-monitors', 'energy-monitors', 'climate-monitors'].includes(name)) {
+    activeHashes.push('#media-monitors', '#energy-monitors', '#climate-monitors', '#monitors');
   }
+  document.querySelectorAll('.nav-item-dropdown').forEach(dd => {
+    const trigger = dd.querySelector('.dropdown-trigger');
+    if (!trigger) return;
+    const match = Array.from(dd.querySelectorAll('.dropdown-menu a'))
+      .some(a => activeHashes.includes(a.getAttribute('href')));
+    trigger.classList.toggle('active', match);
+  });
 
   // Sync hash with window state (avoid pushing duplicate states)
-  const targetHash = '#' + name + (name === 'article' && slug ? '/' + slug : '');
+  const targetHash = '#' + name + ((name === 'article' || name === 'event' || name === 'job') && slug ? '/' + slug : '');
   if (window.location.hash !== targetHash) {
     history.pushState(null, null, targetHash);
   }
@@ -1812,7 +2267,7 @@ window.addEventListener('DOMContentLoaded', () => {
       } else if (text === 'policy briefs') {
         a.setAttribute('href', '#briefs');
       } else if (text === 'energy monitor') {
-        a.setAttribute('href', '#news');
+        a.setAttribute('href', '#energy-monitors');
       } else if (text === 'about pried' || text === 'about') {
         a.setAttribute('href', 'index.html#about');
       } else if (text === 'our team') {
@@ -2194,12 +2649,600 @@ function renderArticle(slug) {
   $('art-author-link').href = a.url;
 }
 
-/* Make any element with data-article navigate to its detail page */
+/* ── EVENTS (data-driven listing + detail pages) ── */
+const PRIED_EVENT = 'https://www.priedpk.org/?post_type=event&p=';
+const EVENTS = {
+  'iran-war': {
+    title: "Pakistan's just-energy transition and climate agenda in the time of war in Iran",
+    cat: "Consultation", date: "", loc: "", emoji: "🤝",
+    img: "https://www.priedpk.org/wp-content/uploads/2023/12/Consultation.png", url: PRIED_EVENT + '2222',
+    body: [
+      `The ongoing war in and around Iran and the consequent disruption of critical energy supply routes have exposed Pakistan's deep structural dependence on imported fossil fuels such as oil, coal and liquified natural gas (LNG). With rising fuel prices in international markets, increased fuel import bills and their mounting pressure on foreign exchange reserves as well as the serious challenges these factors are posing to Pakistan's energy supplies and energy security, the conflict has intensified the countries vulnerabilities—rising energy prices supply concerns, driving inflation that disproportionately impacting lower-income households and renewing interest among policymakers to mine more indigenous coal and use it for power generation.`,
+      `Rather than being a temporary shock, the war and its impacts reflects broader systemic challenge: that Pakistan has an energy model that is both economically unsustainable and geopolitically fragile. At the same time, it has created an urgency to rethink the country's energy and climate trajectories, raising questions about energy security, energy affordability and a sustainable and just energy transition. Importantly, the crisis also underscores the country's climate imperative: continued reliance on fossil fuels not only deepens economic vulnerability but locks us into high-emission energy consumption, undermining our climate commitments and increasing our exposure to future carbon-related trade and financial risks.`
+    ],
+    tags: ["Energy Security", "Just Transition", "Climate", "Iran War", "Fossil Fuels"],
+    related: ["green-loans", "world-bank", "net-metering"],
+    images: ["https://www.priedpk.org/wp-content/uploads/2026/04/2.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/4.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/6.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/8.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/10.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/12.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/14.jpeg"],
+    videos: [], media: [],
+    press: [
+      { title: "Pakistan should use Iran war-driven energy crisis to accelerate renewables: experts — Business Recorder", url: "https://www.brecorder.com/news/40415624/pakistan-should-use-iran-war-driven-energy-crisis-to-accelerate-renewables-experts" },
+      { title: "Govt to keep supporting decentralised solarisation in Pakistan, says Dr Shezra — The Nation", url: "https://www.nation.com.pk/10-Apr-2026/govt-keep-supporting-decentralised-solarisation-pakistan-says-dr-shezra" },
+      { title: "Seminar calls for solar push to counter energy shocks from Gulf conflict — The News", url: "https://www.thenews.pk/print/1409103-seminar-calls-for-solar-push-to-counter-energy-shocks-from-gulf-conflict" }
+    ],
+    others: []
+  },
+  'green-loans': {
+    title: "A consultation on facilitating green loans for sustainable energy transition in Pakistan",
+    cat: "Consultation", date: "2023", loc: "", emoji: "🤝",
+    img: "https://www.priedpk.org/wp-content/uploads/2023/12/Consultation.png", url: PRIED_EVENT + '1119',
+    body: [
+      `In recent times, renewable energy and green alternatives have become cheaper and better in quality, making them more feasible to replace fossil fuels. This is especially true for Electric Vehicles (EVs) and Distributed Solar Photovoltaic (DSPV) systems. Finance plays a crucial role in making the transition to these green technologies, however the process of obtaining funds is extremely challenging and complex for the adopters. There are disagreements and complications between financial institutions and 'borrowers' who are seeking to get financing thereby creating multitude of challenges.`,
+      `These challenges, along with the high cost of green products, pose significant barriers for the adopters who want to switch to these sustainable technologies. To make this shift happen smoothly and affordably, we need smart financial strategies. The lack of accessible financing further increases in financially restricted contexts, causing risks of exclusion, inequality, and inefficient outcomes. Similarly, challenges in capital availability, lack of foreign investments, and poor infrastructure also restrict the scale up of these technologies.`,
+      `A project led by PRIED, with the support of Agora Energiewende, has been extensively analysing these barriers with the objective to provide proposals for refinement, as to accelerate DSPV and EV uptake in Pakistan. By shedding light on these challenges, the aim of this consultative workshop is to initiate the much-needed discourse around a facilitative financing facility for green products in Pakistan.`
+    ],
+    tags: ["Green Finance", "Solar", "EVs", "Energy Transition"],
+    related: ["net-metering", "rooftop-financing", "iran-war"],
+    images: ["https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-2.png", "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-9.png", "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-6.png", "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-7.png"],
+    videos: [], media: [], press: [], others: []
+  },
+  'karachi-electricity': {
+    title: "Energy experts discuss various aspects of Karachi's electricity crisis at multi-stakeholder dialogue",
+    cat: "Panel Discussion", date: "2023", loc: "Karachi", emoji: "🎙️",
+    img: "https://www.priedpk.org/wp-content/uploads/2023/09/23FFB014-D428-4AD9-B0DA-C0609415DB17.png", url: PRIED_EVENT + '981',
+    body: [
+      `Pakistan needs to have sustained and consistent energy policies to provide cheap and reliable electricity to its people, said Abu Bakar Ahmed, secretary of Sindh government's energy department at a panel discussion held in Karachi on Tuesday. "Since 1947, we have been lurching from one ad hoc measure to the next and never thought of doing long term planning in the energy sector," he said during his concluding remarks on the occasion.`,
+      `This lack of long term planning means that a lot of energy in the country is being produced with very costly sources such as furnace oil and gas, he said. "The biggest problem in using renewable energy sources such as solar panels is their high capital cost. Unless, we are able to either import solar panels cheaply or we start producing them within Pakistan, we cannot uses these renewable energy sources effectively and economically," he added.`,
+      `The panel discussion was organised by Policy Research Institute for Equitable Development (PRIED), a think tank based in Islamabad around its research report titled Fostering Solar PVs in High Research study R01. The study is based on a household survey conducted in several parts of Karachi last year, aimed at providing solutions against loadshedding in Karachi's high loss feeder areas.`,
+      `Manzoor Ahmed Alizai, one of the lead authors of the study, told the participants of the panel discussion that we need tailor-made solutions and business model that can cater to the needs of those communities in Karachi that cannot afford the costly energy being provided to them and have not access to money required for installing solar panels on their own. "The government, therefore, needs to finance the capital costs required for the installation of these solar panels," he said. "This makes a compelling case for the solarization of high loss feeders as this can help the electricity demand locally, reduce transmission and distribution losses and help the authorities address the problem of electricity theft in Karachi's high loss feeders," he added.`,
+      `The panel discussion put together participants from across Karachi's population and included senior government officers, civil society activists, community representatives, academicians and researchers, political leaders and K-Electric officials. They highlighted various aspects of the electricity crisis in Karachi and emphasized the need for finding innovative solutions to address that crisis. Most of them endorsed the study's finding that solarization was the most feasible and most sustainable option among those solutions and, therefore, needs to be prioritized at an urgent pace.`
+    ],
+    tags: ["Karachi", "Solar", "High-Loss Feeders", "K-Electric"],
+    related: ["net-metering", "rooftop-financing", "world-bank"],
+    images: ["https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7075-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7070-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7236-1-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7105-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7082-scaled.jpg"],
+    videos: [],
+    media: [{ title: "Media coverage (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/09/Media-Coverage.docx.pdf" }],
+    press: [{ title: "Press Release (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/09/Press-release.docx.pdf" }],
+    others: [{ title: "Fostering Solar PV in High-Loss Feeders — Research Study (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/08/PRIED-Fostering-Solar-PV-in-High-Research-study-R01.pdf" }]
+  },
+  'net-metering': {
+    title: "Energy experts call for solar net-metering to enhance Pakistan's electricity system",
+    cat: "Webinar", date: "September 14, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "💻",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/10/renewable-energy-2.png", url: PRIED_EVENT + '257',
+    body: [
+      `Karachi, Lahore, and Islamabad, September 14, 2022: Energy experts say that power consumers in Pakistan have a huge opportunity to reduce their electricity bills by installing solar power panels on their rooftops and connecting them with the national grid. Through a system called net-metering, the government pays consumers the price of electricity that their solar panels inject into the grid, these experts say. This not only reduces the electricity bills of these consumers but also helps the government decrease power shortages, experts add. But, the experts point out, that this opportunity is not being fully utilized because of the financial barriers that the consumers face in installing solar panels.`,
+      `The experts were speaking at a webinar on 'Net-metering in Pakistan: Potential, Challenges and Way Forward', held on Wednesday by Policy Research Institute for Equitable Development (PRIED). Naila Saleh, Project Manager, Agora EW, and Technical Advisor, PRIED, said net-metering can advance renewable energy uptake in Pakistan and reduce dependency on unreliable power supply. "Distributed solar photovoltaic [PV] systems can shift electricity generation from fossil fuels and supply more affordable energy than the grid does. Yet, the overall growth in netmetered systems in the past seven years remains insignificant in Pakistan," Saleh said. She added that easy financing is critical to adopt capital-intensive technologies such as solar PV, which have a high upfront cost but lower operating costs.`,
+      `"Limited adoption of State Bank's 2016 concessionary financial scheme for solar PV and its restricted access to a larger section of the society is a key barrier to its wide-scale diffusion," she said. Atif Pervez, Battery Research Lead at NanoXplore Inc., Canada, said battery energy storage that is integrated into a renewable energy setup is important to enhance grid reliability and resilience while facilitating decarbonization. "Regular grid failures and rolling blackouts due to energy crisis are common in Pakistan. Battery storage, coupled with solar panels can provide low maintenance and low carbon footprint solution during continuous power outages," Pervez added. Ameena Sohail, Managing Partner at Precision Advocates and Consultants, emphasized the need to practice a 'non-discriminative' distribution of power to all consumers. She suggested including customer service regulations in net-metering licenses and incentivizing power distribution companies (DISCOs) to resolve supply chain issues and delays in meter installations.`,
+      `Discussing the challenges faced by DISCOs, Amjad Aslam, Deputy Manager Regulations, Peshawar Electric Supply Company shared the major obstacles in the slow uptake of new net metering connections. He said that a lack of technical training, legacy power infrastructure, non-uniform standards of net metering equipment and revenue erosion act as the main hurdles.`
+    ],
+    tags: ["Net Metering", "Solar PV", "Financing", "Battery Storage"],
+    related: ["rooftop-financing", "green-loans", "imf-gst"],
+    images: [],
+    videos: [{ title: "Energy experts call for solar net-metering", url: "https://www.youtube.com/embed/-TcmivZV_vI" }],
+    media: [],
+    press: [{ title: "Press Release — Net Metering in Pakistan: Potential, Challenges and Way Forward (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/PRESS-RELEASE-Net-Metering-in-Pakistan-Potential-Challenges-and-Way-Forward-1.pdf" }],
+    others: []
+  },
+  'rooftop-financing': {
+    title: "Limited financing schemes restricting domestic users to install rooftop solar systems: study",
+    cat: "Webinar", date: "September 27, 2021", loc: "Islamabad", emoji: "💻",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/05/stock-exchange-app-1-1.png", url: PRIED_EVENT + '217',
+    body: [
+      `Islamabad, September 27, 2021: A recent study shows that a major hurdle in the installation of home-based rooftop solar systems is arranging money for them. Its authors say that the demand and need for these solar systems is rising constantly but difficulties in financing them are hindering their diffusion in areas where they are needed the most.`,
+      `The study titled 'Unlocking the Economic Potential of Rooftop Solar PV in Pakistan', carried out by Rural Development Policy Institute (RDPI), was launched in a webinar on Thursday. The study highlights the potential of rooftop solar PV in Pakistan and shows the unequal picture of solar financing landscape along with several barriers restricting rooftop solar drive.`,
+      `While presenting the findings of the study, Naila Saleh—author of the study and Project Lead at RDPI–said, "Financing is critically important for transition towards capital intensive technologies such as solar PV characterized by high upfront cost." Speaking about the concessionary financing scheme introduced by State Bank of Pakistan (SBP) to promote rooftop solar systems, she said that restricted lending under the scheme and difficulties in acquiring finance due to stringent securitization has limited the scheme's scope.`,
+      `Research Associate at RDPI and study's co-author, Talha Rashid, spoke about the need to introduce operating expenses business model (OPEX) in Pakistan, which currently not even a single solar company is using at domestic level. He said that the growth of rooftop solar can increase rapidly through adopting OPEX – a system in which the developer owns the solar project and the consumer only has to pay for the energy generated.`,
+      `Syed Aqeel Jafri, Director Policy, Alternative Energy Development Board (AEDB) said that several measures had already been taken to promote rooftop solar, which includes certification of solar vendors and revisions in net-metering regulations. He added that AEDB envisions greening the power sector through renewable power generation. Musa Khan Durrani, Head of Strategic Alliances, SkyElectric Pvt. Ltd. and GM Business Development, Saif Group, said it was essential that SBP pushes commercial banks to pursue solar financing by aligning incentive structure vis-a-vis other SBP schemes and through active monitoring. He stressed on the need to engage distribution companies, along with power purchase agreement financers or banks, to provide OPEX model services to customers.`,
+      `Asad Mahmood, Manager Technical/Company Secretary, National Energy Efficiency & Conservation said, "Currently, majority end-users in Pakistan have 1-phase meters, whereas net-metering applies only to 3-phase meters. This is a binding constraint that is restricting distributed generation participation by the majority. Most solar vendors are also not providing after sales services, causing dissatisfaction of solar PV consumers. Customized solutions is also something vendors mostly don't look into." Zarak Khan from State Bank of Pakistan also participated in the webinar as one of the panelists.`
+    ],
+    tags: ["Rooftop Solar", "Financing", "State Bank", "OPEX"],
+    related: ["net-metering", "green-loans", "caucus-meeting"],
+    images: ["https://www.priedpk.org/wp-content/uploads/2022/05/Image-1.jpg", "https://www.priedpk.org/wp-content/uploads/2022/05/Image-6.jpg"],
+    videos: [{ title: "Virtual launch of research study 'Unlocking the Economic Potential of Rooftop Solar PV in Pakistan'", url: "https://www.youtube.com/embed/iickpQgWHxk" }],
+    media: [{ title: "Business Recorder", url: "https://www.brecorder.com/news/40123804" }],
+    press: [],
+    others: [
+      { title: "Summary of Study — English (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/Summary-of-Study-Unlocking-the-Economic-Potential-of-Rooftop-Solar-PV-in-Pakistan-FJ.pdf" },
+      { title: "Summary of Study — Urdu (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/Summary-of-Study-Urdu.pdf" },
+      { title: "Research Study — Unlocking the Economic Potential of Rooftop Solar PV in Pakistan (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2022/02/Research-study-Unlocking-the-Economic-Potential-of-Rooftop-Solar-PV-in-Pakistan.pdf" }
+    ]
+  },
+  'caucus-meeting': {
+    title: "Parliamentarians discuss need to launch awareness campaigns on clean energy sources at third caucus meeting",
+    cat: "Caucus Meeting", date: "October 6, 2021", loc: "Islamabad", emoji: "🏛️",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/05/friend-1-1.png", url: PRIED_EVENT + '216',
+    body: [
+      `ISLAMABAD: Members of the proposed parliamentary caucus on clean energy met for the third time on October 6, 2021 in Islamabad to discuss the objectives of the caucus, where the participants underlined the need to launch awareness campaigns on clean and green sources of energy while focusing on transition to alternative sources keeping in view the best practices followed by various countries.`,
+      `The meeting was organized by Sustainable Development Policy Institute (SDPI) and Rural Development Policy Institute (RDPI) to facilitate the debate on the proposed parliamentary caucus for energy transition in Pakistan. Previously another meeting was held in August, where members of the parliamentary caucus discussed the importance of green parliamentary caucus for combating climate crisis and facilitating Pakistan in its transition to clean energy resources.`,
+      `In the second meeting, Dr. Abid Suleri, Executive Director of SDPI, made a detailed presentation on various aspects of climate change and how some of the countries were dealing with the problem. He suggested different ways Pakistan could learn to play its role in reducing carbon emissions and improving the quality of environment.`,
+      `He also suggested that Pakistan, in the COP-26 to be held in Glasgow, should urge the developed countries to assist developing countries financially and technologically in order to roll back their coal-based power projects. Dr. Suleri further said that Pakistan was the least emitter of carbon and least polluter of the environment but still among the top 10 vulnerable countries to climate change calamities. That is one immediate reasons why a parliamentary caucus on clean and green energy should be formed, he stressed, adding that the caucus is of much relevance and importance. He underlined the importance of the parliamentary caucus by highlighting its main objectives and also suggested that we need a robust campaign for generating funds for the green transition.`,
+      `Munawara Bibi Baloch, Pakistan Tehrik-e-Insaf (PTI) Member National Assembly (MNA) from Balochistan, said that they, members of the caucus, needed to think beyond party lines and work collectively for transition to clean energy. "We need to fully capitalize on the existing natural resource base and develop community level clean energy transition models," she said stressing the importance of well thought-out policies and laws regarding the transition to clean energy. "The laws when made after proper debate can generate, facilitate and streamline finances and coordination among various stake holders," she said.`,
+      `Senator Zeeshan Khanzada, also from PTI, suggested to take this campaign and initiative to the province and district levels. "We need to incentivize and subsidize the domestic installation of solar panels and make this transition easy and cheap especially for rural areas," he said, stressing the need to capitalize on the full potential of the small hydro power projects.`,
+      `Senator Haji Hidayat Ullah Khan of Awami National Party (ANP) also endorsed the suggestion to launch a robust campaign for the protection of the environment before introducing policies and laws. He said it was the right time to shift from coal and fuel-based energy resources to alternative and clean energy. He urged the parliamentarians to think and act beyond party lines and vested electoral interests because it is a responsibility we owe to the coming generation.`,
+      `Romina Khursheed Alam of Pakistan Muslim League Nawaz (PML – N), Member National Assembly (MNA), suggested setting up a young parliamentarians' forum where they should be provided with all the technical support to launch campaigns and take practical steps towards the clean energy transition. "We need to engage and support the local entrepreneurs who are working on alternative energy resources at community and village level," she said adding that the government should provide targeted subsidy on solar panel installations especially for domestic use and agriculture purposes e.g., installation of tube wells for irrigation.`,
+      `Riaz Fatyana, a PTI MNA, informed that they already had a task force working on this issue. "Presently, we have only 6% renewable energy in the national grid whereas the target of the incumbent government is to take it to 20% by 2030. The developed and technologically advanced countries are either rolling back or have transitioned their coal-based plants into alternative sources," he said. Fatyana said the country had enough laws for clean energy and transition to renewable energy. "What we need to do is to launch awareness campaigns to sensitize the public," he said stressing the need to implement local and indigenous solutions to the alternative energy and conservation of water.`,
+      `Nafeesa Shah, Pakistan Peoples Party MNA, suggested setting up an office for the members of the caucus at the parliament secretariat with the help of the government. She urged the government to provide support and resources for this. "It is a good omen that the parliamentarians are getting to know things about climate change and the need for transition to renewable energy sources", she said making a case for improving the governance structure and allocation of finances and funds. "We need to take the ownership of the caucus. We can't achieve the desired results if we don't do that," she said emphasizing the need for a consistent forum or a committee to facilitate the caucus for finalizing TORs and action plan.`,
+      `Zille Humma, PTI MNA, said it was the need of the hour to invest in the renewable energy and alternative energy sources. "We can generate electricity from hydro sources in Khyber-Pakhtunkhwa, solar sources can be exploited in Punjab and Baluchistan and wind energy can be utilized in Sindh," she said adding that we needed to protect our environment through collective endeavor and campaigning. "Experts' opinions are very important to make this transition sustainable. Awareness can play a key role in this transition. First, we should provide people with a viable alternative before urging them to abandon the fossil fuel or coal-based energy sources," she further said.`,
+      `Nausheen Hamed of PTI said that we need to generate discussion on the existing legislations first. She said that parliamentary action and its modalities also need to be made clear. She also stressed on budgetary demands for the clean energy transition. Shahida Rehmani, PPP MNA, said the climate change and the need for alternative energy resources were important issues requiring special attention. "Water and energy are getting rare in Pakistan, so it needs to be taken into serious consideration, especially by the parliamentarians," she said while highlighting the importance of the parliamentary caucus.`,
+      `Aliya Hamza, PTI MNA, also emphasized the need for climate effective polices and need to propagate them. She said that we need to shift from LNG to solar energy and take a lead in the transition. Senator Sana Jamali said participation of the youth in the energy transition is key in coping with the climate change impacts. He said: "We need to work collectively, beyond party consideration for the conservation of water and the transition to clean and green energy. Being from Baluchistan which is most vulnerable to climate change in terms of droughts, we can better understand the importance of safe drinking water and continuous supply of electricity."`,
+      `Shaza Fatima, PML-N MNA, said that we need to engage experts on green transition to formulate new policies and bring amendments in the existing laws, by making them more practicable. We also need to engage our constituencies or public in the transition to clean energy. She suggested on holding public hearings with academia and university graduates on the topic. "The more we advertise it, the more sensitivity we will produce among the public," she said, adding that we need policy for the procurement of the tech and solar panel to make this transition robust. She also said that we also need to introduce energy efficient infrastructure/buildings based on sustainable energy consumption patterns. Awareness campaign would play a key role in making the public aware of the coal and fossil fuel energy sources. She advocated for small and local level solutions for energy needs especially for household use.`
+    ],
+    tags: ["Parliament", "Clean Energy", "Policy", "Awareness"],
+    related: ["net-metering", "rooftop-financing", "world-bank"],
+    images: [], videos: [], media: [], press: [], others: []
+  },
+  'world-bank': {
+    title: "Experts urge World Bank not to sabotage green energy transition of Pakistan's energy sector",
+    cat: "Panel Discussion", date: "March 22, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "🎙️",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/05/energy-control-1.png", url: PRIED_EVENT + '201',
+    body: [
+      `KARACHI, LAHORE and ISLAMABAD, March 22, 2022: The World Bank has attracted severe criticism for its role in pushing Pakistan's energy sector into debt and sabotaging its transition into clean energy. Experts associated with at least two international think tanks believe that the bank's support for Thar coal power project will help them soon become the largest source of air pollutants, such as mercury and CO2, in South Asia.`,
+      `Sharing the findings of their research studies, these experts shed light on the World Bank's role in Pakistan's energy and environmental crisis at an online panel discussion held on Tuesday. The webinar was organised by the Alliance for Climate Justice & Clean Energy (ACJCE), a coalition of think tanks and civil society organisations working on energy transition in Pakistan.`,
+      `Discussing her research study, Heike Mainhardt, Senior Advisor at Urgewald, a Germany-based non-profit organisation, said the World Bank's technical assistance in Pakistan provided a road map to attract investors into country's coal sector from 2009 to 2012. "Arguably, the Bank's most important actions were tariff policy reforms that made new coal power investments in Pakistan the world's most profitable. As a result, Pakistan is tied to very high capacity payments for coal power, leading to high subsidies and consumer tariffs," she said. Heiki added that it is the World Bank's responsibility to help Pakistan re-direct its power sector development from coal to renewable energy.`,
+      `Fran Witt, Campaigns Lead at Recourse, a Netherlands-based not-for-profit organisation, discussed the research study co-published by Recourse and Alternative Law Collective (ALC), a Pakistan-based firm. She said that the World Bank's Development Policy Finance (DPF) for Pakistan's energy sector amounted to $1.4billion from 2020 to 2021 and therefore, has a huge impact on energy policy and investment. She suggested that all fossil fuels must be included on the Excluded Expenditures list for DPF, through which the World Bank can support the Pakistani government to build its energy from Pakistan's sustainable renewable energy sources instead of relying on expensive coal or LNG imports.`,
+      `Zain Moulvi, Director Research at ALC, said that the World Bank's tacit support of Thar coal and its damaging DPF loan conditionality demonstrates the complex mechanisms through which it can instigate crises in Pakistan's energy sector. "The Thar coal projects will significantly raise electricity tariffs and have already caused massive displacement and loss of livelihood in Thar. They are further projected to cause up to 29,000 air pollution-related deaths," Zain said. He added that the Bank's flagship PACE project – supposedly meant to facilitate Pakistan's transition to cheap and clean energy – has instead forced the country to plan its energy mix around costly, socially and environmentally destructive fossil fuels and large hydro projects.`,
+      `Appreciating the research studies' authors for shedding light on international financial institutions' support for dirty and costly projects in Pakistan and elsewhere in the Global South, Ahsan Kamal, Lecturer at Quaid-i-Azam University said, "Despite claims of being a leader in knowledge and investment for development, the World Bank has a long history of ignoring definitive research that shows coal, gas and large hydropower projects damaging to the environment, humans, and economy," he said.`
+    ],
+    tags: ["World Bank", "Coal", "Thar", "Climate Finance"],
+    related: ["imf-gst", "thar-water", "karachi-electricity"],
+    images: ["https://www.priedpk.org/wp-content/uploads/2023/02/Moderator.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Heike-Mainhardt-.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Fran-Witt-presentation.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Ahsan-Kamal.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Zains-presentation-.jpg"],
+    videos: [{ title: "Demystifying the Bank's role in the energy and environmental crisis", url: "https://www.youtube.com/embed/HHwP52l1wYA" }],
+    media: [], press: [],
+    others: [
+      { title: "World Bank and Pakistan's Energy Transition — Presentation (PPTX)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/World-Bank-and-Pakistans-Energy-Transition-Presentation-Final-.pptx" },
+      { title: "Fran Witt — World Bank presentation (PPTX)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/Fran-Witt-WB-presentation.pptx" }
+    ]
+  },
+  'imf-gst': {
+    title: "Civil society demands IMF to revoke GST on renewable energy technologies",
+    cat: "Media Briefing", date: "February 1, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "📰",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/05/renewable-energy-1.png", url: PRIED_EVENT + '200',
+    body: [
+      `KARACHI, LAHORE and ISLAMABAD, February 1, 2022: Demanding the government to revoke imposition of general sales tax on solar panels and electric vehicles, a civil society group striving to promote renewable energy has asked the International Monetary Fund (IMF) to play a responsible part in developing socially just and environmental friendly financing solutions in Pakistan.`,
+      `Alliance for Climate Justice and Clean Energy (ACJCE) has made these demands in a letter written to the IMF board ahead of its meeting for Pakistan's sixth review, following the recent imposition of 20% GST on solar panels in Pakistan. ACJCE shared details of the letter in a media briefing held on Tuesday, where the speakers assailed the tax imposition and discussed its repercussions.`,
+      `Speaking at the briefing, Zain Moulvi, Associate at Alternative Law Collective, said that the hastily passed mini budget is a grim reminder of how IMF's policies and lending practices can sabotage Pakistan's social and environmental planning. "The new IMF-backed fiscal reforms include heavy taxes on solar panels, wind turbines and electric vehicles, which are likely to cripple the renewable energy market," he said. Moulvi emphasized that the renewables are Pakistan's biggest hope for cheap electricity, adding that these taxes are inconsistent with Pakistan's Alternative and Renewable Energy and National Electric Vehicle policies".`,
+      `Haneea Isaad, Research Associate at Institute for Energy Economics and Financial Analysis, discussed the financial impacts of the added taxation. "At present, the latest tariffs given out by National Electric Power Regulatory Authority for utility scale solar/wind power indicate a levelized cost of generation of Rs. 6-7/KWh. This range holds true for residential/commercial rooftop photovoltaic installations too. Imposing the added tax can significantly raise the costs for these projects," she said. Isaad emphasized such decisions will hurt investor's confidence, while small and mid-size enterprises and off-grid and lower-income households will be the most affected segment as the added taxes will increase costs.`,
+      `Waqas Moosa, Member Executive Committee of Pakistan Solar Association (PSA), revealed that solar deployments in Pakistan are expected to fall by at least 20% in 2022 as solar equipment's cost will increase by around 20% due to the added taxes. "Consumers who are unable to shift to solar due to higher cost will end up paying an extra Rs. 175 billion in electricity costs over 20 years," PSA representative said. He questioned whether putting the extra cost on solar panels is worth it as the expected revenue from one year of GST is only about Rs. 16 billion to Rs. 20 billion. "For each solar solution not deployed, fossil-fuel based power sources will instead be used over the next 20 years, which is the life of solar equipment," he said.`,
+      `Research Analyst at Renewables First, Mustafa Amjad, pointed out that the government is contradicting its own mantra of a green Pakistan by taxing these technologies. "Presently, local development for solar panel and renewable energy technologies is negligible in Pakistan. At such a crucial stage, where both these industries require fiscal support, such taxation will damage the development of renewable energy, as well as Pakistan's electric vehicle market," he said. The government, he said, is jeopardizing the take-off promised for these technologies. Amjad said, "These increased costs would ultimately be transferred to the consumer and result in higher tariff rates."`,
+      `Transportation already accounts for 43% of the airborne emissions in the country and the EV Policy states that the "initial years of EV penetration in Pakistan are not possible without governmental support." The policy also argues that the "initial incentives, tax breaks and benefits will pay for itself with the savings in fuel import bill, reduction in emission related expenses, usage of idle electricity capacity and income from charging revenues", estimating annual savings of around PKR 110 Billion per year for the first five years of the policy.`
+    ],
+    tags: ["IMF", "GST", "Solar", "EVs", "Taxation"],
+    related: ["world-bank", "net-metering", "rooftop-financing"],
+    images: [],
+    videos: [{ title: 'Media briefing on "Imposition of general sales tax on solar panels and electric vehicles"', url: "https://www.youtube.com/embed/f00kdb4GhA4" }],
+    media: [
+      { title: "Dawn", url: "https://www.dawn.com/news/1672743" },
+      { title: "Express Tribune", url: "https://tribune.com.pk/story/2341511/reversal-of-tax-on-evs-solar-panels-demanded?amp=1" },
+      { title: "The News", url: "https://www.thenews.com.pk/print/929197-taxing-solar-panels" },
+      { title: "Such TV", url: "https://www.suchtv.pk/business/item/111245-reversal-of-tax-on-evs-solar-panels-demanded.html" }
+    ],
+    press: [],
+    others: [
+      { title: "ACJCE letter to the IMF on renewables taxation (PDF)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/ACJCE-letter-to-the-IMF-on-renewables-Taxation.pdf" },
+      { title: "ACJCE Presentation — Environmental Impacts of the IMF-Backed Tax Reforms (PPTX)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/ACJCE-Presentation-ENVIRONMENTAL-Impacts-of-the-IMF-Backed-TAX-reforms.pptx" }
+    ]
+  },
+  'thar-water': {
+    title: "Coal mining companies in Thar violating Environment Protection Act by dumping toxic water in clean wells: analysts",
+    cat: "Webinar", date: "March 25, 2022", loc: "Karachi · Lahore · Islamabad · Thar", emoji: "💻",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/05/mining-cart-1.png", url: PRIED_EVENT + '198',
+    body: [
+      `Karachi, Lahore, Islamabad, March 25, 2022: Coal-inflicted miseries of Tharis have started to complicate as their dug wells are now increasingly becoming contaminated due to the toxic waste being discharged by the mining and thermal power companies. Groundwater degradation in Thar, a painful occurrence after coal-induced displacement, dispossession and destitution, was a violation of certain environmental laws of the country, stated the experts.`,
+      `This was revealed in a webinar titled 'Coal-induced Water Woes of Tharis' held on Friday by Alliance for Climate Justice & Clean Energy (ACJCE), a coalition of think tanks and civil society organisations working on energy transition in Pakistan. A short documentary was also screened at the webinar, highlighting the ground reality and magnitude of water-related issues in Thar.`,
+      `Giving an insight into the problems being created by coal mining companies in Thar, Azhar Lashari from Policy Research Institute for Equitable Development said, "The coal rush in Thar has been depleting and poisoning the precarious groundwater resources of the region and making lives of locals miserable. Percolation of toxic water from Gorano and Dukar Chaou reservoirs, lowering water table around mining sites and dumping of wastewater in farmlands have been posing a serious threat to the ecosystem and public health," he said.`,
+      `Lashari added that while the water level of the dug-wells is depleting in some villages, the sweet water of the dug-wells surrounding the wastewater reservoirs is becoming toxic. "The incidents of malarial fever and livestock casualties have significantly increased in the area," he added.`,
+      `Muhammad Abdul Rafay from Alternative Law Collective said that the testimonies of Tharis reveal illegalities being committed by coal mining and power generation companies. "The release of contaminated water into agricultural and grazing lands by the companies and its reinjection into underground aquifers violates the Sindh Environment Protection Act, the National Water Policy 2018 and their generation licenses issued by National Electric Power Regulatory Authority," he said. Rafay added that Pakistan's superior courts have repeatedly held such practices a violation of the constitutional right to life and a breach of public trust.`,
+      `Two representatives from the Thar community also discussed the water-related difficulties they have been facing in the region. Rani Bheel, a female affected resident of Bitra Village, Block-II, said that the coal companies were releasing poisonous water openly with no regard to human life. "This is also harming our livestock. More than 50 buffaloes and cows, 70 plus camels and over 500 goats and sheep have died from drinking poisonous water," she added. Bheel further said that the clean water wells becoming saline because of the toxic water has added to the troubles of the women, as they have to arrange potable water for their households from remote places.`,
+      `Sharing the harmful impacts of the dams built by these companies in the area, Ameer Hassan, an office-bearer of Thar Samaji Tehreek, said that 20 dug-wells have become saline after the development of Gorano Dam. The local community representatives shared that more than 50 children living in the villages near Gorano Dam have died in the last few years from mosquito-borne diseases spread due to toxic water.`
+    ],
+    tags: ["Thar", "Coal", "Water", "Environment", "Community"],
+    related: ["world-bank", "karachi-electricity", "caucus-meeting"],
+    images: [],
+    videos: [{ title: "Webinar on 'Coal-induced water woes of Tharis'", url: "https://www.youtube.com/embed/VLohWxj5NiE" }],
+    media: [], press: [], others: []
+  }
+};
+const EVENT_ORDER = ['iran-war', 'green-loans', 'karachi-electricity', 'net-metering', 'rooftop-financing', 'caucus-meeting', 'world-bank', 'imf-gst', 'thar-water'];
+
+function renderEvent(slug) {
+  const e = EVENTS[slug] || EVENTS['iran-war'];
+  const $ = id => document.getElementById(id);
+  $('ev-crumb').textContent = e.title;
+  const hero = $('ev-hero'); hero.src = e.img; hero.alt = e.title;
+  $('ev-tag').textContent = e.cat;
+  if (e.date) { $('ev-date').textContent = e.date; $('ev-date').style.display = ''; $('ev-date-sep').style.display = ''; }
+  else { $('ev-date').style.display = 'none'; $('ev-date-sep').style.display = 'none'; }
+  if (e.loc) { $('ev-loc').textContent = e.loc; $('ev-loc').style.display = ''; $('ev-loc-sep').style.display = ''; }
+  else { $('ev-loc').style.display = 'none'; $('ev-loc-sep').style.display = 'none'; }
+  $('ev-title').textContent = e.title;
+  $('ev-body').innerHTML = e.body.map(p => '<p>' + p + '</p>').join('');
+  $('ev-tags').innerHTML = (e.tags || []).map(t => '<span class="t-chip">' + t + '</span>').join('');
+  $('ev-detail-list').innerHTML =
+    '<div>📅 <strong>Date:</strong> ' + (e.date || 'Not specified') + '</div>' +
+    '<div>📍 <strong>Location:</strong> ' + (e.loc || 'Not specified') + '</div>' +
+    '<div>🏷️ <strong>Type:</strong> ' + e.cat + '</div>';
+  const rel = (e.related || []).map(s => EVENTS[s] && Object.assign({ slug: s }, EVENTS[s])).filter(Boolean);
+  $('ev-related').innerHTML = rel.map(r =>
+    '<div class="ra-card" data-event="' + r.slug + '"><div class="ra-img"><img src="' + r.img + '" alt="" loading="lazy" onerror="this.style.background=\'var(--cream)\'"></div><div class="ra-body"><div class="ra-tag">' + r.cat + (r.date ? ' · ' + r.date : '') + '</div><h5>' + r.title + '</h5></div></div>'
+  ).join('');
+
+  // Related Items accordion (Images, Videos, Media Coverage, Press Statements, Others)
+  const RI = [
+    { key: 'images', label: 'Images' },
+    { key: 'videos', label: 'Videos' },
+    { key: 'media', label: 'Media Coverage' },
+    { key: 'press', label: 'Press Statements' },
+    { key: 'others', label: 'Others' }
+  ];
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const firstWithContent = RI.find(c => (e[c.key] || []).length);
+  const riHtml = RI.map(c => {
+    const items = e[c.key] || [];
+    const count = items.length;
+    let inner;
+    if (c.key === 'images') {
+      inner = count
+        ? '<div class="ri-gallery">' + items.map(u => '<a class="ri-img" data-full="' + esc(u) + '"><img src="' + esc(u) + '" alt="" loading="lazy" onerror="this.closest(\'.ri-img\').style.display=\'none\'"></a>').join('') + '</div>'
+        : '<div class="ri-empty">No images available.</div>';
+    } else if (c.key === 'videos') {
+      inner = count
+        ? items.map(it => '<div class="ri-video"><iframe src="' + esc(it.url) + '" title="' + esc(it.title) + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>').join('')
+        : '<div class="ri-empty">No videos available.</div>';
+    } else {
+      inner = count
+        ? '<ul class="ri-links">' + items.map(it => '<li><a href="' + esc(it.url) + '" target="_blank" rel="noopener">↗ ' + esc(it.title) + '</a></li>').join('') + '</ul>'
+        : '<div class="ri-empty">No items available.</div>';
+    }
+    const open = firstWithContent && c.key === firstWithContent.key;
+    return '<div class="ri-item' + (open ? ' open' : '') + '">' +
+      '<button type="button" class="ri-head">' + c.label + '<span class="ri-count">' + (count || '') + '</span><span class="ri-chev">▾</span></button>' +
+      '<div class="ri-panel"><div class="ri-panel-inner">' + inner + '</div></div></div>';
+  }).join('');
+  document.getElementById('ev-related-items').innerHTML = '<h3 class="ev-ri-title">Related Items</h3><div class="ri-acc">' + riHtml + '</div>';
+
+  window.__articleTitle = e.title;
+}
+
+function buildEventsGrid() {
+  const grid = document.getElementById('eventsGrid');
+  if (!grid) return;
+  grid.innerHTML = EVENT_ORDER.map((slug, i) => {
+    const e = EVENTS[slug];
+    const d = ['rv', 'rv d1', 'rv d2'][i % 3];
+    const meta = e.cat + (e.date ? ' · ' + e.date : '');
+    const foot = e.date || e.loc || e.cat;
+    const altSafe = e.title.replace(/"/g, '&quot;');
+    return '<div class="study-card ' + d + '" data-event="' + slug + '">' +
+      '<div class="study-card-img"><img src="' + e.img + '" alt="' + altSafe + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><div class="study-card-img-placeholder" style="display:none"><span>' + e.emoji + '</span></div></div>' +
+      '<div class="study-card-body"><div class="sc-type">' + meta + '</div><h3>' + e.title + '</h3>' +
+      '<div class="sc-footer"><span class="sc-year">' + foot + '</span><span class="sc-dl">Read More →</span></div></div></div>';
+  }).join('');
+}
+buildEventsGrid();
+
+/* Make any element with data-article / data-event navigate to its detail page */
 document.addEventListener('click', e => {
   if (e.target.closest('a, button')) return;
-  const card = e.target.closest('[data-article]');
-  if (card) location.hash = '#article/' + card.getAttribute('data-article');
+  const art = e.target.closest('[data-article]');
+  if (art) { location.hash = '#article/' + art.getAttribute('data-article'); return; }
+  const ev = e.target.closest('[data-event]');
+  if (ev) { location.hash = '#event/' + ev.getAttribute('data-event'); return; }
+  const job = e.target.closest('[data-job]');
+  if (job) { location.hash = '#job/' + job.getAttribute('data-job'); }
 });
+
+/* Related Items: accordion toggle + image lightbox */
+document.addEventListener('click', e => {
+  const head = e.target.closest('.ri-head');
+  if (head) { head.closest('.ri-item').classList.toggle('open'); return; }
+  const thumb = e.target.closest('.ri-img');
+  if (thumb) {
+    const lb = document.getElementById('riLightbox');
+    document.getElementById('riLightboxImg').src = thumb.getAttribute('data-full');
+    lb.classList.add('open');
+    return;
+  }
+  if (e.target.closest('#riLightbox')) {
+    document.getElementById('riLightbox').classList.remove('open');
+    document.getElementById('riLightboxImg').src = '';
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const lb = document.getElementById('riLightbox');
+    if (lb) { lb.classList.remove('open'); }
+  }
+});
+
+/* ══════════════════════════════════════════
+   CAREERS — job detail pages (data-driven)
+══════════════════════════════════════════ */
+const JOBS = {
+  'graphic-designer': {
+    title: "Graphic Designer",
+    location: "Islamabad", type: "Full-time", deadline: "31 May 2026", apply: "hrpried@priedpk.org",
+    body: [
+      { p: `We are hiring a full-time Graphic Designer with a background in Design or Visual Communication to join our Media Communications team. This role offers an exciting opportunity to contribute to the visual identity of a research-driven organization committed to climate justice and a just energy transition through creative, impactful, and data-informed design.` },
+      { h: "Key Responsibilities" },
+      { ul: [
+        `Create innovative and engaging visualizations for research publications, campaigns and events.`,
+        `Design engaging and innovative data-based graphics, charts and images for research publications, campaigns and events.`,
+        `Design engaging social media content aligned with organizational goals and objectives.`,
+        `Develop user-friendly UI/UX designs for digital platforms.`,
+        `Design reports and documents with strong visual coherence and clarity.`,
+        `Produce print materials for events, outreach, and publications.`
+      ] },
+      { h: "Qualifications &amp; Skills" },
+      { ul: [
+        `Minimum Bachelor's degree (Master's preferred) in Design or a related field.`,
+        `Three to five years of professional experience in digital and print design.`,
+        `Strong portfolio demonstrating versatility in visual storytelling, brand design, and layout.`,
+        `Ability to work collaboratively in a fast-paced, research-oriented environment.`,
+        `Proficiency in Adobe Creative Suite (Illustrator, Photoshop, InDesign, etc.).`,
+        `Sound understanding of design principles, typography, colour theory, and layout techniques.`
+      ] },
+      { h: "Job Details" },
+      { ul: [ `Position Type: Full-time`, `Location: Islamabad`, `Salary: Market competitive` ] }
+    ]
+  },
+  'modeling-forecasting-specialist': {
+    title: "Modeling and Forecasting Specialist",
+    location: "Islamabad", type: "Full-time", deadline: "31 May 2026", apply: "info@priedpk.org",
+    body: [
+      { p: `PRIED is seeking a Modeling and Forecasting Specialist to develop pathways for Pakistan's low-carbon, just energy transition — modelling the interaction between energy technology shifts, energy finance, and greenhouse gas emission trajectories.` },
+      { h: "Key Responsibilities" },
+      { ul: [
+        `Develop pathways for low-carbon transition, evaluating the interaction between energy technology shifts, availability of energy finance, and greenhouse gas (GHG) emission trajectories.`,
+        `Model various pathways towards a just energy transition, particularly focusing on decentralized solarization hybridized with battery energy storage systems.`,
+        `Develop robust scenarios that consider carbon pricing and levies, renewable energy and battery storage penetration, transition pathways, and shifts in global climate and energy finance and policies.`,
+        `Evaluate the financial and economic parameters of energy projects and their associated climatic and socioenvironmental impacts.`,
+        `Quantify the impact of climate change, such as extreme weather and hydrological shifts, on Pakistan's power sector.`,
+        `Aggregate and analyze primary and secondary climate-related and power-related datasets from official sources to facilitate research and analysis.`,
+        `Manage the preparation and submission of detailed techno-economic and environmental feasibility studies and assessment reports for power projects and associated infrastructure.`,
+        `Liaise with stakeholders, including government bodies, energy departments, environmental agencies, and relevant ministries, and present the findings of the studies carried out at PRIED publicly.`,
+        `Any other tasks assigned by the management and the supervisor.`
+      ] },
+      { h: "Qualifications" },
+      { ul: [
+        `Bachelor's or Master's degree in Energy Economics, Environmental Engineering, Atmospheric Sciences, or Climate Science.`,
+        `Minimum of 4 years of relevant experience, with a focus on energy efficiency, renewable energy, resource conservation, and energy and climate modeling, and prior experience with GIS software for spatial climate analysis.`,
+        `In-depth understanding of power sector expansion models and plans used by the government for power sector long-term planning.`,
+        `Understanding of the IPCC Shared Socioeconomic Pathways (SSPs) and the 2006 IPCC guidelines.`,
+        `Experience with national and international environmental and energy policies and regulations is a plus.`
+      ] }
+    ]
+  },
+  'data-analyst': {
+    title: "Data Analyst / Econometrician",
+    location: "Islamabad", type: "Full-time", deadline: "31 May 2026", apply: "info@priedpk.org",
+    body: [
+      { p: `PRIED is looking for a highly skilled and publicly motivated data analyst who can work on subjects related to energy and climate sectors. If you have a strong educational background in data analytics and have a serious interest in economy, energy, climate and finance, please send your CV to us.` },
+      { p: `The work will require the ability to analyze policy changes and quick developments in the energy and climate sectors. The ideal candidate should have strong experience in data analytics and familiarity with all the relevant software. They should also be able to work in team settings and develop discussion papers, policy briefs, presentations, and other research materials on short notice.` },
+      { p: `If you are passionate about public interest and keen to explore and analyze financial and statistical trends in the energy and climate sectors, you are exactly the person we are looking for!` },
+      { h: "Key Responsibilities" },
+      { ul: [
+        `Plan and implement field surveys and data collection activities for PRIED's energy and climate-related projects.`,
+        `Design and develop sampling design and survey methodology in coordination with PRIED's other staff members.`,
+        `Carry out data cleaning, processing, and organization of raw primary data for research and analysis.`,
+        `Conduct descriptive and advanced statistical analysis of the primary survey data.`,
+        `Identify trends, patterns, and insights from datasets relevant to PRIED's research and advocacy objectives.`,
+        `Prepare visually appealing and easily comprehensible tables, charts, summaries, and presentations to communicate findings effectively.`,
+        `Actively contribute towards the drafting of research reports, briefs, and presentations alongside the research team.`,
+        `Ensure data quality during fieldwork and post-collection stages.`,
+        `Any other tasks assigned by the management and the supervisor.`
+      ] },
+      { h: "Qualifications" },
+      { ul: [
+        `Bachelor's or Master's degree in Economics, Statistics, Data Sciences/Analytics or a related field.`,
+        `Familiarity with econometric tools, survey design methodologies, data analysis and data visualization.`
+      ] }
+    ]
+  }
+};
+
+function renderJob(slug) {
+  const j = JOBS[slug] || JOBS['graphic-designer'];
+  const $ = id => document.getElementById(id);
+  $('job-crumb').textContent = j.title;
+  $('job-title').textContent = j.title;
+  $('job-type').textContent = j.type;
+  $('job-loc').textContent = j.location;
+  $('job-deadline').textContent = j.deadline;
+  $('job-body').innerHTML = j.body.map(b => {
+    if (b.h) return '<h3>' + b.h + '</h3>';
+    if (b.ul) return '<ul>' + b.ul.map(li => '<li>' + li + '</li>').join('') + '</ul>';
+    return '<p>' + b.p + '</p>';
+  }).join('');
+  const mail = $('job-apply-email');
+  mail.textContent = j.apply;
+  mail.href = 'mailto:' + j.apply + '?subject=' + encodeURIComponent(j.title);
+  $('job-related').innerHTML = Object.keys(JOBS).filter(s => s !== slug).map(s => {
+    const o = JOBS[s];
+    return '<div class="ra-card" data-job="' + s + '"><div class="ra-body"><div class="ra-tag">' + o.location + ' · ' + o.type + '</div><h5>' + o.title + '</h5></div></div>';
+  }).join('');
+  window.__articleTitle = j.title;
+}
+
+/* ══════════════════════════════════════════
+   MEDIA MONITORS — weekly + six-monthly (filter + pagination)
+══════════════════════════════════════════ */
+const SIXMONTH_MM = [
+  { t: "Six-Monthly Media Monitor (May–Oct 2025)", y: "2026", img: "https://www.priedpk.org/wp-content/uploads/2026/01/Thumbnails-07-scaled.jpg", pdf: "https://www.priedpk.org/wp-content/uploads/2026/01/MM-6-months.pdf" },
+  { t: "Six-Monthly Media Monitor (Nov 2024–April 2025)", y: "2025", img: "https://www.priedpk.org/wp-content/uploads/2025/07/november-to-april.jpg", pdf: "https://www.priedpk.org/wp-content/uploads/2025/07/November-1st-2024-April-30th-2025.pdf" },
+  { t: "Six-Monthly Media Monitor (May–Oct 2024)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/11/media.jpg", pdf: "https://www.priedpk.org/wp-content/uploads/2025/07/Six-Month-Media-Monitor.pdf" },
+  { t: "Six-Monthly Media Monitor (Nov 2023–April 2024)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/10/six.jpg", pdf: "https://www.priedpk.org/wp-content/uploads/2024/10/Six-Month-Media-Monitor-Powerlines-in-Pakistan-The-media-coverage-of-the-energy-sector.pdf" },
+  { t: "Six-Monthly Media Monitor (May–Oct 2023)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/01/six-month-monitor-R02.png", pdf: "https://www.priedpk.org/wp-content/uploads/2024/01/Six-month-media-monitor-May-to-October-R04.pdf" },
+  { t: "Six-Monthly Media Monitor (Jan–June 2023)", y: "2023", img: "https://www.priedpk.org/wp-content/uploads/2023/08/Screenshot-2023-08-21-at-1.05.36-PM.png", pdf: "https://www.priedpk.org/wp-content/uploads/2023/08/Six-month-media-monitor-R05-icons-head.pdf" }
+];
+
+const WEEKLY_MM = [
+  ["25-May-31-may-2026", "https://www.priedpk.org/wp-content/uploads/2026/06/25-31-May.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/06/25-May-31-may-2026-.pdf"],
+  ["18-May-24-may-2026", "https://www.priedpk.org/wp-content/uploads/2026/05/May-18-24.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/05/18-May-24-may-2026-.pdf"],
+  ["11-May-17-may-2026", "https://www.priedpk.org/wp-content/uploads/2026/05/11-17-May.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/05/11-May-17-may-2026-.pdf"],
+  ["04-May-10-may-2026", "https://www.priedpk.org/wp-content/uploads/2026/05/4-10-May.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/05/04-May-10-may-2026-.pdf"],
+  ["27-April-03-May-2026", "https://www.priedpk.org/wp-content/uploads/2026/05/27-03.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/05/27-april-03-may-2026-2.pdf"],
+  ["20-April-26-April-2026", "https://www.priedpk.org/wp-content/uploads/2026/05/20-28.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/05/20-april-26-april-2026.pdf"],
+  ["13-April-19-April-2026", "https://www.priedpk.org/wp-content/uploads/2026/04/13-19-.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/13-April-19-April-2026.pdf"],
+  ["6-April-12-April-2026", "https://www.priedpk.org/wp-content/uploads/2026/04/6-12-apr.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/6-April-12-April-2026-2.pdf"],
+  ["Mar-30–April-5-2026", "https://www.priedpk.org/wp-content/uploads/2026/04/30-05-apr.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/Mar-30–-APRIL-5-2026.pdf"],
+  ["March-23–29-2026", "https://www.priedpk.org/wp-content/uploads/2026/04/23-29-mar.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/March-23–-29-2026.pdf"],
+  ["Mar-16–22-2026", "https://www.priedpk.org/wp-content/uploads/2026/03/Mar-16-22.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/03/Mar-16–-22-2026.pdf"],
+  ["9-March-15-March-2026", "https://www.priedpk.org/wp-content/uploads/2026/03/March-9-15.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/03/9-march-15-march-2026.pdf"],
+  ["Mar-2–8-2026", "https://www.priedpk.org/wp-content/uploads/2026/03/March-2-8.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/03/Mar-2–-8-2026.pdf"],
+  ["23-Feb-1-Mar-2026", "https://www.priedpk.org/wp-content/uploads/2026/03/Feb-23-1Mar.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/03/23-feb-1-mar.pdf"],
+  ["Feb-16–22-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/16-22.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/02/Feb-16-–-22-2026.pdf"],
+  ["9-Feb-15-Feb-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/9-feb-15-feb.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/02/9-feb-15-feb.pdf"],
+  ["2-Feb-8-Feb-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/2-Feb-8-Feb-2026-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/2-Feb-8-Feb-2026.pdf"],
+  ["January-26th-Feb-1st-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/January-26th-Feb-1st-2026-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/January-26th-Feb-1st-2026.pdf"],
+  ["19-January-25-January-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/19-January-25-January-2026-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/19-January-25-January-2026.pdf"],
+  ["12-Jan-18-Jan-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/12-jan-18-jan-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/12-jan-18-jan.pdf"],
+  ["5-Jan-11-Jan-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/5-jan-11-jan-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/5-jan-11-jan.pdf"],
+  ["29-Dec-2025–4-Jan-2026", "https://www.priedpk.org/wp-content/uploads/2026/02/29-Dec-4-Jan-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/29-Dec-4-Jan.pdf"],
+  ["22-28-December-2025", "https://www.priedpk.org/wp-content/uploads/2026/02/22-Dec-28-Dec-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/22-28-December-2025.pdf"],
+  ["15th-21st-December-2025", "https://www.priedpk.org/wp-content/uploads/2026/02/15-Dec-21-Dec-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/15th-21st-Dec2025.pdf"],
+  ["8–14-December-2025", "https://www.priedpk.org/wp-content/uploads/2026/02/8-Dec-14-Dec-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/8–14-December.pdf"],
+  ["1-7-December-2025", "https://www.priedpk.org/wp-content/uploads/2026/02/01-Dec-07-Dec-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/1-7-December-2025.pdf"],
+  ["24-30-November-2025", "https://www.priedpk.org/wp-content/uploads/2026/02/24-NOV-30-NOV-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/24-30-November-2025.pdf"],
+  ["17-Nov-23-Nov-2025", "https://www.priedpk.org/wp-content/uploads/2026/02/17-NOV-23-NOV-01.png", "https://www.priedpk.org/wp-content/uploads/2026/02/17-Nov-23-Nov.pdf"],
+  ["Nov-10-16-2025", "https://www.priedpk.org/wp-content/uploads/2025/11/Nov-10-16.png", "https://www.priedpk.org/wp-content/uploads/2025/11/Nov-10-16.pdf"],
+  ["Nov-3-9-2025", "https://www.priedpk.org/wp-content/uploads/2025/11/Nov-3rd-9ths.png", "https://www.priedpk.org/wp-content/uploads/2025/11/Nov-3-9.pdf"],
+  ["October-27–2-Nov-2025", "https://www.priedpk.org/wp-content/uploads/2025/11/oct-27-2nd.png", "https://www.priedpk.org/wp-content/uploads/2025/11/Weekly-media-monitor-October-27-2-nov-R02.pdf"],
+  ["20-Oct-26-Oct-2025", "https://www.priedpk.org/wp-content/uploads/2025/11/oct-20-26.png", "https://www.priedpk.org/wp-content/uploads/2025/11/20-oct-26-occt.pdf"],
+  ["October-13-19-2025", "https://www.priedpk.org/wp-content/uploads/2025/10/October-13th-October-19th.png", "https://www.priedpk.org/wp-content/uploads/2025/10/Weekly-media-monitor-October-13-19-R02.pdf"],
+  ["6-Oct-12-Oct-2025", "https://www.priedpk.org/wp-content/uploads/2025/11/oct-6-12.png", "https://www.priedpk.org/wp-content/uploads/2025/11/16-oct-12-occt.pdf"],
+  ["29th-Sep-5th-Oct-2025", "https://www.priedpk.org/wp-content/uploads/2025/10/Sep-29th-oct-05th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/10/29th-Sep-5th-Oct-2025.pdf"],
+  ["22-Sep-28-Sep-2025", "https://www.priedpk.org/wp-content/uploads/2025/10/Sep-22-Sep-28-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/10/Sep-22-Sep-28-2025.pdf"],
+  ["15th-Sep-21st-Sep-2025", "https://www.priedpk.org/wp-content/uploads/2025/09/Sep-15th-Sep-21st.png", "https://www.priedpk.org/wp-content/uploads/2025/09/15th-Sep-21st-Sep-2025.pdf"],
+  ["8th-Sep-14th-Sep-2025", "https://www.priedpk.org/wp-content/uploads/2025/09/8th-Sept-14th-Sep-2025.png", "https://www.priedpk.org/wp-content/uploads/2025/09/8th-Sep-14th-Sep-2025.pdf"],
+  ["1st-Sep-7th-Sep-2025", "https://www.priedpk.org/wp-content/uploads/2025/09/Thumbnail.png", "https://www.priedpk.org/wp-content/uploads/2025/09/1st-Sep-07-Sep-2025.pdf"],
+  ["25th-August-31st-August-2025", "https://www.priedpk.org/wp-content/uploads/2025/09/August-25th-August-31st.png", "https://www.priedpk.org/wp-content/uploads/2025/09/August-25th-August-31st-2025.pdf"],
+  ["18th-24th-August-2025", "https://www.priedpk.org/wp-content/uploads/2025/08/August-18th-August-24th.png", "https://www.priedpk.org/wp-content/uploads/2025/08/18th-24th-August-2025.pdf"],
+  ["11th-17th-August-2025", "https://www.priedpk.org/wp-content/uploads/2025/08/august-11th-August-17th.png", "https://www.priedpk.org/wp-content/uploads/2025/08/11th-17th-August-2025.pdf"],
+  ["August-04-10-2025", "https://www.priedpk.org/wp-content/uploads/2025/08/August-4d-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/08/Weekly-Media-Monitor-August-04-10-2025.pdf"],
+  ["July-28th-3rd-August-2025", "https://www.priedpk.org/wp-content/uploads/2025/08/July-28th-August-3rd-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/08/July-28th-03rd-August-2025.pdf"],
+  ["July-21st-July-27th-2025", "https://www.priedpk.org/wp-content/uploads/2025/07/July-21st-july-27th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/07/July-21st-July-27th-2025.pdf"],
+  ["July-14th-July-20th-2025", "https://www.priedpk.org/wp-content/uploads/2025/07/July-14th-20th-July-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/07/July-14th-July-20th-2025.pdf"],
+  ["July-7th-13th-July-2025", "https://www.priedpk.org/wp-content/uploads/2025/07/July-07th-July-13th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/07/July-07th-13th-July-2025.pdf"],
+  ["June-30th-July-6th-2025", "https://www.priedpk.org/wp-content/uploads/2025/07/June-30th-july-06th-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/07/June-30th-July-06th-2025.pdf"],
+  ["23-June-29-June-2025", "https://www.priedpk.org/wp-content/uploads/2025/07/June-23rd-June-29th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/07/23-June-29-June-2025.pdf"],
+  ["16th-June-22nd-June-2025", "https://www.priedpk.org/wp-content/uploads/2025/06/June-16th-June-22nd.jpg", "https://www.priedpk.org/wp-content/uploads/2025/06/16th-June-22nd-June-2025.pdf"],
+  ["June-9th-June-15th-2025", "https://www.priedpk.org/wp-content/uploads/2025/06/June-9th-15th-June-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/06/June-09th-June-15th-2025.pdf"],
+  ["2-June-8-June-2025", "https://www.priedpk.org/wp-content/uploads/2025/06/02-June-08-June-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/06/02-June-08-June-2025.pdf"],
+  ["26-May-2-June-2025", "https://www.priedpk.org/wp-content/uploads/2025/06/May-12th-May-18th-copy.jpg", "https://www.priedpk.org/wp-content/uploads/2025/06/26-May-02-June-2025.pdf"],
+  ["19th-May-25th-May-2025", "https://www.priedpk.org/wp-content/uploads/2025/05/May-19th-May-25th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/05/19th-May-25th-2025.pdf"],
+  ["12-May-18-May-2025", "https://www.priedpk.org/wp-content/uploads/2025/05/May-12th-May-18th1.jpg", "https://www.priedpk.org/wp-content/uploads/2025/05/12-May-18-May-2025.pdf"],
+  ["May-5th-May-11th-2025", "https://www.priedpk.org/wp-content/uploads/2025/05/May-05th-May-11th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/05/May-05th-May-11th-2025.pdf"],
+  ["April-28th-May-4th-2025", "https://www.priedpk.org/wp-content/uploads/2025/05/Apr-28th-May-04th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/05/April-28th-May-04th-2025.pdf"],
+  ["April-21st-27th-April-2025", "https://www.priedpk.org/wp-content/uploads/2025/05/Apr-21st-Apr-27th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/05/April-21st-27th-April-2025.pdf"],
+  ["April-14th-20th-April-2025", "https://www.priedpk.org/wp-content/uploads/2025/04/Apr-14th-Apr-20th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/04/Apr-14th-20th-Apr-2025.pdf"],
+  ["April-7th-13th-April-2025", "https://www.priedpk.org/wp-content/uploads/2025/04/Apr-07th-Apr-13th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/04/Apr-7th-13th-Apr-2025.pdf"],
+  ["Mar-31st-6th-April-2025", "https://www.priedpk.org/wp-content/uploads/2025/04/Mar-31st-Apr-06th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/04/Mar-31st-06th-April-2025.pdf"],
+  ["24th-30th-March-2025", "https://www.priedpk.org/wp-content/uploads/2025/04/24th-30th-Mar-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/04/24th-30th-Mar-2025.pdf"],
+  ["17th-23rd-March-2025", "https://www.priedpk.org/wp-content/uploads/2025/03/mar-17th-mar-23rd.jpg", "https://www.priedpk.org/wp-content/uploads/2025/03/17th-23rd-Mar-2025.pdf"],
+  ["10th-Mar-16th-Mar-2025", "https://www.priedpk.org/wp-content/uploads/2025/03/mar-10th-mar-16th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/03/10th-Mar-16th-Mar-2025-1.pdf"],
+  ["Mar-3rd-Mar-9th-2025", "https://www.priedpk.org/wp-content/uploads/2025/03/Mar-3rd-Mar-9th-2025.jpg", "https://www.priedpk.org/wp-content/uploads/2025/03/Mar-3rd-Mar-9th-2025.pdf"],
+  ["Feb-24th-Mar-2nd-2025", "https://www.priedpk.org/wp-content/uploads/2025/03/Feb-24th-Mar-2nd.jpg", "https://www.priedpk.org/wp-content/uploads/2025/03/Feb-24th-Mar-2nd-2025.pdf"],
+  ["Feb-17th-23rd-Feb-2025", "https://www.priedpk.org/wp-content/uploads/2025/02/feb-17th-Feb-23rd.jpg", "https://www.priedpk.org/wp-content/uploads/2025/02/Feb-17th-23rd-Feb.pdf"],
+  ["Feb-10th-16th-2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Feb-10th-Feb-16th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/02/Feb-10th-16th.pdf"],
+  ["Feb-3rd–9th-Feb-2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Feb-3rd-Feb-9th.jpg", "https://www.priedpk.org/wp-content/uploads/2025/02/Weekly-Media-Monitor-Feb-3rd-–-Feb-09th-2025.pdf"],
+  ["Jan-27th–2nd-Feb-2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Jan-27th-2nd-Feb.jpg", "https://www.priedpk.org/wp-content/uploads/2025/02/Weekly-Media-Monitor-Jan-27th-–-2nd-Feb-2025.pdf"],
+  ["Jan-20th-26th-2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Jan-20th-26th-Jan_.jpg", "https://www.priedpk.org/wp-content/uploads/2025/02/Weekly-Media-Monitor-Jan-20th-26th.pdf"],
+  ["Jan-13th-19th-2025", "https://www.priedpk.org/wp-content/uploads/2025/01/Weekly-Media-Monitor-Jan-13-–-Jan-19-2025-thumbnail.jpg", "https://www.priedpk.org/wp-content/uploads/2025/01/Weekly-media-monitor-Jan-13th-19th-2025.pdf"],
+  ["6th-Jan-12-Jan-2025", "https://www.priedpk.org/wp-content/uploads/2025/01/Jan-6th-12th-Jan.jpg", "https://www.priedpk.org/wp-content/uploads/2025/01/Weekly-Media-Monitor-6th-Jan-12-Jan.pdf"],
+  ["Dec-30th-2024–5th-Jan-2025", "https://www.priedpk.org/wp-content/uploads/2025/01/Dec-30th-2024-Jan-05th20251.jpg", "https://www.priedpk.org/wp-content/uploads/2025/01/Weekly-Media-Monitor-Dec-30th-2024-05th-Jan-2025.pdf"],
+  ["Dec-23rd-29th-2024", "https://www.priedpk.org/wp-content/uploads/2025/01/Dec-23-29-Dec.jpg", "https://www.priedpk.org/wp-content/uploads/2025/01/Weekly-Media-Monitor-Dec-23th-29th.pdf"],
+  ["Dec-16th-22nd-2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Dec-16-22-Dec.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Dec-16th-22nd.pdf"],
+  ["Dec-9th-15th-2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Dec-09-15-Dec_.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Dec-09th-15th.pdf"],
+  ["Dec-2nd-8th-2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Dec-02-08-Dec_.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Dec-2nd-Dec-08.pdf"],
+  ["Nov-25th-Dec-1st-2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Nov-25-Dec-01.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Nov-25th-Dec-01st-2024.pdf"],
+  ["Nov-18th-24th-2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Nov-18th-24th1.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Nov-18th-24th-1.pdf"],
+  ["Nov-11th-17th-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Nov-11th-17th.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Nov-11th-17th-1.pdf"],
+  ["Nov-4th-10th-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Nov-4th-10th.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/Weekly-Media-Monitor-Nov-4th-10th-1.pdf"],
+  ["Oct-28-Nov-3-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/OCT-28-Nov-03.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/OCT-28-Nov-03-1.pdf"],
+  ["October-21-27-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/October-21-27.jpg", "https://www.priedpk.org/wp-content/uploads/2024/12/October-21-27-1.pdf"],
+  ["Oct-14-Oct-20-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/October-14-20.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/OCt-14-Oct-20-2024.pdf"],
+  ["Oct-7-Oct-13-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/October-7-13.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/Oct-7-Oct-13-2024.pdf"],
+  ["Sep-30-6-October-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Sep-30-Oct-06.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/Sep-30-6-October-2024.pdf"],
+  ["Sep-23-Sep-29-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-23-29.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/Sep-23-Sep-29-2024.pdf"],
+  ["Sep-16-Sep-22-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-16-22.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/Sep-16-Sep-22-2024.pdf"],
+  ["Sep-9-Sep-15-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-9-15.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/Sep-9-Sep-15-2024.pdf"],
+  ["2nd-Sep-8th-Sep-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-2-8.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/2nd-Sep-8th-Sep-Monitor-2.pdf"],
+  ["August-26-September-1-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Aug-26-01-Sep.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/August-26-September-01-1.pdf"],
+  ["August-19-25-2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Aug-19-25.jpg", "https://www.priedpk.org/wp-content/uploads/2024/11/Weekly-Media-Monitor-August-19-25.pdf"],
+  ["August-12-18-2024", "https://www.priedpk.org/wp-content/uploads/2024/09/Aug-12-18.png", "https://www.priedpk.org/wp-content/uploads/2024/09/Weekly-media-monitor-Aug-12-18.-indd.pdf"],
+  ["August-5-11-2024", "https://www.priedpk.org/wp-content/uploads/2024/09/Aug-5-11.png", "https://www.priedpk.org/wp-content/uploads/2024/09/Weekly-media-monitor-Aug-5-11.pdf"],
+  ["July-29-August-4-2024", "https://www.priedpk.org/wp-content/uploads/2024/08/June-Aug-29-4.png", "https://www.priedpk.org/wp-content/uploads/2024/08/Weekly-media-monitor-July-29-august-4.pdf"],
+  ["July-22-28-2024", "https://www.priedpk.org/wp-content/uploads/2024/08/July-22-28.png", "https://www.priedpk.org/wp-content/uploads/2024/08/Weekly-media-monitor-July-22-28.pdf"],
+  ["July-15-21-2024", "https://www.priedpk.org/wp-content/uploads/2024/08/Jult-15-21.png", "https://www.priedpk.org/wp-content/uploads/2024/08/Weekly-media-monitor-July-15-21.pdf"],
+  ["July-8-14-2024", "https://www.priedpk.org/wp-content/uploads/2024/08/June-8-14.png", "https://www.priedpk.org/wp-content/uploads/2024/08/Weekly-media-monitor-July-8-14.pdf"],
+  ["July-1-7-2024", "https://www.priedpk.org/wp-content/uploads/2024/08/July-1st-7th.png", "https://www.priedpk.org/wp-content/uploads/2024/08/Weekly-media-monitor-July-1-7.pdf"]
+];
+
+function mmTitle(label) {
+  let s = label.replace(/\.indd$/i, '').replace(/-R0\d+/ig, '').replace(/^Weekly[-_\s]*media[-_\s]*monitor[-_\s]*/i, '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  s = s.replace(/\b([a-z])/g, m => m.toUpperCase());
+  return s || 'Weekly Media Monitor';
+}
+
+(function () {
+  const grid = document.getElementById('mmGrid');
+  if (!grid) return;
+  const pager = document.getElementById('mmPagination');
+  const chips = document.querySelectorAll('#mm-filter .filter-chip');
+  const esc = s => String(s).replace(/"/g, '&quot;');
+  const weekly = WEEKLY_MM.map(r => ({ t: mmTitle(r[0]), y: (r[0].match(/20\d\d/) || [''])[0], img: r[1], pdf: r[2], type: 'Weekly Media Monitor', cat: 'weekly' }));
+  const six = SIXMONTH_MM.map(o => Object.assign({ type: 'Six-Monthly Media Monitor', cat: 'six' }, o));
+  const all = weekly.concat(six);
+  const search = document.getElementById('mmSearch');
+  let filter = 'all', query = '', page = 1; const perPage = 16;
+
+  function monCard(o) {
+    return '<a class="study-card mon-card" href="' + o.pdf + '" target="_blank" rel="noopener">' +
+      '<div class="study-card-img"><img src="' + o.img + '" alt="' + esc(o.t) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><div class="study-card-img-placeholder" style="display:none"><span>📰</span></div></div>' +
+      '<div class="study-card-body"><div class="sc-type">' + o.type + '</div><h3>' + o.t + '</h3>' +
+      '<div class="sc-footer"><span class="sc-year">' + (o.y || '') + '</span><span class="sc-dl">↓ PDF</span></div></div></a>';
+  }
+  function list() {
+    let L = filter === 'all' ? all : all.filter(x => x.cat === filter);
+    if (query) L = L.filter(x => x.t.toLowerCase().includes(query) || (x.y || '').includes(query));
+    return L;
+  }
+  function render(scroll) {
+    const L = list();
+    const pc = Math.max(1, Math.ceil(L.length / perPage));
+    if (page > pc) page = pc;
+    if (!L.length) {
+      grid.innerHTML = '<div class="mm-empty">No monitors match "' + esc(query) + '".</div>';
+      pager.innerHTML = '';
+      return;
+    }
+    const slice = L.slice((page - 1) * perPage, page * perPage);
+    grid.innerHTML = slice.map(monCard).join('');
+    let h = '<button class="pg-btn pg-prev" data-nav="prev">← Prev</button>';
+    for (let i = 1; i <= pc; i++) h += '<button class="pg-btn' + (i === page ? ' active' : '') + '" data-p="' + i + '">' + i + '</button>';
+    h += '<button class="pg-btn pg-next" data-nav="next">Next →</button>';
+    pager.innerHTML = h;
+    pager.querySelector('[data-nav="prev"]').disabled = page === 1;
+    pager.querySelector('[data-nav="next"]').disabled = page === pc;
+    if (scroll) { const fb = document.querySelector('#page-media-monitors .studies-filter-bar'); if (fb) fb.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+  chips.forEach(c => c.addEventListener('click', () => {
+    chips.forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    filter = c.dataset.mfilter; page = 1; render(false);
+  }));
+  if (search) search.addEventListener('input', () => {
+    query = search.value.trim().toLowerCase(); page = 1; render(false);
+  });
+  pager.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b || b.disabled) return;
+    if (b.dataset.nav === 'prev') page--;
+    else if (b.dataset.nav === 'next') page++;
+    else if (b.dataset.p) page = +b.dataset.p;
+    render(true);
+  });
+  render(false);
+})();
 </script>
 </body>
 </html>
