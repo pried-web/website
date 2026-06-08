@@ -744,11 +744,15 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
       <a href="index.html" style="display: flex; align-items: center;"><img class="nav-logo" src="pried-logo.png" alt="PRIED Logo"></a>
     </div>
     <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
+      <li class="nav-item-dropdown">
+        <a href="index.html#about" class="dropdown-trigger">About Us <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </li>
       <li class="nav-item-dropdown">
         <a href="index.html#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="#events">Events</a></li>
           <li><a href="#news">News</a></li>
         </ul>
       </li>
@@ -760,17 +764,16 @@ a.ra-card, a.ng3-card, a.nl-row { text-decoration: none; color: inherit; }
         </ul>
       </li>
       <li class="nav-item-dropdown">
-        <a href="#monitors" class="dropdown-trigger">Monitor <span class="chevron">▼</span></a>
+        <a href="#monitors" class="dropdown-trigger">Monitors <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
           <li><a href="#media-monitors">Media</a></li>
           <li><a href="#energy-monitors">Energy</a></li>
           <li><a href="#climate-monitors">Climate</a></li>
         </ul>
       </li>
-      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
-      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="index.html#partners">Partner</a></li>
+      <li><a href="pakistan_ndc_climate_dashboard.html">NDC</a></li>
+      <li><a href="ifi-monitor.html">IFI</a></li>
+      <li><a href="#events">Media</a></li>
       <li><a href="#careers">Career</a></li>
     </ul>
     <div class="nav-end">

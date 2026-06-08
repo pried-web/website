@@ -2002,9 +2002,18 @@
     }
 
     @media (min-width: 961px) and (max-width: 1120px) {
-      .nav-links { gap: 0; }
-      .nav-links a { padding: 7px 9px; font-size: .73rem; }
-      #nav { padding-left: 18px; }
+      .nav-links {
+        gap: 0;
+      }
+
+      .nav-links a {
+        padding: 7px 9px;
+        font-size: .73rem;
+      }
+
+      #nav {
+        padding-left: 18px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -2075,11 +2084,15 @@
           alt="PRIED Logo"></a>
     </div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li class="nav-item-dropdown">
+        <a href="#about" class="dropdown-trigger">About Us <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="pried-inner-pages.html#team">Team</a></li>
+        </ul>
+      </li>
       <li class="nav-item-dropdown">
         <a href="#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="pried-inner-pages.html#events">Events</a></li>
           <li><a href="pried-inner-pages.html#news">News</a></li>
         </ul>
       </li>
@@ -2091,17 +2104,16 @@
         </ul>
       </li>
       <li class="nav-item-dropdown">
-        <a href="pried-inner-pages.html#monitors" class="dropdown-trigger">Monitor <span class="chevron">▼</span></a>
+        <a href="pried-inner-pages.html#monitors" class="dropdown-trigger">Monitors <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
           <li><a href="pried-inner-pages.html#media-monitors">Media</a></li>
           <li><a href="pried-inner-pages.html#energy-monitors">Energy</a></li>
           <li><a href="pried-inner-pages.html#climate-monitors">Climate</a></li>
         </ul>
       </li>
-      <li><a href="pakistan_ndc_climate_dashboard.html">NDC Tracker</a></li>
-      <li><a href="ifi-monitor.html">IFI Monitor</a></li>
-      <li><a href="pried-inner-pages.html#team">Team</a></li>
-      <li><a href="#partners">Partner</a></li>
+      <li><a href="pakistan_ndc_climate_dashboard.html">NDC</a></li>
+      <li><a href="ifi-monitor.html">IFI</a></li>
+      <li><a href="pried-inner-pages.html#events">Media</a></li>
       <li><a href="pried-inner-pages.html#careers">Career</a></li>
     </ul>
     <div class="nav-end">
@@ -2268,15 +2280,11 @@
             </div>
           </div>
           <div class="pi-body">
-            <p>The research we undertake brings forth evidence so others don't have to take our word
-              for it. We look at what Pakistan's energy and climate policies actually do - to
-              communities, to ecosystems, to household budgets - not just what they're meant to do.
-              We've spent time in Thar tracking what coal does to the people living beside it, mapped
-              the obstacles blocking green finance across the country, and explored what mini-grids
-              and solar could mean for communities still waiting for the grid. The work is rigorous
-              because it has to be. Our findings go into reports and briefs designed to shift policy
-              debates toward people-centered outcomes. Our research is independent; our intent,
-              however, is far from neutral.</p>
+            <p>We undertake rigorous research on what Pakistan's energy and climate policies actually do to communities,
+              ecosystems and household budgets. From tracking coal's impact on Thar's communities, to mapping barriers
+              to green finance, and what solar and mini-grids could mean for those still off the grid, our findings go
+              into reports and briefs designed to shift policy debates toward people-centered outcomes. Our research is
+              independent; our intent, however, is far from neutral.</p>
           </div>
         </div>
         <div class="pillar-item">
@@ -2288,20 +2296,12 @@
                 class="pi-tag">GCEN</span></div>
           </div>
           <div class="pi-body">
-            <p>Some of our most important work happens not in offices, but in the field. For example, in
-              Thar — a region where coal development has been underway since 2012-13 – we have
-              been speaking to communities living with its consequences ever since. From the
-              beginning, we've worked together alongside the people most directly affected by energy
-              and climate decisions, helping them find their footing, their voice, and their place in
-              conversations that too often happen without them.</p>
-            <p>This same spirit of collaboration runs through everything we do. We've helped build two
-              networks that we're genuinely proud of: The Alliance for Climate Justice and Clean
-              Energy (ACJCE), which brings together organisations working at the intersection of
-              energy transition and climate justice, and the Pakistan Renewable Energy Coalition
-              (PREC), which advocates for a faster, fairer shift to renewables. Beyond Pakistan, we're
-              part of the Asian People's Movement for Debt and Development (APMDD) and the
-              Global Clean Energy Network (GCEN). We believe the challenges we're working on
-              don't stop at borders, and neither should the people working on them.</p>
+            <p>Our most important work happens with communities, not just for them. In Thar, we've been alongside people
+              living with coal's consequences since 2012, helping them find their voice in decisions that too often get
+              made without them. The same spirit drives us to build networks we're proud of, including the Alliance for
+              Climate Justice and Clean Energy and the Pakistan Renewable Energy Coalition - and to connect with global
+              partners because the challenges we work on don't stop at borders, and neither should the people working on
+              them.</p>
           </div>
         </div>
         <div class="pillar-item">
@@ -2312,20 +2312,13 @@
             <div class="pi-tags"><span class="pi-tag">Parliament</span><span class="pi-tag">MDB Letters</span></div>
           </div>
           <div class="pi-body">
-            <p>Producing research and writing white papers means little without advocacy for change. We do
-              this by taking our research to the people who make decisions and push them to act.
-              One of the things we're proud of is helping establish the Parliamentary Forum on Energy
-              and Economy - a cross-party group of parliamentarians who are willing to ask hard questions
-              about the energy-economy relationship from a public interest perspective. Getting
-              legislators from different parties into the same room, focused on the same problem, is no
-              mean feat, by any measure and in any country.</p>
-            <p>Beyond parliament, we regularly sit down with policymakers, government departments, and
-              Pakistan's development partners — bilateral and multilateral — to push for energy and
-              climate policies that work for people, especially those on the margins. When sitting down
-              isn't enough, we write. We send letters to government representatives and multilateral
-              development banks, offering direct, evidence-based critiques of policies and projects we
-              believe need to change. Nobody said it is going to be comfortable, but everybody knows it’s
-              necessary.</p>
+            <p>Research means little without the will to push for change, so we take our findings directly to
+              decision-makers and don't let them off the hook. We're particularly proud of helping establish the
+              Parliamentary Forum on Energy and Economy, a cross-party group of legislators willing to ask hard
+              questions about energy and the economy in the public interest. When lobbying policymakers isn't enough, we
+              write directly to government and multilateral development actors with evidence-based critiques of what
+              needs
+              to change.</p>
           </div>
         </div>
         <div class="pillar-item">
@@ -2336,17 +2329,11 @@
             <div class="pi-tags"><span class="pi-tag">Media</span><span class="pi-tag">Communities</span></div>
           </div>
           <div class="pi-body">
-            <p>Energy transition needs more than good policy; it needs an informed public and a press willing to
-              cover it honestly. That's why we've trained over a hundred journalists and content creators to
-              report on energy transition and climate justice from a public interest perspective. We've partnered
-              with established news outlets and newer startups alike, helping them publish stories on everything
-              from rooftop solar to coal phase-out - stories that might otherwise not find a home in a typical
-              newsroom.</p>
-            <p>What's grown out of that work is something remarkable: an informal, Pakistan-wide community of
-              journalists who keep returning to these issues on their own. They're doing investigative work on the
-              environmental, economic and social impacts of energy projects, on the role of multilateral
-              development banks, on the stories that tend to fall through the cracks. It is one of the things we're
-              very glad to have been part of.</p>
+            <p>Energy transition needs an informed public and a press willing to cover it responsibly, which is why
+              we've trained over a hundred journalists and content creators to report on energy and climate justice from
+              a public interest perspective. What's grown from that work is a Pakistan-wide community of journalists who
+              keep covering these issues, doing investigative work on the stories that tend to fall through the
+              cracks.</p>
           </div>
         </div>
       </div>
@@ -2631,7 +2618,8 @@
               </div>
             </div>
           </div>
-          <a href="pried-inner-pages.html#events" class="btn-outline-b" style="margin-top:14px;width:100%;justify-content:center">View All Events →</a>
+          <a href="pried-inner-pages.html#events" class="btn-outline-b"
+            style="margin-top:14px;width:100%;justify-content:center">View All Events →</a>
         </div>
       </div>
     </div>
