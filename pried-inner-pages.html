@@ -1190,14 +1190,16 @@
     }
 
     .tc-img {
-      height: 240px;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       background: var(--cream);
       position: relative;
     }
 
     .tc-img img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
       object-position: top;
       transition: transform .4s ease;
     }
@@ -1255,7 +1257,7 @@
       overflow: hidden;
     }
 
-    .tc-expand {
+    .tc-body p.tc-expand {
       display: none;
     }
 
@@ -1263,7 +1265,7 @@
       -webkit-line-clamp: unset;
     }
 
-    .team-card.expanded .tc-expand {
+    .team-card.expanded .tc-body p.tc-expand {
       display: block;
     }
 
@@ -2748,12 +2750,7 @@
           <li><a href="#team">Team</a></li>
         </ul>
       </li>
-      <li class="nav-item-dropdown">
-        <a href="index.html#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#news">News</a></li>
-        </ul>
-      </li>
+      <li><a href="index.html#pillars">Our Work</a></li>
       <li class="nav-item-dropdown">
         <a href="#studies" class="dropdown-trigger">Research <span class="chevron">▼</span></a>
         <ul class="dropdown-menu">
@@ -2771,7 +2768,13 @@
       </li>
       <li><a href="pakistan_ndc_climate_dashboard.html">NDC</a></li>
       <li><a href="ifi-monitor.html">IFI</a></li>
-      <li><a href="#events">Media</a></li>
+      <li class="nav-item-dropdown">
+        <a href="#" class="dropdown-trigger">Media <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#news">News</a></li>
+          <li><a href="#events">Events</a></li>
+        </ul>
+      </li>
       <li><a href="#careers">Career</a></li>
     </ul>
     <div class="nav-end">
@@ -2839,8 +2842,8 @@
               transition.</p>
           </div>
           <div class="sf-actions">
-            <a href="pdfs/A-EW_Roadmap_for_industrial_electrification_in_Pakistan_WEB.pdf"
-              class="btn-b" target="_blank">Download PDF →</a>
+            <a href="pdfs/A-EW_Roadmap_for_industrial_electrification_in_Pakistan_WEB.pdf" class="btn-b"
+              target="_blank">Download PDF →</a>
             <a href="#" class="btn-outline-b">View Details</a>
           </div>
         </div>
@@ -2857,8 +2860,8 @@
           <div class="sc-type">Research Study · 2025</div>
           <h3>Thunder &amp; Lightning: Exploring the Link Between Lightning Strikes and Coal</h3>
           <div class="sc-footer"><span class="sc-year">2025</span><a
-              href="pdfs/Thunder-and-lightning-Exploring-the-link-between-lightning-strikes-and-coal.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/Thunder-and-lightning-Exploring-the-link-between-lightning-strikes-and-coal.pdf" class="sc-dl"
+              target="_blank">↓ PDF</a></div>
         </div>
       </div>
 
@@ -2872,8 +2875,7 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2025</div>
           <h3>Pakistan's Offshore Wind Energy Potential</h3>
-          <div class="sc-footer"><span class="sc-year">2025</span><a
-              href="pdfs/Pakistans-Offshore-Wind-Potential.pdf"
+          <div class="sc-footer"><span class="sc-year">2025</span><a href="pdfs/Pakistans-Offshore-Wind-Potential.pdf"
               class="sc-dl" target="_blank">↓ PDF</a></div>
         </div>
       </div>
@@ -2887,9 +2889,8 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2025</div>
           <h3>Pakistan's Solar Rush: The Unprecedented Distributed Solar Revolution</h3>
-          <div class="sc-footer"><span class="sc-year">2025</span><a
-              href="pdfs/Energy-Monitor-PRIED-R01-1.pdf" class="sc-dl"
-              target="_blank">↓ PDF</a></div>
+          <div class="sc-footer"><span class="sc-year">2025</span><a href="pdfs/Energy-Monitor-PRIED-R01-1.pdf"
+              class="sc-dl" target="_blank">↓ PDF</a></div>
         </div>
       </div>
 
@@ -2903,8 +2904,7 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2026</div>
           <h3>Megawatts of Betrayal: The Sahiwal Case</h3>
-          <div class="sc-footer"><span class="sc-year">2026</span><a
-              href="pdfs/Megawatts-of-Betrayal.pdf" class="sc-dl"
+          <div class="sc-footer"><span class="sc-year">2026</span><a href="pdfs/Megawatts-of-Betrayal.pdf" class="sc-dl"
               target="_blank">↓ PDF</a></div>
         </div>
       </div>
@@ -2933,8 +2933,7 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2025</div>
           <h3>Rural Electrification in Balochistan: Challenges and Opportunities</h3>
-          <div class="sc-footer"><span class="sc-year">2025</span><a
-              href="pdfs/Balochistan-Study.pdf" class="sc-dl"
+          <div class="sc-footer"><span class="sc-year">2025</span><a href="pdfs/Balochistan-Study.pdf" class="sc-dl"
               target="_blank">↓ PDF</a></div>
         </div>
       </div>
@@ -2961,8 +2960,8 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2025</div>
           <h3>KAPCO Case Studies: The Need for Changing Generation Mix</h3>
-          <div class="sc-footer"><span class="sc-year">2025</span><a
-              href="pdfs/KAPCO-Study.pdf" class="sc-dl" target="_blank">↓
+          <div class="sc-footer"><span class="sc-year">2025</span><a href="pdfs/KAPCO-Study.pdf" class="sc-dl"
+              target="_blank">↓
               PDF</a></div>
         </div>
       </div>
@@ -2977,8 +2976,8 @@
           <div class="sc-type">Research Study · 2024</div>
           <h3>Coal Gasification Project for Thar Coal: A Critical Assessment</h3>
           <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/Coal-Gasification-Project-for-Thar-Coal-Study.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/Coal-Gasification-Project-for-Thar-Coal-Study.pdf" class="sc-dl" target="_blank">↓ PDF</a>
+          </div>
         </div>
       </div>
 
@@ -3006,9 +3005,8 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2024</div>
           <h3>Thar's Livelihood Loss: Impacts of Coal Development on Local Communities</h3>
-          <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/Livilihood-Study-Design-Final.pdf" class="sc-dl"
-              target="_blank">↓ PDF</a></div>
+          <div class="sc-footer"><span class="sc-year">2024</span><a href="pdfs/Livilihood-Study-Design-Final.pdf"
+              class="sc-dl" target="_blank">↓ PDF</a></div>
         </div>
       </div>
 
@@ -3020,8 +3018,7 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2024</div>
           <h3>Powering Pakistan's Future: A PLEXOS-Based Least-Cost Power Planning Model</h3>
-          <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/Powering_Pakistans_Future_A_PLEXOS.pdf"
+          <div class="sc-footer"><span class="sc-year">2024</span><a href="pdfs/Powering_Pakistans_Future_A_PLEXOS.pdf"
               class="sc-dl" target="_blank">↓ PDF</a></div>
         </div>
       </div>
@@ -3036,8 +3033,7 @@
           <div class="sc-type">Research Study · 2024</div>
           <h3>Decarbonizing the Cement Industry in Pakistan</h3>
           <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/Decarbonizing-the-Cement-Industry-R11.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/Decarbonizing-the-Cement-Industry-R11.pdf" class="sc-dl" target="_blank">↓ PDF</a></div>
         </div>
       </div>
 
@@ -3051,8 +3047,8 @@
           <div class="sc-type">Research Study · 2024</div>
           <h3>Integrating Battery Storage with Renewables: A Techno-Economic Analysis</h3>
           <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/Integrating-battery-Storage-with-Renewables-A-Techno-economic-Analysis.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/Integrating-battery-Storage-with-Renewables-A-Techno-economic-Analysis.pdf" class="sc-dl"
+              target="_blank">↓ PDF</a></div>
         </div>
       </div>
 
@@ -3066,8 +3062,7 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2024</div>
           <h3>Examining K-Electric's Cost of Inaction in Distribution</h3>
-          <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/RE4KE-WhitePaper-1.pdf" class="sc-dl"
+          <div class="sc-footer"><span class="sc-year">2024</span><a href="pdfs/RE4KE-WhitePaper-1.pdf" class="sc-dl"
               target="_blank">↓ PDF</a></div>
         </div>
       </div>
@@ -3082,8 +3077,7 @@
           <div class="sc-type">Research Study · 2023</div>
           <h3>Powering Pakistan's Future: Pathway to Optimum Energy Mix</h3>
           <div class="sc-footer"><span class="sc-year">2023</span><a
-              href="pdfs/PLEXOS-STUDY-WITH-COMICS-FOR-THE-WEBSITE-.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/PLEXOS-STUDY-WITH-COMICS-FOR-THE-WEBSITE-.pdf" class="sc-dl" target="_blank">↓ PDF</a></div>
         </div>
       </div>
 
@@ -3096,8 +3090,7 @@
         <div class="study-card-body">
           <div class="sc-type">Research Study · 2024</div>
           <h3>Thar's Changing Hydrology: Adverse Impacts of Coal</h3>
-          <div class="sc-footer"><span class="sc-year">2024</span><a
-              href="pdfs/Thars-hydrology.pdf" class="sc-dl"
+          <div class="sc-footer"><span class="sc-year">2024</span><a href="pdfs/Thars-hydrology.pdf" class="sc-dl"
               target="_blank">↓ PDF</a></div>
         </div>
       </div>
@@ -3157,8 +3150,8 @@
           <div class="sc-type">Research Study · 2023</div>
           <h3>Fostering Solar PV in High-Loss Feeders</h3>
           <div class="sc-footer"><span class="sc-year">2023</span><a
-              href="pdfs/PRIED-Fostering-Solar-PV-in-High-Research-study-R01.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/PRIED-Fostering-Solar-PV-in-High-Research-study-R01.pdf" class="sc-dl" target="_blank">↓
+              PDF</a></div>
         </div>
       </div>
 
@@ -3172,8 +3165,8 @@
           <div class="sc-type">Research Study · 2023</div>
           <h3>Utility Scale Renewable Energy Transformation</h3>
           <div class="sc-footer"><span class="sc-year">2023</span><a
-              href="pdfs/Utility-Scale-Renewable-Energy-Transformation-R01.pdf"
-              class="sc-dl" target="_blank">↓ PDF</a></div>
+              href="pdfs/Utility-Scale-Renewable-Energy-Transformation-R01.pdf" class="sc-dl" target="_blank">↓ PDF</a>
+          </div>
         </div>
       </div>
 
@@ -3292,8 +3285,7 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · May 2026</div>
               <h4>Just Transition in Pakistan: A Framework for Equitable Energy Phaseout</h4>
-              <div class="br-meta"><span class="br-year">May 2026</span><a
-                  href="pdfs/Just-Transition-in-Pakistan.pdf"
+              <div class="br-meta"><span class="br-year">May 2026</span><a href="pdfs/Just-Transition-in-Pakistan.pdf"
                   class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
@@ -3310,8 +3302,8 @@
               <div class="br-type">Policy Brief · April 2026</div>
               <h4>Beyond the Shock: Pakistan's Energy Supply Disruption in the Context of US–Israel–Iran War</h4>
               <div class="br-meta"><span class="br-year">Apr 2026</span><a
-                  href="pdfs/Policy-Brief-Energy-Supply-Disruption-by-US-Israel-Iran-War.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/Policy-Brief-Energy-Supply-Disruption-by-US-Israel-Iran-War.pdf" class="br-dl"
+                  target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3326,9 +3318,8 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · February 2026</div>
               <h4>Bearing the (Over) Burden: Social and Environmental Costs of Coal Mining in Thar</h4>
-              <div class="br-meta"><span class="br-year">Feb 2026</span><a
-                  href="pdfs/Coal_Mine_layout_.pdf" class="br-dl"
-                  target="_blank">Download PDF →</a></div>
+              <div class="br-meta"><span class="br-year">Feb 2026</span><a href="pdfs/Coal_Mine_layout_.pdf"
+                  class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3343,9 +3334,8 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · January 2026</div>
               <h4>From Net Metering to Net Billing: Implications for Pakistan's Solar Prosumers</h4>
-              <div class="br-meta"><span class="br-year">Jan 2026</span><a
-                  href="pdfs/Net-Metering-PRIED.pdf" class="br-dl"
-                  target="_blank">Download PDF →</a></div>
+              <div class="br-meta"><span class="br-year">Jan 2026</span><a href="pdfs/Net-Metering-PRIED.pdf"
+                  class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3361,8 +3351,8 @@
               <div class="br-type">Discussion Paper · September 2025</div>
               <h4>Chinese Investments in Pakistan's Energy Transition: A Critical Review</h4>
               <div class="br-meta"><span class="br-year">Sep 2025</span><a
-                  href="pdfs/Discussion-Paper_Chinese-Investments-in-Pakistans-Energy-Transition.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/Discussion-Paper_Chinese-Investments-in-Pakistans-Energy-Transition.pdf" class="br-dl"
+                  target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3377,9 +3367,8 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · June 2025</div>
               <h4>Pakistan's Surplus Electricity and the Feasibility of Bitcoin Mining</h4>
-              <div class="br-meta"><span class="br-year">Jun 2025</span><a
-                  href="pdfs/Bitcoin-Mining-Paper.pdf" class="br-dl"
-                  target="_blank">Download PDF →</a></div>
+              <div class="br-meta"><span class="br-year">Jun 2025</span><a href="pdfs/Bitcoin-Mining-Paper.pdf"
+                  class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3394,8 +3383,7 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · June 2025</div>
               <h4>Renegotiating the Future: A Reform Agenda for Pakistan's IPP Agreements</h4>
-              <div class="br-meta"><span class="br-year">Jun 2025</span><a
-                  href="pdfs/IPP-Agreement.pdf" class="br-dl"
+              <div class="br-meta"><span class="br-year">Jun 2025</span><a href="pdfs/IPP-Agreement.pdf" class="br-dl"
                   target="_blank">Download PDF →</a></div>
             </div>
           </div>
@@ -3411,9 +3399,8 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · February 2025</div>
               <h4>Solving Pakistan's Energy Crisis: The Case for Electricity Wheeling</h4>
-              <div class="br-meta"><span class="br-year">Feb 2025</span><a
-                  href="pdfs/Energy-Wheeling-Updated.pdf" class="br-dl"
-                  target="_blank">Download PDF →</a></div>
+              <div class="br-meta"><span class="br-year">Feb 2025</span><a href="pdfs/Energy-Wheeling-Updated.pdf"
+                  class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3427,9 +3414,8 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · December 2024</div>
               <h4>Reform Agenda for CPEC 2.0: Making Chinese Energy Investment Work for Pakistan</h4>
-              <div class="br-meta"><span class="br-year">Dec 2024</span><a
-                  href="pdfs/Reform-Agenda-for-CPEC-2.0.pdf" class="br-dl"
-                  target="_blank">Download PDF →</a></div>
+              <div class="br-meta"><span class="br-year">Dec 2024</span><a href="pdfs/Reform-Agenda-for-CPEC-2.0.pdf"
+                  class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3444,9 +3430,8 @@
             <div class="br-body">
               <div class="br-type">Situation Brief · November 2024</div>
               <h4>Financial Analysis of Utility Scale Variable Renewable Energy Projects</h4>
-              <div class="br-meta"><span class="br-year">Nov 2024</span><a
-                  href="pdfs/White-Paper-Landscape-1.pdf" class="br-dl"
-                  target="_blank">Download PDF →</a></div>
+              <div class="br-meta"><span class="br-year">Nov 2024</span><a href="pdfs/White-Paper-Landscape-1.pdf"
+                  class="br-dl" target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3496,8 +3481,8 @@
               <div class="br-type">Situation Brief · August 2024</div>
               <h4>Projects Delayed, Projects Denied: Financial Analysis of Utility Scale Renewables</h4>
               <div class="br-meta"><span class="br-year">Aug 2024</span><a
-                  href="pdfs/Situation-Brief-Financial-Analysis-of-Utility-Scale-R05-1.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/Situation-Brief-Financial-Analysis-of-Utility-Scale-R05-1.pdf" class="br-dl"
+                  target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3530,8 +3515,8 @@
               <div class="br-type">Situation Brief · July 2024</div>
               <h4>The Energy-Economy Nexus in Pakistan: Circular Debt and the Path Forward</h4>
               <div class="br-meta"><span class="br-year">Jul 2024</span><a
-                  href="pdfs/The-Energy-Economy-Nexus-in-Pakistan-R05.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/The-Energy-Economy-Nexus-in-Pakistan-R05.pdf" class="br-dl" target="_blank">Download PDF
+                  →</a></div>
             </div>
           </div>
 
@@ -3547,8 +3532,8 @@
               <div class="br-type">Discussion Paper · July 2024</div>
               <h4>Reform or Bust: Restructuring Pakistan's Power Distribution Companies (DISCOs)</h4>
               <div class="br-meta"><span class="br-year">Jul 2024</span><a
-                  href="pdfs/Discussion-paper-Reform-or-Bust-DISCOs-R08.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/Discussion-paper-Reform-or-Bust-DISCOs-R08.pdf" class="br-dl" target="_blank">Download PDF
+                  →</a></div>
             </div>
           </div>
 
@@ -3581,8 +3566,8 @@
               <div class="br-type">Policy Brief · May 2024</div>
               <h4>The Inaugural Meeting of the Loss and Damage Fund</h4>
               <div class="br-meta"><span class="br-year">May 2024</span><a
-                  href="pdfs/The-Inaugural-Meeting-of-the-Loss-and-Damage-Fund-R00.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/The-Inaugural-Meeting-of-the-Loss-and-Damage-Fund-R00.pdf" class="br-dl"
+                  target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3598,8 +3583,8 @@
               <div class="br-type">Situation Brief · March 2024</div>
               <h4>Greening Pakistan's Future: A Roadmap for Renewable Energy</h4>
               <div class="br-meta"><span class="br-year">Mar 2024</span><a
-                  href="pdfs/Situation-Brief-Greening-Pakistans-Future-2024-R03-1.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/Situation-Brief-Greening-Pakistans-Future-2024-R03-1.pdf" class="br-dl"
+                  target="_blank">Download PDF →</a></div>
             </div>
           </div>
 
@@ -3614,8 +3599,7 @@
             <div class="br-body">
               <div class="br-type">Policy Brief · 2023</div>
               <h4>Health Hazards: Air Pollution Impacts of Coal Power Generation in Thar</h4>
-              <div class="br-meta"><span class="br-year">2023</span><a
-                  href="pdfs/Health-Hazards-R07.pdf" class="br-dl"
+              <div class="br-meta"><span class="br-year">2023</span><a href="pdfs/Health-Hazards-R07.pdf" class="br-dl"
                   target="_blank">Download PDF →</a></div>
             </div>
           </div>
@@ -3632,8 +3616,8 @@
               <div class="br-type">Policy Brief · 2022</div>
               <h4>Coal Power and Livelihood Disruptions in Thar</h4>
               <div class="br-meta"><span class="br-year">2022</span><a
-                  href="pdfs/Coal-Power-and-Livelihood-Disruptions-in-Thar.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/Coal-Power-and-Livelihood-Disruptions-in-Thar.pdf" class="br-dl" target="_blank">Download
+                  PDF →</a></div>
             </div>
           </div>
 
@@ -3649,8 +3633,8 @@
               <div class="br-type">Policy Brief · 2022</div>
               <h4>Pakistan's Heedless Hydropower Development: Environmental and Social Risks</h4>
               <div class="br-meta"><span class="br-year">2022</span><a
-                  href="pdfs/PAKISTANS-HEEDLESS-HYDROPOWER-DEVELOPMENT.pdf"
-                  class="br-dl" target="_blank">Download PDF →</a></div>
+                  href="pdfs/PAKISTANS-HEEDLESS-HYDROPOWER-DEVELOPMENT.pdf" class="br-dl" target="_blank">Download PDF
+                  →</a></div>
             </div>
           </div>
 
@@ -3735,8 +3719,8 @@
       <!-- CEO — Featured -->
       <div class="team-card featured rv">
         <div class="tc-img">
-          <img src="https://www.priedpk.org/wp-content/uploads/2025/11/Untitled-design-5.jpg" alt="Muhammad Badar Alam"
-            loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="profile pics/Badar.jpg" alt="Muhammad Badar Alam" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">B</span></div>
         </div>
         <div class="tc-body">
@@ -3756,8 +3740,7 @@
 
       <!-- Team member cards -->
       <div class="team-card rv">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/06/Azhar-lashari.png"
-            alt="Azhar Ali Lashari" loading="lazy"
+        <div class="tc-img"><img src="profile pics/Azhar-lashari.png.jpg" alt="Azhar Ali Lashari" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">A</span></div>
         </div>
@@ -3772,8 +3755,21 @@
       </div>
 
       <div class="team-card rv d1">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/07/Naila-Saleh.png"
-            alt="Naila Saleh" loading="lazy"
+        <div class="tc-img"><img src="profile pics/Aurangzeb.png" alt="Aurangzaib Khan" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">A</span></div>
+        </div>
+        <div class="tc-body">
+          <div class="tc-role">Communication Advisor / Director</div>
+          <h3>Aurangzaib Khan</h3>
+          <p>Aurangzaib Khan is a journalist, editor, trainer and media development practitioner who has spent the last 30 years asking questions, telling stories and helping other journalists do the same. Working across newsrooms, universities, press clubs and field locations throughout Pakistan, he has built a career at the intersection of journalism, research, training and development communications.</p>
+          <p class="tc-expand">He has trained reporters on issues ranging from climate change, public health and humanitarian crises to human rights, democracy, governance and labour rights, while designing and managing media development projects for organizations including the World Bank, UNDP, UNICEF, UNESCO, ILO, GIZ, IFJ, IMS, Internews and DW Akademie. A strong advocate of building journalism from the ground up, he has helped strengthen journalism education at universities across Pakistan and trained hundreds of journalists, particularly in the border regions of Khyber Pakhtunkhwa and Balochistan. As a journalist and editor, he has written for Herald and Dawn and served as Editor of News Lens Pakistan (2013–2017), a pioneering digital platform that trained and mentored journalists reporting from Pakistan's border regions. He remains passionate about thoughtful journalism, good storytelling and helping reporters find the stories others miss.</p>
+          <a href="#" class="tc-read-more">Read Full Profile →</a>
+        </div>
+      </div>
+
+      <div class="team-card rv d2">
+        <div class="tc-img"><img src="profile pics/Naila-Saleh.png.jpg" alt="Naila Saleh" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">N</span></div>
         </div>
@@ -3788,8 +3784,7 @@
       </div>
 
       <div class="team-card rv d2">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/06/Assad.png"
-            alt="Hussain Assad Buzdar" loading="lazy"
+        <div class="tc-img"><img src="profile pics/Assad.png.jpg" alt="Hussain Assad Buzdar" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">H</span></div>
         </div>
@@ -3804,8 +3799,7 @@
       </div>
 
       <div class="team-card rv">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/02/Shaheera-tahir.png"
-            alt="Shaheera Tahir" loading="lazy"
+        <div class="tc-img"><img src="profile pics/Shaheera-tahir.png.jpg" alt="Shaheera Tahir" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">S</span></div>
         </div>
@@ -3820,8 +3814,8 @@
       </div>
 
       <div class="team-card rv d1">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/06/Mehwish.png" alt="Mehwish"
-            loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="tc-img"><img src="profile pics/Mehwish.png.jpg" alt="Mehwish" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">M</span></div>
         </div>
         <div class="tc-body">
@@ -3835,8 +3829,8 @@
       </div>
 
       <div class="team-card rv d2">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/02/ammara.png" alt="Ammara Aslam"
-            loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="tc-img"><img src="profile pics/Ammara.jpg" alt="Ammara Aslam" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">A</span></div>
         </div>
         <div class="tc-body">
@@ -3850,9 +3844,7 @@
       </div>
 
       <div class="team-card rv">
-        <div class="tc-img"><img
-            src="https://www.priedpk.org/wp-content/uploads/2022/02/23BE5D4F-A646-482C-A435-4FAF531DCA10.png"
-            alt="Manzoor Ahmed Alizai" loading="lazy"
+        <div class="tc-img"><img src="profile pics/Manzoor Ahmed.png.jpg" alt="Manzoor Ahmed Alizai" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">M</span></div>
         </div>
@@ -3867,8 +3859,7 @@
       </div>
 
       <div class="team-card rv d1">
-        <div class="tc-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/07/Amina-Shahab.jpg"
-            alt="Amina Shahab" loading="lazy"
+        <div class="tc-img"><img src="profile pics/Amina-Shahab.jpg" alt="Amina Shahab" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">A</span></div>
         </div>
@@ -3893,12 +3884,8 @@
         <div class="tc-body">
           <div class="tc-role">Project Coordinator</div>
           <h3>Shan E Zahra Naeem</h3>
-          <p>Shan E Zahra Naeem holds an MPhil degree in gender studies and anthropology. As a student, she represented
-            Pakistan in a training in England on citizenship education and community engagement. After completing her
-            studies, she did a training course on gender, masculinity and campaign designing. At PRIED, her work
-            explores connections between climate change, fossil fuel-based power generation and their impacts on
-            marginalised communities in general and women in particular. She also works with the Parliamentary Forum on
-            Energy and Economy to coordinate, expand and promote its work.</p>
+          <p>Shan E Zahra Naeem is a freelance journalist, communications specialist and researcher whose work follows the paths connecting energy, climate and social justice. With a background in Gender Studies and Anthropology, she is particularly interested in how large systems—political, economic and environmental—arrive in ordinary lives, especially that of women who have little say in shaping them.</p>
+          <p class="tc-expand">Her work with PRIED and the Parliamentary Forum on Energy and Economy explore the distance between policy and lived experience, highlighting socio-economic complexities glossed over by neat solutions.</p>
           <a href="#" class="tc-read-more">Read Full Profile →</a>
         </div>
       </div>
@@ -5297,8 +5284,7 @@
 
     <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
       <a class="study-card mon-card rv" href="#media-monitors">
-        <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/04/Media-Monitors.jpg"
-            alt="Media Monitors" loading="lazy"
+        <div class="study-card-img"><img src="cover/Media-2.jpg" alt="Media Monitors" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="study-card-img-placeholder" style="display:none"><span>📰</span></div>
         </div>
@@ -5313,9 +5299,7 @@
       </a>
 
       <a class="study-card mon-card rv d1" href="#energy-monitors">
-        <div class="study-card-img"><img
-            src="https://www.priedpk.org/wp-content/uploads/2023/07/0144D88B-7531-4531-B8EC-392345A3F581.jpg"
-            alt="Energy Monitors" loading="lazy"
+        <div class="study-card-img"><img src="cover/Energy.jpg" alt="Energy Monitors" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="study-card-img-placeholder" style="display:none"><span>⚡</span></div>
         </div>
@@ -5330,8 +5314,7 @@
       </a>
 
       <a class="study-card mon-card rv d2" href="#climate-monitors">
-        <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/07/climte_monitors.png"
-            alt="Climate Monitors" loading="lazy"
+        <div class="study-card-img"><img src="cover/Climate.jpg" alt="Climate Monitors" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="study-card-img-placeholder" style="display:none"><span>🌍</span></div>
         </div>
@@ -5490,8 +5473,7 @@
     </div>
 
     <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
-      <a class="study-card mon-card rv" href="pdfs/Energy-Monitor-.pdf"
-        target="_blank" rel="noopener">
+      <a class="study-card mon-card rv" href="pdfs/Energy-Monitor-.pdf" target="_blank" rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2026/04/media-monitor.jpg"
             alt="Solar Adoption Patterns" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -5505,8 +5487,7 @@
       </a>
 
       <a class="study-card mon-card rv d1"
-        href="pdfs/ENERGY-MONITOR-part-1-final-Pakistans-Solar-Revolution_14102025.pdf"
-        target="_blank" rel="noopener">
+        href="pdfs/ENERGY-MONITOR-part-1-final-Pakistans-Solar-Revolution_14102025.pdf" target="_blank" rel="noopener">
         <div class="study-card-img"><img
             src="https://www.priedpk.org/wp-content/uploads/2026/01/Thumbnails-09.jpg-scaled.jpeg"
             alt="Pakistan's Solar Rush" loading="lazy"
@@ -5520,9 +5501,7 @@
         </div>
       </a>
 
-      <a class="study-card mon-card rv d2"
-        href="pdfs/WHITE-PAPER-Solar-Revolution.pdf" target="_blank"
-        rel="noopener">
+      <a class="study-card mon-card rv d2" href="pdfs/WHITE-PAPER-Solar-Revolution.pdf" target="_blank" rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2025/10/Thumbnail.jpg"
             alt="White Paper – Solar Revolution" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -5535,8 +5514,7 @@
         </div>
       </a>
 
-      <a class="study-card mon-card rv" href="pdfs/Energy-Monitor.pdf"
-        target="_blank" rel="noopener">
+      <a class="study-card mon-card rv" href="pdfs/Energy-Monitor.pdf" target="_blank" rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/11/5.jpg"
             alt="Strategic Approaches to Pakistan's Power Sector" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -5549,8 +5527,7 @@
         </div>
       </a>
 
-      <a class="study-card mon-card rv d1"
-        href="pdfs/Energy-monitor-Power-Pulse-R04-1.pdf" target="_blank"
+      <a class="study-card mon-card rv d1" href="pdfs/Energy-monitor-Power-Pulse-R04-1.pdf" target="_blank"
         rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/05/4.jpg"
             alt="Aims vs Priorities" loading="lazy"
@@ -5564,8 +5541,7 @@
         </div>
       </a>
 
-      <a class="study-card mon-card rv d2"
-        href="pdfs/Energy-Monitor-six-monthly-R07-1.pdf" target="_blank"
+      <a class="study-card mon-card rv d2" href="pdfs/Energy-Monitor-six-monthly-R07-1.pdf" target="_blank"
         rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2024/01/3.jpg" alt="Gridlocked"
             loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -5578,8 +5554,7 @@
         </div>
       </a>
 
-      <a class="study-card mon-card rv" href="pdfs/QEM-R03.pdf"
-        target="_blank" rel="noopener">
+      <a class="study-card mon-card rv" href="pdfs/QEM-R03.pdf" target="_blank" rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/07/2.jpg"
             alt="Gas Sector in Pakistan" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -5592,9 +5567,8 @@
         </div>
       </a>
 
-      <a class="study-card mon-card rv d1"
-        href="pdfs/QEM-Electricity-subsidies-in-Pakistan-1.pdf"
-        target="_blank" rel="noopener">
+      <a class="study-card mon-card rv d1" href="pdfs/QEM-Electricity-subsidies-in-Pakistan-1.pdf" target="_blank"
+        rel="noopener">
         <div class="study-card-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/01/1.jpg"
             alt="Electricity Subsidies in Pakistan" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -5675,8 +5649,7 @@
     </div>
 
     <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
-      <a class="study-card mon-card rv" href="pdfs/Pakistans-NDCs.pdf"
-        target="_blank" rel="noopener">
+      <a class="study-card mon-card rv" href="pdfs/Pakistans-NDCs.pdf" target="_blank" rel="noopener">
         <div class="study-card-img"><img
             src="https://www.priedpk.org/wp-content/uploads/2025/12/Thumbnails-06-706x1024.png"
             alt="Pakistan's NDCs 3.0" loading="lazy"
@@ -6279,7 +6252,7 @@
       'iran-war': {
         title: "Pakistan's just-energy transition and climate agenda in the time of war in Iran",
         cat: "Consultation", date: "", loc: "", emoji: "🤝",
-        img: "https://www.priedpk.org/wp-content/uploads/2023/12/Consultation.png", url: PRIED_EVENT + '2222',
+        img: "Events thumbnails for website/Pakistan's just-energy transition and climate agenda in the time of war in Iran.jpeg.jpg", url: PRIED_EVENT + '2222',
         body: [
           `The ongoing war in and around Iran and the consequent disruption of critical energy supply routes have exposed Pakistan's deep structural dependence on imported fossil fuels such as oil, coal and liquified natural gas (LNG). With rising fuel prices in international markets, increased fuel import bills and their mounting pressure on foreign exchange reserves as well as the serious challenges these factors are posing to Pakistan's energy supplies and energy security, the conflict has intensified the countries vulnerabilities—rising energy prices supply concerns, driving inflation that disproportionately impacting lower-income households and renewing interest among policymakers to mine more indigenous coal and use it for power generation.`,
           `Rather than being a temporary shock, the war and its impacts reflects broader systemic challenge: that Pakistan has an energy model that is both economically unsustainable and geopolitically fragile. At the same time, it has created an urgency to rethink the country's energy and climate trajectories, raising questions about energy security, energy affordability and a sustainable and just energy transition. Importantly, the crisis also underscores the country's climate imperative: continued reliance on fossil fuels not only deepens economic vulnerability but locks us into high-emission energy consumption, undermining our climate commitments and increasing our exposure to future carbon-related trade and financial risks.`
@@ -6298,7 +6271,7 @@
       'green-loans': {
         title: "A consultation on facilitating green loans for sustainable energy transition in Pakistan",
         cat: "Consultation", date: "2023", loc: "", emoji: "🤝",
-        img: "https://www.priedpk.org/wp-content/uploads/2023/12/Consultation.png", url: PRIED_EVENT + '1119',
+        img: "Events thumbnails for website/A consultation on facilitating green loans for sustainable energy transition in Pakistan.png.jpg", url: PRIED_EVENT + '1119',
         body: [
           `In recent times, renewable energy and green alternatives have become cheaper and better in quality, making them more feasible to replace fossil fuels. This is especially true for Electric Vehicles (EVs) and Distributed Solar Photovoltaic (DSPV) systems. Finance plays a crucial role in making the transition to these green technologies, however the process of obtaining funds is extremely challenging and complex for the adopters. There are disagreements and complications between financial institutions and 'borrowers' who are seeking to get financing thereby creating multitude of challenges.`,
           `These challenges, along with the high cost of green products, pose significant barriers for the adopters who want to switch to these sustainable technologies. To make this shift happen smoothly and affordably, we need smart financial strategies. The lack of accessible financing further increases in financially restricted contexts, causing risks of exclusion, inequality, and inefficient outcomes. Similarly, challenges in capital availability, lack of foreign investments, and poor infrastructure also restrict the scale up of these technologies.`,
@@ -6312,7 +6285,7 @@
       'karachi-electricity': {
         title: "Energy experts discuss various aspects of Karachi's electricity crisis at multi-stakeholder dialogue",
         cat: "Panel Discussion", date: "2023", loc: "Karachi", emoji: "🎙️",
-        img: "https://www.priedpk.org/wp-content/uploads/2023/09/23FFB014-D428-4AD9-B0DA-C0609415DB17.png", url: PRIED_EVENT + '981',
+        img: "Events thumbnails for website/Energy experts discuss various aspects of Karachi's electricity crisis at multi-stakeholder dialogue.jpg", url: PRIED_EVENT + '981',
         body: [
           `Pakistan needs to have sustained and consistent energy policies to provide cheap and reliable electricity to its people, said Abu Bakar Ahmed, secretary of Sindh government's energy department at a panel discussion held in Karachi on Tuesday. "Since 1947, we have been lurching from one ad hoc measure to the next and never thought of doing long term planning in the energy sector," he said during his concluding remarks on the occasion.`,
           `This lack of long term planning means that a lot of energy in the country is being produced with very costly sources such as furnace oil and gas, he said. "The biggest problem in using renewable energy sources such as solar panels is their high capital cost. Unless, we are able to either import solar panels cheaply or we start producing them within Pakistan, we cannot uses these renewable energy sources effectively and economically," he added.`,
@@ -6331,7 +6304,7 @@
       'net-metering': {
         title: "Energy experts call for solar net-metering to enhance Pakistan's electricity system",
         cat: "Webinar", date: "September 14, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "💻",
-        img: "https://www.priedpk.org/wp-content/uploads/2022/10/renewable-energy-2.png", url: PRIED_EVENT + '257',
+        img: "https://img.youtube.com/vi/-TcmivZV_vI/hqdefault.jpg", url: PRIED_EVENT + '257',
         body: [
           `Karachi, Lahore, and Islamabad, September 14, 2022: Energy experts say that power consumers in Pakistan have a huge opportunity to reduce their electricity bills by installing solar power panels on their rooftops and connecting them with the national grid. Through a system called net-metering, the government pays consumers the price of electricity that their solar panels inject into the grid, these experts say. This not only reduces the electricity bills of these consumers but also helps the government decrease power shortages, experts add. But, the experts point out, that this opportunity is not being fully utilized because of the financial barriers that the consumers face in installing solar panels.`,
           `The experts were speaking at a webinar on 'Net-metering in Pakistan: Potential, Challenges and Way Forward', held on Wednesday by Policy Research Institute for Equitable Development (PRIED). Naila Saleh, Project Manager, Agora EW, and Technical Advisor, PRIED, said net-metering can advance renewable energy uptake in Pakistan and reduce dependency on unreliable power supply. "Distributed solar photovoltaic [PV] systems can shift electricity generation from fossil fuels and supply more affordable energy than the grid does. Yet, the overall growth in netmetered systems in the past seven years remains insignificant in Pakistan," Saleh said. She added that easy financing is critical to adopt capital-intensive technologies such as solar PV, which have a high upfront cost but lower operating costs.`,
@@ -6349,7 +6322,7 @@
       'rooftop-financing': {
         title: "Limited financing schemes restricting domestic users to install rooftop solar systems: study",
         cat: "Webinar", date: "September 27, 2021", loc: "Islamabad", emoji: "💻",
-        img: "https://www.priedpk.org/wp-content/uploads/2022/05/stock-exchange-app-1-1.png", url: PRIED_EVENT + '217',
+        img: "Events thumbnails for website/Limited financing schemes restricting domestic users to install rooftop sola.png", url: PRIED_EVENT + '217',
         body: [
           `Islamabad, September 27, 2021: A recent study shows that a major hurdle in the installation of home-based rooftop solar systems is arranging money for them. Its authors say that the demand and need for these solar systems is rising constantly but difficulties in financing them are hindering their diffusion in areas where they are needed the most.`,
           `The study titled 'Unlocking the Economic Potential of Rooftop Solar PV in Pakistan', carried out by Rural Development Policy Institute (RDPI), was launched in a webinar on Thursday. The study highlights the potential of rooftop solar PV in Pakistan and shows the unequal picture of solar financing landscape along with several barriers restricting rooftop solar drive.`,
@@ -6373,7 +6346,7 @@
       'caucus-meeting': {
         title: "Parliamentarians discuss need to launch awareness campaigns on clean energy sources at third caucus meeting",
         cat: "Caucus Meeting", date: "October 6, 2021", loc: "Islamabad", emoji: "🏛️",
-        img: "https://www.priedpk.org/wp-content/uploads/2022/05/friend-1-1.png", url: PRIED_EVENT + '216',
+        img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80", url: PRIED_EVENT + '216',
         body: [
           `ISLAMABAD: Members of the proposed parliamentary caucus on clean energy met for the third time on October 6, 2021 in Islamabad to discuss the objectives of the caucus, where the participants underlined the need to launch awareness campaigns on clean and green sources of energy while focusing on transition to alternative sources keeping in view the best practices followed by various countries.`,
           `The meeting was organized by Sustainable Development Policy Institute (SDPI) and Rural Development Policy Institute (RDPI) to facilitate the debate on the proposed parliamentary caucus for energy transition in Pakistan. Previously another meeting was held in August, where members of the parliamentary caucus discussed the importance of green parliamentary caucus for combating climate crisis and facilitating Pakistan in its transition to clean energy resources.`,
@@ -6397,7 +6370,7 @@
       'world-bank': {
         title: "Experts urge World Bank not to sabotage green energy transition of Pakistan's energy sector",
         cat: "Panel Discussion", date: "March 22, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "🎙️",
-        img: "https://www.priedpk.org/wp-content/uploads/2022/05/energy-control-1.png", url: PRIED_EVENT + '201',
+        img: "Events thumbnails for website/Experts urge World Bank not to sabotage green energy transition of Pakistan's energy sector.jpg", url: PRIED_EVENT + '201',
         body: [
           `KARACHI, LAHORE and ISLAMABAD, March 22, 2022: The World Bank has attracted severe criticism for its role in pushing Pakistan's energy sector into debt and sabotaging its transition into clean energy. Experts associated with at least two international think tanks believe that the bank's support for Thar coal power project will help them soon become the largest source of air pollutants, such as mercury and CO2, in South Asia.`,
           `Sharing the findings of their research studies, these experts shed light on the World Bank's role in Pakistan's energy and environmental crisis at an online panel discussion held on Tuesday. The webinar was organised by the Alliance for Climate Justice & Clean Energy (ACJCE), a coalition of think tanks and civil society organisations working on energy transition in Pakistan.`,
@@ -6419,7 +6392,7 @@
       'imf-gst': {
         title: "Civil society demands IMF to revoke GST on renewable energy technologies",
         cat: "Media Briefing", date: "February 1, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "📰",
-        img: "https://www.priedpk.org/wp-content/uploads/2022/05/renewable-energy-1.png", url: PRIED_EVENT + '200',
+        img: "https://img.youtube.com/vi/f00kdb4GhA4/hqdefault.jpg", url: PRIED_EVENT + '200',
         body: [
           `KARACHI, LAHORE and ISLAMABAD, February 1, 2022: Demanding the government to revoke imposition of general sales tax on solar panels and electric vehicles, a civil society group striving to promote renewable energy has asked the International Monetary Fund (IMF) to play a responsible part in developing socially just and environmental friendly financing solutions in Pakistan.`,
           `Alliance for Climate Justice and Clean Energy (ACJCE) has made these demands in a letter written to the IMF board ahead of its meeting for Pakistan's sixth review, following the recent imposition of 20% GST on solar panels in Pakistan. ACJCE shared details of the letter in a media briefing held on Tuesday, where the speakers assailed the tax imposition and discussed its repercussions.`,
@@ -6448,7 +6421,7 @@
       'thar-water': {
         title: "Coal mining companies in Thar violating Environment Protection Act by dumping toxic water in clean wells: analysts",
         cat: "Webinar", date: "March 25, 2022", loc: "Karachi · Lahore · Islamabad · Thar", emoji: "💻",
-        img: "https://www.priedpk.org/wp-content/uploads/2022/05/mining-cart-1.png", url: PRIED_EVENT + '198',
+        img: "https://img.youtube.com/vi/VLohWxj5NiE/hqdefault.jpg", url: PRIED_EVENT + '198',
         body: [
           `Karachi, Lahore, Islamabad, March 25, 2022: Coal-inflicted miseries of Tharis have started to complicate as their dug wells are now increasingly becoming contaminated due to the toxic waste being discharged by the mining and thermal power companies. Groundwater degradation in Thar, a painful occurrence after coal-induced displacement, dispossession and destitution, was a violation of certain environmental laws of the country, stated the experts.`,
           `This was revealed in a webinar titled 'Coal-induced Water Woes of Tharis' held on Friday by Alliance for Climate Justice & Clean Energy (ACJCE), a coalition of think tanks and civil society organisations working on energy transition in Pakistan. A short documentary was also screened at the webinar, highlighting the ground reality and magnitude of water-related issues in Thar.`,
