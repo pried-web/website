@@ -2444,8 +2444,8 @@
         </div>
         <div class="out-photos-and-stats rv d1">
           <div class="out-photo">
-            <img src="7.jpeg"
-              alt="PRIED seminar on Pakistan's just-energy transition and climate agenda" loading="lazy">
+            <img src="7.jpeg" alt="PRIED seminar on Pakistan's just-energy transition and climate agenda"
+              loading="lazy">
           </div>
           <div class="out-stats-row">
             <div class="ost">
@@ -2482,9 +2482,8 @@
       </div>
       <div class="out-text rv">
         <p>PRIED runs three monitors:</p>
-        <p><strong>Weekly Media Monitor:</strong> Tracks how Pakistan’s press covers energy and climate. Now an
-          institutionalized
-          output with archives from 2025 through 2026.</p>
+        <p><strong>Weekly and Six Monthly Media Monitor:</strong> Tracks how Pakistan’s press covers energy and climate.
+          Now an institutionalized output with archives from 2025 through 2026.</p>
         <p><strong>Quarterly Energy Monitor:</strong> Assesses broader sector trends across Pakistan’s energy
           landscape.</p>
         <p><strong>Specialized Climate Monitor:</strong> Focuses on policy commitments and their implementation.
@@ -2550,7 +2549,8 @@
           </a>
         </div>
       </div>
-      <div class="res-all"><a href="pried-inner-pages.html#media-monitors" class="btn-outline-b">Browse All Monitors →</a>
+      <div class="res-all"><a href="pried-inner-pages.html#media-monitors" class="btn-outline-b">Browse All Monitors
+          →</a>
       </div>
     </div>
   </section>
@@ -2618,22 +2618,36 @@
             <div class="ns-header">
               <h3>PRIED in Press</h3>
             </div>
-            <div class="ns-items">
-              <a class="ns-item" href="https://www.brecorder.com/news/40415624/pakistan-should-use-iran-war-driven-energy-crisis-to-accelerate-renewables-experts" target="_blank" style="text-decoration:none">
+            <div class="ns-items" id="priedPressItems">
+              <a class="ns-item"
+                href="https://www.brecorder.com/news/40415624/pakistan-should-use-iran-war-driven-energy-crisis-to-accelerate-renewables-experts"
+                target="_blank" style="text-decoration:none">
                 <div class="ns-itag">Business Recorder</div>
                 <h5>Pakistan should use Iran war-driven energy crisis to accelerate renewables: experts</h5>
               </a>
-              <a class="ns-item" href="https://www.nation.com.pk/10-Apr-2026/govt-keep-supporting-decentralised-solarisation-pakistan-says-dr-shezra" target="_blank" style="text-decoration:none">
+              <a class="ns-item"
+                href="https://www.nation.com.pk/10-Apr-2026/govt-keep-supporting-decentralised-solarisation-pakistan-says-dr-shezra"
+                target="_blank" style="text-decoration:none">
                 <div class="ns-itag">The Nation</div>
                 <h5>Govt to keep supporting decentralised solarisation in Pakistan, says Dr Shezra</h5>
               </a>
-              <a class="ns-item" href="https://www.thenews.pk/print/1409103-seminar-calls-for-solar-push-to-counter-energy-shocks-from-gulf-conflict" target="_blank" style="text-decoration:none">
+              <a class="ns-item"
+                href="https://www.thenews.pk/print/1409103-seminar-calls-for-solar-push-to-counter-energy-shocks-from-gulf-conflict"
+                target="_blank" style="text-decoration:none">
                 <div class="ns-itag">The News</div>
                 <h5>Seminar calls for solar push to counter energy shocks from Gulf conflict</h5>
               </a>
-              <a class="ns-item" href="pdfs/PRESS-RELEASE-Net-Metering-in-Pakistan-Potential-Challenges-and-Way-Forward-1.pdf" target="_blank" style="text-decoration:none">
+              <a class="ns-item"
+                href="pdfs/PRESS-RELEASE-Net-Metering-in-Pakistan-Potential-Challenges-and-Way-Forward-1.pdf"
+                target="_blank" style="text-decoration:none">
                 <div class="ns-itag">Press Release</div>
                 <h5>Net Metering in Pakistan: Potential, Challenges and Way Forward</h5>
+              </a>
+              <a class="ns-item"
+                href="https://www.dawn.com/news/2008541"
+                target="_blank" style="text-decoration:none">
+                <div class="ns-itag">Dawn</div>
+                <h5>Scooty for the beti and EV for the biwi</h5>
               </a>
             </div>
           </div>
@@ -2670,7 +2684,7 @@
               Partners</span><span class="pchip">Civil Society Orgs</span>
           </div>
         </div>
-        <div class="pt-right rv d1">
+        <div class="pt-right rv d1" id="partnersNetList">
           <div class="pnet-row">
             <div class="pnet-abbr"><img src="pfee-logo.jpg" alt="PFEE Logo" loading="lazy"></div>
             <div class="pnet-body">
@@ -2799,6 +2813,54 @@
         });
       });
     }
+  </script>
+  <script>
+    function loopScroll(containerId, rowSelector, speed) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const origItems = Array.from(container.querySelectorAll(rowSelector));
+      if (origItems.length <= 1) return;
+
+      // Read gap from original container before we restructure it
+      const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
+
+      const strip = document.createElement('div');
+      strip.style.cssText = 'display:flex;flex-direction:column;row-gap:' + gap + 'px;';
+      origItems.forEach(function (item) { strip.appendChild(item); });
+      origItems.forEach(function (item) { strip.appendChild(item.cloneNode(true)); });
+      container.appendChild(strip);
+      container.style.overflowY = 'hidden';
+
+      requestAnimationFrame(function () {
+        // Height to clip at 4 items (3 gaps between them)
+        const vis = Array.from(strip.querySelectorAll(rowSelector)).slice(0, 4);
+        const clipH = vis.reduce(function (s, el) { return s + el.offsetHeight; }, 0) + gap * 3;
+        container.style.height = clipH + 'px';
+
+        // One full cycle = all original items + gaps after each (including trailing before clone)
+        const fullH = origItems.reduce(function (s, el) { return s + el.offsetHeight + gap; }, 0);
+
+        var pos = 0, paused = false, last = null;
+        container.addEventListener('mouseenter', function () { paused = true; });
+        container.addEventListener('mouseleave', function () { paused = false; last = null; });
+
+        (function tick(ts) {
+          if (!paused) {
+            if (last !== null) {
+              pos += speed * (ts - last) / 1000;
+              if (pos >= fullH) pos -= fullH;
+              strip.style.transform = 'translateY(-' + pos.toFixed(2) + 'px)';
+            }
+            last = ts;
+          }
+          requestAnimationFrame(tick);
+        })(performance.now());
+      });
+    }
+
+    loopScroll('partnersNetList', '.pnet-row', 28);
+
+    loopScroll('priedPressItems', '.ns-item', 28);
   </script>
 </body>
 

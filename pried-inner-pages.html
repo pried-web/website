@@ -603,28 +603,30 @@
       flex-wrap: wrap;
       padding: 0 48px;
       max-width: 1100px;
-      margin: 32px auto 0;
+      margin: 36px auto 0;
     }
 
     .filter-label {
       font-family: 'Courier Prime', monospace;
-      font-size: .6rem;
-      letter-spacing: 1.5px;
+      font-size: .72rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--lite);
-      margin-right: 6px;
+      color: var(--bd);
+      font-weight: 700;
+      margin-right: 8px;
     }
 
     .filter-chip {
-      font-size: .72rem;
-      font-weight: 500;
+      font-size: .88rem;
+      font-weight: 600;
       background: #fff;
-      border: 1.5px solid var(--rule);
-      color: var(--mid);
-      padding: 6px 16px;
+      border: 2px solid var(--b);
+      color: var(--b);
+      padding: 9px 24px;
       border-radius: 100px;
       cursor: pointer;
       transition: all .2s;
+      letter-spacing: .3px;
     }
 
     .filter-chip:hover,
@@ -632,6 +634,7 @@
       background: var(--b);
       border-color: var(--b);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(29,110,181,.25);
     }
 
     .studies-count-row {
@@ -1683,7 +1686,9 @@
     }
 
     .ng3-img img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
       transition: transform .4s ease;
     }
 
@@ -3760,10 +3765,22 @@
           <div class="tc-img-placeholder" style="display:none"><span class="tc-initial">A</span></div>
         </div>
         <div class="tc-body">
-          <div class="tc-role">Communication Advisor / Director</div>
+          <div class="tc-role">Communication Advisor & Director</div>
           <h3>Aurangzaib Khan</h3>
-          <p>Aurangzaib Khan is a journalist, editor, trainer and media development practitioner who has spent the last 30 years asking questions, telling stories and helping other journalists do the same. Working across newsrooms, universities, press clubs and field locations throughout Pakistan, he has built a career at the intersection of journalism, research, training and development communications.</p>
-          <p class="tc-expand">He has trained reporters on issues ranging from climate change, public health and humanitarian crises to human rights, democracy, governance and labour rights, while designing and managing media development projects for organizations including the World Bank, UNDP, UNICEF, UNESCO, ILO, GIZ, IFJ, IMS, Internews and DW Akademie. A strong advocate of building journalism from the ground up, he has helped strengthen journalism education at universities across Pakistan and trained hundreds of journalists, particularly in the border regions of Khyber Pakhtunkhwa and Balochistan. As a journalist and editor, he has written for Herald and Dawn and served as Editor of News Lens Pakistan (2013–2017), a pioneering digital platform that trained and mentored journalists reporting from Pakistan's border regions. He remains passionate about thoughtful journalism, good storytelling and helping reporters find the stories others miss.</p>
+          <p>Aurangzaib Khan is a journalist, editor, trainer and media development practitioner who has spent the last
+            30 years asking questions, telling stories and helping other journalists do the same. Working across
+            newsrooms, universities, press clubs and field locations throughout Pakistan, he has built a career at the
+            intersection of journalism, research, training and development communications.</p>
+          <p class="tc-expand">He has trained reporters on issues ranging from climate change, public health and
+            humanitarian crises to human rights, democracy, governance and labour rights, while designing and managing
+            media development projects for organizations including the World Bank, UNDP, UNICEF, UNESCO, ILO, GIZ, IFJ,
+            IMS, Internews and DW Akademie. A strong advocate of building journalism from the ground up, he has helped
+            strengthen journalism education at universities across Pakistan and trained hundreds of journalists,
+            particularly in the border regions of Khyber Pakhtunkhwa and Balochistan. As a journalist and editor, he has
+            written for Herald and Dawn and served as Editor of News Lens Pakistan (2013–2017), a pioneering digital
+            platform that trained and mentored journalists reporting from Pakistan's border regions. He remains
+            passionate about thoughtful journalism, good storytelling and helping reporters find the stories others
+            miss.</p>
           <a href="#" class="tc-read-more">Read Full Profile →</a>
         </div>
       </div>
@@ -3884,8 +3901,13 @@
         <div class="tc-body">
           <div class="tc-role">Project Coordinator</div>
           <h3>Shan E Zahra Naeem</h3>
-          <p>Shan E Zahra Naeem is a freelance journalist, communications specialist and researcher whose work follows the paths connecting energy, climate and social justice. With a background in Gender Studies and Anthropology, she is particularly interested in how large systems—political, economic and environmental—arrive in ordinary lives, especially that of women who have little say in shaping them.</p>
-          <p class="tc-expand">Her work with PRIED and the Parliamentary Forum on Energy and Economy explore the distance between policy and lived experience, highlighting socio-economic complexities glossed over by neat solutions.</p>
+          <p>Shan E Zahra Naeem is a freelance journalist, communications specialist and researcher whose work follows
+            the paths connecting energy, climate and social justice. With a background in Gender Studies and
+            Anthropology, she is particularly interested in how large systems—political, economic and
+            environmental—arrive in ordinary lives, especially that of women who have little say in shaping them.</p>
+          <p class="tc-expand">Her work with PRIED and the Parliamentary Forum on Energy and Economy explore the
+            distance between policy and lived experience, highlighting socio-economic complexities glossed over by neat
+            solutions.</p>
           <a href="#" class="tc-read-more">Read Full Profile →</a>
         </div>
       </div>
@@ -4318,140 +4340,118 @@
             </div>
           </div>
 
-          <!-- LIST ROWS -->
-          <div class="news-list-more" style="margin-top:24px">
-            <div class="nl-row" data-article="climate-justice">
-              <div class="nl-img"><img
-                  src="https://www.priedpk.org/wp-content/uploads/2023/06/Coalmining-In-Thar-01.jpg"
-                  alt="Climate justice" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Climate Justice · 2023</div>
-                <h5>Climate Justice: Holding the Greenhouse Elite Accountable</h5>
-                <div class="nl-date">2023</div>
+          <!-- MORE CARDS -->
+          <div class="news-grid-3" style="margin-top:14px">
+            <div class="ng3-card" data-article="climate-justice">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/06/Coalmining-In-Thar-01.jpg" alt="Climate justice" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Climate Justice · 2023</div>
+                <h4>Climate Justice: Holding the Greenhouse Elite Accountable</h4>
+                <div class="ng3-date">2023</div>
               </div>
             </div>
-            <div class="nl-row" data-article="gas-crisis">
-              <div class="nl-img"><img
-                  src="https://www.priedpk.org/wp-content/uploads/2023/01/Gas-crisiscauses-and-remedies.png"
-                  alt="Gas crisis" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Analysis · 2023</div>
-                <h5>Gas Crisis: Causes and Remedies</h5>
-                <div class="nl-date">2023 · The News</div>
+            <div class="ng3-card" data-article="gas-crisis">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/01/Gas-crisiscauses-and-remedies.png" alt="Gas crisis" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Analysis · 2023</div>
+                <h4>Gas Crisis: Causes and Remedies</h4>
+                <div class="ng3-date">1 Jan 2023 · The News</div>
               </div>
             </div>
-            <div class="nl-row" data-article="planning-power">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/01/Planning-Power.png"
-                  alt="Planning power" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Opinion · 2023</div>
-                <h5>Planning Power</h5>
-                <div class="nl-date">2023 · The News</div>
+            <div class="ng3-card" data-article="planning-power">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2023/01/Planning-Power.png" alt="Planning power" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Opinion · 2023</div>
+                <h4>Planning Power</h4>
+                <div class="ng3-date">1 Jan 2023 · The News</div>
               </div>
             </div>
-            <div class="nl-row" data-article="coalmining-thar">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/11/Coalmining-In-Thar.png"
-                  alt="Coalmining Thar" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Investigation · 2022</div>
-                <h5>Coalmining in Thar Spells Disaster For Locals</h5>
-                <div class="nl-date">November 2022</div>
+            <div class="ng3-card" data-article="coalmining-thar">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/11/Coalmining-In-Thar.png" alt="Coalmining Thar" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Investigation · 2022</div>
+                <h4>Coalmining in Thar Spells Disaster For Locals</h4>
+                <div class="ng3-date">23 Mar 2022 · The Friday Times</div>
               </div>
             </div>
-            <div class="nl-row" data-article="thermal-power">
-              <div class="nl-img"><img
-                  src="https://www.priedpk.org/wp-content/uploads/2022/11/Thermal-Power-In-Times.png"
-                  alt="Thermal power" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Analysis · 2022</div>
-                <h5>Thermal Power in Times of Stagflation</h5>
-                <div class="nl-date">2022</div>
+            <div class="ng3-card" data-article="thermal-power">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/11/Thermal-Power-In-Times.png" alt="Thermal power" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Analysis · 2022</div>
+                <h4>Thermal Power in Times of Stagflation</h4>
+                <div class="ng3-date">2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="letting-go-coal">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/11/Letting-Go-Of-Coal.png"
-                  alt="Letting go of coal" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Opinion · 2022</div>
-                <h5>Letting Go of Coal</h5>
-                <div class="nl-date">2022</div>
+            <div class="ng3-card" data-article="letting-go-coal">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/11/Letting-Go-Of-Coal.png" alt="Letting go of coal" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Opinion · 2022</div>
+                <h4>Letting Go of Coal</h4>
+                <div class="ng3-date">2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="phasing-out-coal">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Opinion-Is.png"
-                  alt="Coal phaseout" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Opinion · 2022</div>
-                <h5>Is Pakistan Really Phasing Out Coal?</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="phasing-out-coal">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Opinion-Is.png" alt="Coal phaseout" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Opinion · 2022</div>
+                <h4>Is Pakistan Really Phasing Out Coal?</h4>
+                <div class="ng3-date">18 Jan 2021 · The Third Pole</div>
               </div>
             </div>
-            <div class="nl-row" data-article="energy-paradox">
-              <div class="nl-img"><img
-                  src="https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels-1.png"
-                  alt="Energy transition paradox" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Analysis · 2022</div>
-                <h5>The Paradox of Energy Transition in Pakistan</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="energy-paradox">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels-1.png" alt="Energy transition paradox" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Analysis · 2021</div>
+                <h4>The Paradox of Energy Transition</h4>
+                <div class="ng3-date">6 Jul 2021 · The Daily Times</div>
               </div>
             </div>
-            <div class="nl-row" data-article="pakistan-energy-transition">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Pakistan-And-Energy.png"
-                  alt="Pakistan and energy transition" loading="lazy" onerror="this.style.background='var(--cream)'">
-              </div>
-              <div class="nl-body">
-                <div class="nl-tag">Analysis · 2022</div>
-                <h5>Pakistan and Energy Transition</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="pakistan-energy-transition">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Pakistan-And-Energy.png" alt="Pakistan and energy transition" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Analysis · 2022</div>
+                <h4>Pakistan and Energy Transition</h4>
+                <div class="ng3-date">May 2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="reduced-ambitions">
-              <div class="nl-img"><img
-                  src="https://www.priedpk.org/wp-content/uploads/2022/05/Reduced-Ambitions-For.png"
-                  alt="Reduced ambitions renewables" loading="lazy" onerror="this.style.background='var(--cream)'">
-              </div>
-              <div class="nl-body">
-                <div class="nl-tag">Renewable Energy · 2022</div>
-                <h5>Reduced Ambitions for Renewable Energy</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="reduced-ambitions">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Reduced-Ambitions-For.png" alt="Reduced ambitions renewables" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Renewable Energy · 2022</div>
+                <h4>Reduced Ambitions for Renewable Energy</h4>
+                <div class="ng3-date">May 2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="cutting-losses">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Cutting-Losses.png"
-                  alt="Cutting losses" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Analysis · 2022</div>
-                <h5>Cutting Losses</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="cutting-losses">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Cutting-Losses.png" alt="Cutting losses" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Analysis · 2022</div>
+                <h4>Cutting Losses</h4>
+                <div class="ng3-date">May 2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="coal-companies-thar">
-              <div class="nl-img"><img
-                  src="https://www.priedpk.org/wp-content/uploads/2022/05/Coal-Mining-Companies-In-Thar.png"
-                  alt="Coal mining companies Thar" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Investigation · 2022</div>
-                <h5>Coal Mining Companies in Thar Violating Environment Protection Act</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="coal-companies-thar">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Coal-Mining-Companies-In-Thar.png" alt="Coal mining companies Thar" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Investigation · 2022</div>
+                <h4>Coal Mining Companies in Thar Violating Environment Protection Act</h4>
+                <div class="ng3-date">May 2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="lng-renewables">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/LNG-vs-renewables.png"
-                  alt="LNG vs renewables" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Analysis · 2022</div>
-                <h5>LNG vs Renewables: The Battle for Pakistan's Energy Future</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="lng-renewables">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/LNG-vs-renewables.png" alt="LNG vs renewables" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Analysis · 2022</div>
+                <h4>LNG vs Renewables</h4>
+                <div class="ng3-date">May 2022</div>
               </div>
             </div>
-            <div class="nl-row" data-article="taxing-solar">
-              <div class="nl-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels.png"
-                  alt="Taxing solar panels" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
-              <div class="nl-body">
-                <div class="nl-tag">Solar Policy · 2022</div>
-                <h5>Taxing Solar Panels</h5>
-                <div class="nl-date">May 2022</div>
+            <div class="ng3-card" data-article="taxing-solar">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels.png" alt="Taxing solar panels" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Solar Policy · 2022</div>
+                <h4>Taxing Solar Panels</h4>
+                <div class="ng3-date">May 2022</div>
               </div>
             </div>
           </div>
@@ -4590,16 +4590,14 @@
           <span class="am-date" id="art-date"></span>
           <span class="am-sep" id="art-author-sep"></span>
           <span class="am-author" id="art-author"></span>
-          <span class="am-sep"></span>
-          <a href="#" class="am-source" id="art-source" target="_blank">Read original ↗</a>
+          <span class="am-sep" id="art-source-sep"></span>
+          <a href="#" class="am-source" id="art-source" target="_blank"></a>
         </div>
 
         <h1 id="art-title"></h1>
         <div class="article-divider"></div>
 
         <div class="article-body" id="art-body"></div>
-
-        <a href="#" class="article-link-out" id="art-linkout" target="_blank">Read the Full Article ↗</a>
 
         <div class="article-tags" id="art-tags"></div>
 
@@ -5284,7 +5282,7 @@
 
     <div class="studies-grid wrap" style="max-width:1100px;margin:24px auto 0;padding:0 48px">
       <a class="study-card mon-card rv" href="#media-monitors">
-        <div class="study-card-img"><img src="cover/Media-2.jpg" alt="Media Monitors" loading="lazy"
+        <div class="study-card-img"><img src="cover/Media-1.jpg" alt="Media Monitors" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="study-card-img-placeholder" style="display:none"><span>📰</span></div>
         </div>
@@ -6000,28 +5998,37 @@
     const PRIED_NEWS = 'https://www.priedpk.org/?post_type=news&p=';
     const ARTICLES = {
       'crossroads': {
-        title: "Pakistan at Energy Crossroads", tag: "Featured · Energy", date: "May 2026",
-        url: PRIED_NEWS + '2249', sourceName: "PRIED",
+        title: "Pakistan at energy crossroads",
+        tag: "Energy", date: "14 May 2026",
+        author: "Muqaddas Ashiq & Rimsha Rehan",
+        url: "https://www.brecorder.com/news/40421008", sourceName: "Business Recorder",
         img: "https://www.priedpk.org/wp-content/uploads/2026/05/energy-crossroads.gif",
         body: [
-          `Pakistan stands at a defining moment for its energy future. The decisions taken now — on solar tariffs, the fate of ageing coal plants, and the pace of renewable deployment — will shape the country's power sector, economy and climate trajectory for decades to come.`,
-          `This feature brings together PRIED's analysis of the choices ahead: from contested net-metering reforms and circular debt to the unprecedented boom in distributed solar, and the unfinished business of a just transition away from fossil fuels.`
+          `The energy shock triggered by the US-Israel war has reverberated across global markets with uncommon severity. For Pakistan, the disruption arrives at a particularly vulnerable moment. Summer brings a sharp surge in electricity demand driven by cooling needs, forcing the national grid to rapidly ramp up generation capacity.`
         ],
-        tags: ["Energy Transition", "Solar", "Coal", "Policy", "Pakistan"], related: ["net-metering", "33gw", "sahiwal"]
+        tags: ["Energy Policy", "Pakistan", "US-Israel War", "Energy Transition", "Grid"],
+        related: ["net-metering", "33gw", "sahiwal"]
       },
       'net-metering': {
-        title: "Net Metering: Who Pays the Price for Pakistan's New Solar Regime?", tag: "Solar Policy", date: "February 2026",
-        url: PRIED_NEWS + '2111', sourceName: "PRIED",
+        title: "Net metering: Who pays the price for Pakistan's new solar regime?",
+        tag: "Solar Policy", date: "10 February 2026",
+        author: "Manzoor Ahmed Alizai",
+        url: PRIED_NEWS + '2111', sourceName: "Dawn",
         img: "https://www.priedpk.org/wp-content/uploads/2026/02/net-billing.jpg",
         body: [
-          `Pakistan's shift from net metering to net billing has reshaped the economics of rooftop solar almost overnight. This analysis unpacks what the new regime means for the households and businesses that invested in solar — and who ultimately bears the cost of the change.`,
-          `As the regulator recalibrates buy-back rates, PRIED examines the tension between protecting the grid's finances and preserving the incentives that fuelled Pakistan's distributed solar boom.`
+          `The Pakistani government recently implemented a significant policy shift by replacing the existing net-metering system with a net-billing framework for solar consumers — known as prosumers. This change affects both current and prospective participants in the solar energy sector.`,
+          `Authorities cited multiple justifications for this transition, including "the need to address the technical, financial and equity concerns" that have surfaced due to rapid solar expansion across the nation. A key modification involves the compensation rate for solar-generated electricity returned to the grid: the buyback rate has been substantially reduced from Rs26 per unit to Rs11 per unit.`,
+          `This adjustment reflects market rates and may result in extended recovery periods and diminished financial gains for prosumers. The newly established export rate aligns with the government's average procurement costs for electricity from conventional power generation facilities.`,
+          `As the regulator recalibrates buy-back rates, the tension between protecting the grid's finances and preserving the incentives that fuelled Pakistan's distributed solar boom remains unresolved — and it is ordinary solar investors who are left to absorb the difference.`
         ],
-        tags: ["Net Metering", "Solar", "Prosumers", "Tariffs", "Policy"], related: ["solar-gender", "33gw", "taxing-solar"]
+        tags: ["Net Metering", "Solar", "Prosumers", "Tariffs", "Policy"],
+        related: ["solar-gender", "33gw", "taxing-solar"]
       },
       'solar-gender': {
-        title: "Pakistan's solar shift has a <em>gender problem</em>", tag: "Gender & Energy", date: "24 December 2025",
-        author: "Zahra Naeem", url: "https://www.dawn.com/news/1962618/pakistans-solar-shift-has-a-gender-problem", sourceName: "Dawn",
+        title: "Pakistan's solar shift has a <em>gender problem</em>",
+        tag: "Gender & Energy", date: "24 December 2025",
+        author: "Zahra Naeem",
+        url: "https://www.dawn.com/news/1962618/pakistans-solar-shift-has-a-gender-problem", sourceName: "Dawn",
         img: "https://www.priedpk.org/wp-content/uploads/2025/12/2317433207e27f0.jpeg",
         body: [
           `In a quiet Rawalpindi neighbourhood, where the power grid often dictates the rhythm of life, one family has transitioned from stopgap solutions to a more sun-powered reality. Their journey into solar energy was not just a financial calculation, but a response to a two-decade fight with an unreliable power supply.`,
@@ -6030,189 +6037,254 @@
           `Rubab's experience highlights a critical but underexplored dimension of Pakistan's solar revolution: while the country is experiencing an unprecedented boom in distributed solar adoption — with studies estimating over 33GW installed nationwide — the benefits and decision-making around this energy transition are deeply gendered.`,
           `Research by PRIED and TransitionZero, which combined satellite imagery with national household survey data, has found that the solar revolution in Pakistan is happening at an unprecedented pace — but questions of who benefits, who decides, and who bears the cost remain unanswered in most policy discussions.`
         ],
-        tags: ["Solar Energy", "Gender & Energy", "Pakistan", "Energy Access", "Distributed Solar", "Dawn"],
-        authorDesc: "A journalist covering energy, climate and gender in Pakistan. This article was originally published in Dawn.",
+        tags: ["Solar", "Gender & Energy", "Energy Access", "Distributed Solar"],
+        authorDesc: "Zahra Naeem is a journalist and researcher covering energy, climate and gender in Pakistan. This article was originally published in Dawn.",
         related: ["33gw", "distributed-solar", "net-metering"]
       },
       'sahiwal': {
-        title: "Sahiwal's Megawatts of Betrayal: Coal's Broken Promises", tag: "Investigation", date: "October 2025",
-        url: PRIED_NEWS + '1949', sourceName: "PRIED",
+        title: "Sahiwal's Megawatts of Betrayal",
+        tag: "Investigation", date: "26 October 2025",
+        author: "Zahra Naeem & Hussain Assad",
+        url: PRIED_NEWS + '1949', sourceName: "Dawn",
         img: "https://www.priedpk.org/wp-content/uploads/2025/10/sahiwal.jpg",
         body: [
-          `The Sahiwal coal power plant was sold to the public as a symbol of progress and energy security. Years on, PRIED's investigation traces the gap between those promises and the lived reality for the communities around the plant.`,
-          `From land and livelihoods to air quality and water, this story documents the social and environmental costs of imported-coal generation far from the Thar coalfields it was meant to complement.`
+          `Officials presented the Sahiwal coal-fired power plant as a transformative initiative in 2014. The 1,320-megawatt facility was marketed as "Pakistan's flagship energy project" that would resolve electricity deficiencies and improve conditions in central Punjab.`,
+          `Local representatives promised villagers in 76-5R substantial benefits, characterising the opportunity as "once-in-a-generation" and emphasising China's substantial CPEC investment. Pledged outcomes included 3,700 construction positions, 1,600 permanent roles, technical training centres, girls' educational facilities, a hospital, improved road infrastructure, and complimentary electricity for the three most-affected villages.`,
+          `However, authorities omitted critical information. They failed to disclose that established agricultural lands would transform into contaminated zones with coal residue and polluted water sources. Communities were not informed about the environmental consequences their children would face: respiratory difficulties, orchard deterioration, and declining groundwater levels.`,
+          `Years on, this investigation traces the gap between those promises and the lived reality for the communities around the plant — from land and livelihoods to air quality and water. It documents how the promise of development has too often translated into loss for locals.`
         ],
-        tags: ["Coal", "Sahiwal", "Investigation", "Community", "Environment"], related: ["coalmining-thar", "climate-justice", "thermal-power"]
+        tags: ["Coal", "Sahiwal", "CPEC", "Investigation", "Community", "Environment"],
+        related: ["coalmining-thar", "climate-justice", "thermal-power"]
       },
       '33gw': {
-        title: "Study Finds 33GW of Solar Panels Already Installed Nationwide", tag: "Research Coverage", date: "October 2025",
-        url: PRIED_NEWS + '1943', sourceName: "PRIED",
+        title: "Study finds 33GW of solar panels already installed nationwide",
+        tag: "Research Coverage", date: "31 October 2025",
+        url: PRIED_NEWS + '1943', sourceName: "The News",
         img: "https://www.priedpk.org/wp-content/uploads/2025/10/33GW.jpg",
         body: [
-          `A landmark study co-produced by PRIED and TransitionZero estimates that more than 33GW of solar capacity has already been installed across Pakistan — a figure that dwarfs official projections and reshapes how the country should plan its grid.`,
-          `By combining satellite imagery with household survey data, the research reveals the true scale of Pakistan's distributed solar revolution and the urgent need for policy to catch up with what is happening on rooftops nationwide.`
+          `Pakistan is experiencing significant growth in solar energy adoption, according to researchers and officials gathered at an event in Karachi. A newly released study indicates that approximately 33 gigawatts of solar photovoltaic capacity has been deployed throughout the nation.`,
+          `The research, titled "Shouting from the Rooftops: Mapping Pakistan's Solar Power Revolution," was developed collaboratively by PRIED and TransitionZero, a London-based energy-transition organisation. The document examines solar installations across different regions, population segments, and industry sectors.`,
+          `Participants at the launch event — including government representatives and lawmakers — emphasised that off-grid solar expansion represents "an unstoppable phenomenon" in Pakistan. However, they stressed the importance of directing this growth strategically "to enhance the sustainability, affordability and accessibility of electricity nationwide."`
         ],
-        tags: ["Solar", "Research", "Distributed Solar", "Data", "Grid"], related: ["distributed-solar", "solarisation", "net-metering"]
+        tags: ["Solar", "Research", "Distributed Solar", "TransitionZero", "Grid"],
+        related: ["distributed-solar", "solarisation", "net-metering"]
       },
       'solarisation': {
-        title: "Pakistan Is Experiencing an Unprecedented Solarisation of Its Energy Sector", tag: "Research", date: "October 2025",
-        url: PRIED_NEWS + '1945', sourceName: "PRIED",
+        title: "Pakistan was experiencing unprecedented solarisation of its energy sector",
+        tag: "Research", date: "30 October 2025",
+        url: PRIED_NEWS + '1945', sourceName: "The News",
         img: "https://www.priedpk.org/wp-content/uploads/2025/10/pakistan-solar.webp",
         body: [
-          `Driven by high grid tariffs and falling panel prices, Pakistanis are adopting solar faster than almost anywhere in the world. This coverage explores what that rapid, bottom-up solarisation means for the national grid and for energy planners.`,
-          `PRIED's work argues that the transition is already underway — the question is whether policy will steer it toward an equitable, well-integrated power system or leave the grid scrambling to adapt.`
+          `Pakistan has installed solar photovoltaic panels totalling 33 gigawatts of capacity throughout the nation, according to a study launched by PRIED in Karachi. The event featured the launch of "Shouting from the Rooftops: Mapping Pakistan's Solar Power Revolution," produced jointly by PRIED and TransitionZero.`,
+          `Speakers at the launch emphasised that Pakistan's off-grid solar expansion has become "an unstoppable phenomenon," though they noted it requires proper direction to enhance electricity sustainability, affordability and accessibility nationwide.`,
+          `The research is characterised as a significant resource for comprehending the scope and distribution of solar power development occurring across the country — and the urgent need for policy to catch up with what is happening on rooftops.`
         ],
-        tags: ["Solar", "Energy Transition", "Grid", "Research"], related: ["33gw", "distributed-solar", "net-metering"]
+        tags: ["Solar", "Energy Transition", "Grid", "Research"],
+        related: ["33gw", "distributed-solar", "net-metering"]
       },
       'distributed-solar': {
-        title: "Shedding Light on Pakistan's Distributed Solar Revolution", tag: "Research", date: "October 2025",
-        url: PRIED_NEWS + '1940', sourceName: "PRIED",
+        title: "Shedding light on Pakistan's distributed solar",
+        tag: "Research", date: "October 2025",
+        url: PRIED_NEWS + '1940', sourceName: "PRIED & TransitionZero",
         img: "https://www.priedpk.org/wp-content/uploads/2025/10/Gemi.jpg",
         body: [
-          `Distributed solar is transforming how Pakistani homes and businesses access electricity, yet much of this growth has been invisible to official statistics. PRIED's research brings new data and clarity to a fast-moving phenomenon.`,
-          `This piece looks at how mapping the real footprint of rooftop solar can help policymakers design fairer tariffs, protect grid stability, and ensure the benefits of cheap clean power are broadly shared.`
+          `Pakistan's solar sector has grown rapidly, with approximately 50 GW of panels imported as prices dropped and adoption increased. However, comprehensive installation data remained scarce. TransitionZero and PRIED addressed this through satellite imagery analysis combined with household survey research to create the first detailed distributed solar assessment.`,
+          `The research indicates that "most of Pakistan's solar growth is happening outside the formal sector." TransitionZero's estimates place total installed capacity at roughly 29 GW, with 27.5 GW from distributed systems concentrated primarily in Punjab, with additional presence in Khyber Pakhtunkhwa and Sindh.`,
+          `PRIED's survey findings show "33.35 GW of imported panels have been installed across residential, commercial, industrial, and agricultural sectors." This includes 19 GW of non-net-metered and 8.3 GW of off-grid systems. Residential adoption correlates with income levels, ranging from 38% among lower-income households to 88% among higher-income households, while agricultural adoption reaches 85% among small-scale farmers.`
         ],
-        tags: ["Solar", "Distributed Solar", "Research", "Data"], related: ["33gw", "solarisation", "solar-gender"]
+        tags: ["Solar", "Distributed Solar", "Research", "Data", "TransitionZero"],
+        related: ["33gw", "solarisation", "solar-gender"]
       },
       'climate-justice': {
-        title: "Climate Justice: Holding the Greenhouse Elite Accountable", tag: "Climate Justice", date: "2023",
-        url: PRIED_NEWS + '891', sourceName: "PRIED",
+        title: "Climate Justice: holding the green house elite accountable",
+        tag: "Climate Justice", date: "3 April 2023",
+        author: "Badar Alam",
+        url: PRIED_NEWS + '891', sourceName: "UNDP Development Advocate Pakistan",
         img: "https://www.priedpk.org/wp-content/uploads/2023/06/Coalmining-In-Thar-01.jpg",
         body: [
-          `Pakistan contributes a tiny share of global emissions yet bears some of the harshest climate impacts. This commentary makes the case for climate justice — holding the world's biggest emitters accountable for the damage borne by vulnerable communities.`,
-          `Drawing on PRIED's work in Thar and beyond, it connects the global politics of loss and damage to the everyday realities of those living on the frontlines of fossil-fuel extraction.`
+          `The Thar desert in Pakistan contains massive lignite coal reserves — 175 billion tonnes, comparable in energy wealth to Gulf nations — yet its residents remain among Pakistan's poorest populations. The contrast captures a structural injustice at the heart of Pakistan's energy story.`,
+          `Stark disparities in electricity consumption tell the same story: Bahrain residents use 17,844 kWh per capita annually, while Pakistanis consume only 399 kWh, with Thar residents using minimal electricity for basic household needs.`,
+          `Climate justice addresses two interconnected issues. First, wealthy populations disproportionately consume fossil fuels and emit greenhouse gases, causing climate disruption that predominantly affects impoverished communities. Second, affluent nations bear responsibility for "taking extra responsibility for fighting this crisis" while prioritising vulnerable populations' needs.`,
+          `The data is stark: "the wealthiest one percent of the world's population has produced more than twice as much carbon emissions as the poorest half." The World Bank projects 86 million Sub-Saharan Africans may be displaced by 2050, despite that region producing only 2% of greenhouse emissions. South Asia faces potential displacement of 40 million people within 25 years.`
         ],
-        tags: ["Climate Justice", "Loss & Damage", "Coal", "Thar", "Equity"], related: ["coalmining-thar", "sahiwal", "letting-go-coal"]
+        tags: ["Climate Justice", "Loss & Damage", "Coal", "Thar", "Equity"],
+        authorDesc: "Muhammad Badar Alam is the Chief Executive of PRIED. This article was published in UNDP's Development Advocate Pakistan journal.",
+        related: ["coalmining-thar", "sahiwal", "letting-go-coal"]
       },
       'gas-crisis': {
-        title: "Gas Crisis: Causes and Remedies", tag: "Analysis", date: "2023", sourceName: "The News",
-        url: PRIED_NEWS + '437',
+        title: "Gas crisis: causes and remedies",
+        tag: "Analysis", date: "1 January 2023",
+        author: "Azhar Lashari",
+        url: PRIED_NEWS + '437', sourceName: "The News",
         img: "https://www.priedpk.org/wp-content/uploads/2023/01/Gas-crisiscauses-and-remedies.png",
         body: [
-          `Each winter, Pakistan's gas shortages return with familiar severity. This analysis examines the structural roots of the crisis — from declining domestic reserves and costly LNG imports to pricing distortions across the supply chain.`,
-          `Rather than treating shortages as a seasonal emergency, the piece argues for systemic remedies: rationalised pricing, demand management, and a serious pivot toward indigenous renewable energy.`
+          `Pakistan ranks 21st globally in natural gas consumption and currently faces severe supply shortages. The demand exceeds 2.5 billion cubic feet per day while supply stands around 1.7 bcfd, creating a deficit of 1.35 bcfd distributed between major utilities.`,
+          `Demand for gas is rapidly increasing — particularly in power, residential and fertiliser sectors — due to subsidised pricing, while domestic reserves have declined from 23.9 to 13.6 trillion cubic feet between 2006 and 2020.`,
+          `Pakistan initiated LNG imports from Qatar in 2012, with a multi-billion dollar 16-year deal signed in 2016. Imports surged from 19.8 million MMBTU in 2015 to 348.6 million MMBTU by 2020, with costs rising from $151 million to $2.559 billion. The Russia-Ukraine conflict further disrupted LNG markets, making procurement increasingly difficult.`,
+          `The piece advocates for renewable energy investment, noting that "cost of power generation through LNG was as high as Rs 16/KWh whereas solar and wind technologies cost just Rs 6/KWh." Local reserves will deplete within 10–12 years, yet Pakistan continues expanding gas infrastructure rather than pursuing alternatives.`
         ],
-        tags: ["Gas", "LNG", "Energy Security", "Policy"], related: ["lng-renewables", "planning-power", "cutting-losses"]
+        tags: ["Gas", "LNG", "Energy Security", "Policy", "Renewables"],
+        authorDesc: "Azhar Ali Lashari is Director & Project Lead at PRIED.",
+        related: ["lng-renewables", "planning-power", "cutting-losses"]
       },
       'planning-power': {
-        title: "Planning Power", tag: "Opinion", date: "2023", sourceName: "The News",
-        url: PRIED_NEWS + '395',
+        title: "Planning power",
+        tag: "Opinion", date: "1 January 2023",
+        author: "Shaheera Tahir",
+        url: PRIED_NEWS + '395', sourceName: "The News",
         img: "https://www.priedpk.org/wp-content/uploads/2023/01/Planning-Power.png",
         body: [
-          `Pakistan's power planning has long been driven by capacity-addition targets rather than least-cost, demand-led analysis. This opinion piece questions the assumptions baked into the country's generation planning.`,
-          `It argues that smarter, transparent and renewable-friendly planning is essential to break the cycle of surplus capacity, idle plants and mounting circular debt.`
+          `Pakistan's energy sector relies heavily on reactive crisis management rather than strategic planning. This approach has caused environmental damage, harmed communities, and left the nation vulnerable to external supply chain disruptions, resulting in a dysfunctional system with an expensive energy mix dependent on imported fossil fuels.`,
+          `Pakistan's circular debt has surpassed Rs2.5 trillion, demonstrating widespread system inefficiencies. "A long-term system-oriented planning centred at sustainable energy resources such as solar and wind is direly needed," with emphasis on systems-based approaches for harnessing renewable potential.`,
+          `Variable renewable energy (VRE) resources remain underutilised despite Pakistan's significant potential. Only six percent of installed capacity comes from VRE, with over 150 stalled projects totalling 8 GW. Solar and wind represent the most economical generation options, costing Rs6–7/kWh compared to thermal fuels ranging from Rs16–35/kWh.`,
+          `Adopting comprehensive system-cost approaches would reveal renewables' genuine economic advantages while reducing electricity prices, carbon emissions, and energy vulnerability. European studies demonstrate that balancing costs at lower VRE penetration remain negligible.`
         ],
-        tags: ["Power Planning", "IGCEP", "Policy", "Circular Debt"], related: ["reduced-ambitions", "cutting-losses", "gas-crisis"]
+        tags: ["Power Planning", "IGCEP", "Policy", "Circular Debt", "VRE"],
+        authorDesc: "Shaheera Tahir is Program Manager, Research at PRIED.",
+        related: ["reduced-ambitions", "cutting-losses", "gas-crisis"]
       },
       'coalmining-thar': {
-        title: "Coalmining in Thar Spells Disaster For Locals", tag: "Investigation", date: "November 2022",
-        url: PRIED_NEWS + '361', sourceName: "PRIED",
+        title: "Coalmining In Thar Spells Disaster For Locals",
+        tag: "Investigation", date: "23 March 2022",
+        author: "Azhar Lashari",
+        url: PRIED_NEWS + '361', sourceName: "The Friday Times",
         img: "https://www.priedpk.org/wp-content/uploads/2022/11/Coalmining-In-Thar.png",
         body: [
-          `For the communities of Thar, the arrival of large-scale coal mining has brought displacement, disrupted livelihoods and growing concerns over water and land. This investigation gives voice to residents living alongside the mines.`,
-          `It documents how the promise of development has too often translated into loss for locals, and why their grievances must be central to any conversation about Thar's coal.`
+          `Coal mining development in Thar's coalfields prioritises economic growth while dismissing environmental and human costs as acceptable externalities. Since coal power projects began in Thar Coalfield Block-II, hundreds of families have faced forced displacement from ancestral lands without alternative livelihood options.`,
+          `Mining operations have restricted access to farmlands and pastures while causing severe groundwater depletion and contamination. Dewatering activities for mining have lowered water levels in five villages by three to four feet, creating acute scarcity.`,
+          `Coal extraction requires draining three aquifer layers beneath the surface. The extracted water contains "heavy metals like arsenic, copper and lead," posing serious public health and ecosystem risks. Two reservoirs at Gorrano and Dukar Chaou store this contaminated wastewater, yet lack protective geo-membrane lining, causing seepage that has polluted wells across thirteen villages.`,
+          `Beyond reservoir disposal, coal companies have dumped wastewater in grazing areas, killing livestock and rendering wells toxic. Local communities report vegetation die-off affecting winter livestock fodder and increased malaria prevalence from mosquito breeding in contaminated water sources.`
         ],
-        tags: ["Coal", "Thar", "Community", "Investigation", "Water"], related: ["coal-companies-thar", "climate-justice", "sahiwal"]
+        tags: ["Coal", "Thar", "Community", "Investigation", "Water", "Environment"],
+        authorDesc: "Azhar Ali Lashari is Director & Project Lead at PRIED.",
+        related: ["coal-companies-thar", "climate-justice", "sahiwal"]
       },
       'thermal-power': {
-        title: "Thermal Power in Times of Stagflation", tag: "Analysis", date: "2022",
+        title: "Thermal power in times of stagflation",
+        tag: "Analysis", date: "2022",
         url: PRIED_NEWS + '360', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/11/Thermal-Power-In-Times.png",
         body: [
           `With the rupee under pressure and fuel-import bills soaring, Pakistan's heavy reliance on imported-fuel thermal power has become a macroeconomic liability. This analysis links energy choices to the country's wider economic distress.`,
-          `It makes the case that, in an era of stagflation, doubling down on costly thermal generation deepens the crisis — while domestic renewables offer a hedge against imported inflation.`
+          `In an era of stagflation, doubling down on costly thermal generation deepens the crisis — while domestic renewables offer a hedge against imported inflation and provide a path toward energy security.`
         ],
-        tags: ["Thermal Power", "Economy", "Imports", "Renewables"], related: ["cutting-losses", "gas-crisis", "lng-renewables"]
+        tags: ["Thermal Power", "Economy", "Imports", "Renewables"],
+        related: ["cutting-losses", "gas-crisis", "lng-renewables"]
       },
       'letting-go-coal': {
-        title: "Letting Go of Coal", tag: "Opinion", date: "2022",
+        title: "Letting go of Coal",
+        tag: "Opinion", date: "2022",
         url: PRIED_NEWS + '359', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/11/Letting-Go-Of-Coal.png",
         body: [
-          `As the world moves to phase out coal, Pakistan faces a choice about how much further to expand its coal fleet. This opinion piece argues that the economic and climate case for new coal has all but collapsed.`,
-          `Letting go of coal, it contends, is not just an environmental imperative but a financial one — sparing the country from stranded assets and locked-in fuel costs for decades.`
+          `As the world moves to phase out coal, Pakistan faces a choice about how much further to expand its coal fleet. The economic and climate case for new coal has all but collapsed.`,
+          `Letting go of coal is not just an environmental imperative but a financial one — sparing the country from stranded assets and locked-in fuel costs for decades.`
         ],
-        tags: ["Coal", "Phaseout", "Climate", "Stranded Assets"], related: ["phasing-out-coal", "climate-justice", "reduced-ambitions"]
+        tags: ["Coal", "Phaseout", "Climate", "Stranded Assets"],
+        related: ["phasing-out-coal", "climate-justice", "reduced-ambitions"]
       },
       'phasing-out-coal': {
-        title: "Is Pakistan Really Phasing Out Coal?", tag: "Opinion", date: "May 2022",
-        url: PRIED_NEWS + '214', sourceName: "PRIED",
+        title: "Opinion: Is Pakistan really phasing out coal?",
+        tag: "Opinion", date: "18 January 2021",
+        author: "Haneea Isaad",
+        url: PRIED_NEWS + '214', sourceName: "The Third Pole",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Opinion-Is.png",
         body: [
-          `Pakistan has announced a moratorium on new coal power — but the reality on the ground is more complicated. This piece scrutinises whether the country's pledges add up to a genuine coal phase-out.`,
-          `Between existing projects, Thar coal expansion and gasification plans, it asks whether the rhetoric of transition matches the trajectory of the power sector.`
+          `Prime Minister Imran Khan announced a coal moratorium in December 2020 at the Climate Ambition Summit, marking the fifth anniversary of the Paris Climate Agreement. While this garnered international praise, significant implementation details remain unclear regarding timeline, transition mechanisms, and the treatment of existing versus planned facilities.`,
+          `Pakistan's energy strategy has relied heavily on coal-based generation, with substantial Chinese investment through CPEC projects. The corridor encompasses 17 priority energy initiatives totalling 11.1 GW capacity, with three-quarters representing coal-fired plants backed by approximately USD 8.7 billion in insured debt from major Chinese financial institutions.`,
+          `Coal already represents a substantial portion of Pakistan's generation mix: 2019–20 saw 19% of power generation coming from just four coal-fired CPEC plants. Cancelling coal projects would require extensive renegotiation of government power purchase contracts, a complexity demonstrated by ongoing difficulties with 47 independent power producers.`,
+          `The Prime Minister's proposal to explore Coal-to-Liquid and Coal-to-Gas alternatives raises environmental concerns. These processes demand substantial water and energy resources. The article advocates instead for battery storage and hybrid renewable energy systems as more sustainable alternatives.`
         ],
-        tags: ["Coal", "Phaseout", "Policy", "Climate"], related: ["letting-go-coal", "reduced-ambitions", "climate-justice"]
+        tags: ["Coal", "Phaseout", "Policy", "CPEC", "Climate"],
+        related: ["letting-go-coal", "reduced-ambitions", "climate-justice"]
       },
       'energy-paradox': {
-        title: "The Paradox of Energy Transition in Pakistan", tag: "Analysis", date: "May 2022",
-        url: PRIED_NEWS + '213', sourceName: "PRIED",
+        title: "The paradox of energy transition",
+        tag: "Analysis", date: "6 July 2021",
+        author: "Naila Saleh",
+        url: PRIED_NEWS + '213', sourceName: "The Daily Times",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels-1.png",
         body: [
-          `Pakistan wants a cleaner energy system, yet its policies often pull in the opposite direction — taxing solar even as it commits to renewables. This analysis explores the contradictions at the heart of the country's energy transition.`,
-          `Resolving the paradox, it argues, requires aligning fiscal policy, tariffs and planning behind the clean-energy goals the country has publicly embraced.`
+          `Pakistan has publicly endorsed renewable energy advancement ahead of COP 26. This commitment appears across multiple frameworks including the Nationally Determined Contribution, Net Metering Regulation 2015, and the Alternative Renewable Energy Policy (AREP, 2019), which established a goal of "30 percent of non-hydro renewable energy by 2030."`,
+          `However, significant contradictions undermine these initiatives. The National SDG Framework targets 25 percent renewable share in total energy consumption; AREP targets 30 percent renewable generation capacity by 2030; yet the revised IGCEP projects only 10 percent solar and wind capacity by 2030. These misaligned objectives create confusion about Pakistan's decarbonisation strategy.`,
+          `Technical studies confirm that scaling solar and wind capacity alongside hydropower investments is both feasible and advantageous for emissions reduction and cost efficiency. However, fragmented oversight and uncoordinated planning continue prioritising fossil fuels.`,
+          `Successfully transitioning to renewable energy requires systemic coordination across government levels, legal frameworks, and stakeholder engagement. Pakistan must align policies with actions and establish institutional coherence to capture the closing window for climate goals.`
         ],
-        tags: ["Energy Transition", "Solar", "Policy", "Taxation"], related: ["taxing-solar", "reduced-ambitions", "net-metering"]
+        tags: ["Energy Transition", "Solar", "Policy", "AREP", "IGCEP"],
+        authorDesc: "Naila Saleh is Technical Advisor at PRIED and Project Manager at Agora Energiewende.",
+        related: ["taxing-solar", "reduced-ambitions", "net-metering"]
       },
       'pakistan-energy-transition': {
-        title: "Pakistan and Energy Transition", tag: "Analysis", date: "May 2022",
+        title: "Pakistan and energy transition",
+        tag: "Analysis", date: "May 2022",
         url: PRIED_NEWS + '212', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Pakistan-And-Energy.png",
         body: [
           `Where does Pakistan stand in the global shift to clean energy? This piece maps the country's starting point — its fuel mix, institutions and financing constraints — and the path it must travel toward a low-carbon power system.`,
           `It frames the energy transition not as a distant aspiration but as an immediate opportunity to cut costs, improve security and reduce emissions simultaneously.`
         ],
-        tags: ["Energy Transition", "Renewables", "Policy", "Pakistan"], related: ["energy-paradox", "reduced-ambitions", "solarisation"]
+        tags: ["Energy Transition", "Renewables", "Policy", "Pakistan"],
+        related: ["energy-paradox", "reduced-ambitions", "solarisation"]
       },
       'reduced-ambitions': {
-        title: "Reduced Ambitions for Renewable Energy", tag: "Renewable Energy", date: "May 2022",
+        title: "Reduced ambitions for renewable energy",
+        tag: "Renewable Energy", date: "May 2022",
         url: PRIED_NEWS + '205', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Reduced-Ambitions-For.png",
         body: [
           `Despite ambitious headline targets, Pakistan's actual renewable-energy commitments have repeatedly been scaled back in planning documents. This analysis tracks the gap between stated ambition and the numbers in official plans.`,
-          `It warns that diluted renewable targets risk locking the country into expensive fossil generation, and calls for planning that treats clean energy as the least-cost option it has become.`
+          `Diluted renewable targets risk locking the country into expensive fossil generation, and planning must treat clean energy as the least-cost option it has become.`
         ],
-        tags: ["Renewables", "IGCEP", "Targets", "Policy"], related: ["planning-power", "pakistan-energy-transition", "energy-paradox"]
+        tags: ["Renewables", "IGCEP", "Targets", "Policy"],
+        related: ["planning-power", "pakistan-energy-transition", "energy-paradox"]
       },
       'cutting-losses': {
-        title: "Cutting Losses", tag: "Analysis", date: "May 2022",
+        title: "Cutting losses",
+        tag: "Analysis", date: "May 2022",
         url: PRIED_NEWS + '204', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Cutting-Losses.png",
         body: [
           `Transmission and distribution losses, theft and under-recovery drain billions from Pakistan's power sector every year. This piece examines where the losses come from and why they keep feeding the circular-debt spiral.`,
-          `It argues that cutting these losses — through metering, governance reform and targeted investment — is among the cheapest and fastest ways to stabilise the sector's finances.`
+          `Cutting these losses — through metering, governance reform and targeted investment — is among the cheapest and fastest ways to stabilise the sector's finances.`
         ],
-        tags: ["Circular Debt", "DISCOs", "Losses", "Reform"], related: ["planning-power", "thermal-power", "gas-crisis"]
+        tags: ["Circular Debt", "DISCOs", "Losses", "Reform"],
+        related: ["planning-power", "thermal-power", "gas-crisis"]
       },
       'coal-companies-thar': {
-        title: "Coal Mining Companies in Thar Violating Environment Protection Act", tag: "Investigation", date: "May 2022",
+        title: "Coal mining companies in Thar violating Environment Protection Act",
+        tag: "Investigation", date: "May 2022",
         url: PRIED_NEWS + '196', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Coal-Mining-Companies-In-Thar.png",
         body: [
-          `Analysts allege that coal-mining operations in Thar have been dumping saline and contaminated water in ways that threaten clean wells and local water sources — in apparent breach of environmental law.`,
-          `This report sets out the concerns over water contamination and weak enforcement, and the implications for communities whose survival depends on Thar's already-scarce groundwater.`
+          `Analysts allege that coal-mining operations in Thar have been dumping saline and contaminated water in ways that threaten clean wells and local water sources — in apparent breach of the Sindh Environment Protection Act, the National Water Policy 2018 and generation licences issued by NEPRA.`,
+          `The report sets out the concerns over water contamination and weak enforcement, and the implications for communities whose survival depends on Thar's already-scarce groundwater.`
         ],
-        tags: ["Coal", "Thar", "Water", "Environment", "Regulation"], related: ["coalmining-thar", "climate-justice", "sahiwal"]
+        tags: ["Coal", "Thar", "Water", "Environment", "Regulation"],
+        related: ["coalmining-thar", "climate-justice", "sahiwal"]
       },
       'lng-renewables': {
-        title: "LNG vs Renewables: The Battle for Pakistan's Energy Future", tag: "Analysis", date: "May 2022",
+        title: "LNG vs renewables",
+        tag: "Analysis", date: "May 2022",
         url: PRIED_NEWS + '195', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/LNG-vs-renewables.png",
         body: [
           `Pakistan's energy planners face a fork in the road: lock in more imported LNG, or accelerate domestic renewables. This analysis compares the two paths on cost, security and exposure to volatile global markets.`,
-          `With LNG prices spiking, the piece argues that renewables increasingly win on economics as well as climate — making the case for a decisive tilt away from imported gas.`
+          `With LNG prices spiking, renewables increasingly win on economics as well as climate — making the case for a decisive tilt away from imported gas.`
         ],
-        tags: ["LNG", "Renewables", "Energy Security", "Imports"], related: ["gas-crisis", "thermal-power", "pakistan-energy-transition"]
+        tags: ["LNG", "Renewables", "Energy Security", "Imports"],
+        related: ["gas-crisis", "thermal-power", "pakistan-energy-transition"]
       },
       'taxing-solar': {
-        title: "Taxing Solar Panels", tag: "Solar Policy", date: "May 2022",
+        title: "Taxing solar panels",
+        tag: "Solar Policy", date: "May 2022",
         url: PRIED_NEWS + '193', sourceName: "PRIED",
         img: "https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels.png",
         body: [
           `Proposals to tax solar panels and equipment risk undercutting the very transition Pakistan says it wants. This piece weighs the short-term revenue logic against the long-term cost of slowing solar adoption.`,
-          `It argues that penalising clean energy at the border is self-defeating in a country where rooftop solar is easing pressure on the grid and on household bills alike.`
+          `Penalising clean energy at the border is self-defeating in a country where rooftop solar is easing pressure on the grid and on household bills alike.`
         ],
-        tags: ["Solar", "Taxation", "Policy", "Renewables"], related: ["energy-paradox", "net-metering", "reduced-ambitions"]
+        tags: ["Solar", "Taxation", "Policy", "Renewables"],
+        related: ["energy-paradox", "net-metering", "reduced-ambitions"]
       }
     };
 
@@ -6228,12 +6300,13 @@
       const authorEl = $('art-author'), authorSep = $('art-author-sep');
       if (a.author) { authorEl.innerHTML = 'By <strong>' + a.author + '</strong>'; authorEl.style.display = ''; authorSep.style.display = ''; }
       else { authorEl.style.display = 'none'; authorSep.style.display = 'none'; }
-      const src = $('art-source'); src.href = a.url;
-      src.textContent = (a.sourceName ? 'Published via ' + a.sourceName : 'Read original') + ' ↗';
+      const src = $('art-source'), srcSep = $('art-source-sep');
+      if (a.sourceName) {
+        src.href = a.url; src.textContent = a.sourceName + ' ↗';
+        src.style.display = ''; srcSep.style.display = '';
+      } else { src.style.display = 'none'; srcSep.style.display = 'none'; }
       $('art-title').innerHTML = a.title;
-      $('art-body').innerHTML = a.body.map(p => /^["“]/.test(p) ? '<blockquote>' + p + '</blockquote>' : '<p>' + p + '</p>').join('');
-      const lo = $('art-linkout'); lo.href = a.url;
-      lo.textContent = 'Read the Full Article' + (a.sourceName ? ' on ' + a.sourceName : '') + ' ↗';
+      $('art-body').innerHTML = a.body.map(p => /^[“”]/.test(p) ? '<blockquote>' + p + '</blockquote>' : '<p>' + p + '</p>').join('');
       $('art-tags').innerHTML = (a.tags || []).map(t => '<span class="t-chip">' + t + '</span>').join('');
       const rel = (a.related || []).map(s => ARTICLES[s] && Object.assign({ slug: s }, ARTICLES[s])).filter(Boolean);
       $('art-related').innerHTML = rel.map(r =>
@@ -6251,7 +6324,7 @@
     const EVENTS = {
       'iran-war': {
         title: "Pakistan's just-energy transition and climate agenda in the time of war in Iran",
-        cat: "Consultation", date: "", loc: "", emoji: "🤝",
+        cat: "Consultation", date: "April 2026", loc: "Islamabad", emoji: "🤝",
         img: "Events thumbnails for website/Pakistan's just-energy transition and climate agenda in the time of war in Iran.jpeg.jpg", url: PRIED_EVENT + '2222',
         body: [
           `The ongoing war in and around Iran and the consequent disruption of critical energy supply routes have exposed Pakistan's deep structural dependence on imported fossil fuels such as oil, coal and liquified natural gas (LNG). With rising fuel prices in international markets, increased fuel import bills and their mounting pressure on foreign exchange reserves as well as the serious challenges these factors are posing to Pakistan's energy supplies and energy security, the conflict has intensified the countries vulnerabilities—rising energy prices supply concerns, driving inflation that disproportionately impacting lower-income households and renewing interest among policymakers to mine more indigenous coal and use it for power generation.`,
@@ -6436,9 +6509,259 @@
         images: [],
         videos: [{ title: "Webinar on 'Coal-induced water woes of Tharis'", url: "https://www.youtube.com/embed/VLohWxj5NiE" }],
         media: [], press: [], others: []
+      },
+      'kapco': {
+        title: "Repurposing Pakistan's Aging Thermal Power Plants: Pathways to Solar Integration and Grid Stability",
+        cat: "Webinar", date: "2025", loc: "Islamabad", emoji: "⚡",
+        img: "https://www.priedpk.org/wp-content/uploads/2025/02/2-1.jpg",
+        url: PRIED_EVENT + '1957',
+        body: [
+          `Pakistan faces an energy infrastructure challenge: aging, inefficient thermal power plants that are no longer viable yet remain critical for grid stability. Facilities like KAPCO and TPS Muzaffargarh operate beyond their design life, with high generation costs and significant carbon footprints.`,
+          `PRIED's research initiative examined the feasibility of converting these fossil-fuel stations into large-scale solar installations — leveraging existing land, grid connections, and infrastructure already in place. The study, titled "Repurposing Pakistan's Aging Thermal Power Plants: Pathways to Solar Integration and Grid Stability," combined financial assessments with decommissioning evaluations.`,
+          `The analysis examined component salvage, dismantling expenses, land reuse opportunities, and international best practices. Results indicated that decommissioning costs are "far outweighed by the economic and environmental benefits" — including payback periods of just 1–2.4 years, an 80% reduction in generation costs, and millions of tons of prevented CO₂ emissions.`,
+          `The study recommends integrating repurposing frameworks into Pakistan's generation planning, promoting green financing instruments, and developing phased retirement strategies for aging fossil fuel plants as a practical pathway to grid decarbonisation.`
+        ],
+        tags: ["KAPCO", "Thermal Power", "Repurposing", "Solar", "Grid", "Decarbonisation"],
+        related: ["world-bank", "green-loans", "iran-war"],
+        images: [],
+        videos: [],
+        media: [],
+        press: [],
+        others: [{ title: "KAPCO Study — Repurposing Pakistan's Aging Thermal Power Plants (PDF)", url: "pdfs/KAPCO-Study.pdf" }]
+      },
+      'grm': {
+        title: "Making people heard: Grievances Redressal Mechanism for Tharparkar's Coalfields",
+        cat: "Consultation", date: "21 August 2025", loc: "Press Club, Hyderabad", emoji: "🤝",
+        img: "Events/GRM event/0060F5C8-7721-4477-BBC6-7C219820E318.jpg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `Grievances Redressal Mechanisms (GRMs) are essential tools for ensuring that communities affected by large-scale infrastructure and development projects can voice their concerns and access fair remedies. In Tharparkar, communities living near coal power plants face many serious grievances, including air and water pollution, forced land acquisition and displacement, inadequate compensation for lost land and livelihoods, lightning strikes and loss of lives and livestock, lack of consultation, health hazards and disruptions to social structures.`,
+          `Many of these issues have remained unresolved primarily because GRMs in Tharparkar are not just inaccessible, unresponsive and non-inclusive — they are sometimes also non-existent.`,
+          `To address these challenges, PRIED developed a draft GRM based on field work in Tharparkar and an expert consultative session. This draft is intended as a stepping stone to develop a GRM for those affected by coal development that is locally grounded, inclusive and accessible, with an emphasis on building strong engagement with affected communities as well as establishing trust between the government, coal developers and community-based organisations.`,
+          `PRIED launched the GRM draft and presented it to the communities most affected by coal mining and power generation, as well as to government officials and power plant operators — paving the way towards a sustainable and inclusive process of developing Thar's indigenous resources.`
+        ],
+        tags: ["GRM", "Thar", "Coal", "Community", "Grievance Redressal", "Coalfields"],
+        related: ["thar-water", "coalmining-thar", "world-bank"],
+        images: [
+          "Events/GRM event/0060F5C8-7721-4477-BBC6-7C219820E318.jpg",
+          "Events/GRM event/2BDBB73E-6100-4F67-8D52-90D33E946498.jpg",
+          "Events/GRM event/4E15D4ED-9090-47A0-A0D9-CBDB2F770B94.jpg",
+          "Events/GRM event/6445CF48-7C72-4C35-BE02-68EF37EB87AE.jpg",
+          "Events/GRM event/7B424112-7FF0-400E-B46E-82FC7713AA20.jpg",
+          "Events/GRM event/BD88C9A8-C152-4FCF-9C76-5CF1DBA7CB84.jpg",
+          "Events/GRM event/BE4FC12C-FBB2-4468-803F-AFA224031DFE.jpg",
+          "Events/GRM event/CD3848A9-7CB1-4934-BE75-B4BE546ECF96.jpg"
+        ],
+        videos: [],
+        media: [{ title: "Effective grievance redressal mechanism missing in Thar coalfields — Dawn", url: "https://www.dawn.com/news/1937001/effective-grievance-redressal-mechanism-missing-in-thar-coalfields-study" }],
+        press: [],
+        others: []
+      },
+      'pre-budget-2025': {
+        title: "Pre-Budget Dialogue 2025: Rethinking Economic Policy for a Just Energy Transition",
+        cat: "Panel Discussion", date: "20 May 2025", loc: "Kehkashan-I, Serena Hotel, Islamabad", emoji: "🎙️",
+        img: "Events/Pre-budget event/1748250604669.jpeg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `As Pakistan prepared its 2025-26 budget, its energy sector came under the spotlight like never before. Energy prices, an unsustainable circular debt, the untenable cost of maintaining an inefficient power transmission and distribution system, and the heavy financial burden of importing oil, gas and coal are only a few of the issues that budget makers grappled with.`,
+          `The government had taken several steps: reducing energy prices to spur grid electricity demand; renegotiating agreements with independent power producers (IPPs) to curtail capacity payments; and starting a process of privatising electricity distribution companies (DISCOs). There were also reports that the government might levy a carbon tax, and plans to obtain a new IMF Resilience and Sustainability Facility (RSF) loan — both carrying serious financial implications for the energy sector.`,
+          `The Sustainable Development Policy Institute (SDPI) and PRIED joined hands to organise a one-day dialogue on the energy-economy nexus, with a special focus on Pakistan's transition to renewable energy and all its fiscal, economic, social and environmental consequences. Participants deliberated on how a just energy transition can address the energy sector's economic ailments and help Pakistan fight the escalating climate crisis.`,
+          `The dialogue aimed to: inform budget-making with actionable policy recommendations; redefine public spending priorities from generation toward grid modernisation and renewable energy access in underserved regions; promote a just energy transition that benefits communities negatively affected by energy policies; strengthen policy coherence by aligning fiscal requirements with improved energy governance; and catalyse private sector involvement in solarisation, EVs, mini-grids and other green technologies.`
+        ],
+        tags: ["Budget", "Energy Transition", "Economy", "SDPI", "IMF", "Just Transition", "Circular Debt"],
+        related: ["gas-crisis", "planning-power", "iran-war"],
+        images: [
+          "Events/Pre-budget event/1748250604669.jpeg",
+          "Events/Pre-budget event/1748250604855.jpeg",
+          "Events/Pre-budget event/1748250605721.jpeg",
+          "Events/Pre-budget event/1748250605954.jpeg",
+          "Events/Pre-budget event/1748250606010.jpeg",
+          "Events/Pre-budget event/1748250606105.jpeg",
+          "Events/Pre-budget event/1748250606114.jpeg",
+          "Events/Pre-budget event/1748250606122.jpeg",
+          "Events/Pre-budget event/1748250606128-2.jpeg",
+          "Events/Pre-budget event/1748250606128.jpeg",
+          "Events/Pre-budget event/1748250606415.jpeg",
+          "Events/Pre-budget event/1748250606456.jpeg",
+          "Events/Pre-budget event/1748250607054.jpeg"
+        ],
+        videos: [],
+        media: [{ title: "Pre-Budget Dialogue 2025 — Dawn", url: "https://www.dawn.com/news/1912243" }],
+        press: [],
+        others: []
+      },
+      'rural-electrification': {
+        title: "Rural Electrification in Balochistan: Challenges to Meet Nushki District's Electricity Demand",
+        cat: "Research Launch", date: "3 September 2025", loc: "Qamar Board Room, Ramada by Wyndham Islamabad", emoji: "💡",
+        img: "Events/Rural Electrification/IMG-20250904-WA0017.jpg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `Understanding real-time household energy needs is a critical yet often overlooked step in energy planning, particularly in underserved rural regions. In Pakistan, inadequate demand forecasting and data scarcity have historically led to inefficient infrastructure planning, unreliable grid supply, and deepening energy poverty — especially in remote areas of Balochistan.`,
+          `To address this gap, PRIED undertook a comprehensive household energy demand assessment in six rural settlements of Balochistan's Nushki district. By integrating primary data collected through on-ground household surveys with publicly available secondary datasets, PRIED employed a scenario-based modelling approach using the Low Emissions Analysis Platform (LEAP) to assess baseline energy consumption, identify energy sources in use, and project future demand under different development trajectories — including Business-as-Usual, CPEC-induced growth, and an Optimistic Electrification scenario aligned with Pakistan's national clean energy goals.`,
+          `The study reveals that despite high electrification rates shown on paper, most households in Nushki receive unreliable electricity (2–3 hours per day) and remain heavily dependent on traditional biomass for cooking and heating. By quantifying these problems and modelling how electricity demand may evolve in the surveyed areas of the district, the research makes a compelling case for data-driven, decentralised electrification solutions tailored to actual household energy needs.`,
+          `PRIED shared these findings with relevant stakeholders at a public event in Islamabad, bringing together policymakers, development partners, and community representatives to discuss pathways to reliable, affordable and clean electricity access for Balochistan's rural communities.`
+        ],
+        tags: ["Rural Electrification", "Balochistan", "Nushki", "Energy Access", "LEAP", "Demand Assessment"],
+        related: ["distributed-solar", "33gw", "thar-water"],
+        images: [
+          "Events/Rural Electrification/IMG-20250904-WA0017.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0018.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0019.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0020.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0021.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0022.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0023.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0024.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0025.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0026.jpg",
+          "Events/Rural Electrification/IMG-20250904-WA0027.jpg"
+        ],
+        videos: [],
+        media: [],
+        press: [],
+        others: []
+      },
+      'industrial-electrification': {
+        title: "A Consultation on Pakistan's Energy Demand: Residential and Industrial Electrification Pathways",
+        cat: "Consultation", date: "30 December 2025", loc: "Boardroom 2, Roomy Signature Hotel, Islamabad", emoji: "⚡",
+        img: "Events/Roadmap for industrial electrification in Pakistan/WhatsApp Image 2026-06-20 at 5.46.22 PM.jpeg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `Pakistan's energy transition depends not just on expanding renewable supply but on understanding where and how electricity demand is actually growing. PRIED organised this consultation to explore residential and industrial electrification pathways — examining how household appliance shifts, EV uptake, and industrial process electrification will reshape the country's load profile over the coming decade.`,
+          `Participants from government, industry, academia and civil society deliberated on the financial, technical and policy barriers to electrification, and on what mix of grid expansion, distributed generation and demand-side management is needed to serve both urban and rural consumers equitably.`,
+          `The consultation drew on PRIED's research into Pakistan's evolving energy demand, with a focus on ensuring that the shift to clean electricity benefits all segments of society — not just those already well connected to the grid.`
+        ],
+        tags: ["Electrification", "Industrial", "Residential", "Energy Demand", "Pathways"],
+        related: ["rural-electrification", "distributed-solar", "planning-power"],
+        images: [
+          "Events/Roadmap for industrial electrification in Pakistan/WhatsApp Image 2026-06-20 at 5.46.22 PM.jpeg",
+          "Events/Roadmap for industrial electrification in Pakistan/WhatsApp Image 2026-06-20 at 5.46.22 PM (1).jpeg",
+          "Events/Roadmap for industrial electrification in Pakistan/WhatsApp Image 2026-06-20 at 5.46.22 PM (3).jpeg",
+          "Events/Roadmap for industrial electrification in Pakistan/WhatsApp Image 2026-06-20 at 5.46.22 PM (4).jpeg",
+          "Events/Roadmap for industrial electrification in Pakistan/WhatsApp Image 2026-06-20 at 5.46.23 PM.jpeg"
+        ],
+        videos: [], media: [], press: [],
+        others: [{ title: "A Roadmap for Industrial Electrification in Pakistan (PDF)", url: "pdfs/A-EW_Roadmap_for_industrial_electrification_in_Pakistan_WEB.pdf" }]
+      },
+      'offshore-wind-consultation': {
+        title: "Harnessing Pakistan's Energy Potential: Overcoming Challenges in Offshore Wind and Residential Gas Sectors",
+        cat: "Consultation", date: "30 October 2024", loc: "Islamabad", emoji: "🌊",
+        img: "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.46 PM.jpeg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `Pakistan's coastline holds significant offshore wind potential, yet the sector remains largely untapped due to regulatory, financial and technical constraints. At the same time, the residential gas sector faces mounting pressure from depleting domestic reserves, rising import costs and the need for a managed transition toward cleaner cooking and heating fuels.`,
+          `This multi-stakeholder consultation brought together energy experts, government officials, private sector representatives and civil society to examine the barriers to offshore wind development and to chart pathways for a sustainable transformation of the residential gas sector.`,
+          `Held from 2:00 pm to 5:00 pm, the session explored policy and regulatory reforms needed to attract offshore wind investment, the economics of gas-to-electric transitions in households, and how Pakistan can sequence these shifts to maintain energy security and affordability for consumers throughout the transition.`
+        ],
+        tags: ["Offshore Wind", "Residential Gas", "Consultation", "Energy Transition", "Policy"],
+        related: ["lng-renewables", "planning-power", "offshore-wind-study"],
+        images: [
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.46 PM.jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.48 PM.jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM.jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (1).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (2).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (3).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (4).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (5).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (6).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (7).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (8).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (9).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (10).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (11).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (12).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (13).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (14).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (15).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (16).jpeg",
+          "Events/Stakeholder consultation offshore wind and residential gas sector/WhatsApp Image 2026-06-20 at 5.37.49 PM (17).jpeg"
+        ],
+        videos: [], media: [], press: [],
+        others: [{ title: "Pakistan's Offshore Wind Potential (PDF)", url: "pdfs/Pakistans-Offshore-Wind-Potential.pdf" }]
+      },
+      'offshore-wind-study': {
+        title: "Study Launch: Harnessing Pakistan's Energy Potential — Overcoming Challenges in Offshore Wind and Residential Gas Sectors",
+        cat: "Study Launch", date: "1 November 2024", loc: "Islamabad", emoji: "📄",
+        img: "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.43 PM.jpeg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `PRIED launched its research study on Pakistan's offshore wind and residential gas sectors, presenting findings on the country's largely untapped offshore wind potential and the fiscal, technical and social challenges involved in transitioning the residential gas sector toward cleaner alternatives.`,
+          `The study examines the regulatory landscape, grid integration requirements and investment conditions needed to unlock offshore wind development, while also modelling the household-level implications of reducing residential gas subsidies and accelerating the shift to electric cooking and heating.`,
+          `The launch event brought together policymakers, sector regulators, development finance institutions and civil society to discuss the study's recommendations — including phased tariff reforms, targeted social protection for low-income gas consumers, and the policy enablers required to attract private investment in offshore wind.`
+        ],
+        tags: ["Offshore Wind", "Residential Gas", "Study Launch", "Research", "Energy Transition"],
+        related: ["offshore-wind-consultation", "lng-renewables", "gas-crisis"],
+        images: [
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.43 PM.jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.44 PM.jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.44 PM (1).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.44 PM (2).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.44 PM (3).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.44 PM (4).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM.jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (1).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (2).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (3).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (4).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (5).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (6).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (7).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (8).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.45 PM (9).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.46 PM.jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.46 PM (1).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.46 PM (2).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.46 PM (3).jpeg",
+          "Events/Study launch offshore wind and residential gas sectors/WhatsApp Image 2026-06-20 at 5.38.46 PM (4).jpeg"
+        ],
+        videos: [], media: [], press: [],
+        others: [{ title: "Pakistan's Offshore Wind Potential (PDF)", url: "pdfs/Pakistans-Offshore-Wind-Potential.pdf" }]
+      },
+      'thunder-lightning': {
+        title: "Thunder & Lightning: Exploring the Link Between Lightning Strikes and Coal",
+        cat: "Study Launch", date: "9 January 2025", loc: "Karachi", emoji: "⛈️",
+        img: "Events/Thunder and lightening/WhatsApp Image 2026-06-20 at 5.49.11 PM.jpeg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `Pakistan's Thar region has witnessed a troubling rise in lightning-related fatalities and livestock deaths in communities living near open-cast coal mines. PRIED's study investigates whether large-scale surface coal mining alters local meteorological conditions in ways that increase the frequency and intensity of lightning strikes.`,
+          `By combining historical lightning data, satellite imagery of mine expansion and community testimony, the research examines the intersection of industrial coal development and changing environmental hazards — and what this means for the safety of Thari communities who were not consulted when these projects were approved.`,
+          `The study was launched in Karachi to raise awareness among policymakers, environmental regulators and the media about an under-reported consequence of coal extraction, and to call for rigorous environmental impact assessments that account for such localised climate and safety effects.`
+        ],
+        tags: ["Thunder", "Lightning", "Coal", "Thar", "Environment", "Safety"],
+        related: ["thar-water", "coalmining-thar", "coal-companies-thar"],
+        images: [
+          "Events/Thunder and lightening/WhatsApp Image 2026-06-20 at 5.49.11 PM.jpeg",
+          "Events/Thunder and lightening/WhatsApp Image 2026-06-20 at 5.49.12 PM.jpeg",
+          "Events/Thunder and lightening/WhatsApp Image 2026-06-20 at 5.49.12 PM (1).jpeg",
+          "Events/Thunder and lightening/WhatsApp Image 2026-06-20 at 5.49.12 PM (2).jpeg"
+        ],
+        videos: [], media: [], press: [],
+        others: [{ title: "Thunder and Lightning: Exploring the Link Between Lightning Strikes and Coal (PDF)", url: "pdfs/Thunder-and-lightning-Exploring-the-link-between-lightning-strikes-and-coal.pdf" }]
+      },
+      'black-gold': {
+        title: "The Real Price of Black Gold: How Coal Development in Thar is Disrupting Lives and Livelihoods",
+        cat: "Study Launch", date: "16 October 2024", loc: "Indus Hotel, Hyderabad", emoji: "⛏️",
+        img: "Events/Study launch Black gold/WhatsApp Image 2026-06-20 at 5.53.17 PM (1).jpeg",
+        url: PRIED_EVENT + '0',
+        body: [
+          `Thar's coal reserves have been promoted as a pathway to Pakistan's energy security, but the communities living in and around the coalfields tell a different story. PRIED's study examines the social, economic and environmental costs of coal development in Tharparkar — from forced displacement and loss of farmland to contaminated water and disrupted livelihoods.`,
+          `By putting the actual experiences of affected Thari communities at the centre of the analysis, the research quantifies what coal development has cost the people it was supposed to benefit — and argues that these costs have been systematically ignored in the project approvals, impact assessments and compensation frameworks that govern the coalfields.`,
+          `The study was launched in Hyderabad to bring its findings directly to the communities most affected, as well as to Sindh government officials, civil society organisations and journalists covering Thar — making the case for meaningful community consent, transparent grievance mechanisms and equitable benefit-sharing as preconditions for any further coal expansion.`
+        ],
+        tags: ["Coal", "Thar", "Livelihoods", "Displacement", "Black Gold", "Community"],
+        related: ["grm", "coalmining-thar", "thar-water"],
+        images: [
+          "Events/Study launch Black gold/WhatsApp Image 2026-06-20 at 5.53.17 PM (1).jpeg",
+          "Events/Study launch Black gold/WhatsApp Image 2026-06-20 at 5.53.17 PM (2).jpeg",
+          "Events/Study launch Black gold/WhatsApp Image 2026-06-20 at 5.53.17 PM (3).jpeg",
+          "Events/Study launch Black gold/WhatsApp Image 2026-06-20 at 5.53.17 PM (4).jpeg"
+        ],
+        videos: [], media: [], press: [],
+        others: [{ title: "Coal Power and Livelihood Disruptions in Thar (PDF)", url: "pdfs/Coal-Power-and-Livelihood-Disruptions-in-Thar.pdf" }]
       }
     };
-    const EVENT_ORDER = ['iran-war', 'green-loans', 'karachi-electricity', 'net-metering', 'rooftop-financing', 'caucus-meeting', 'world-bank', 'imf-gst', 'thar-water'];
+    const EVENT_ORDER = ['iran-war', 'industrial-electrification', 'pre-budget-2025', 'rural-electrification', 'grm', 'kapco', 'thunder-lightning', 'offshore-wind-study', 'offshore-wind-consultation', 'black-gold', 'green-loans', 'karachi-electricity', 'net-metering', 'rooftop-financing', 'caucus-meeting', 'world-bank', 'imf-gst', 'thar-water'];
 
     function renderEvent(slug) {
       const e = EVENTS[slug] || EVENTS['iran-war'];
@@ -6787,9 +7110,41 @@
     ];
 
     function mmTitle(label) {
-      let s = label.replace(/\.indd$/i, '').replace(/-R0\d+/ig, '').replace(/^Weekly[-_\s]*media[-_\s]*monitor[-_\s]*/i, '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
-      s = s.replace(/\b([a-z])/g, m => m.toUpperCase());
-      return s || 'Weekly Media Monitor';
+      const MONTHS = {
+        jan: 'January', feb: 'February', mar: 'March', apr: 'April', may: 'May',
+        jun: 'June', jul: 'July', aug: 'August', sep: 'September', oct: 'October',
+        nov: 'November', dec: 'December'
+      };
+      // Normalise: en/em dashes → hyphen, strip ordinal suffixes (1st→1), strip noise
+      let s = label.replace(/[–—]/g, '-').replace(/[_\s]+/g, '-')
+        .replace(/(\d+)(st|nd|rd|th)/gi, '$1')
+        .replace(/\.indd$/i, '').replace(/-R0\d+/ig, '')
+        .replace(/^Weekly-?media-?monitor-?/i, '');
+      const parts = s.split(/-+/).filter(Boolean);
+      const tokens = [];
+      for (const p of parts) {
+        if (/^\d{4}$/.test(p)) { tokens.push({ type: 'y', v: p }); continue; }
+        const n = p.match(/^(\d+)$/);
+        if (n) { tokens.push({ type: 'd', v: parseInt(n[1]) }); continue; }
+        const pl = p.toLowerCase();
+        for (const [abbr, full] of Object.entries(MONTHS)) {
+          if (pl === abbr || (pl.startsWith(abbr) && pl.length >= 3)) {
+            tokens.push({ type: 'm', v: full }); break;
+          }
+        }
+      }
+      const years = tokens.filter(t => t.type === 'y').map(t => t.v);
+      const days = tokens.filter(t => t.type === 'd').map(t => t.v);
+      const months = tokens.filter(t => t.type === 'm').map(t => t.v);
+      const d1 = days[0], m1 = months[0], d2 = days[1] !== undefined ? days[1] : null, m2 = months[1] || months[0];
+      const y1 = years[0] || '', y2 = years[1] || '';
+      if (d1 !== undefined && m1 && d2 !== null && y1) {
+        return y2 && y2 !== y1
+          ? `${d1} ${m1} ${y1} – ${d2} ${m2} ${y2}`
+          : `${d1} ${m1} – ${d2} ${m2} ${y1}`;
+      }
+      if (d1 !== undefined && m1 && y1) return `${d1} ${m1} ${y1}`;
+      return label.replace(/[-_]+/g, ' ').replace(/\b[a-z]/g, c => c.toUpperCase()) || 'Weekly Media Monitor';
     }
 
     (function () {
@@ -6802,7 +7157,7 @@
       const six = SIXMONTH_MM.map(o => Object.assign({ type: 'Six-Monthly Media Monitor', cat: 'six' }, o));
       const all = weekly.concat(six);
       const search = document.getElementById('mmSearch');
-      let filter = 'all', query = '', page = 1; const perPage = 16;
+      let filter = 'all', query = '', page = 1; const perPage = 15;
 
       function monCard(o) {
         return '<a class="study-card mon-card" href="' + o.pdf + '" target="_blank" rel="noopener">' +
