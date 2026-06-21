@@ -8,13 +8,11 @@
   <meta name="description" content="PRIED is an independent public interest think-tank based in Islamabad, developing evidence-based research for a sustainable, equitable and low-carbon energy future in Pakistan.">
   <!-- Preload hero image (LCP) -->
   <link rel="preload" as="image" href="image 1.png">
-  <!-- Fonts: preconnect first, then non-blocking load -->
+  <!-- Fonts: preconnect to both Google hosts, then single blocking request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <!-- Preconnect to external image CDN -->
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://www.priedpk.org">
   <link rel="icon" type="image/png" href="mono.png">
   <link rel="apple-touch-icon" href="mono.png">
@@ -2832,7 +2830,7 @@
       const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
 
       const strip = document.createElement('div');
-      strip.style.cssText = 'display:flex;flex-direction:column;row-gap:' + gap + 'px;';
+      strip.style.cssText = 'display:flex;flex-direction:column;row-gap:' + gap + 'px;will-change:transform;';
       origItems.forEach(function (item) { strip.appendChild(item); });
       origItems.forEach(function (item) { strip.appendChild(item.cloneNode(true)); });
       container.appendChild(strip);
