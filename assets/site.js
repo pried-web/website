@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // parent section (article→news, event→events, job→careers).
     const fileOf = href => (href || '').split('/').pop().split(/[?#]/)[0];
     const current = fileOf(location.pathname) || 'index.html';
-    const parentSection = { 'article.html': 'news.html', 'event.html': 'events.html', 'job.html': 'careers.html' };
+    const parentSection = { 'article': 'news', 'event': 'events', 'job': 'careers' };
     const activeFile = parentSection[current] || current;
 
     nav.querySelectorAll('.nav-links a').forEach(a => {
@@ -290,11 +290,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', e => {
       if (e.target.closest('a, button')) return;
       const art = e.target.closest('[data-article]');
-      if (art) { location.href = 'article.html?slug=' + art.getAttribute('data-article'); return; }
+      if (art) { location.href = 'article?slug=' + art.getAttribute('data-article'); return; }
       const ev = e.target.closest('[data-event]');
-      if (ev) { location.href = 'event.html?slug=' + ev.getAttribute('data-event'); return; }
+      if (ev) { location.href = 'event?slug=' + ev.getAttribute('data-event'); return; }
       const job = e.target.closest('[data-job]');
-      if (job) { location.href = 'job.html?slug=' + job.getAttribute('data-job'); }
+      if (job) { location.href = 'job?slug=' + job.getAttribute('data-job'); }
     });
 
     /* ── RELATED ITEMS ACCORDION + IMAGE LIGHTBOX ── */

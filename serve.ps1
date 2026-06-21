@@ -20,6 +20,8 @@ try {
     if ([string]::IsNullOrEmpty($rel)) { $rel = 'index.html' }
     $full = Join-Path $root $rel
     if (Test-Path $full -PathType Container) { $full = Join-Path $full 'index.html' }
+    # Clean URLs: serve /studies from studies.html (mirrors Netlify pretty_urls)
+    if (-not (Test-Path $full -PathType Leaf) -and (Test-Path ($full + '.html') -PathType Leaf)) { $full = $full + '.html' }
     if (Test-Path $full -PathType Leaf) {
       try {
         $bytes = [System.IO.File]::ReadAllBytes($full)
