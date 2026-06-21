@@ -7250,40 +7250,62 @@
   </script>
   <script>
     (function () {
-      function loopScroll(containerId, rowSelector, speed) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
+      function startLoopScroll(container, rowSelector, speed) {
         const origItems = Array.from(container.querySelectorAll(rowSelector));
         if (origItems.length <= 1) return;
         const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
+
         const strip = document.createElement('div');
         strip.style.cssText = 'display:flex;flex-direction:column;row-gap:' + gap + 'px;will-change:transform;';
         origItems.forEach(function (item) { strip.appendChild(item); });
         origItems.forEach(function (item) { strip.appendChild(item.cloneNode(true)); });
         container.appendChild(strip);
         container.style.overflowY = 'hidden';
+
+        // Measure after one frame so text has fully rendered
         requestAnimationFrame(function () {
-          const vis = Array.from(strip.querySelectorAll(rowSelector)).slice(0, 4);
-          const clipH = vis.reduce(function (s, el) { return s + el.offsetHeight; }, 0) + gap * 3;
-          container.style.height = clipH + 'px';
-          const fullH = origItems.reduce(function (s, el) { return s + el.offsetHeight + gap; }, 0);
-          var pos = 0, paused = false, last = null;
-          container.addEventListener('mouseenter', function () { paused = true; });
-          container.addEventListener('mouseleave', function () { paused = false; last = null; });
-          (function tick(ts) {
-            if (!paused) {
-              if (last !== null) {
-                pos += speed * (ts - last) / 1000;
-                if (pos >= fullH) pos -= fullH;
-                strip.style.transform = 'translateY(-' + pos.toFixed(2) + 'px)';
+          requestAnimationFrame(function () {
+            const allItems = Array.from(strip.querySelectorAll(rowSelector));
+            const vis = allItems.slice(0, 4);
+            const clipH = vis.reduce(function (s, el) { return s + el.offsetHeight; }, 0) + gap * 3;
+            container.style.height = (clipH || 240) + 'px'; // 240px fallback if still 0
+            const fullH = origItems.reduce(function (s, el) { return s + el.offsetHeight + gap; }, 0) || 300;
+
+            var pos = 0, paused = false, last = null;
+            container.addEventListener('mouseenter', function () { paused = true; });
+            container.addEventListener('mouseleave', function () { paused = false; last = null; });
+
+            (function tick(ts) {
+              if (!paused) {
+                if (last !== null) {
+                  pos += speed * (ts - last) / 1000;
+                  if (pos >= fullH) pos -= fullH;
+                  strip.style.transform = 'translateY(-' + pos.toFixed(2) + 'px)';
+                }
+                last = ts;
               }
-              last = ts;
-            }
-            requestAnimationFrame(tick);
-          })(performance.now());
+              requestAnimationFrame(tick);
+            })(performance.now());
+          });
         });
       }
-      loopScroll('ongoingWorkItems', '.nside-item', 28);
+
+      // Defer until the container is actually visible (SPA — section may start hidden)
+      var container = document.getElementById('ongoingWorkItems');
+      if (!container) return;
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            io.disconnect();
+            startLoopScroll(container, '.nside-item', 28);
+          }
+        }, { threshold: 0.1 });
+        io.observe(container);
+      } else {
+        // Fallback for older browsers
+        setTimeout(function () { startLoopScroll(container, '.nside-item', 28); }, 800);
+      }
     })();
   </script>
 </body>
