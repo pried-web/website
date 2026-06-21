@@ -4275,21 +4275,30 @@
 
         <div>
           <!-- FEATURED -->
-          <div class="news-featured-hero" data-article="crossroads">
-            <div class="nfh-bg"><img src="https://www.priedpk.org/wp-content/uploads/2026/05/energy-crossroads.gif"
-                alt="Pakistan energy crossroads" loading="lazy"
+          <div class="news-featured-hero" data-article="scooty-ev">
+            <div class="nfh-bg"><img src="https://i.dawn.com/primary/2026/06/1711212592f22e0.webp"
+                alt="Scooty for the beti and EV for the biwi" loading="eager"
                 onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80'"></div>
             <div class="nfh-body">
-              <div class="nfh-tag">Latest Story · May 2026</div>
-              <h2>Pakistan at Energy Crossroads</h2>
-              <p>A comprehensive look at the pivotal decisions facing Pakistan's energy sector — from solar tariff
-                disputes to the future of coal and the promise of renewable energy at scale.</p>
-              <a href="#article/crossroads" class="nfh-link">Read Full Story →</a>
+              <div class="nfh-tag">Latest Story · 17 June 2026 · Dawn</div>
+              <h2>Scooty for the beti and EV for the biwi</h2>
+              <p>Zahra Naeem &amp; Laiba Nayyab examine how electric two-wheelers are reshaping women's mobility in
+                Pakistan — and who the revolution is leaving behind.</p>
+              <a href="#article/scooty-ev" class="nfh-link">Read Full Story →</a>
             </div>
           </div>
 
           <!-- 3-COLUMN GRID -->
           <div class="news-grid-3">
+            <div class="ng3-card" data-article="crossroads">
+              <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2026/05/energy-crossroads.gif"
+                  alt="Pakistan at energy crossroads" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
+              <div class="ng3-body">
+                <div class="ng3-tag">Energy · May 2026</div>
+                <h4>Pakistan at Energy Crossroads</h4>
+                <div class="ng3-date">14 May 2026 · Business Recorder</div>
+              </div>
+            </div>
             <div class="ng3-card" data-article="net-metering">
               <div class="ng3-img"><img src="https://www.priedpk.org/wp-content/uploads/2026/02/net-billing.jpg"
                   alt="Net metering" loading="lazy" onerror="this.style.background='var(--cream)'"></div>
@@ -6003,6 +6012,23 @@
     /* ── NEWS ARTICLES (data-driven detail pages) ── */
     const PRIED_NEWS = 'https://www.priedpk.org/?post_type=news&p=';
     const ARTICLES = {
+      'scooty-ev': {
+        title: "Scooty for the beti and EV for the biwi",
+        tag: "Gender & Energy", date: "17 June 2026",
+        author: "Zahra Naeem & Laiba Nayyab",
+        url: "https://www.dawn.com/news/2008541", sourceName: "Dawn",
+        img: "https://i.dawn.com/primary/2026/06/1711212592f22e0.webp",
+        body: [
+          `Two young women — Esha, 22, and Sana, 24 — chose electric scooters for practical reasons: eliminating fuel expenses (petrol costs have doubled to Rs12,000 monthly) and managing lighter machines that require no kickstart mechanics. For them, the switch to an electric two-wheeler was less about the environment and more about reclaiming time, money and a degree of independence.`,
+          `Esha identifies three obstacles facing women who want to ride: upfront costs, social pressure ("what will people say"), and discomfort with female independence. She notes that "control only works when we're dependent." For women like her, the electric scooter is not just a vehicle — it is a negotiation with the household about who gets to move.`,
+          `The federal PAVE initiative targets 116,000 electric bikes annually, yet only 5,409 units were distributed — roughly 4.5% of targets. Commercial banks approved merely 9% of EV loan applications. The policy promise and the delivery gap tell very different stories.`,
+          `Nazia, a 30-year-old household helper, cannot access this technology at all. Battery durability concerns, lack of charging infrastructure, electricity costs and language barriers on device interfaces create insurmountable obstacles for low-income workers. EV subsidies funded by petrol levies disproportionately burden middle and lower-income consumers while benefiting more affluent buyers.`,
+          `Rural women face exclusion as charging infrastructure concentrates in major cities. The article asks the central question: is Pakistan's EV transition a just transition, or just a transition — one that delivers mobility to those who already have options, while leaving behind those who need it most?`
+        ],
+        tags: ["Women", "EVs", "Electric Mobility", "Gender", "Energy Transition", "PAVE", "Mobility"],
+        authorDesc: "Zahra Naeem and Laiba Nayyab are researchers at PRIED covering energy, gender and climate justice in Pakistan.",
+        related: ["solar-gender", "net-metering", "distributed-solar"]
+      },
       'crossroads': {
         title: "Pakistan at energy crossroads",
         tag: "Energy", date: "14 May 2026",
