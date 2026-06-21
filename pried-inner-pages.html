@@ -4479,7 +4479,7 @@
               <h3>Ongoing Work</h3>
               <p>What we're actively working on</p>
             </div>
-            <div class="nside-items">
+            <div class="nside-items" id="ongoingWorkItems">
               <div class="nside-item">
                 <div class="nsi-tag">Community</div>
                 <h5>Thar community mobilisation &amp; international representation</h5>
@@ -4495,6 +4495,14 @@
               <div class="nside-item">
                 <div class="nsi-tag">Media Training</div>
                 <h5>Journalist training cohorts across Pakistan</h5>
+              </div>
+              <div class="nside-item">
+                <div class="nsi-tag">Policy</div>
+                <h5>Net metering reform — prosumer rights and grid equity analysis</h5>
+              </div>
+              <div class="nside-item">
+                <div class="nsi-tag">Research</div>
+                <h5>Balochistan rural electrification and energy access pathways</h5>
               </div>
             </div>
           </div>
@@ -7238,6 +7246,44 @@
         render(true);
       });
       render(false);
+    })();
+  </script>
+  <script>
+    (function () {
+      function loopScroll(containerId, rowSelector, speed) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const origItems = Array.from(container.querySelectorAll(rowSelector));
+        if (origItems.length <= 1) return;
+        const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
+        const strip = document.createElement('div');
+        strip.style.cssText = 'display:flex;flex-direction:column;row-gap:' + gap + 'px;will-change:transform;';
+        origItems.forEach(function (item) { strip.appendChild(item); });
+        origItems.forEach(function (item) { strip.appendChild(item.cloneNode(true)); });
+        container.appendChild(strip);
+        container.style.overflowY = 'hidden';
+        requestAnimationFrame(function () {
+          const vis = Array.from(strip.querySelectorAll(rowSelector)).slice(0, 4);
+          const clipH = vis.reduce(function (s, el) { return s + el.offsetHeight; }, 0) + gap * 3;
+          container.style.height = clipH + 'px';
+          const fullH = origItems.reduce(function (s, el) { return s + el.offsetHeight + gap; }, 0);
+          var pos = 0, paused = false, last = null;
+          container.addEventListener('mouseenter', function () { paused = true; });
+          container.addEventListener('mouseleave', function () { paused = false; last = null; });
+          (function tick(ts) {
+            if (!paused) {
+              if (last !== null) {
+                pos += speed * (ts - last) / 1000;
+                if (pos >= fullH) pos -= fullH;
+                strip.style.transform = 'translateY(-' + pos.toFixed(2) + 'px)';
+              }
+              last = ts;
+            }
+            requestAnimationFrame(tick);
+          })(performance.now());
+        });
+      }
+      loopScroll('ongoingWorkItems', '.nside-item', 28);
     })();
   </script>
 </body>
