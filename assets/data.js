@@ -1037,16 +1037,16 @@
     ];
 
     const BIWEEKLY_MM = [
-      ["Bi-Weekly Monitor - 13 Mar to 19 Mar 2023", "Weekly/thumbnails/Bi-Weekly Monitor - 13 Mar to 19 Mar 20231.jpg", "Weekly/Bi-Weekly Monitor - 13 Mar to 19 Mar 2023.pdf"],
-      ["Bi-Weekly Monitor - 01 Mar to 12 Mar 2023", "Weekly/thumbnails/Bi-Weekly Monitor - 01 Mar to 12 Mar 20231.jpg", "Weekly/Bi-Weekly Monitor - 01 Mar to 12 Mar 2023.pdf"],
-      ["Bi-Weekly Monitor - 14 Feb to 28 Feb 2023", "Weekly/thumbnails/Bi-Weekly Monitor - 14 Feb to 28 Feb 20231.jpg", "Weekly/Bi-Weekly Monitor - 14 Feb to 28 Feb 2023.pdf"],
-      ["Bi-Weekly Monitor - 01 Feb to 13 Feb 2023", "Weekly/thumbnails/Bi-Weekly Monitor - 01 Feb to 13 Feb 20231.jpg", "Weekly/Bi-Weekly Monitor - 01 Feb to 13 Feb 2023.pdf"],
-      ["Bi-Weekly Monitor - 15 Jan to 31 Jan 2023", "Weekly/thumbnails/Bi-Weekly Monitor - 15 Jan to 31 Jan 20231.jpg", "Weekly/Bi-Weekly Monitor - 15 Jan to 31 Jan 2023.pdf"],
-      ["Bi-Weekly Monitor - 01 Jan to 14 Jan 2023", "Weekly/thumbnails/Bi-Weekly Monitor - 01 Jan to 14 Jan 20231.jpg", "Weekly/Bi-Weekly Monitor - 01 Jan to 14 Jan 2023.pdf"],
-      ["Bi-Weekly Monitor - 15 Dec to 31 Dec 2022", "Weekly/thumbnails/Bi-Weekly Monitor - 15 Dec to 31 Dec 20221.jpg", "Weekly/Bi-Weekly Monitor - 15 Dec to 31 Dec 2022.pdf"],
-      ["Bi-Weekly Monitor - 01 Dec to 14 Dec 2022", "Weekly/thumbnails/Bi-Weekly Monitor - 01 Dec to 14 Dec 20221.jpg", "Weekly/Bi-Weekly Monitor - 01 Dec to 14 Dec 2022.pdf"],
-      ["Bi-Weekly Monitor - 15 Nov to 30 Nov 2022", "Weekly/thumbnails/Bi-Weekly Monitor - 15 Nov to 30 Nov 20221.jpg", "Weekly/Bi-Weekly Monitor - 15 Nov to 30 Nov 2022.pdf"],
-      ["Bi-Weekly Monitor - 01 Nov to 14 Nov 2022", "Weekly/thumbnails/Bi-Weekly Monitor - 01 Nov to 14 Nov 20221.jpg", "Weekly/Bi-Weekly Monitor - 01 Nov to 14 Nov 2022.pdf"]
+      ["Bi-Weekly Monitor - 13 Mar to 19 Mar 2023", "Bi-Weekly/10.jpg?v=3", "Weekly/Bi-Weekly Monitor - 13 Mar to 19 Mar 2023.pdf"],
+      ["Bi-Weekly Monitor - 01 Mar to 12 Mar 2023", "Bi-Weekly/9.jpg?v=3", "Weekly/Bi-Weekly Monitor - 01 Mar to 12 Mar 2023.pdf"],
+      ["Bi-Weekly Monitor - 14 Feb to 28 Feb 2023", "Bi-Weekly/8.jpg?v=3", "Weekly/Bi-Weekly Monitor - 14 Feb to 28 Feb 2023.pdf"],
+      ["Bi-Weekly Monitor - 01 Feb to 13 Feb 2023", "Bi-Weekly/7.png?v=3", "Weekly/Bi-Weekly Monitor - 01 Feb to 13 Feb 2023.pdf"],
+      ["Bi-Weekly Monitor - 15 Jan to 31 Jan 2023", "Bi-Weekly/6.jpeg?v=3", "Weekly/Bi-Weekly Monitor - 15 Jan to 31 Jan 2023.pdf"],
+      ["Bi-Weekly Monitor - 01 Jan to 14 Jan 2023", "Bi-Weekly/5.jpeg?v=3", "Weekly/Bi-Weekly Monitor - 01 Jan to 14 Jan 2023.pdf"],
+      ["Bi-Weekly Monitor - 15 Dec to 31 Dec 2022", "Bi-Weekly/4.jpeg?v=3", "Weekly/Bi-Weekly Monitor - 15 Dec to 31 Dec 2022.pdf"],
+      ["Bi-Weekly Monitor - 01 Dec to 14 Dec 2022", "Bi-Weekly/3.jpeg?v=3", "Weekly/Bi-Weekly Monitor - 01 Dec to 14 Dec 2022.pdf"],
+      ["Bi-Weekly Monitor - 15 Nov to 30 Nov 2022", "Bi-Weekly/2.jpeg?v=3", "Weekly/Bi-Weekly Monitor - 15 Nov to 30 Nov 2022.pdf"],
+      ["Bi-Weekly Monitor - 01 Nov to 14 Nov 2022", "Bi-Weekly/1.jpeg?v=3", "Weekly/Bi-Weekly Monitor - 01 Nov to 14 Nov 2022.pdf"]
     ];
 
     function mmTitle(label) {
