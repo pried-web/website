@@ -856,6 +856,7 @@
 
 /* ── MEDIA MONITORS data + title helper ── */
     const SIXMONTH_MM = [
+      { t: "Six-Monthly Media Monitor (Nov 2025–Apr 2026)", y: "2026", img: "cover/Thumbnails-11.jpg.jpeg", pdf: "Weekly/Six Monthly - Nov 2025 to Apr 2026.pdf" },
       { t: "Six-Monthly Media Monitor (May–Oct 2025)", y: "2026", img: "https://www.priedpk.org/wp-content/uploads/2026/01/Thumbnails-07-scaled.jpg", pdf: "pdfs/MM-6-months.pdf" },
       { t: "Six-Monthly Media Monitor (Nov 2024–April 2025)", y: "2025", img: "https://www.priedpk.org/wp-content/uploads/2025/07/november-to-april.jpg", pdf: "pdfs/November-1st-2024-April-30th-2025.pdf" },
       { t: "Six-Monthly Media Monitor (May–Oct 2024)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/11/media.jpg", pdf: "pdfs/Six-Month-Media-Monitor.pdf" },
