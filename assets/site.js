@@ -146,8 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── CONTACT FORM ── */
     function handleContactSubmit(e) {
       e.preventDefault();
-      document.querySelector('.contact-form').style.display = 'none';
-      document.getElementById('cf-success').style.display = 'block';
+      const form = e.target;
+      const formData = new FormData(form);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        document.querySelector('.contact-form').style.display = 'none';
+        document.getElementById('cf-success').style.display = 'block';
+      })
+      .catch((error) => alert("There was an issue sending your message. Please try again."));
     }
 
     /* ── SHARE BUTTONS ── */
