@@ -1,4 +1,4 @@
-﻿/* PRIED shared data â€” articles, events, jobs, media monitors.
+/* PRIED shared data â€” articles, events, jobs, media monitors.
    Extracted from pried-inner-pages.html. No DOM access here. */
 
 /* â”€â”€ NEWS ARTICLES â”€â”€ */
