@@ -16,9 +16,13 @@ http.createServer((req, res) => {
   if (url === '/') url = '/index.html';
   const file = path.join(root, url);
   if (!file.startsWith(root)) { res.writeHead(403); return res.end('Forbidden'); }
-  fs.readFile(file, (err, data) => {
-    if (err) { res.writeHead(404); return res.end('Not found'); }
-    res.writeHead(200, { 'Content-Type': types[path.extname(file).toLowerCase()] || 'application/octet-stream' });
-    res.end(data);
-  });
+  const tryFiles = [file, file + '.html'];
+  (function next(i) {
+    if (i >= tryFiles.length) { res.writeHead(404); return res.end('Not found'); }
+    fs.readFile(tryFiles[i], (err, data) => {
+      if (err) return next(i + 1);
+      res.writeHead(200, { 'Content-Type': types[path.extname(tryFiles[i]).toLowerCase()] || 'application/octet-stream' });
+      res.end(data);
+    });
+  }(0));
 }).listen(port, '127.0.0.1', () => console.log('Serving ' + root + ' at http://127.0.0.1:' + port + '/'));
