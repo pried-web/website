@@ -504,16 +504,38 @@ const EVENTS = {
     videos: [{ title: "Webinar on 'Coal-induced water woes of Tharis'", url: "https://www.youtube.com/embed/VLohWxj5NiE" }],
     media: [], press: [], others: []
   },
+  'climates-conference': {
+    title: "PRIED collaborates with NIPS - Climates of Past, Present and Future",
+    cat: "Conference", date: "December 15, 2022", loc: "National Institute of Pakistan Studies, Quaid-i-Azam University, Islamabad", emoji: "🌍",
+    img: "https://www.priedpk.org/wp-content/uploads/2022/12/PRIED-collaborates-with-NIPS-to-hold-one-day.png",
+    url: PRIED_EVENT + '372',
+    body: [
+      `The people of Pakistan – and particularly historically oppressed ethnic peripheries – have been ravaged by floods. Thousands killed, millions displaced, livelihoods destroyed. Large parts of Sindh remain inundated by water, disease running rampant.`,
+      `In the wake of the floods, a growing number of voices – in Pakistan, other postcolonial countries, and the so-called 'developed' world – have called for climate reparations and debt relief.`,
+      `Organised jointly by PRIED and the National Institute of Pakistan Studies at Quaid-i-Azam University, this one-day conference addressed cross-cutting themes with an emphasis on history, contemporary global and domestic power relations, political ecology, and centring the voices of those who are bearing the brunt of the unfolding climate crisis.`,
+      `The conference featured keynote addresses by Dr. Saeed Rid and Ibrahim Buriro, followed by panel discussions on climate justice and Pakistan's colonial history, domestic power structures and political ecology, and community-level case studies from South Punjab, Sindhi and Baloch fishing communities, and the environmental impacts of large-scale infrastructure. Pakistan contributes less than 1% of global carbon emissions yet faces disproportionate and devastating climate impacts — a central injustice the conference sought to examine and respond to.`
+    ],
+    tags: ["Climate Justice", "Conference", "Floods", "Political Ecology", "Reparations", "NIPS"],
+    related: ["thar-water", "world-bank", "caucus-meeting"],
+    images: [
+      "https://www.priedpk.org/wp-content/uploads/2022/12/Image-1-1.jpeg",
+      "https://www.priedpk.org/wp-content/uploads/2022/12/Image-2.jpeg"
+    ],
+    videos: [{ title: "Climates of Past, Present and Future — Full Conference Recording", url: "https://www.youtube.com/embed/WTe1NNXVJQI" }],
+    media: [], press: [], others: []
+  },
   'kapco': {
-    title: "Repurposing Pakistan's Aging Thermal Power Plants: Pathways to Solar Integration and Grid Stability",
+    title: "KAPCO Webinar",
     cat: "Webinar", date: "2025", loc: "Islamabad", emoji: "⚡",
-    img: "https://www.priedpk.org/wp-content/uploads/2025/02/2-1.jpg",
+    img: "cover/Energy.jpg",
     url: PRIED_EVENT + '1957',
     body: [
-      `Pakistan faces an energy infrastructure challenge: aging, inefficient thermal power plants that are no longer viable yet remain critical for grid stability. Facilities like KAPCO and TPS Muzaffargarh operate beyond their design life, with high generation costs and significant carbon footprints.`,
-      `PRIED's research initiative examined the feasibility of converting these fossil-fuel stations into large-scale solar installations — leveraging existing land, grid connections, and infrastructure already in place. The study, titled "Repurposing Pakistan's Aging Thermal Power Plants: Pathways to Solar Integration and Grid Stability," combined financial assessments with decommissioning evaluations.`,
-      `The analysis examined component salvage, dismantling expenses, land reuse opportunities, and international best practices. Results indicated that decommissioning costs are "far outweighed by the economic and environmental benefits" — including payback periods of just 1–2.4 years, an 80% reduction in generation costs, and millions of tons of prevented CO₂ emissions.`,
-      `The study recommends integrating repurposing frameworks into Pakistan's generation planning, promoting green financing instruments, and developing phased retirement strategies for aging fossil fuel plants as a practical pathway to grid decarbonisation.`
+      `In recent years, Pakistan's energy sector has faced a pressing challenge — what to do with its aging, inefficient thermal power plants that are no longer viable yet remain critical for grid stability.`,
+      `At the same time, renewable energy technologies like solar and wind have become significantly cheaper and more reliable, offering a clear opportunity to replace these fossil-based systems.`,
+      `To address this complex issue, PRIED undertook a comprehensive study titled 'Repurposing Pakistan's Aging Thermal Power Plants: Pathways to Solar Integration and Grid Stability.'`,
+      `The research combined cost–benefit analysis with a detailed decommissioning assessment, examining both the costs and processes of safely retiring old thermal units.`,
+      `By integrating decommissioning, repurposing, and renewable integration in a single framework, this study provides both a technical blueprint and policy roadmap for Pakistan's clean energy transition.`,
+      `Ultimately, the study highlights that Pakistan's path to sustainable energy lies not in extending the life of its aging infrastructure, but in repurposing it.`
     ],
     tags: ["KAPCO", "Thermal Power", "Repurposing", "Solar", "Grid", "Decarbonisation"],
     related: ["world-bank", "green-loans", "iran-war"],
@@ -755,7 +777,7 @@ const EVENTS = {
     others: [{ title: "Coal Power and Livelihood Disruptions in Thar (PDF)", url: "pdfs/Coal-Power-and-Livelihood-Disruptions-in-Thar.pdf" }]
   }
 };
-const EVENT_ORDER = ['iran-war', 'industrial-electrification', 'pre-budget-2025', 'rural-electrification', 'grm', 'kapco', 'thunder-lightning', 'offshore-wind-study', 'offshore-wind-consultation', 'black-gold', 'green-loans', 'karachi-electricity', 'net-metering', 'rooftop-financing', 'caucus-meeting', 'world-bank', 'imf-gst', 'thar-water'];
+const EVENT_ORDER = ['iran-war', 'industrial-electrification', 'pre-budget-2025', 'rural-electrification', 'grm', 'kapco', 'thunder-lightning', 'offshore-wind-study', 'offshore-wind-consultation', 'black-gold', 'green-loans', 'karachi-electricity', 'climates-conference', 'net-metering', 'rooftop-financing', 'caucus-meeting', 'world-bank', 'imf-gst', 'thar-water'];
 
 /* ── JOBS ── */
 const JOBS = {
