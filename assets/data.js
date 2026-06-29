@@ -888,6 +888,7 @@ const SIXMONTH_MM = [
 ];
 
 const WEEKLY_MM = [
+  ["Weekly Monitor - 15 Jun to 21 Jun 2026", "Weekly/covers/June 15-June21-2026.jpeg", "Weekly/Weekly Monitor - 15 Jun to 21 Jun 2026.pdf"],
   ["Weekly Monitor - 08 Jun to 14 Jun 2026", "https://www.priedpk.org/wp-content/uploads/2026/06/8-14.jpeg", "Weekly/Weekly Monitor - 08 Jun to 14 Jun 2026.pdf"],
   ["Weekly Monitor - 01 Jun to 07 Jun 2026", "https://www.priedpk.org/wp-content/uploads/2026/06/1-7-.jpeg", "Weekly/Weekly Monitor - 01 Jun to 07 Jun 2026.pdf"],
   ["Weekly Monitor - 25 May to 31 May 2026", "https://www.priedpk.org/wp-content/uploads/2026/06/25-31-May.jpeg", "Weekly/Weekly Monitor - 25 May to 31 May 2026.pdf"],
