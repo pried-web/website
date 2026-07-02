@@ -2,20 +2,16 @@
    Extracted from pried-inner-pages.html. No DOM access here. */
 
 /* ── NEWS ARTICLES ── */
-const PRIED_NEWS = 'https://www.priedpk.org/?post_type=news&p=';
 const ARTICLES = {
   'scooty-ev': {
     title: "Scooty for the beti and EV for the biwi",
     tag: "Gender & Energy", date: "17 June 2026",
     author: "Zahra Naeem & Laiba Nayyab",
-    url: "https://www.dawn.com/news/2008541", sourceName: "Dawn",
+    url: "https://www.dawn.com/news/2008541/scooty-for-the-beti-and-ev-for-the-biwi", sourceName: "Dawn",
     img: "https://i.dawn.com/primary/2026/06/1711212592f22e0.webp",
     body: [
-      `Two young women — Esha, 22, and Sana, 24 — chose electric scooters for practical reasons: eliminating fuel expenses (petrol costs have doubled to Rs12,000 monthly) and managing lighter machines that require no kickstart mechanics. For them, the switch to an electric two-wheeler was less about the environment and more about reclaiming time, money and a degree of independence.`,
-      `Esha identifies three obstacles facing women who want to ride: upfront costs, social pressure ("what will people say"), and discomfort with female independence. She notes that "control only works when we're dependent." For women like her, the electric scooter is not just a vehicle — it is a negotiation with the household about who gets to move.`,
-      `The federal PAVE initiative targets 116,000 electric bikes annually, yet only 5,409 units were distributed — roughly 4.5% of targets. Commercial banks approved merely 9% of EV loan applications. The policy promise and the delivery gap tell very different stories.`,
-      `Nazia, a 30-year-old household helper, cannot access this technology at all. Battery durability concerns, lack of charging infrastructure, electricity costs and language barriers on device interfaces create insurmountable obstacles for low-income workers. EV subsidies funded by petrol levies disproportionately burden middle and lower-income consumers while benefiting more affluent buyers.`,
-      `Rural women face exclusion as charging infrastructure concentrates in major cities. The article asks the central question: is Pakistan's EV transition a just transition, or just a transition — one that delivers mobility to those who already have options, while leaving behind those who need it most?`
+      `Esha named her scooty Riri, after herself. It cost Rs420,000 and she hasn't spent a rupee more since on transport. Every time the scooty hums to life — when the 22-year-old leaves for classes at the College of Electrical & Mechanical Engineering — heads turn. "My friends think it's cool," she says. "Young women light up in public. They say it looks easy to handle." Their reaction means everything to her.`,
+      `In a country where a woman's movement is still being negotiated, the sight of a young woman riding an electric bike is its own argument. Esha has thought carefully about why that argument meets resistance. "One, the upfront cost. But honestly, why would a family invest in a scooty for their daughter when bhai is around as a free drop service?" she says. The second resistance comes from the feeble 'log kya kahenge' and 'kuch ho jayega road pe' fear. And lastly, Esha believes that women's independence makes men uncomfortable. "The control only works when we're dependent," she adds.`
     ],
     tags: ["Women", "EVs", "Electric Mobility", "Gender", "Energy Transition", "PAVE", "Mobility"],
     authorDesc: "Zahra Naeem and Laiba Nayyab are researchers at PRIED covering energy, gender and climate justice in Pakistan.",
@@ -26,7 +22,7 @@ const ARTICLES = {
     tag: "Energy", date: "14 May 2026",
     author: "Muqaddas Ashiq & Rimsha Rehan",
     url: "https://www.brecorder.com/news/40421008", sourceName: "Business Recorder",
-    img: "https://www.priedpk.org/wp-content/uploads/2026/05/energy-crossroads.gif",
+    img: "assets/uploads/2026/05/energy-crossroads.gif",
     body: [
       `The energy shock triggered by the US-Israel war has reverberated across global markets with uncommon severity. For Pakistan, the disruption arrives at a particularly vulnerable moment. Summer brings a sharp surge in electricity demand driven by cooling needs, forcing the national grid to rapidly ramp up generation capacity.`
     ],
@@ -37,13 +33,11 @@ const ARTICLES = {
     title: "Net metering: Who pays the price for Pakistan's new solar regime?",
     tag: "Solar Policy", date: "10 February 2026",
     author: "Manzoor Ahmed Alizai",
-    url: PRIED_NEWS + '2111', sourceName: "Dawn",
-    img: "https://www.priedpk.org/wp-content/uploads/2026/02/net-billing.jpg",
+    url: "https://www.dawn.com/news/1972275/net-metering-billing-who-pays-the-price-for-pakistans-new-solar-regime", sourceName: "Dawn",
+    img: "assets/uploads/2026/02/net-billing.jpg",
     body: [
-      `The Pakistani government recently implemented a significant policy shift by replacing the existing net-metering system with a net-billing framework for solar consumers — known as prosumers. This change affects both current and prospective participants in the solar energy sector.`,
-      `Authorities cited multiple justifications for this transition, including "the need to address the technical, financial and equity concerns" that have surfaced due to rapid solar expansion across the nation. A key modification involves the compensation rate for solar-generated electricity returned to the grid: the buyback rate has been substantially reduced from Rs26 per unit to Rs11 per unit.`,
-      `This adjustment reflects market rates and may result in extended recovery periods and diminished financial gains for prosumers. The newly established export rate aligns with the government's average procurement costs for electricity from conventional power generation facilities.`,
-      `As the regulator recalibrates buy-back rates, the tension between protecting the grid's finances and preserving the incentives that fuelled Pakistan's distributed solar boom remains unresolved — and it is ordinary solar investors who are left to absorb the difference.`
+      `In a sudden move, the government recently terminated the existing net-metering regime for all existing and future net-metered solar consumers, known as prosumers, and replaced it with a net-billing regime for all.`,
+      `The stated rationale behind this development — which could mean longer payback periods and lower overnight returns — is the need to address the technical, financial and equity concerns that have emerged from the mushrooming growth of solar power in Pakistan over the last couple of years. Under the changes, the buyback rate for electricity exported to the grid by solarised consumers has been reduced from the existing Rs26 per unit to Rs11 per unit. The new export rate broadly reflects the national average energy purchase price at which the government purchases electricity from power plants.`
     ],
     tags: ["Net Metering", "Solar", "Prosumers", "Tariffs", "Policy"],
     related: ["solar-gender", "33gw", "taxing-solar"]
@@ -53,13 +47,12 @@ const ARTICLES = {
     tag: "Gender & Energy", date: "24 December 2025",
     author: "Zahra Naeem",
     url: "https://www.dawn.com/news/1962618/pakistans-solar-shift-has-a-gender-problem", sourceName: "Dawn",
-    img: "https://www.priedpk.org/wp-content/uploads/2025/12/2317433207e27f0.jpeg",
+    img: "assets/uploads/2025/12/2317433207e27f0.jpeg",
     body: [
       `In a quiet Rawalpindi neighbourhood, where the power grid often dictates the rhythm of life, one family has transitioned from stopgap solutions to a more sun-powered reality. Their journey into solar energy was not just a financial calculation, but a response to a two-decade fight with an unreliable power supply.`,
       `"It was one hour off and one hour on," recalls Rubab, a 40-year-old housewife and resident of the Marir Hassan neighbourhood. After struggling with frail UPS batteries for years, she finally invested in solar panels about a year and a half ago — at a high personal cost.`,
       `"I sold my gold to buy these solar panels for our home," she tells Dawn. "Women are expected to make these sacrifices for the household. Even my sister had to install solar on installments, that is the only way families like ours can afford it."`,
-      `Rubab's experience highlights a critical but underexplored dimension of Pakistan's solar revolution: while the country is experiencing an unprecedented boom in distributed solar adoption — with studies estimating over 33GW installed nationwide — the benefits and decision-making around this energy transition are deeply gendered.`,
-      `Research by PRIED and TransitionZero, which combined satellite imagery with national household survey data, has found that the solar revolution in Pakistan is happening at an unprecedented pace — but questions of who benefits, who decides, and who bears the cost remain unanswered in most policy discussions.`
+      `The decision to shift to solar, she recounts, was both hers and her husband's, influenced by relatives who had already made the transition. Their purchase, however, was isolated from their understanding of the technical system they had scrambled to secure.`
     ],
     tags: ["Solar", "Gender & Energy", "Energy Access", "Distributed Solar"],
     authorDesc: "Zahra Naeem is a journalist and researcher covering energy, climate and gender in Pakistan. This article was originally published in Dawn.",
@@ -69,13 +62,13 @@ const ARTICLES = {
     title: "Sahiwal's Megawatts of Betrayal",
     tag: "Investigation", date: "26 October 2025",
     author: "Zahra Naeem & Hussain Assad",
-    url: PRIED_NEWS + '1949', sourceName: "Dawn",
-    img: "https://www.priedpk.org/wp-content/uploads/2025/10/sahiwal.jpg",
+    url: "https://www.dawn.com/news/1951175/sahiwals-megawatts-of-betrayal", sourceName: "Dawn",
+    img: "assets/uploads/2025/10/sahiwal.jpg",
     body: [
-      `Officials presented the Sahiwal coal-fired power plant as a transformative initiative in 2014. The 1,320-megawatt facility was marketed as "Pakistan's flagship energy project" that would resolve electricity deficiencies and improve conditions in central Punjab.`,
-      `Local representatives promised villagers in 76-5R substantial benefits, characterising the opportunity as "once-in-a-generation" and emphasising China's substantial CPEC investment. Pledged outcomes included 3,700 construction positions, 1,600 permanent roles, technical training centres, girls' educational facilities, a hospital, improved road infrastructure, and complimentary electricity for the three most-affected villages.`,
-      `However, authorities omitted critical information. They failed to disclose that established agricultural lands would transform into contaminated zones with coal residue and polluted water sources. Communities were not informed about the environmental consequences their children would face: respiratory difficulties, orchard deterioration, and declining groundwater levels.`,
-      `Years on, this investigation traces the gap between those promises and the lived reality for the communities around the plant — from land and livelihoods to air quality and water. It documents how the promise of development has too often translated into loss for locals.`
+      `When officials first arrived in villages near Qadirabad in 2014, they brought promises wrapped in the language of progress. The Sahiwal coal-fired power plant, they told residents, would be Pakistan's flagship energy project — a 1,320 megawatt giant that would end electricity shortages and bring prosperity to central Punjab's fertile heartland. They promised jobs, schools, hospitals and a brighter future.`,
+      `In Village 76-5R, the local member of the provincial assembly and member of the National Assembly told farmers this was a 'once-in-a-generation opportunity'. China was investing billions in the China-Pakistan Economic Corridor (CPEC), they said, and Sahiwal would be at its centre. There would be 3,700 construction jobs and 1,600 permanent positions. Technical training centres would teach youth valuable skills. Girls' schools would be built. A hospital with seven to 10 beds would serve the community. Roads connecting villages to markets would be paved. The three most-affected villages would receive free electricity.`,
+      `What officials didn't tell communities — what they conveniently left out — was that none of this would come to pass.`,
+      `What they didn't say was that fertile fields, cultivated since the British built the Canal Colonies in the 1800s, would become a wasteland of coal ash and contaminated water. They didn't mention that families would watch their children struggle to breathe, their orchards wither and their groundwater sink deeper into the earth year after year.`
     ],
     tags: ["Coal", "Sahiwal", "CPEC", "Investigation", "Community", "Environment"],
     related: ["coalmining-thar", "climate-justice", "thermal-power"]
@@ -83,25 +76,26 @@ const ARTICLES = {
   '33gw': {
     title: "Study finds 33GW of solar panels already installed nationwide",
     tag: "Research Coverage", date: "31 October 2025",
-    url: PRIED_NEWS + '1943', sourceName: "The News",
-    img: "https://www.priedpk.org/wp-content/uploads/2025/10/33GW.jpg",
+    url: "https://e.thenews.com.pk/detail?id=442357", sourceName: "The News",
+    img: "assets/uploads/2025/10/33GW.jpg",
     body: [
-      `Pakistan is experiencing significant growth in solar energy adoption, according to researchers and officials gathered at an event in Karachi. A newly released study indicates that approximately 33 gigawatts of solar photovoltaic capacity has been deployed throughout the nation.`,
-      `The research, titled "Shouting from the Rooftops: Mapping Pakistan's Solar Power Revolution," was developed collaboratively by PRIED and TransitionZero, a London-based energy-transition organisation. The document examines solar installations across different regions, population segments, and industry sectors.`,
-      `Participants at the launch event — including government representatives and lawmakers — emphasised that off-grid solar expansion represents "an unstoppable phenomenon" in Pakistan. However, they stressed the importance of directing this growth strategically "to enhance the sustainability, affordability and accessibility of electricity nationwide."`
+      `KARACHI: Researchers, civil society representatives, government officials and parliamentarians agree that Pakistan is witnessing an unprecedented solarisation of its energy sector, with solar photovoltaic (PV) panels of around 33 gigawatts capacity already installed across the country.`,
+      `The views were shared at an event organised by the Policy Research Institute for Equitable Development (PRIED), an independent think tank, to launch a study titled 'Shouting from the Rooftops: Mapping Pakistan's Solar Power Revolution'. The study is a joint initiative of PRIED and Transition Zero, an energy-transition think tank based in London.`,
+      `Speakers and panellists at the launch highlighted various aspects of the study, describing it as an important knowledge product for understanding the scale of solar PV installations across regions, social groups, and economic sectors in Pakistan. They noted that the country's off-grid solarisation has become an unstoppable phenomenon, though it must be channelled effectively to enhance the sustainability, affordability and accessibility of electricity nationwide.`
     ],
     tags: ["Solar", "Research", "Distributed Solar", "TransitionZero", "Grid"],
     related: ["distributed-solar", "solarisation", "net-metering"]
   },
   'solarisation': {
     title: "Pakistan was experiencing unprecedented solarisation of its energy sector",
-    tag: "Research", date: "30 October 2025",
-    url: PRIED_NEWS + '1945', sourceName: "The News",
-    img: "https://www.priedpk.org/wp-content/uploads/2025/10/pakistan-solar.webp",
+    tag: "Research Coverage", date: "30 October 2025",
+    url: "https://www.brecorder.com/news/40390078", sourceName: "Business Recorder",
+    img: "assets/uploads/2025/10/pakistan-solar.webp",
     body: [
-      `Pakistan has installed solar photovoltaic panels totalling 33 gigawatts of capacity throughout the nation, according to a study launched by PRIED in Karachi. The event featured the launch of "Shouting from the Rooftops: Mapping Pakistan's Solar Power Revolution," produced jointly by PRIED and TransitionZero.`,
-      `Speakers at the launch emphasised that Pakistan's off-grid solar expansion has become "an unstoppable phenomenon," though they noted it requires proper direction to enhance electricity sustainability, affordability and accessibility nationwide.`,
-      `The research is characterised as a significant resource for comprehending the scope and distribution of solar power development occurring across the country — and the urgent need for policy to catch up with what is happening on rooftops.`
+      `Pakistan was experiencing unprecedented solarisation of its energy sector, with solar photovoltaic (PV) panels of 33 gigawatts capacity having already been installed across the country, a press release stated on Thursday.`,
+      `These views were expressed by the speakers at an event organised by the Policy Research Institute for Equitable Development (PRIED), an independent think tank.`,
+      `The event was held to launch a study, titled Shouting from the rooftops: Mapping Pakistan's solar power revolution. The study was a joint production of PRIED and Transition Zero, an energy-transition think-tank based in London.`,
+      `Speakers at the event stated that Pakistan's off-grid solarisation had become 'an unstoppable phenomenon' though it needs to be channeled into the right direction to increase sustainability, affordability and accessibility of electricity across the country.`
     ],
     tags: ["Solar", "Energy Transition", "Grid", "Research"],
     related: ["33gw", "distributed-solar", "net-metering"]
@@ -109,12 +103,12 @@ const ARTICLES = {
   'distributed-solar': {
     title: "Shedding light on Pakistan's distributed solar",
     tag: "Research", date: "October 2025",
-    url: PRIED_NEWS + '1940', sourceName: "PRIED & TransitionZero",
-    img: "https://www.priedpk.org/wp-content/uploads/2025/10/Gemi.jpg",
+    url: "https://www.transitionzero.org/shedding-light-on-pakistans-distributed-solar-revolution", sourceName: "TransitionZero",
+    img: "assets/uploads/2025/10/Gemi.jpg",
     body: [
-      `Pakistan's solar sector has grown rapidly, with approximately 50 GW of panels imported as prices dropped and adoption increased. However, comprehensive installation data remained scarce. TransitionZero and PRIED addressed this through satellite imagery analysis combined with household survey research to create the first detailed distributed solar assessment.`,
-      `The research indicates that "most of Pakistan's solar growth is happening outside the formal sector." TransitionZero's estimates place total installed capacity at roughly 29 GW, with 27.5 GW from distributed systems concentrated primarily in Punjab, with additional presence in Khyber Pakhtunkhwa and Sindh.`,
-      `PRIED's survey findings show "33.35 GW of imported panels have been installed across residential, commercial, industrial, and agricultural sectors." This includes 19 GW of non-net-metered and 8.3 GW of off-grid systems. Residential adoption correlates with income levels, ranging from 38% among lower-income households to 88% among higher-income households, while agricultural adoption reaches 85% among small-scale farmers.`
+      `Pakistan has emerged as one of the fastest-growing solar markets, importing nearly 50 GW of panels amid falling prices and rising adoption across sectors. Yet, reliable data on actual installations has been limited. To bridge this gap, TransitionZero and the Policy Research Institute for Equitable Development (PRIED) combined satellite imagery with a national household survey to produce the first comprehensive estimate of distributed solar in Pakistan.`,
+      `Our findings show that most of Pakistan's solar growth is happening outside the formal sector. TransitionZero estimates total installed solar capacity at around 29 GW, of which 27.5 GW comes from distributed systems, mainly concentrated in Punjab, followed by Khyber Pakhtunkhwa and Sindh. After accounting for uncertainties, total distributed solar ranges between 22.6 and 32.5 gigawatts (GW).`,
+      `PRIED's survey, however, reveals that 33.35 GW of imported panels have been installed across residential, commercial, industrial, and agricultural sectors, including 19 GW of non-net-metered and 8.3 GW of off-grid systems. In households, adoption rises with income — 38% among low spenders versus 88% among high spenders — reflecting affordability gaps. In contrast, agricultural uptake is highest among low-income farmers (85%), driven by the need for reliable and cheaper power.`
     ],
     tags: ["Solar", "Distributed Solar", "Research", "Data", "TransitionZero"],
     related: ["33gw", "solarisation", "solar-gender"]
@@ -123,13 +117,14 @@ const ARTICLES = {
     title: "Climate Justice: holding the green house elite accountable",
     tag: "Climate Justice", date: "3 April 2023",
     author: "Badar Alam",
-    url: PRIED_NEWS + '891', sourceName: "UNDP Development Advocate Pakistan",
-    img: "https://www.priedpk.org/wp-content/uploads/2023/06/Coalmining-In-Thar-01.jpg",
+    url: "assets/uploads/2023/06/DAP-Volume-10-Issue-1-Justice-for-All.pdf", sourceName: "UNDP Development Advocate Pakistan",
+    img: "assets/uploads/2023/06/Coalmining-In-Thar-01.jpg",
     body: [
-      `The Thar desert in Pakistan contains massive lignite coal reserves — 175 billion tonnes, comparable in energy wealth to Gulf nations — yet its residents remain among Pakistan's poorest populations. The contrast captures a structural injustice at the heart of Pakistan's energy story.`,
-      `Stark disparities in electricity consumption tell the same story: Bahrain residents use 17,844 kWh per capita annually, while Pakistanis consume only 399 kWh, with Thar residents using minimal electricity for basic household needs.`,
-      `Climate justice addresses two interconnected issues. First, wealthy populations disproportionately consume fossil fuels and emit greenhouse gases, causing climate disruption that predominantly affects impoverished communities. Second, affluent nations bear responsibility for "taking extra responsibility for fighting this crisis" while prioritising vulnerable populations' needs.`,
-      `The data is stark: "the wealthiest one percent of the world's population has produced more than twice as much carbon emissions as the poorest half." The World Bank projects 86 million Sub-Saharan Africans may be displaced by 2050, despite that region producing only 2% of greenhouse emissions. South Asia faces potential displacement of 40 million people within 25 years.`
+      `Consider Thar — a vast desert spread roughly over 20,000 square kilometers. If it was located in the Persian Gulf, it could have been a separate country. Larger in size than Kuwait, it is endowed with massive energy sources — lignite coal reserves estimated to be 175 billion tonnes and capable of producing 100,000 megawatts of electricity for 200 years — just as several states in that region are. This is as far as the similarities between the two regions go, since those living in Thar are among the poorest residents of Pakistan whereas the residents of Gulf have some of the highest per capita incomes in the world.`,
+      `Similarly, per capita electricity consumption in the Gulf state of Bahrain is 17,844 kilowatt-hours whereas per capita electricity consumption in Pakistan is merely 399 kilowatt-hours. It is even less in Thar where most people use a single electric bulb and fan in their homes.`,
+      `Yet, there is already evidence that coal-mining and coal-based power generation in Thar is destroying its air quality and poisoning its water resources. This situation raises an important question: who will benefit from the loss of Thar's natural and environmental resources? The answer involves a concept called climate justice.`,
+      `This concept rests on two basic premises: Firstly, rich countries and rich individuals living anywhere in the world use disproportionately high amounts of energy largely produced from fossil fuels such as oil and coal and thereby emit greenhouse gases in large quantities. These gases, in turn, cause climate change. The brunt of these climatic disruptions is mostly borne by the poor — non-whites, women and indigenous communities living in rich nations and the residents of the global south. Secondly, rich nations and wealthy individuals should be made to "take extra responsibility for fighting this crisis while keeping uppermost in mind the needs of those most grievously affected."`,
+      `According to one estimate, "the wealthiest one percent of the world's population has produced more than twice as much carbon emissions as the poorest half of the world." On the other hand, the World Bank predicts that by 2050, climate change will force 86 million people to leave their homes in the poor states of Sub-Saharan Africa alone — despite those states being responsible for only two percent of greenhouse gas emissions. In South Asia, which includes Pakistan, the estimated number of people to be displaced over the next 25 years could be 40 million.`
     ],
     tags: ["Climate Justice", "Loss & Damage", "Coal", "Thar", "Equity"],
     authorDesc: "Muhammad Badar Alam is the Chief Executive of PRIED. This article was published in UNDP's Development Advocate Pakistan journal.",
@@ -139,13 +134,14 @@ const ARTICLES = {
     title: "Gas crisis: causes and remedies",
     tag: "Analysis", date: "1 January 2023",
     author: "Azhar Lashari",
-    url: PRIED_NEWS + '437', sourceName: "The News",
-    img: "https://www.priedpk.org/wp-content/uploads/2023/01/Gas-crisiscauses-and-remedies.png",
+    url: "https://www.thenews.com.pk/tns/detail/1030614-gas-crisis-causes-and-remedies", sourceName: "The News",
+    img: "assets/uploads/2023/01/Gas-crisiscauses-and-remedies.png",
     body: [
-      `Pakistan ranks 21st globally in natural gas consumption and currently faces severe supply shortages. The demand exceeds 2.5 billion cubic feet per day while supply stands around 1.7 bcfd, creating a deficit of 1.35 bcfd distributed between major utilities.`,
-      `Demand for gas is rapidly increasing — particularly in power, residential and fertiliser sectors — due to subsidised pricing, while domestic reserves have declined from 23.9 to 13.6 trillion cubic feet between 2006 and 2020.`,
-      `Pakistan initiated LNG imports from Qatar in 2012, with a multi-billion dollar 16-year deal signed in 2016. Imports surged from 19.8 million MMBTU in 2015 to 348.6 million MMBTU by 2020, with costs rising from $151 million to $2.559 billion. The Russia-Ukraine conflict further disrupted LNG markets, making procurement increasingly difficult.`,
-      `The piece advocates for renewable energy investment, noting that "cost of power generation through LNG was as high as Rs 16/KWh whereas solar and wind technologies cost just Rs 6/KWh." Local reserves will deplete within 10–12 years, yet Pakistan continues expanding gas infrastructure rather than pursuing alternatives.`
+      `Ranked as the 21st country in the world in terms of natural gas consumption, Pakistan is currently facing a severe supply crisis, which has intensified with the advent of the winter season. The demand for gas has soared above 2.5 billion cubic feet per day (bcfd) while the supply is around 1.7 bcfd.`,
+      `While the demand for gas is rapidly increasing — particularly in power, residential and fertiliser sectors — due to its subsidised prices, the supply is constrained by fast depleting local reserves and the increasing reliance on import. The country's proved gas reserves significantly decreased from 23.9 trillion cubic feet (tcf) in 2006 to 13.6 tcf in 2020, showing a steady decline in the domestic gas production since 2012. To bridge the gap, the government decided (in 2012) to import LNG from Qatar.`,
+      `In 2016, Pakistan signed a multi-billion dollar deal with Qatar to import LNG for 16 years. Pakistan's LNG import increased from 19,795,505 MMBTU in 2015 to 348,587,218 MMBTU in 2020. Correspondingly, the import value increased from $151 million in 2015 to $2,559 million in 2020.`,
+      `Following the Russo-Ukraine war and consequent spike in prices of LNG in the international market, importing LNG to meet domestic needs is becoming more difficult for Pakistan. Notwithstanding the fact that its local reserves will exhaust in the next 10-12 years, Pakistan is paying no heed to cutting its dependence on gas. Instead of looking for alternative fuels and sources of energy to cope with the crisis, the country is still planning to expand its gas infrastructure and add new LNG-fired thermal power plants.`,
+      `Pakistan's increasing dependence on LNG is not only a contravention of its commitment to the Paris Agreement of 2015 but also against the spirit and principles of climate justice. To curtail its reliance on fossil gas, Pakistan needs to invest more on alternative energy. During the previous winter season, the cost of power generation through LNG was as high as Rs 16/KWh whereas the price of electricity production through solar and wind technologies was just Rs 6/KWh.`
     ],
     tags: ["Gas", "LNG", "Energy Security", "Policy", "Renewables"],
     authorDesc: "Azhar Ali Lashari is Director & Project Lead at PRIED.",
@@ -155,13 +151,14 @@ const ARTICLES = {
     title: "Planning power",
     tag: "Opinion", date: "1 January 2023",
     author: "Shaheera Tahir",
-    url: PRIED_NEWS + '395', sourceName: "The News",
-    img: "https://www.priedpk.org/wp-content/uploads/2023/01/Planning-Power.png",
+    url: "https://www.thenews.com.pk/print/1025893-planning-power", sourceName: "The News",
+    img: "assets/uploads/2023/01/Planning-Power.png",
     body: [
-      `Pakistan's energy sector relies heavily on reactive crisis management rather than strategic planning. This approach has caused environmental damage, harmed communities, and left the nation vulnerable to external supply chain disruptions, resulting in a dysfunctional system with an expensive energy mix dependent on imported fossil fuels.`,
-      `Pakistan's circular debt has surpassed Rs2.5 trillion, demonstrating widespread system inefficiencies. "A long-term system-oriented planning centred at sustainable energy resources such as solar and wind is direly needed," with emphasis on systems-based approaches for harnessing renewable potential.`,
-      `Variable renewable energy (VRE) resources remain underutilised despite Pakistan's significant potential. Only six percent of installed capacity comes from VRE, with over 150 stalled projects totalling 8 GW. Solar and wind represent the most economical generation options, costing Rs6–7/kWh compared to thermal fuels ranging from Rs16–35/kWh.`,
-      `Adopting comprehensive system-cost approaches would reveal renewables' genuine economic advantages while reducing electricity prices, carbon emissions, and energy vulnerability. European studies demonstrate that balancing costs at lower VRE penetration remain negligible.`
+      `Energy planning in Pakistan is mostly carried out on an ad-hoc basis as a reaction to an urgent crisis. This hasty and short-sighted approach has not only caused irreversible damage to our environment and local communities but also exposed our national exchequer to external energy supply chain shocks.`,
+      `Lack of attention to address the structural causes of growing illiquidity in the energy sector has further hampered its financial position. As a result, what we see today is a rather dysfunctional energy sector compromised on both environmental and economic grounds. Our expensive energy mix, heavily reliant on imported fossil fuels, and lower contribution by cheaper renewable energy resources such as wind and solar bear testament to such shortcomings. The energy sector's swelling circular debt crossing over Rs2.5 trillion highlights the magnitude of the prevalent inefficiencies.`,
+      `Solar and wind energy resources are inherently intermittent energy sources, and for this reason they are also known as variable renewable energy (VRE) resources. In Pakistan their potential has remained neglectfully unexplored, misled by the deep-rooted belief of power planning institutions that their variability would cause additional costs for the system. A mere six per cent share of VRE in the current installed generation capacity, and over 150 pending wind and solar power projects worth more than 8 GW reflect institutional reluctance towards VRE.`,
+      `VRE resources are proving to be the cheapest generation options. An analysis of the existing solar and wind utility-scale power projects reveals that the lifetime cost of generating electricity from these resources is as low as Rs6-7/kWh. Whereas, for thermal fleet, the latest fuel cost component is as high as Rs35/kWh for furnace oil, Rs30/kWh for high-speed diesel, Rs22/kWh for regasified liquid natural gas (RLNG), Rs30/kWh for imported coal, and Rs16/kWh for domestic coal.`,
+      `A more holistic power planning approach needs to be adopted if Pakistan sincerely intends to amend its course towards sustainable and affordable means of power generation. Variable renewable energy presents a unique opportunity for much-needed system flexibility and long-term sustainability.`
     ],
     tags: ["Power Planning", "IGCEP", "Policy", "Circular Debt", "VRE"],
     authorDesc: "Shaheera Tahir is Program Manager, Research at PRIED.",
@@ -171,13 +168,15 @@ const ARTICLES = {
     title: "Coalmining In Thar Spells Disaster For Locals",
     tag: "Investigation", date: "23 March 2022",
     author: "Azhar Lashari",
-    url: PRIED_NEWS + '361', sourceName: "The Friday Times",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/11/Coalmining-In-Thar.png",
+    url: "https://www.thefridaytimes.com/2022/03/23/coalmining-in-thar-spells-disaster-for-locals/", sourceName: "The Friday Times",
+    img: "assets/uploads/2022/11/Coalmining-In-Thar.png",
     body: [
-      `Coal mining development in Thar's coalfields prioritises economic growth while dismissing environmental and human costs as acceptable externalities. Since coal power projects began in Thar Coalfield Block-II, hundreds of families have faced forced displacement from ancestral lands without alternative livelihood options.`,
-      `Mining operations have restricted access to farmlands and pastures while causing severe groundwater depletion and contamination. Dewatering activities for mining have lowered water levels in five villages by three to four feet, creating acute scarcity.`,
-      `Coal extraction requires draining three aquifer layers beneath the surface. The extracted water contains "heavy metals like arsenic, copper and lead," posing serious public health and ecosystem risks. Two reservoirs at Gorrano and Dukar Chaou store this contaminated wastewater, yet lack protective geo-membrane lining, causing seepage that has polluted wells across thirteen villages.`,
-      `Beyond reservoir disposal, coal companies have dumped wastewater in grazing areas, killing livestock and rendering wells toxic. Local communities report vegetation die-off affecting winter livestock fodder and increased malaria prevalence from mosquito breeding in contaminated water sources.`
+      `In a conventional approach, environmental degradation caused by development is considered nothing more than an externality. Planners and implementers disdain the pain suffered by the locals because of environmental externalities. They consider it as an inevitable but trivial price that must be paid to achieve economic growth.`,
+      `Marked with apathy towards people and environment, this development approach is evident in the implementation of the ongoing coal power projects in the Thar desert of Pakistan, which hosts the sixth largest coal reserves of the world. Since the beginning of the so-called coal power development in Thar Coalfield Block-II (TCB-II), hundreds of local families have been facing forcible eviction from their ancestral houses and villages to make way for coalmines and thermal power plants.`,
+      `Without providing any alternative source of livelihood to the desert dwellers, the coal power companies have been encroaching on their farmlands and pastures, erecting fences around them, and banning the entry of local communities and their livestock. As if pains and sorrows of dispossession and destitution were not enough, the increasing depletion and poisoning of groundwater — an environmental externality of coal power development — has started to impact villages adversely.`,
+      `Due to the ongoing dewatering of coalmines in TCB-I and TCB-II, water table is fast depleting in the villages neighbouring the mining sites. Water level of dug-wells has lowered from three to four feet in five villages, including Jaman Samoo, Bitra, Aban Jo Tar, Khemay Ji Dhani and Thario Halepoto.`,
+      `Water drained out from the coalmines is acidic, contains heavy metals like arsenic, copper and lead, and leave a harmful impact on local water resources. They pose a serious threat to public health and ecosystems. Since these reservoirs have not been lined with a geo-membrane or a soil sealant, percolation of saline water has already started to pollute the area, particularly 12 villages around the Gorrano reservoir.`,
+      `The gravity of water woes induced by the Thar coal power projects must be addressed on priority basis. An inclusive oversight of the coal industry's environmental management must be established at the earliest.`
     ],
     tags: ["Coal", "Thar", "Community", "Investigation", "Water", "Environment"],
     authorDesc: "Azhar Ali Lashari is Director & Project Lead at PRIED.",
@@ -185,54 +184,65 @@ const ARTICLES = {
   },
   'thermal-power': {
     title: "Thermal power in times of stagflation",
-    tag: "Analysis", date: "2022",
-    url: PRIED_NEWS + '360', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/11/Thermal-Power-In-Times.png",
+    tag: "Analysis", date: "12 June 2022",
+    author: "Azhar Lashari",
+    url: "https://www.thenews.com.pk/tns/detail/965012-thermal-power-in-times-of-stagflation", sourceName: "The News",
+    img: "assets/uploads/2022/11/Thermal-Power-In-Times.png",
     body: [
-      `With the rupee under pressure and fuel-import bills soaring, Pakistan's heavy reliance on imported-fuel thermal power has become a macroeconomic liability. This analysis links energy choices to the country's wider economic distress.`,
-      `In an era of stagflation, doubling down on costly thermal generation deepens the crisis — while domestic renewables offer a hedge against imported inflation and provide a path toward energy security.`
+      `The global spike in energy prices, starting with lifting of coronavirus-induced restrictions and intensifying with the Russian war against Ukraine, has been the largest since the 1973 oil crisis. The historic highs in the prices of oil, gas and coal have triggered the risk of what economists call stagflation.`,
+      `Middle- and low-income economies like Pakistan are especially vulnerable to the developments. The country's power sector is overwhelmingly dependent on imported oil, gas and coal. Two thirds (66 percent) of Pakistan's installed generation capacity is based on thermal power produced using fossil fuels. Contribution of imported fuels like furnace oil, liquefied natural gas (LNG) and coal to Pakistan's installed thermal capacity is 6,507 MW (31.9 percent), 5,838 MW (28.62 percent) and 3,960 MW (19.41 percent) respectively — amounting to around 80 percent of the total installed thermal capacity.`,
+      `According to data released by the Federal Bureau of Statistics in May 2022, Pakistan's oil import bill surged by 95.84 percent to $17.03 billion in the July-April period compared to $8.69 billion in the corresponding period of the last fiscal year.`,
+      `Thermal power is heavy not only on the country's fuel import bill but also on consumers' pockets. According to the State of Industry Report 2021 by NEPRA, several factors account for the high cost of electricity generated by thermal power plants — including unutilised 'take or pay' capacity, old inefficient plants, increasing capacity payments, a whopping circular debt, and poor governance.`,
+      `In addition to the economic cost, thermal power has high environmental cost. Carbon dioxide and other greenhouse gases emitted in the wake of fossil fuel combustion contribute to global warming and climate change. The 'least cost principle' will have to be adopted both in letter and spirit in preparing the next iteration of the IGCEP.`
     ],
-    tags: ["Thermal Power", "Economy", "Imports", "Renewables"],
+    tags: ["Thermal Power", "Economy", "Imports", "Renewables", "Stagflation"],
+    authorDesc: "Azhar Ali Lashari is Director & Project Lead at PRIED.",
     related: ["cutting-losses", "gas-crisis", "lng-renewables"]
   },
   'letting-go-coal': {
     title: "Letting go of Coal",
-    tag: "Opinion", date: "2022",
-    url: PRIED_NEWS + '359', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/11/Letting-Go-Of-Coal.png",
+    tag: "Opinion", date: "29 July 2021",
+    author: "Haneea Isaad",
+    url: "https://www.thenews.com.pk/print/870045-letting-go-of-coal", sourceName: "The News",
+    img: "assets/uploads/2022/11/Letting-Go-Of-Coal.png",
     body: [
-      `As the world moves to phase out coal, Pakistan faces a choice about how much further to expand its coal fleet. The economic and climate case for new coal has all but collapsed.`,
-      `Letting go of coal is not just an environmental imperative but a financial one — sparing the country from stranded assets and locked-in fuel costs for decades.`
+      `In a world that is increasingly moving towards high climate ambition, there are still examples of people vouching for the 'development and prosperity' that coal could bring to a developing economy. Pakistan is one such case where multiple stakeholders, be it project developers, corporate entities or government officials, genuinely believe that investing in coal power development is the optimal pathway to rid the country of its energy woes.`,
+      `At the Climate Ambition Summit in December 2020, the prime minister announced a moratorium on coal fired power generation but at the same time indicated Pakistan's plans of giving a second life to coal via coal gasification and liquefaction for energy generation. While the premier's intentions for a cleaner energy mix cannot be doubted, existing cases for such technology show that these projects are neither economically nor environmentally feasible and will soon be a technology of the past.`,
+      `The technological obsolescence of such projects is compounded by a dwindling political and financial support worldwide for investments in coal in general. Public and political pressure and high investment risks have pushed governments and commercial banks to quit coal altogether. Just last month, the G7 group of rich nations agreed to end support for unabated coal.`,
+      `South Korea and Japan not only announced that they would decarbonize by 2030 but also committed to exiting from coal-based investments overseas. China also announced an intention to reach a peak in domestic coal consumption by 2025. These recent developments should be sufficient to put coal project developers in Pakistan on alert.`,
+      `Energy policymakers in Pakistan thus need to preempt a shift away from coal towards cheaper and cleaner renewable energy as early as possible. COP26 is just around the corner and this year's focus is solely dedicated to putting an end to investments in coal around the world. The sooner Pakistan acts, the better it will be for Pakistan's climate, economy and environment.`
     ],
-    tags: ["Coal", "Phaseout", "Climate", "Stranded Assets"],
+    tags: ["Coal", "Phaseout", "Climate", "Stranded Assets", "CPEC"],
+    authorDesc: "Haneea Isaad is a researcher at the Institute for Energy Economics and Financial Analysis.",
     related: ["phasing-out-coal", "climate-justice", "reduced-ambitions"]
   },
   'phasing-out-coal': {
     title: "Opinion: Is Pakistan really phasing out coal?",
     tag: "Opinion", date: "18 January 2021",
     author: "Haneea Isaad",
-    url: PRIED_NEWS + '214', sourceName: "The Third Pole",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Opinion-Is.png",
+    url: "https://www.thethirdpole.net/en/energy/opinion-is-pakistan-really-phasing-out-coal/", sourceName: "The Third Pole",
+    img: "assets/uploads/2022/05/Opinion-Is.png",
     body: [
-      `Prime Minister Imran Khan announced a coal moratorium in December 2020 at the Climate Ambition Summit, marking the fifth anniversary of the Paris Climate Agreement. While this garnered international praise, significant implementation details remain unclear regarding timeline, transition mechanisms, and the treatment of existing versus planned facilities.`,
-      `Pakistan's energy strategy has relied heavily on coal-based generation, with substantial Chinese investment through CPEC projects. The corridor encompasses 17 priority energy initiatives totalling 11.1 GW capacity, with three-quarters representing coal-fired plants backed by approximately USD 8.7 billion in insured debt from major Chinese financial institutions.`,
-      `Coal already represents a substantial portion of Pakistan's generation mix: 2019–20 saw 19% of power generation coming from just four coal-fired CPEC plants. Cancelling coal projects would require extensive renegotiation of government power purchase contracts, a complexity demonstrated by ongoing difficulties with 47 independent power producers.`,
-      `The Prime Minister's proposal to explore Coal-to-Liquid and Coal-to-Gas alternatives raises environmental concerns. These processes demand substantial water and energy resources. The article advocates instead for battery storage and hybrid renewable energy systems as more sustainable alternatives.`
+      `In a surprising turn of events, the Prime Minister of Pakistan, Imran Khan, announced a moratorium on coal on December 12, at the Climate Ambition Summit held to mark the fifth anniversary of the Paris Climate Agreement. Khan's statement received international acclaim, since Pakistan's bid to achieve energy security was known to be based on coal-based generation, indicated by the heavy investments in the sector from Chinese and local investors alike.`,
+      `China is Pakistan's largest investor and contractor of energy projects, most of which are coal-burning power plants. CPEC includes 17 priority energy projects totalling 11.1 GW in capacity and USD 18.62 billion in investments. Three quarters (8.22 GW) of this capacity is coal fired in nature, backed by roughly USD 8.7 billion of insured debt from major Chinese banks.`,
+      `Despite being a recent player in the energy domain in Pakistan, coal is already a major part of the generation mix. The year 2019-2020 saw 19% of the power generation in the country coming from just four coal-fired CPEC power plants. A complete phase out of coal would gravely complicate matters for these power projects.`,
+      `While the first part of the Prime Minister's statement could be a message of hope, the second part is cause for concern: it refers to the government's recent plans for exploring the possibility of Coal to Liquid (CTL) and Coal to Gas (CTG) options. What is surprising is that the premier introduced this as his plan to mitigate climate change, while it is widely known how cost-prohibitive and water and energy intensive these CTL and CTG processes are.`,
+      `If Pakistan is to shift away from coal, then CTL or CTG is not the way to go. The government should come up with a solution that is better thought out, more rounded and ensures that Pakistan's transition to cleaner energy is socially and environmentally just. Perhaps the government should be looking into the feasibility of battery storage and hybrid renewable energy systems instead.`
     ],
     tags: ["Coal", "Phaseout", "Policy", "CPEC", "Climate"],
     related: ["letting-go-coal", "reduced-ambitions", "climate-justice"]
   },
   'energy-paradox': {
     title: "The paradox of energy transition",
-    tag: "Analysis", date: "6 July 2021",
+    tag: "Analysis", date: "7 June 2021",
     author: "Naila Saleh",
-    url: PRIED_NEWS + '213', sourceName: "The Daily Times",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels-1.png",
+    url: "https://dailytimes.com.pk/768335/the-paradox-of-energy-transition/", sourceName: "Daily Times",
+    img: "assets/uploads/2022/05/Taxing-solar-panels-1.png",
     body: [
-      `Pakistan has publicly endorsed renewable energy advancement ahead of COP 26. This commitment appears across multiple frameworks including the Nationally Determined Contribution, Net Metering Regulation 2015, and the Alternative Renewable Energy Policy (AREP, 2019), which established a goal of "30 percent of non-hydro renewable energy by 2030."`,
-      `However, significant contradictions undermine these initiatives. The National SDG Framework targets 25 percent renewable share in total energy consumption; AREP targets 30 percent renewable generation capacity by 2030; yet the revised IGCEP projects only 10 percent solar and wind capacity by 2030. These misaligned objectives create confusion about Pakistan's decarbonisation strategy.`,
-      `Technical studies confirm that scaling solar and wind capacity alongside hydropower investments is both feasible and advantageous for emissions reduction and cost efficiency. However, fragmented oversight and uncoordinated planning continue prioritising fossil fuels.`,
-      `Successfully transitioning to renewable energy requires systemic coordination across government levels, legal frameworks, and stakeholder engagement. Pakistan must align policies with actions and establish institutional coherence to capture the closing window for climate goals.`
+      `Ahead of the 26th UN Climate Change Conference of the Parties (COP 26) scheduled at the end of the year in Glasgow, many countries have been upping the ante on the 'green agenda' to deliver new ambitious commitments. Pakistan has also expressed strong support for advancing renewable energy and fast-tracking energy transition, which is certainly an admirable, and necessary, pathway.`,
+      `Even a cursory look at the most recent policies and statements alone indicates major misalignments. The National SDG Framework targets to increase share of renewable energy to 25 percent in the total final energy consumption. The AREP targets 30 percent of power generation capacity from non-hydro renewables by 2030. Whereas the recently revised Indicative Generation Capacity Expansion Plan (IGCEP) for the period 2021 to 2030 envisage the share of solar and wind at 10 percent in the overall energy mix by 2030.`,
+      `What is difficult to comprehend here is not only the paradox of policy and planning, but also the paradox of rationality. For the power sector of Pakistan, a long-standing objective has been reducing reliance on imported fossil-fuels and improving energy security. And although Pakistan always had abundant solar and wind energy resources, yet till recently, competing counterclaims associated with the economic and technical constraints of these technologies held back its growth.`,
+      `The window of opportunity to achieve the 1.5 degrees Celsius Paris Agreement goal is closing fast. For Pakistan, renewable energy does not only offer an 'irresistible alternative' for advancing indigenous sustainable energy but a 'necessary prescription' for addressing longstanding challenges in the power sector. An incoherent planning system cannot drive a coherent strategy. IGCEP must align with AREP — it is time to walk the walk.`
     ],
     tags: ["Energy Transition", "Solar", "Policy", "AREP", "IGCEP"],
     authorDesc: "Naila Saleh is Technical Advisor at PRIED and Project Manager at Agora Energiewende.",
@@ -240,74 +250,98 @@ const ARTICLES = {
   },
   'pakistan-energy-transition': {
     title: "Pakistan and energy transition",
-    tag: "Analysis", date: "May 2022",
-    url: PRIED_NEWS + '212', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Pakistan-And-Energy.png",
+    tag: "Analysis", date: "20 December 2021",
+    author: "Haneea Isaad",
+    url: "https://www.thenews.com.pk/print/918146-pakistan-and-energy-transition", sourceName: "The News",
+    img: "assets/uploads/2022/05/Pakistan-And-Energy.png",
     body: [
-      `Where does Pakistan stand in the global shift to clean energy? This piece maps the country's starting point — its fuel mix, institutions and financing constraints — and the path it must travel toward a low-carbon power system.`,
-      `It frames the energy transition not as a distant aspiration but as an immediate opportunity to cut costs, improve security and reduce emissions simultaneously.`
+      `In August of this year, the Asian Development Bank (ADB) launched an ambitious programme to foster the energy transition in emerging Asia, the Energy Transition Mechanism (ETM) for Southeast Asia. The ETM is a blended finance facility that seeks to facilitate early coal-fired power plant retirements while replacing them with cleaner energy technologies.`,
+      `In Vietnam's place, the ADB has approached Pakistan to enter the facility, allocating grant funds worth $300,000 to conduct a pre-feasibility study of potential assets that could be retired by the mechanism. For Pakistan, the ADB programme's scope has been expanded to target not only coal-fired power plants, but diesel and furnace oil-based plants as well.`,
+      `Around 66 percent of Pakistan's power generation mix is thermal based. Targeting coal-based power assets would come with many complications. Pakistan's present coal fleet is extremely young; the oldest coal-fired power plant is only four years old. More capacity will enter generation by 2024 to replace aging furnace oil/gas-based plants as they retire, but the average age of coal-fired capacity will remain under five years.`,
+      `Further, new enabling regulations may be required to enable the ETM to affect the transfer of targeted assets into a third-party vehicle for retirement. Pakistan's entrenched reliance on thermal-based sources, serving both baseload and peaking power, raises serious questions regarding the country's energy security. All the players involved need to think more holistically beyond a 'mere' ETM transaction.`
     ],
-    tags: ["Energy Transition", "Renewables", "Policy", "Pakistan"],
+    tags: ["Energy Transition", "Renewables", "Policy", "Pakistan", "ADB", "ETM"],
+    authorDesc: "Haneea Isaad is a researcher at the Institute for Energy Economics and Financial Analysis.",
     related: ["energy-paradox", "reduced-ambitions", "solarisation"]
   },
   'reduced-ambitions': {
     title: "Reduced ambitions for renewable energy",
-    tag: "Renewable Energy", date: "May 2022",
-    url: PRIED_NEWS + '205', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Reduced-Ambitions-For.png",
+    tag: "Renewable Energy", date: "9 August 2021",
+    author: "Naila Saleh",
+    url: "https://www.dawn.com/news/1639557", sourceName: "Dawn",
+    img: "assets/uploads/2022/05/Reduced-Ambitions-For.png",
     body: [
-      `Despite ambitious headline targets, Pakistan's actual renewable-energy commitments have repeatedly been scaled back in planning documents. This analysis tracks the gap between stated ambition and the numbers in official plans.`,
-      `Diluted renewable targets risk locking the country into expensive fossil generation, and planning must treat clean energy as the least-cost option it has become.`
+      `While the new Indicative Generation Capacity Expansion Plan (IGCEP) has invited wide-scale criticism, a major overlooked dimension of this plan is its reduced ambition for variable renewable energy (VRE). IGCEP 2021-30 has revised down the share of solar and wind in the energy mix to 12 per cent — compared to 30 per cent in the previous version which interfaced with the government's policies and commitment of 30 per cent non-hydro renewable energy by 2030.`,
+      `This argument of 'additional reserve requirements' — is not only marred by misconceptions and misinformation but also contradicts the findings of the recent World Bank study (2020) which while using the same Plexos modelling claimed that achieving the least-cost electricity mix in Pakistan would require a rapid expansion of VRE.`,
+      `VRE has become currently the fastest-growing source of electricity globally. In dynamic power systems with growing electricity demand such as in the case of Pakistan, wind power and solar photovoltaic (PV) are ideal to meet incremental demand while facilitating system transformation without any economic stress on incumbents.`,
+      `Pakistan could have sufficient flexible generation to balance adequately higher shares of VRE without building additional reserves. As IGCEP observes, "Pakistan is at a crossroads at the moment and in fact faces a defining moment in its history." The country has a clear opportunity to set the tone for adopting RE — an urgent realignment of Pakistan's power system with greater VRE penetration is the need of the hour.`
     ],
-    tags: ["Renewables", "IGCEP", "Targets", "Policy"],
+    tags: ["Renewables", "IGCEP", "Targets", "Policy", "VRE"],
+    authorDesc: "Naila Saleh is Technical Advisor at PRIED and Project Manager at Agora Energiewende.",
     related: ["planning-power", "pakistan-energy-transition", "energy-paradox"]
   },
   'cutting-losses': {
     title: "Cutting losses",
-    tag: "Analysis", date: "May 2022",
-    url: PRIED_NEWS + '204', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Cutting-Losses.png",
+    tag: "Analysis", date: "1 April 2022",
+    author: "Naila Saleh",
+    url: "https://www.thenews.com.pk/print/946334-cutting-losses", sourceName: "The News",
+    img: "assets/uploads/2022/05/Cutting-Losses.png",
     body: [
-      `Transmission and distribution losses, theft and under-recovery drain billions from Pakistan's power sector every year. This piece examines where the losses come from and why they keep feeding the circular-debt spiral.`,
-      `Cutting these losses — through metering, governance reform and targeted investment — is among the cheapest and fastest ways to stabilise the sector's finances.`
+      `Pakistan's energy sector has been facing potential losses and distortions in the distribution sector for years now, costing the national exchequer billions annually. In 2019 alone, DISCOs posted a loss of Rs171 billion due to less recovery of pending bills and another Rs38 billion due to technical losses. On average, nearly 20 percent of the electricity transmitted to the distribution system is lost.`,
+      `Despite surplus energy, power cuts are widespread, especially in high-loss feeders. While the country has long been seeking a strategy to minimise these losses, these decade-old problems continue; traditional intervention solutions have been at the root of the ongoing unsustainable trajectory.`,
+      `A major discourse in the specific case of Pakistan is how solar PV penetration in high-loss configurations offers an 'irresistible' and 'necessary' alternative to improve energy access and address the longstanding technical and inter-linked financial losses in the power sector. These applications can potentially defer transformer and transmission line upgrades, extend equipment maintenance intervals, reduce electrical line losses, and improve distribution system reliability.`,
+      `It is hence an opportune time to recommend a roadmap for targeted solar photovoltaic (PV) applications in those feeders of DISCOs that are experiencing excessive transmission losses. The relevant authorities should anchor a facilitative organisation model around these decentralised solutions — and on a priority basis.`
     ],
-    tags: ["Circular Debt", "DISCOs", "Losses", "Reform"],
+    tags: ["Circular Debt", "DISCOs", "Losses", "Reform", "Solar PV"],
+    authorDesc: "Naila Saleh is Technical Advisor at PRIED and Project Manager at Agora Energiewende.",
     related: ["planning-power", "thermal-power", "gas-crisis"]
   },
   'coal-companies-thar': {
     title: "Coal mining companies in Thar violating Environment Protection Act",
-    tag: "Investigation", date: "May 2022",
-    url: PRIED_NEWS + '196', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Coal-Mining-Companies-In-Thar.png",
+    tag: "Investigation", date: "23 March 2022",
+    author: "Azhar Lashari",
+    url: "https://www.thefridaytimes.com/2022/03/23/coalmining-in-thar-spells-disaster-for-locals/", sourceName: "The Friday Times",
+    img: "assets/uploads/2022/05/Coal-Mining-Companies-In-Thar.png",
     body: [
-      `Analysts allege that coal-mining operations in Thar have been dumping saline and contaminated water in ways that threaten clean wells and local water sources — in apparent breach of the Sindh Environment Protection Act, the National Water Policy 2018 and generation licences issued by NEPRA.`,
-      `The report sets out the concerns over water contamination and weak enforcement, and the implications for communities whose survival depends on Thar's already-scarce groundwater.`
+      `In a conventional approach, environmental degradation caused by development is considered nothing more than an externality. Planners and implementers disdain the pain suffered by the locals because of environmental externalities. They consider it as an inevitable but trivial price that must be paid to achieve economic growth.`,
+      `Since the beginning of coal power development in Thar Coalfield Block-II (TCB-II), hundreds of local families have been facing forcible eviction from their ancestral houses and villages to make way for coalmines and thermal power plants, without providing any alternative source of livelihood.`,
+      `Water drained out from the coalmines is acidic, contains heavy metals like arsenic, copper and lead, and poses a serious threat to public health and ecosystems. The companies have also been dangerously dumping wastewater around Tilwaiyo, Warwai, Jaman Samoon and Bitra. For last several months, hundreds of camels, cows, sheep and goats have died after drinking wastewater released in these villages.`,
+      `The contaminated water released by coalmines and power plants becomes breeding grounds for mosquitos. Malaria has now become endemic in the area. The gravity of water woes induced by the Thar coal power projects must be addressed on priority basis. An inclusive oversight of the coal industry's environmental management must be established at the earliest.`
     ],
     tags: ["Coal", "Thar", "Water", "Environment", "Regulation"],
+    authorDesc: "Azhar Ali Lashari is Director & Project Lead at PRIED.",
     related: ["coalmining-thar", "climate-justice", "sahiwal"]
   },
   'lng-renewables': {
     title: "LNG vs renewables",
-    tag: "Analysis", date: "May 2022",
-    url: PRIED_NEWS + '195', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/LNG-vs-renewables.png",
+    tag: "Analysis", date: "6 February 2022",
+    author: "Haneea Isaad",
+    url: "https://www.dawn.com/news/1673569/lng-vs-renewables", sourceName: "Dawn",
+    img: "assets/uploads/2022/05/LNG-vs-renewables.png",
     body: [
-      `Pakistan's energy planners face a fork in the road: lock in more imported LNG, or accelerate domestic renewables. This analysis compares the two paths on cost, security and exposure to volatile global markets.`,
-      `With LNG prices spiking, renewables increasingly win on economics as well as climate — making the case for a decisive tilt away from imported gas.`
+      `Extreme cold weather across the country, a domestic gas supply gap of 1,300 mcf per day and skyrocketing imported LNG prices that Pakistan can ill afford — it is a nightmare for the government. The prime minister's recent directive to gas utilities to build an LNG terminal by next winter may be rooted in the right reasons. Still, such a terminal may elude economic justification with fears of it turning into another stranded asset.`,
+      `Back in 2015, when the first LNG import terminal was set up, investments in LNG infrastructure and power plants were justified with the argument of pivoting away from the use of expensive furnace oil for power production. Unfortunately, the trend has since reversed. The last quarter of 2020 brought in an extremely cold winter in North Asia, causing the demand for natural gas to soar. Extreme LNG price volatility continued into 2021, with single shipments selling as high as $56/mmBtu in October 2021.`,
+      `A floating offshore LNG terminal may cost between $400 million and $500 million without factoring in operational expenses and imported fuel costs. In comparison, the upfront cost for setting up a solar park in Pakistan would be $600,000 per megawatt; meaning that the installation of 1,000 MW of solar capacity can cost nearly the same as a single LNG terminal. Furthermore, fuel costs alone for LNG power plants went as high as Rs16/KWh this winter, while the levelised cost of electricity generation from solar and wind energy stood at just Rs6/KWh.`,
+      `The International Energy Agency's latest gas market report predicts that price volatility will likely continue in 2022, hurting emerging economies the most. Getting money out of LNG and putting it into renewables instead may be a smarter move in a rapidly changing world that favours climate-friendly investments.`
     ],
-    tags: ["LNG", "Renewables", "Energy Security", "Imports"],
+    tags: ["LNG", "Renewables", "Energy Security", "Imports", "Solar"],
+    authorDesc: "Haneea Isaad is a researcher at the Institute for Energy Economics and Financial Analysis.",
     related: ["gas-crisis", "thermal-power", "pakistan-energy-transition"]
   },
   'taxing-solar': {
     title: "Taxing solar panels",
-    tag: "Solar Policy", date: "May 2022",
-    url: PRIED_NEWS + '193', sourceName: "PRIED",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Taxing-solar-panels.png",
+    tag: "Solar Policy", date: "30 January 2022",
+    author: "Naila Saleh",
+    url: "https://www.thenews.com.pk/print/929197-taxing-solar-panels", sourceName: "The News",
+    img: "assets/uploads/2022/05/Taxing-solar-panels.png",
     body: [
-      `Proposals to tax solar panels and equipment risk undercutting the very transition Pakistan says it wants. This piece weighs the short-term revenue logic against the long-term cost of slowing solar adoption.`,
-      `Penalising clean energy at the border is self-defeating in a country where rooftop solar is easing pressure on the grid and on household bills alike.`
+      `Pakistan plans to expand its power sector substantially. It has enormous solar photovoltaic (PV) potential and all the necessary conditions for its implementation such as high radiation yield, a regulatory framework, a favourable architectural landscape and strong demand forces that support its development. The Alternative Renewable Energy Policy, 2019 also aims to produce 30 percent of its energy from non-hydro renewable energy resources by 2030.`,
+      `The government recently proposed a 17 percent sales tax — previously zero percent — on the import of solar panels. Before examining the implications of this tax, it is important to understand that the solar PV market of Pakistan is largely dominated by imported products. More than 90 percent of the consumer market for solar PV panels is met via imported products.`,
+      `In such a scenario, the imposition of GST will only add further complexities. It will increase the retail price of the complete system for potential adopters and disincentivise the national solar drive in an early market. This will widen the gap between imported fossil fuel-based power generation and solar PV energy — delaying the onset of the targeted indigenisation of power procurement resources.`,
+      `Progressive economies of the world are evolving renewable energy policies to incentivise the stakeholders and support the solar industry's growth. Rather than imposing taxes, the Pakistani government needs to offer loans, rebates, duty exemption and credit schemes. Developing policies and tax benefits that help RE integration should be the government's top priority.`
     ],
-    tags: ["Solar", "Taxation", "Policy", "Renewables"],
+    tags: ["Solar", "Taxation", "Policy", "Renewables", "GST"],
+    authorDesc: "Naila Saleh is Technical Advisor at PRIED and Project Manager at Agora Energiewende.",
     related: ["energy-paradox", "net-metering", "reduced-ambitions"]
   }
 };
@@ -319,14 +353,14 @@ const EVENTS = {
   'iran-war': {
     title: "Pakistan's just-energy transition and climate agenda in the time of war in Iran",
     cat: "Consultation", date: "April 2026", loc: "Islamabad", emoji: "🤝",
-    img: "https://www.priedpk.org/wp-content/uploads/2026/04/2.jpeg", url: PRIED_EVENT + '2222',
+    img: "assets/uploads/2026/04/2.jpeg", url: PRIED_EVENT + '2222',
     body: [
       `The ongoing war in and around Iran and the consequent disruption of critical energy supply routes have exposed Pakistan's deep structural dependence on imported fossil fuels such as oil, coal and liquified natural gas (LNG). With rising fuel prices in international markets, increased fuel import bills and their mounting pressure on foreign exchange reserves as well as the serious challenges these factors are posing to Pakistan's energy supplies and energy security, the conflict has intensified the countries vulnerabilities—rising energy prices supply concerns, driving inflation that disproportionately impacting lower-income households and renewing interest among policymakers to mine more indigenous coal and use it for power generation.`,
       `Rather than being a temporary shock, the war and its impacts reflects broader systemic challenge: that Pakistan has an energy model that is both economically unsustainable and geopolitically fragile. At the same time, it has created an urgency to rethink the country's energy and climate trajectories, raising questions about energy security, energy affordability and a sustainable and just energy transition. Importantly, the crisis also underscores the country's climate imperative: continued reliance on fossil fuels not only deepens economic vulnerability but locks us into high-emission energy consumption, undermining our climate commitments and increasing our exposure to future carbon-related trade and financial risks.`
     ],
     tags: ["Energy Security", "Just Transition", "Climate", "Iran War", "Fossil Fuels"],
     related: ["green-loans", "world-bank", "net-metering"],
-    images: ["https://www.priedpk.org/wp-content/uploads/2026/04/2.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/4.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/6.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/8.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/10.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/12.jpeg", "https://www.priedpk.org/wp-content/uploads/2026/04/14.jpeg"],
+    images: ["assets/uploads/2026/04/2.jpeg", "assets/uploads/2026/04/4.jpeg", "assets/uploads/2026/04/6.jpeg", "assets/uploads/2026/04/8.jpeg", "assets/uploads/2026/04/10.jpeg", "assets/uploads/2026/04/12.jpeg", "assets/uploads/2026/04/14.jpeg"],
     videos: [], media: [],
     press: [
       { title: "Pakistan should use Iran war-driven energy crisis to accelerate renewables: experts — Business Recorder", url: "https://www.brecorder.com/news/40415624/pakistan-should-use-iran-war-driven-energy-crisis-to-accelerate-renewables-experts" },
@@ -338,7 +372,7 @@ const EVENTS = {
   'green-loans': {
     title: "A consultation on facilitating green loans for sustainable energy transition in Pakistan",
     cat: "Consultation", date: "2023", loc: "", emoji: "🤝",
-    img: "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-2.png", url: PRIED_EVENT + '1119',
+    img: "assets/uploads/2023/12/Artboard-2.png", url: PRIED_EVENT + '1119',
     body: [
       `In recent times, renewable energy and green alternatives have become cheaper and better in quality, making them more feasible to replace fossil fuels. This is especially true for Electric Vehicles (EVs) and Distributed Solar Photovoltaic (DSPV) systems. Finance plays a crucial role in making the transition to these green technologies, however the process of obtaining funds is extremely challenging and complex for the adopters. There are disagreements and complications between financial institutions and 'borrowers' who are seeking to get financing thereby creating multitude of challenges.`,
       `These challenges, along with the high cost of green products, pose significant barriers for the adopters who want to switch to these sustainable technologies. To make this shift happen smoothly and affordably, we need smart financial strategies. The lack of accessible financing further increases in financially restricted contexts, causing risks of exclusion, inequality, and inefficient outcomes. Similarly, challenges in capital availability, lack of foreign investments, and poor infrastructure also restrict the scale up of these technologies.`,
@@ -346,13 +380,13 @@ const EVENTS = {
     ],
     tags: ["Green Finance", "Solar", "EVs", "Energy Transition"],
     related: ["net-metering", "rooftop-financing", "iran-war"],
-    images: ["https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-2.png", "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-9.png", "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-6.png", "https://www.priedpk.org/wp-content/uploads/2023/12/Artboard-7.png"],
+    images: ["assets/uploads/2023/12/Artboard-2.png", "assets/uploads/2023/12/Artboard-9.png", "assets/uploads/2023/12/Artboard-6.png", "assets/uploads/2023/12/Artboard-7.png"],
     videos: [], media: [], press: [], others: []
   },
   'karachi-electricity': {
     title: "Energy experts discuss various aspects of Karachi's electricity crisis at multi-stakeholder dialogue",
     cat: "Panel Discussion", date: "2023", loc: "Karachi", emoji: "🎙️",
-    img: "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7075-scaled.jpg", url: PRIED_EVENT + '981',
+    img: "assets/uploads/2023/09/DSC_7075-scaled.jpg", url: PRIED_EVENT + '981',
     body: [
       `Pakistan needs to have sustained and consistent energy policies to provide cheap and reliable electricity to its people, said Abu Bakar Ahmed, secretary of Sindh government's energy department at a panel discussion held in Karachi on Tuesday. "Since 1947, we have been lurching from one ad hoc measure to the next and never thought of doing long term planning in the energy sector," he said during his concluding remarks on the occasion.`,
       `This lack of long term planning means that a lot of energy in the country is being produced with very costly sources such as furnace oil and gas, he said. "The biggest problem in using renewable energy sources such as solar panels is their high capital cost. Unless, we are able to either import solar panels cheaply or we start producing them within Pakistan, we cannot uses these renewable energy sources effectively and economically," he added.`,
@@ -362,7 +396,7 @@ const EVENTS = {
     ],
     tags: ["Karachi", "Solar", "High-Loss Feeders", "K-Electric"],
     related: ["net-metering", "rooftop-financing", "world-bank"],
-    images: ["https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7075-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7070-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7236-1-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7105-scaled.jpg", "https://www.priedpk.org/wp-content/uploads/2023/09/DSC_7082-scaled.jpg"],
+    images: ["assets/uploads/2023/09/DSC_7075-scaled.jpg", "assets/uploads/2023/09/DSC_7070-scaled.jpg", "assets/uploads/2023/09/DSC_7236-1-scaled.jpg", "assets/uploads/2023/09/DSC_7105-scaled.jpg", "assets/uploads/2023/09/DSC_7082-scaled.jpg"],
     videos: [],
     media: [{ title: "Media coverage (PDF)", url: "pdfs/Media-Coverage.docx.pdf" }],
     press: [{ title: "Press Release (PDF)", url: "pdfs/Press-release.docx.pdf" }],
@@ -389,7 +423,7 @@ const EVENTS = {
   'rooftop-financing': {
     title: "Limited financing schemes restricting domestic users to install rooftop solar systems: study",
     cat: "Webinar", date: "September 27, 2021", loc: "Islamabad", emoji: "💻",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/05/Image-1.jpg", url: PRIED_EVENT + '217',
+    img: "assets/uploads/2022/05/Image-1.jpg", url: PRIED_EVENT + '217',
     body: [
       `Islamabad, September 27, 2021: A recent study shows that a major hurdle in the installation of home-based rooftop solar systems is arranging money for them. Its authors say that the demand and need for these solar systems is rising constantly but difficulties in financing them are hindering their diffusion in areas where they are needed the most.`,
       `The study titled 'Unlocking the Economic Potential of Rooftop Solar PV in Pakistan', carried out by Rural Development Policy Institute (RDPI), was launched in a webinar on Thursday. The study highlights the potential of rooftop solar PV in Pakistan and shows the unequal picture of solar financing landscape along with several barriers restricting rooftop solar drive.`,
@@ -400,7 +434,7 @@ const EVENTS = {
     ],
     tags: ["Rooftop Solar", "Financing", "State Bank", "OPEX"],
     related: ["net-metering", "green-loans", "caucus-meeting"],
-    images: ["https://www.priedpk.org/wp-content/uploads/2022/05/Image-1.jpg", "https://www.priedpk.org/wp-content/uploads/2022/05/Image-6.jpg"],
+    images: ["assets/uploads/2022/05/Image-1.jpg", "assets/uploads/2022/05/Image-6.jpg"],
     videos: [{ title: "Virtual launch of research study 'Unlocking the Economic Potential of Rooftop Solar PV in Pakistan'", url: "https://www.youtube.com/embed/iickpQgWHxk" }],
     media: [{ title: "Business Recorder", url: "https://www.brecorder.com/news/40123804" }],
     press: [],
@@ -437,7 +471,7 @@ const EVENTS = {
   'world-bank': {
     title: "Experts urge World Bank not to sabotage green energy transition of Pakistan's energy sector",
     cat: "Panel Discussion", date: "March 22, 2022", loc: "Karachi · Lahore · Islamabad", emoji: "🎙️",
-    img: "https://www.priedpk.org/wp-content/uploads/2023/02/Moderator.jpg", url: PRIED_EVENT + '201',
+    img: "assets/uploads/2023/02/Moderator.jpg", url: PRIED_EVENT + '201',
     body: [
       `KARACHI, LAHORE and ISLAMABAD, March 22, 2022: The World Bank has attracted severe criticism for its role in pushing Pakistan's energy sector into debt and sabotaging its transition into clean energy. Experts associated with at least two international think tanks believe that the bank's support for Thar coal power project will help them soon become the largest source of air pollutants, such as mercury and CO2, in South Asia.`,
       `Sharing the findings of their research studies, these experts shed light on the World Bank's role in Pakistan's energy and environmental crisis at an online panel discussion held on Tuesday. The webinar was organised by the Alliance for Climate Justice & Clean Energy (ACJCE), a coalition of think tanks and civil society organisations working on energy transition in Pakistan.`,
@@ -448,12 +482,12 @@ const EVENTS = {
     ],
     tags: ["World Bank", "Coal", "Thar", "Climate Finance"],
     related: ["imf-gst", "thar-water", "karachi-electricity"],
-    images: ["https://www.priedpk.org/wp-content/uploads/2023/02/Moderator.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Heike-Mainhardt-.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Fran-Witt-presentation.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Ahsan-Kamal.jpg", "https://www.priedpk.org/wp-content/uploads/2023/02/Zains-presentation-.jpg"],
+    images: ["assets/uploads/2023/02/Moderator.jpg", "assets/uploads/2023/02/Heike-Mainhardt-.jpg", "assets/uploads/2023/02/Fran-Witt-presentation.jpg", "assets/uploads/2023/02/Ahsan-Kamal.jpg", "assets/uploads/2023/02/Zains-presentation-.jpg"],
     videos: [{ title: "Demystifying the Bank's role in the energy and environmental crisis", url: "https://www.youtube.com/embed/HHwP52l1wYA" }],
     media: [], press: [],
     others: [
-      { title: "World Bank and Pakistan's Energy Transition — Presentation (PPTX)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/World-Bank-and-Pakistans-Energy-Transition-Presentation-Final-.pptx" },
-      { title: "Fran Witt — World Bank presentation (PPTX)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/Fran-Witt-WB-presentation.pptx" }
+      { title: "World Bank and Pakistan's Energy Transition — Presentation (PPTX)", url: "assets/uploads/2023/02/World-Bank-and-Pakistans-Energy-Transition-Presentation-Final-.pptx" },
+      { title: "Fran Witt — World Bank presentation (PPTX)", url: "assets/uploads/2023/02/Fran-Witt-WB-presentation.pptx" }
     ]
   },
   'imf-gst': {
@@ -482,7 +516,7 @@ const EVENTS = {
     press: [],
     others: [
       { title: "ACJCE letter to the IMF on renewables taxation (PDF)", url: "pdfs/ACJCE-letter-to-the-IMF-on-renewables-Taxation.pdf" },
-      { title: "ACJCE Presentation — Environmental Impacts of the IMF-Backed Tax Reforms (PPTX)", url: "https://www.priedpk.org/wp-content/uploads/2023/02/ACJCE-Presentation-ENVIRONMENTAL-Impacts-of-the-IMF-Backed-TAX-reforms.pptx" }
+      { title: "ACJCE Presentation — Environmental Impacts of the IMF-Backed Tax Reforms (PPTX)", url: "assets/uploads/2023/02/ACJCE-Presentation-ENVIRONMENTAL-Impacts-of-the-IMF-Backed-TAX-reforms.pptx" }
     ]
   },
   'thar-water': {
@@ -507,7 +541,7 @@ const EVENTS = {
   'climates-conference': {
     title: "PRIED collaborates with NIPS - Climates of Past, Present and Future",
     cat: "Conference", date: "December 15, 2022", loc: "National Institute of Pakistan Studies, Quaid-i-Azam University, Islamabad", emoji: "🌍",
-    img: "https://www.priedpk.org/wp-content/uploads/2022/12/PRIED-collaborates-with-NIPS-to-hold-one-day.png",
+    img: "assets/uploads/2022/12/PRIED-collaborates-with-NIPS-to-hold-one-day.png",
     url: PRIED_EVENT + '372',
     body: [
       `The people of Pakistan – and particularly historically oppressed ethnic peripheries – have been ravaged by floods. Thousands killed, millions displaced, livelihoods destroyed. Large parts of Sindh remain inundated by water, disease running rampant.`,
@@ -518,8 +552,8 @@ const EVENTS = {
     tags: ["Climate Justice", "Conference", "Floods", "Political Ecology", "Reparations", "NIPS"],
     related: ["thar-water", "world-bank", "caucus-meeting"],
     images: [
-      "https://www.priedpk.org/wp-content/uploads/2022/12/Image-1-1.jpeg",
-      "https://www.priedpk.org/wp-content/uploads/2022/12/Image-2.jpeg"
+      "assets/uploads/2022/12/Image-1-1.jpeg",
+      "assets/uploads/2022/12/Image-2.jpeg"
     ],
     videos: [{ title: "Climates of Past, Present and Future — Full Conference Recording", url: "https://www.youtube.com/embed/WTe1NNXVJQI" }],
     media: [], press: [], others: []
@@ -879,116 +913,117 @@ const JOBS = {
 /* ── MEDIA MONITORS data + title helper ── */
 const SIXMONTH_MM = [
   { t: "Six-Monthly Media Monitor (Nov 2025–Apr 2026)", y: "2026", img: "cover/Thumbnails-11.jpg.jpeg", pdf: "Weekly/Six Monthly - Nov 2025 to Apr 2026.pdf" },
-  { t: "Six-Monthly Media Monitor (May–Oct 2025)", y: "2026", img: "https://www.priedpk.org/wp-content/uploads/2026/01/Thumbnails-07-scaled.jpg", pdf: "pdfs/MM-6-months.pdf" },
-  { t: "Six-Monthly Media Monitor (Nov 2024–April 2025)", y: "2025", img: "https://www.priedpk.org/wp-content/uploads/2025/07/november-to-april.jpg", pdf: "pdfs/November-1st-2024-April-30th-2025.pdf" },
-  { t: "Six-Monthly Media Monitor (May–Oct 2024)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/11/media.jpg", pdf: "pdfs/Six-Month-Media-Monitor.pdf" },
-  { t: "Six-Monthly Media Monitor (Nov 2023–April 2024)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/10/six.jpg", pdf: "pdfs/Six-Month-Media-Monitor-Powerlines-in-Pakistan-The-media-coverage-of-the-energy-sector.pdf" },
-  { t: "Six-Monthly Media Monitor (May–Oct 2023)", y: "2024", img: "https://www.priedpk.org/wp-content/uploads/2024/01/six-month-monitor-R02.png", pdf: "pdfs/Six-month-media-monitor-May-to-October-R04.pdf" },
-  { t: "Six-Monthly Media Monitor (Jan–June 2023)", y: "2023", img: "https://www.priedpk.org/wp-content/uploads/2023/08/Screenshot-2023-08-21-at-1.05.36-PM.png", pdf: "pdfs/Six-month-media-monitor-R05-icons-head.pdf" }
+  { t: "Six-Monthly Media Monitor (May–Oct 2025)", y: "2026", img: "assets/uploads/2026/01/Thumbnails-07-scaled.jpg", pdf: "pdfs/MM-6-months.pdf" },
+  { t: "Six-Monthly Media Monitor (Nov 2024–April 2025)", y: "2025", img: "assets/uploads/2025/07/november-to-april.jpg", pdf: "pdfs/November-1st-2024-April-30th-2025.pdf" },
+  { t: "Six-Monthly Media Monitor (May–Oct 2024)", y: "2024", img: "assets/uploads/2024/11/media.jpg", pdf: "pdfs/Six-Month-Media-Monitor.pdf" },
+  { t: "Six-Monthly Media Monitor (Nov 2023–April 2024)", y: "2024", img: "assets/uploads/2024/10/six.jpg", pdf: "pdfs/Six-Month-Media-Monitor-Powerlines-in-Pakistan-The-media-coverage-of-the-energy-sector.pdf" },
+  { t: "Six-Monthly Media Monitor (May–Oct 2023)", y: "2024", img: "assets/uploads/2024/01/six-month-monitor-R02.png", pdf: "pdfs/Six-month-media-monitor-May-to-October-R04.pdf" },
+  { t: "Six-Monthly Media Monitor (Jan–June 2023)", y: "2023", img: "assets/uploads/2023/08/Screenshot-2023-08-21-at-1.05.36-PM.png", pdf: "pdfs/Six-month-media-monitor-R05-icons-head.pdf" }
 ];
 
 const WEEKLY_MM = [
+  ["Weekly Monitor - 22 Jun to 28 Jun 2026", "Weekly/covers/June22-June28-2026.jpeg", "Weekly/Weekly Monitor - 22 Jun to 28 Jun 2026.pdf"],
   ["Weekly Monitor - 15 Jun to 21 Jun 2026", "Weekly/covers/June 15-June21-2026.jpeg", "Weekly/Weekly Monitor - 15 Jun to 21 Jun 2026.pdf"],
-  ["Weekly Monitor - 08 Jun to 14 Jun 2026", "https://www.priedpk.org/wp-content/uploads/2026/06/8-14.jpeg", "Weekly/Weekly Monitor - 08 Jun to 14 Jun 2026.pdf"],
-  ["Weekly Monitor - 01 Jun to 07 Jun 2026", "https://www.priedpk.org/wp-content/uploads/2026/06/1-7-.jpeg", "Weekly/Weekly Monitor - 01 Jun to 07 Jun 2026.pdf"],
-  ["Weekly Monitor - 25 May to 31 May 2026", "https://www.priedpk.org/wp-content/uploads/2026/06/25-31-May.jpeg", "Weekly/Weekly Monitor - 25 May to 31 May 2026.pdf"],
-  ["Weekly Monitor - 18 May to 24 May 2026", "https://www.priedpk.org/wp-content/uploads/2026/05/May-18-24.jpeg", "Weekly/Weekly Monitor - 18 May to 24 May 2026.pdf"],
-  ["Weekly Monitor - 11 May to 17 May 2026", "https://www.priedpk.org/wp-content/uploads/2026/05/11-17-May.jpeg", "Weekly/Weekly Monitor - 11 May to 17 May 2026.pdf"],
-  ["Weekly Monitor - 04 May to 10 May 2026", "https://www.priedpk.org/wp-content/uploads/2026/05/4-10-May.jpeg", "Weekly/Weekly Monitor - 04 May to 10 May 2026.pdf"],
-  ["Weekly Monitor - 27 Apr to 03 May 2026", "https://www.priedpk.org/wp-content/uploads/2026/05/27-03.jpeg", "Weekly/Weekly Monitor - 27 Apr to 03 May 2026.pdf"],
-  ["Weekly Monitor - 20 Apr to 26 Apr 2026", "https://www.priedpk.org/wp-content/uploads/2026/05/20-28.jpeg", "Weekly/Weekly Monitor - 20 Apr to 26 Apr 2026.pdf"],
-  ["Weekly Monitor - 13 Apr to 19 Apr 2026", "https://www.priedpk.org/wp-content/uploads/2026/04/13-19-.jpeg", "Weekly/Weekly Monitor - 13 Apr to 19 Apr 2026.pdf"],
-  ["Weekly Monitor - 06 Apr to 12 Apr 2026", "https://www.priedpk.org/wp-content/uploads/2026/04/6-12-apr.jpeg", "Weekly/Weekly Monitor - 06 Apr to 12 Apr 2026.pdf"],
-  ["Weekly Monitor - 30 Mar to 05 Apr 2026", "https://www.priedpk.org/wp-content/uploads/2026/04/30-05-apr.jpeg", "Weekly/Weekly Monitor - 30 Mar to 05 Apr 2026.pdf"],
-  ["Weekly Monitor - 23 Mar to 29 Mar 2026", "https://www.priedpk.org/wp-content/uploads/2026/04/23-29-mar.jpeg", "Weekly/Weekly Monitor - 23 Mar to 29 Mar 2026.pdf"],
-  ["Weekly Monitor - 16 Mar to 22 Mar 2026", "https://www.priedpk.org/wp-content/uploads/2026/03/Mar-16-22.jpeg", "Weekly/Weekly Monitor - 16 Mar to 22 Mar 2026.pdf"],
-  ["Weekly Monitor - 09 Mar to 15 Mar 2026", "https://www.priedpk.org/wp-content/uploads/2026/03/March-9-15.jpeg", "Weekly/Weekly Monitor - 09 Mar to 15 Mar 2026.pdf"],
-  ["Weekly Monitor - 02 Mar to 08 Mar 2026", "https://www.priedpk.org/wp-content/uploads/2026/03/March-2-8.jpeg", "Weekly/Weekly Monitor - 02 Mar to 08 Mar 2026.pdf"],
-  ["Weekly Monitor - 23 Feb to 01 Mar 2026", "https://www.priedpk.org/wp-content/uploads/2026/03/Feb-23-1Mar.jpeg", "Weekly/Weekly Monitor - 23 Feb to 01 Mar 2026.pdf"],
-  ["Weekly Monitor - 16 Feb to 22 Feb 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/16-22.jpeg", "Weekly/Weekly Monitor - 16 Feb to 22 Feb 2026.pdf"],
-  ["Weekly Monitor - 09 Feb to 15 Feb 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/9-feb-15-feb.jpeg", "Weekly/Weekly Monitor - 09 Feb to 15 Feb 2026.pdf"],
-  ["Weekly Monitor - 02 Feb to 08 Feb 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/2-Feb-8-Feb-2026-01.png", "Weekly/Weekly Monitor - 02 Feb to 08 Feb 2026.pdf"],
-  ["Weekly Monitor - 26 Jan to 01 Feb 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/January-26th-Feb-1st-2026-01.png", "Weekly/Weekly Monitor - 26 Jan to 01 Feb 2026.pdf"],
-  ["Weekly Monitor - 19 Jan to 25 Jan 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/19-January-25-January-2026-01.png", "Weekly/Weekly Monitor - 19 Jan to 25 Jan 2026.pdf"],
-  ["Weekly Monitor - 12 Jan to 18 Jan 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/12-jan-18-jan-01.png", "Weekly/Weekly Monitor - 12 Jan to 18 Jan 2026.pdf"],
-  ["Weekly Monitor - 05 Jan to 11 Jan 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/5-jan-11-jan-01.png", "Weekly/Weekly Monitor - 05 Jan to 11 Jan 2026.pdf"],
-  ["Weekly Monitor - 29 Dec 2025 to 04 Jan 2026", "https://www.priedpk.org/wp-content/uploads/2026/02/29-Dec-4-Jan-01.png", "Weekly/Weekly Monitor - 29 Dec 2025 to 04 Jan 2026.pdf"],
-  ["Weekly Monitor - 22 Dec to 28 Dec 2025", "https://www.priedpk.org/wp-content/uploads/2026/02/22-Dec-28-Dec-01.png", "Weekly/Weekly Monitor - 22 Dec to 28 Dec 2025.pdf"],
-  ["Weekly Monitor - 15 Dec to 21 Dec 2025", "https://www.priedpk.org/wp-content/uploads/2026/02/15-Dec-21-Dec-01.png", "Weekly/Weekly Monitor - 15 Dec to 21 Dec 2025.pdf"],
-  ["Weekly Monitor - 08 Dec to 14 Dec 2025", "https://www.priedpk.org/wp-content/uploads/2026/02/8-Dec-14-Dec-01.png", "Weekly/Weekly Monitor - 08 Dec to 14 Dec 2025.pdf"],
-  ["Weekly Monitor - 01 Dec to 07 Dec 2025", "https://www.priedpk.org/wp-content/uploads/2026/02/01-Dec-07-Dec-01.png", "Weekly/Weekly Monitor - 01 Dec to 07 Dec 2025.pdf"],
-  ["Weekly Monitor - 24 Nov to 30 Nov 2025", "https://www.priedpk.org/wp-content/uploads/2026/02/24-NOV-30-NOV-01.png", "Weekly/Weekly Monitor - 24 Nov to 30 Nov 2025.pdf"],
-  ["Weekly Monitor - 17 Nov to 23 Nov 2025", "https://www.priedpk.org/wp-content/uploads/2026/02/17-NOV-23-NOV-01.png", "Weekly/Weekly Monitor - 17 Nov to 23 Nov 2025.pdf"],
-  ["Weekly Monitor - 10 Nov to 16 Nov 2025", "https://www.priedpk.org/wp-content/uploads/2025/11/Nov-10-16.png", "Weekly/Weekly Monitor - 10 Nov to 16 Nov 2025.pdf"],
-  ["Weekly Monitor - 03 Nov to 09 Nov 2025", "https://www.priedpk.org/wp-content/uploads/2025/11/Nov-3rd-9ths.png", "Weekly/Weekly Monitor - 03 Nov to 09 Nov 2025.pdf"],
-  ["Weekly Monitor - 27 Oct to 02 Nov 2025", "https://www.priedpk.org/wp-content/uploads/2025/11/oct-27-2nd.png", "Weekly/Weekly Monitor - 27 Oct to 02 Nov 2025.pdf"],
-  ["Weekly Monitor - 20 Oct to 26 Oct 2025", "https://www.priedpk.org/wp-content/uploads/2025/11/oct-20-26.png", "Weekly/Weekly Monitor - 20 Oct to 26 Oct 2025.pdf"],
-  ["Weekly Monitor - 13 Oct to 19 Oct 2025", "https://www.priedpk.org/wp-content/uploads/2025/10/October-13th-October-19th.png", "Weekly/Weekly Monitor - 13 Oct to 19 Oct 2025.pdf"],
-  ["Weekly Monitor - 06 Oct to 12 Oct 2025", "https://www.priedpk.org/wp-content/uploads/2025/11/oct-6-12.png", "Weekly/Weekly Monitor - 06 Oct to 12 Oct 2025.pdf"],
-  ["Weekly Monitor - 29 Sep to 05 Oct 2025", "https://www.priedpk.org/wp-content/uploads/2025/10/Sep-29th-oct-05th.jpg", "Weekly/Weekly Monitor - 29 Sep to 05 Oct 2025.pdf"],
-  ["Weekly Monitor - 22 Sep to 28 Sep 2025", "https://www.priedpk.org/wp-content/uploads/2025/10/Sep-22-Sep-28-2025.jpg", "Weekly/Weekly Monitor - 22 Sep to 28 Sep 2025.pdf"],
-  ["Weekly Monitor - 15 Sep to 21 Sep 2025", "https://www.priedpk.org/wp-content/uploads/2025/09/Sep-15th-Sep-21st.png", "Weekly/Weekly Monitor - 15 Sep to 21 Sep 2025.pdf"],
-  ["Weekly Monitor - 08 Sep to 14 Sep 2025", "https://www.priedpk.org/wp-content/uploads/2025/09/8th-Sept-14th-Sep-2025.png", "Weekly/Weekly Monitor - 08 Sep to 14 Sep 2025.pdf"],
-  ["Weekly Monitor - 01 Sep to 07 Sep 2025", "https://www.priedpk.org/wp-content/uploads/2025/09/Thumbnail.png", "Weekly/Weekly Monitor - 01 Sep to 07 Sep 2025.pdf"],
-  ["Weekly Monitor - 25 Aug to 31 Aug 2025", "https://www.priedpk.org/wp-content/uploads/2025/09/August-25th-August-31st.png", "Weekly/Weekly Monitor - 25 Aug to 31 Aug 2025.pdf"],
-  ["Weekly Monitor - 18 Aug to 24 Aug 2025", "https://www.priedpk.org/wp-content/uploads/2025/08/August-18th-August-24th.png", "Weekly/Weekly Monitor - 18 Aug to 24 Aug 2025.pdf"],
-  ["Weekly Monitor - 11 Aug to 17 Aug 2025", "https://www.priedpk.org/wp-content/uploads/2025/08/august-11th-August-17th.png", "Weekly/Weekly Monitor - 11 Aug to 17 Aug 2025.pdf"],
-  ["Weekly Monitor - 04 Aug to 10 Aug 2025", "https://www.priedpk.org/wp-content/uploads/2025/08/August-4d-2025.jpg", "Weekly/Weekly Monitor - 04 Aug to 10 Aug 2025.pdf"],
-  ["Weekly Monitor - 28 Jul to 03 Aug 2025", "https://www.priedpk.org/wp-content/uploads/2025/08/July-28th-August-3rd-2025.jpg", "Weekly/Weekly Monitor - 28 Jul to 03 Aug 2025.pdf"],
-  ["Weekly Monitor - 21 Jul to 27 Jul 2025", "https://www.priedpk.org/wp-content/uploads/2025/07/July-21st-july-27th.jpg", "Weekly/Weekly Monitor - 21 Jul to 27 Jul 2025.pdf"],
-  ["Weekly Monitor - 14 Jul to 20 Jul 2025", "https://www.priedpk.org/wp-content/uploads/2025/07/July-14th-20th-July-2025.jpg", "Weekly/Weekly Monitor - 14 Jul to 20 Jul 2025.pdf"],
-  ["Weekly Monitor - 07 Jul to 13 Jul 2025", "https://www.priedpk.org/wp-content/uploads/2025/07/July-07th-July-13th.jpg", "Weekly/Weekly Monitor - 07 Jul to 13 Jul 2025.pdf"],
-  ["Weekly Monitor - 30 Jun to 06 Jul 2025", "https://www.priedpk.org/wp-content/uploads/2025/07/June-30th-july-06th-2025.jpg", "Weekly/Weekly Monitor - 30 Jun to 06 Jul 2025.pdf"],
-  ["Weekly Monitor - 23 Jun to 29 Jun 2025", "https://www.priedpk.org/wp-content/uploads/2025/07/June-23rd-June-29th.jpg", "Weekly/Weekly Monitor - 23 Jun to 29 Jun 2025.pdf"],
-  ["Weekly Monitor - 16 Jun to 22 Jun 2025", "https://www.priedpk.org/wp-content/uploads/2025/06/June-16th-June-22nd.jpg", "Weekly/Weekly Monitor - 16 Jun to 22 Jun 2025.pdf"],
-  ["Weekly Monitor - 09 Jun to 15 Jun 2025", "https://www.priedpk.org/wp-content/uploads/2025/06/June-9th-15th-June-2025.jpg", "Weekly/Weekly Monitor - 09 Jun to 15 Jun 2025.pdf"],
-  ["Weekly Monitor - 02 Jun to 08 Jun 2025", "https://www.priedpk.org/wp-content/uploads/2025/06/02-June-08-June-2025.jpg", "Weekly/Weekly Monitor - 02 Jun to 08 Jun 2025.pdf"],
-  ["Weekly Monitor - 26 May to 01 Jun 2025", "https://www.priedpk.org/wp-content/uploads/2025/06/May-12th-May-18th-copy.jpg", "Weekly/Weekly Monitor - 26 May to 01 Jun 2025.pdf"],
-  ["Weekly Monitor - 19 May to 25 May 2025", "https://www.priedpk.org/wp-content/uploads/2025/05/May-19th-May-25th.jpg", "Weekly/Weekly Monitor - 19 May to 25 May 2025.pdf"],
-  ["Weekly Monitor - 12 May to 18 May 2025", "https://www.priedpk.org/wp-content/uploads/2025/05/May-12th-May-18th1.jpg", "Weekly/Weekly Monitor - 12 May to 18 May 2025.pdf"],
-  ["Weekly Monitor - 05 May to 11 May 2025", "https://www.priedpk.org/wp-content/uploads/2025/05/May-05th-May-11th.jpg", "Weekly/Weekly Monitor - 05 May to 11 May 2025.pdf"],
-  ["Weekly Monitor - 28 Apr to 04 May 2025", "https://www.priedpk.org/wp-content/uploads/2025/05/Apr-28th-May-04th.jpg", "Weekly/Weekly Monitor - 28 Apr to 04 May 2025.pdf"],
-  ["Weekly Monitor - 21 Apr to 27 Apr 2025", "https://www.priedpk.org/wp-content/uploads/2025/05/Apr-21st-Apr-27th.jpg", "Weekly/Weekly Monitor - 21 Apr to 27 Apr 2025.pdf"],
-  ["Weekly Monitor - 14 Apr to 20 Apr 2025", "https://www.priedpk.org/wp-content/uploads/2025/04/Apr-14th-Apr-20th.jpg", "Weekly/Weekly Monitor - 14 Apr to 20 Apr 2025.pdf"],
-  ["Weekly Monitor - 07 Apr to 13 Apr 2025", "https://www.priedpk.org/wp-content/uploads/2025/04/Apr-07th-Apr-13th.jpg", "Weekly/Weekly Monitor - 07 Apr to 13 Apr 2025.pdf"],
-  ["Weekly Monitor - 31 Mar to 06 Apr 2025", "https://www.priedpk.org/wp-content/uploads/2025/04/Mar-31st-Apr-06th.jpg", "Weekly/Weekly Monitor - 31 Mar to 06 Apr 2025.pdf"],
-  ["Weekly Monitor - 24 Mar to 30 Mar 2025", "https://www.priedpk.org/wp-content/uploads/2025/04/24th-30th-Mar-2025.jpg", "Weekly/Weekly Monitor - 24 Mar to 30 Mar 2025.pdf"],
-  ["Weekly Monitor - 17 Mar to 23 Mar 2025", "https://www.priedpk.org/wp-content/uploads/2025/03/mar-17th-mar-23rd.jpg", "Weekly/Weekly Monitor - 17 Mar to 23 Mar 2025.pdf"],
-  ["Weekly Monitor - 10 Mar to 16 Mar 2025", "https://www.priedpk.org/wp-content/uploads/2025/03/mar-10th-mar-16th.jpg", "Weekly/Weekly Monitor - 10 Mar to 16 Mar 2025.pdf"],
-  ["Weekly Monitor - 03 Mar to 09 Mar 2025", "https://www.priedpk.org/wp-content/uploads/2025/03/Mar-3rd-Mar-9th-2025.jpg", "Weekly/Weekly Monitor - 03 Mar to 09 Mar 2025.pdf"],
-  ["Weekly Monitor - 24 Feb to 02 Mar 2025", "https://www.priedpk.org/wp-content/uploads/2025/03/Feb-24th-Mar-2nd.jpg", "Weekly/Weekly Monitor - 24 Feb to 02 Mar 2025.pdf"],
-  ["Weekly Monitor - 17 Feb to 23 Feb 2025", "https://www.priedpk.org/wp-content/uploads/2025/02/feb-17th-Feb-23rd.jpg", "Weekly/Weekly Monitor - 17 Feb to 23 Feb 2025.pdf"],
-  ["Weekly Monitor - 10 Feb to 16 Feb 2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Feb-10th-Feb-16th.jpg", "Weekly/Weekly Monitor - 10 Feb to 16 Feb 2025.pdf"],
-  ["Weekly Monitor - 03 Feb to 09 Feb 2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Feb-3rd-Feb-9th.jpg", "Weekly/Weekly Monitor - 03 Feb to 09 Feb 2025.pdf"],
-  ["Weekly Monitor - 27 Jan to 02 Feb 2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Jan-27th-2nd-Feb.jpg", "Weekly/Weekly Monitor - 27 Jan to 02 Feb 2025.pdf"],
-  ["Weekly Monitor - 20 Jan to 26 Jan 2025", "https://www.priedpk.org/wp-content/uploads/2025/02/Jan-20th-26th-Jan_.jpg", "Weekly/Weekly Monitor - 20 Jan to 26 Jan 2025.pdf"],
-  ["Weekly Monitor - 13 Jan to 19 Jan 2025", "https://www.priedpk.org/wp-content/uploads/2025/01/Weekly-Media-Monitor-Jan-13-–-Jan-19-2025-thumbnail.jpg", "Weekly/Weekly Monitor - 13 Jan to 19 Jan 2025.pdf"],
-  ["Weekly Monitor - 06 Jan to 12 Jan 2025", "https://www.priedpk.org/wp-content/uploads/2025/01/Jan-6th-12th-Jan.jpg", "Weekly/Weekly Monitor - 06 Jan to 12 Jan 2025.pdf"],
-  ["Weekly Monitor - 30 Dec 2024 to 05 Jan 2025", "https://www.priedpk.org/wp-content/uploads/2025/01/Dec-30th-2024-Jan-05th20251.jpg", "Weekly/Weekly Monitor - 30 Dec 2024 to 05 Jan 2025.pdf"],
-  ["Weekly Monitor - 23 Dec to 29 Dec 2024", "https://www.priedpk.org/wp-content/uploads/2025/01/Dec-23-29-Dec.jpg", "Weekly/Weekly Monitor - 23 Dec to 29 Dec 2024.pdf"],
-  ["Weekly Monitor - 16 Dec to 22 Dec 2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Dec-16-22-Dec.jpg", "Weekly/Weekly Monitor - 16 Dec to 22 Dec 2024.pdf"],
-  ["Weekly Monitor - 09 Dec to 15 Dec 2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Dec-09-15-Dec_.jpg", "Weekly/Weekly Monitor - 09 Dec to 15 Dec 2024.pdf"],
-  ["Weekly Monitor - 02 Dec to 08 Dec 2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Dec-02-08-Dec_.jpg", "Weekly/Weekly Monitor - 02 Dec to 08 Dec 2024.pdf"],
-  ["Weekly Monitor - 25 Nov to 01 Dec 2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Nov-25-Dec-01.jpg", "Weekly/Weekly Monitor - 25 Nov to 01 Dec 2024.pdf"],
-  ["Weekly Monitor - 18 Nov to 24 Nov 2024", "https://www.priedpk.org/wp-content/uploads/2024/12/Nov-18th-24th1.jpg", "Weekly/Weekly Monitor - 18 Nov to 24 Nov 2024.pdf"],
-  ["Weekly Monitor - 11 Nov to 17 Nov 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Nov-11th-17th.jpg", "Weekly/Weekly Monitor - 11 Nov to 17 Nov 2024.pdf"],
-  ["Weekly Monitor - 04 Nov to 10 Nov 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Nov-4th-10th.jpg", "Weekly/Weekly Monitor - 04 Nov to 10 Nov 2024.pdf"],
-  ["Weekly Monitor - 28 Oct to 03 Nov 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/OCT-28-Nov-03.jpg", "Weekly/Weekly Monitor - 28 Oct to 03 Nov 2024.pdf"],
-  ["Weekly Monitor - 21 Oct to 27 Oct 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/October-21-27.jpg", "Weekly/Weekly Monitor - 21 Oct to 27 Oct 2024.pdf"],
-  ["Weekly Monitor - 14 Oct to 20 Oct 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/October-14-20.jpg", "Weekly/Weekly Monitor - 14 Oct to 20 Oct 2024.pdf"],
-  ["Weekly Monitor - 07 Oct to 13 Oct 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/October-7-13.jpg", "Weekly/Weekly Monitor - 07 Oct to 13 Oct 2024.pdf"],
-  ["Weekly Monitor - 30 Sep to 06 Oct 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Sep-30-Oct-06.jpg", "Weekly/Weekly Monitor - 30 Sep to 06 Oct 2024.pdf"],
-  ["Weekly Monitor - 23 Sep to 29 Sep 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-23-29.jpg", "Weekly/Weekly Monitor - 23 Sep to 29 Sep 2024.pdf"],
-  ["Weekly Monitor - 16 Sep to 22 Sep 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-16-22.jpg", "Weekly/Weekly Monitor - 16 Sep to 22 Sep 2024.pdf"],
-  ["Weekly Monitor - 09 Sep to 15 Sep 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-9-15.jpg", "Weekly/Weekly Monitor - 09 Sep to 15 Sep 2024.pdf"],
-  ["Weekly Monitor - 02 Sep to 08 Sep 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/September-2-8.jpg", "Weekly/Weekly Monitor - 02 Sep to 08 Sep 2024.pdf"],
-  ["Weekly Monitor - 26 Aug to 01 Sep 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Aug-26-01-Sep.jpg", "Weekly/Weekly Monitor - 26 Aug to 01 Sep 2024.pdf"],
-  ["Weekly Monitor - 19 Aug to 25 Aug 2024", "https://www.priedpk.org/wp-content/uploads/2024/11/Aug-19-25.jpg", "Weekly/Weekly Monitor - 19 Aug to 25 Aug 2024.pdf"],
-  ["Weekly Monitor - 12 Aug to 18 Aug 2024", "https://www.priedpk.org/wp-content/uploads/2024/09/Aug-12-18.png", "Weekly/Weekly Monitor - 12 Aug to 18 Aug 2024.pdf"],
-  ["Weekly Monitor - 05 Aug to 11 Aug 2024", "https://www.priedpk.org/wp-content/uploads/2024/09/Aug-5-11.png", "Weekly/Weekly Monitor - 05 Aug to 11 Aug 2024.pdf"],
-  ["Weekly Monitor - 29 Jul to 04 Aug 2024", "https://www.priedpk.org/wp-content/uploads/2024/08/June-Aug-29-4.png", "Weekly/Weekly Monitor - 29 Jul to 04 Aug 2024.pdf"],
-  ["Weekly Monitor - 22 Jul to 28 Jul 2024", "https://www.priedpk.org/wp-content/uploads/2024/08/July-22-28.png", "Weekly/Weekly Monitor - 22 Jul to 28 Jul 2024.pdf"],
-  ["Weekly Monitor - 15 Jul to 21 Jul 2024", "https://www.priedpk.org/wp-content/uploads/2024/08/Jult-15-21.png", "Weekly/Weekly Monitor - 15 Jul to 21 Jul 2024.pdf"],
+  ["Weekly Monitor - 08 Jun to 14 Jun 2026", "assets/uploads/2026/06/8-14.jpeg", "Weekly/Weekly Monitor - 08 Jun to 14 Jun 2026.pdf"],
+  ["Weekly Monitor - 01 Jun to 07 Jun 2026", "assets/uploads/2026/06/1-7-.jpeg", "Weekly/Weekly Monitor - 01 Jun to 07 Jun 2026.pdf"],
+  ["Weekly Monitor - 25 May to 31 May 2026", "assets/uploads/2026/06/25-31-May.jpeg", "Weekly/Weekly Monitor - 25 May to 31 May 2026.pdf"],
+  ["Weekly Monitor - 18 May to 24 May 2026", "assets/uploads/2026/05/May-18-24.jpeg", "Weekly/Weekly Monitor - 18 May to 24 May 2026.pdf"],
+  ["Weekly Monitor - 11 May to 17 May 2026", "assets/uploads/2026/05/11-17-May.jpeg", "Weekly/Weekly Monitor - 11 May to 17 May 2026.pdf"],
+  ["Weekly Monitor - 04 May to 10 May 2026", "assets/uploads/2026/05/4-10-May.jpeg", "Weekly/Weekly Monitor - 04 May to 10 May 2026.pdf"],
+  ["Weekly Monitor - 27 Apr to 03 May 2026", "assets/uploads/2026/05/27-03.jpeg", "Weekly/Weekly Monitor - 27 Apr to 03 May 2026.pdf"],
+  ["Weekly Monitor - 20 Apr to 26 Apr 2026", "assets/uploads/2026/05/20-28.jpeg", "Weekly/Weekly Monitor - 20 Apr to 26 Apr 2026.pdf"],
+  ["Weekly Monitor - 13 Apr to 19 Apr 2026", "assets/uploads/2026/04/13-19-.jpeg", "Weekly/Weekly Monitor - 13 Apr to 19 Apr 2026.pdf"],
+  ["Weekly Monitor - 06 Apr to 12 Apr 2026", "assets/uploads/2026/04/6-12-apr.jpeg", "Weekly/Weekly Monitor - 06 Apr to 12 Apr 2026.pdf"],
+  ["Weekly Monitor - 30 Mar to 05 Apr 2026", "assets/uploads/2026/04/30-05-apr.jpeg", "Weekly/Weekly Monitor - 30 Mar to 05 Apr 2026.pdf"],
+  ["Weekly Monitor - 23 Mar to 29 Mar 2026", "assets/uploads/2026/04/23-29-mar.jpeg", "Weekly/Weekly Monitor - 23 Mar to 29 Mar 2026.pdf"],
+  ["Weekly Monitor - 16 Mar to 22 Mar 2026", "assets/uploads/2026/03/Mar-16-22.jpeg", "Weekly/Weekly Monitor - 16 Mar to 22 Mar 2026.pdf"],
+  ["Weekly Monitor - 09 Mar to 15 Mar 2026", "assets/uploads/2026/03/March-9-15.jpeg", "Weekly/Weekly Monitor - 09 Mar to 15 Mar 2026.pdf"],
+  ["Weekly Monitor - 02 Mar to 08 Mar 2026", "assets/uploads/2026/03/March-2-8.jpeg", "Weekly/Weekly Monitor - 02 Mar to 08 Mar 2026.pdf"],
+  ["Weekly Monitor - 23 Feb to 01 Mar 2026", "assets/uploads/2026/03/Feb-23-1Mar.jpeg", "Weekly/Weekly Monitor - 23 Feb to 01 Mar 2026.pdf"],
+  ["Weekly Monitor - 16 Feb to 22 Feb 2026", "assets/uploads/2026/02/16-22.jpeg", "Weekly/Weekly Monitor - 16 Feb to 22 Feb 2026.pdf"],
+  ["Weekly Monitor - 09 Feb to 15 Feb 2026", "assets/uploads/2026/02/9-feb-15-feb.jpeg", "Weekly/Weekly Monitor - 09 Feb to 15 Feb 2026.pdf"],
+  ["Weekly Monitor - 02 Feb to 08 Feb 2026", "assets/uploads/2026/02/2-Feb-8-Feb-2026-01.png", "Weekly/Weekly Monitor - 02 Feb to 08 Feb 2026.pdf"],
+  ["Weekly Monitor - 26 Jan to 01 Feb 2026", "assets/uploads/2026/02/January-26th-Feb-1st-2026-01.png", "Weekly/Weekly Monitor - 26 Jan to 01 Feb 2026.pdf"],
+  ["Weekly Monitor - 19 Jan to 25 Jan 2026", "assets/uploads/2026/02/19-January-25-January-2026-01.png", "Weekly/Weekly Monitor - 19 Jan to 25 Jan 2026.pdf"],
+  ["Weekly Monitor - 12 Jan to 18 Jan 2026", "assets/uploads/2026/02/12-jan-18-jan-01.png", "Weekly/Weekly Monitor - 12 Jan to 18 Jan 2026.pdf"],
+  ["Weekly Monitor - 05 Jan to 11 Jan 2026", "assets/uploads/2026/02/5-jan-11-jan-01.png", "Weekly/Weekly Monitor - 05 Jan to 11 Jan 2026.pdf"],
+  ["Weekly Monitor - 29 Dec 2025 to 04 Jan 2026", "assets/uploads/2026/02/29-Dec-4-Jan-01.png", "Weekly/Weekly Monitor - 29 Dec 2025 to 04 Jan 2026.pdf"],
+  ["Weekly Monitor - 22 Dec to 28 Dec 2025", "assets/uploads/2026/02/22-Dec-28-Dec-01.png", "Weekly/Weekly Monitor - 22 Dec to 28 Dec 2025.pdf"],
+  ["Weekly Monitor - 15 Dec to 21 Dec 2025", "assets/uploads/2026/02/15-Dec-21-Dec-01.png", "Weekly/Weekly Monitor - 15 Dec to 21 Dec 2025.pdf"],
+  ["Weekly Monitor - 08 Dec to 14 Dec 2025", "assets/uploads/2026/02/8-Dec-14-Dec-01.png", "Weekly/Weekly Monitor - 08 Dec to 14 Dec 2025.pdf"],
+  ["Weekly Monitor - 01 Dec to 07 Dec 2025", "assets/uploads/2026/02/01-Dec-07-Dec-01.png", "Weekly/Weekly Monitor - 01 Dec to 07 Dec 2025.pdf"],
+  ["Weekly Monitor - 24 Nov to 30 Nov 2025", "assets/uploads/2026/02/24-NOV-30-NOV-01.png", "Weekly/Weekly Monitor - 24 Nov to 30 Nov 2025.pdf"],
+  ["Weekly Monitor - 17 Nov to 23 Nov 2025", "assets/uploads/2026/02/17-NOV-23-NOV-01.png", "Weekly/Weekly Monitor - 17 Nov to 23 Nov 2025.pdf"],
+  ["Weekly Monitor - 10 Nov to 16 Nov 2025", "assets/uploads/2025/11/Nov-10-16.png", "Weekly/Weekly Monitor - 10 Nov to 16 Nov 2025.pdf"],
+  ["Weekly Monitor - 03 Nov to 09 Nov 2025", "assets/uploads/2025/11/Nov-3rd-9ths.png", "Weekly/Weekly Monitor - 03 Nov to 09 Nov 2025.pdf"],
+  ["Weekly Monitor - 27 Oct to 02 Nov 2025", "assets/uploads/2025/11/oct-27-2nd.png", "Weekly/Weekly Monitor - 27 Oct to 02 Nov 2025.pdf"],
+  ["Weekly Monitor - 20 Oct to 26 Oct 2025", "assets/uploads/2025/11/oct-20-26.png", "Weekly/Weekly Monitor - 20 Oct to 26 Oct 2025.pdf"],
+  ["Weekly Monitor - 13 Oct to 19 Oct 2025", "assets/uploads/2025/10/October-13th-October-19th.png", "Weekly/Weekly Monitor - 13 Oct to 19 Oct 2025.pdf"],
+  ["Weekly Monitor - 06 Oct to 12 Oct 2025", "assets/uploads/2025/11/oct-6-12.png", "Weekly/Weekly Monitor - 06 Oct to 12 Oct 2025.pdf"],
+  ["Weekly Monitor - 29 Sep to 05 Oct 2025", "assets/uploads/2025/10/Sep-29th-oct-05th.jpg", "Weekly/Weekly Monitor - 29 Sep to 05 Oct 2025.pdf"],
+  ["Weekly Monitor - 22 Sep to 28 Sep 2025", "assets/uploads/2025/10/Sep-22-Sep-28-2025.jpg", "Weekly/Weekly Monitor - 22 Sep to 28 Sep 2025.pdf"],
+  ["Weekly Monitor - 15 Sep to 21 Sep 2025", "assets/uploads/2025/09/Sep-15th-Sep-21st.png", "Weekly/Weekly Monitor - 15 Sep to 21 Sep 2025.pdf"],
+  ["Weekly Monitor - 08 Sep to 14 Sep 2025", "assets/uploads/2025/09/8th-Sept-14th-Sep-2025.png", "Weekly/Weekly Monitor - 08 Sep to 14 Sep 2025.pdf"],
+  ["Weekly Monitor - 01 Sep to 07 Sep 2025", "assets/uploads/2025/09/Thumbnail.png", "Weekly/Weekly Monitor - 01 Sep to 07 Sep 2025.pdf"],
+  ["Weekly Monitor - 25 Aug to 31 Aug 2025", "assets/uploads/2025/09/August-25th-August-31st.png", "Weekly/Weekly Monitor - 25 Aug to 31 Aug 2025.pdf"],
+  ["Weekly Monitor - 18 Aug to 24 Aug 2025", "assets/uploads/2025/08/August-18th-August-24th.png", "Weekly/Weekly Monitor - 18 Aug to 24 Aug 2025.pdf"],
+  ["Weekly Monitor - 11 Aug to 17 Aug 2025", "assets/uploads/2025/08/august-11th-August-17th.png", "Weekly/Weekly Monitor - 11 Aug to 17 Aug 2025.pdf"],
+  ["Weekly Monitor - 04 Aug to 10 Aug 2025", "assets/uploads/2025/08/August-4d-2025.jpg", "Weekly/Weekly Monitor - 04 Aug to 10 Aug 2025.pdf"],
+  ["Weekly Monitor - 28 Jul to 03 Aug 2025", "assets/uploads/2025/08/July-28th-August-3rd-2025.jpg", "Weekly/Weekly Monitor - 28 Jul to 03 Aug 2025.pdf"],
+  ["Weekly Monitor - 21 Jul to 27 Jul 2025", "assets/uploads/2025/07/July-21st-july-27th.jpg", "Weekly/Weekly Monitor - 21 Jul to 27 Jul 2025.pdf"],
+  ["Weekly Monitor - 14 Jul to 20 Jul 2025", "assets/uploads/2025/07/July-14th-20th-July-2025.jpg", "Weekly/Weekly Monitor - 14 Jul to 20 Jul 2025.pdf"],
+  ["Weekly Monitor - 07 Jul to 13 Jul 2025", "assets/uploads/2025/07/July-07th-July-13th.jpg", "Weekly/Weekly Monitor - 07 Jul to 13 Jul 2025.pdf"],
+  ["Weekly Monitor - 30 Jun to 06 Jul 2025", "assets/uploads/2025/07/June-30th-july-06th-2025.jpg", "Weekly/Weekly Monitor - 30 Jun to 06 Jul 2025.pdf"],
+  ["Weekly Monitor - 23 Jun to 29 Jun 2025", "assets/uploads/2025/07/June-23rd-June-29th.jpg", "Weekly/Weekly Monitor - 23 Jun to 29 Jun 2025.pdf"],
+  ["Weekly Monitor - 16 Jun to 22 Jun 2025", "assets/uploads/2025/06/June-16th-June-22nd.jpg", "Weekly/Weekly Monitor - 16 Jun to 22 Jun 2025.pdf"],
+  ["Weekly Monitor - 09 Jun to 15 Jun 2025", "assets/uploads/2025/06/June-9th-15th-June-2025.jpg", "Weekly/Weekly Monitor - 09 Jun to 15 Jun 2025.pdf"],
+  ["Weekly Monitor - 02 Jun to 08 Jun 2025", "assets/uploads/2025/06/02-June-08-June-2025.jpg", "Weekly/Weekly Monitor - 02 Jun to 08 Jun 2025.pdf"],
+  ["Weekly Monitor - 26 May to 01 Jun 2025", "assets/uploads/2025/06/May-12th-May-18th-copy.jpg", "Weekly/Weekly Monitor - 26 May to 01 Jun 2025.pdf"],
+  ["Weekly Monitor - 19 May to 25 May 2025", "assets/uploads/2025/05/May-19th-May-25th.jpg", "Weekly/Weekly Monitor - 19 May to 25 May 2025.pdf"],
+  ["Weekly Monitor - 12 May to 18 May 2025", "assets/uploads/2025/05/May-12th-May-18th1.jpg", "Weekly/Weekly Monitor - 12 May to 18 May 2025.pdf"],
+  ["Weekly Monitor - 05 May to 11 May 2025", "assets/uploads/2025/05/May-05th-May-11th.jpg", "Weekly/Weekly Monitor - 05 May to 11 May 2025.pdf"],
+  ["Weekly Monitor - 28 Apr to 04 May 2025", "assets/uploads/2025/05/Apr-28th-May-04th.jpg", "Weekly/Weekly Monitor - 28 Apr to 04 May 2025.pdf"],
+  ["Weekly Monitor - 21 Apr to 27 Apr 2025", "assets/uploads/2025/05/Apr-21st-Apr-27th.jpg", "Weekly/Weekly Monitor - 21 Apr to 27 Apr 2025.pdf"],
+  ["Weekly Monitor - 14 Apr to 20 Apr 2025", "assets/uploads/2025/04/Apr-14th-Apr-20th.jpg", "Weekly/Weekly Monitor - 14 Apr to 20 Apr 2025.pdf"],
+  ["Weekly Monitor - 07 Apr to 13 Apr 2025", "assets/uploads/2025/04/Apr-07th-Apr-13th.jpg", "Weekly/Weekly Monitor - 07 Apr to 13 Apr 2025.pdf"],
+  ["Weekly Monitor - 31 Mar to 06 Apr 2025", "assets/uploads/2025/04/Mar-31st-Apr-06th.jpg", "Weekly/Weekly Monitor - 31 Mar to 06 Apr 2025.pdf"],
+  ["Weekly Monitor - 24 Mar to 30 Mar 2025", "assets/uploads/2025/04/24th-30th-Mar-2025.jpg", "Weekly/Weekly Monitor - 24 Mar to 30 Mar 2025.pdf"],
+  ["Weekly Monitor - 17 Mar to 23 Mar 2025", "assets/uploads/2025/03/mar-17th-mar-23rd.jpg", "Weekly/Weekly Monitor - 17 Mar to 23 Mar 2025.pdf"],
+  ["Weekly Monitor - 10 Mar to 16 Mar 2025", "assets/uploads/2025/03/mar-10th-mar-16th.jpg", "Weekly/Weekly Monitor - 10 Mar to 16 Mar 2025.pdf"],
+  ["Weekly Monitor - 03 Mar to 09 Mar 2025", "assets/uploads/2025/03/Mar-3rd-Mar-9th-2025.jpg", "Weekly/Weekly Monitor - 03 Mar to 09 Mar 2025.pdf"],
+  ["Weekly Monitor - 24 Feb to 02 Mar 2025", "assets/uploads/2025/03/Feb-24th-Mar-2nd.jpg", "Weekly/Weekly Monitor - 24 Feb to 02 Mar 2025.pdf"],
+  ["Weekly Monitor - 17 Feb to 23 Feb 2025", "assets/uploads/2025/02/feb-17th-Feb-23rd.jpg", "Weekly/Weekly Monitor - 17 Feb to 23 Feb 2025.pdf"],
+  ["Weekly Monitor - 10 Feb to 16 Feb 2025", "assets/uploads/2025/02/Feb-10th-Feb-16th.jpg", "Weekly/Weekly Monitor - 10 Feb to 16 Feb 2025.pdf"],
+  ["Weekly Monitor - 03 Feb to 09 Feb 2025", "assets/uploads/2025/02/Feb-3rd-Feb-9th.jpg", "Weekly/Weekly Monitor - 03 Feb to 09 Feb 2025.pdf"],
+  ["Weekly Monitor - 27 Jan to 02 Feb 2025", "assets/uploads/2025/02/Jan-27th-2nd-Feb.jpg", "Weekly/Weekly Monitor - 27 Jan to 02 Feb 2025.pdf"],
+  ["Weekly Monitor - 20 Jan to 26 Jan 2025", "assets/uploads/2025/02/Jan-20th-26th-Jan_.jpg", "Weekly/Weekly Monitor - 20 Jan to 26 Jan 2025.pdf"],
+  ["Weekly Monitor - 13 Jan to 19 Jan 2025", "assets/uploads/2025/01/Weekly-Media-Monitor-Jan-13-–-Jan-19-2025-thumbnail.jpg", "Weekly/Weekly Monitor - 13 Jan to 19 Jan 2025.pdf"],
+  ["Weekly Monitor - 06 Jan to 12 Jan 2025", "assets/uploads/2025/01/Jan-6th-12th-Jan.jpg", "Weekly/Weekly Monitor - 06 Jan to 12 Jan 2025.pdf"],
+  ["Weekly Monitor - 30 Dec 2024 to 05 Jan 2025", "assets/uploads/2025/01/Dec-30th-2024-Jan-05th20251.jpg", "Weekly/Weekly Monitor - 30 Dec 2024 to 05 Jan 2025.pdf"],
+  ["Weekly Monitor - 23 Dec to 29 Dec 2024", "assets/uploads/2025/01/Dec-23-29-Dec.jpg", "Weekly/Weekly Monitor - 23 Dec to 29 Dec 2024.pdf"],
+  ["Weekly Monitor - 16 Dec to 22 Dec 2024", "assets/uploads/2024/12/Dec-16-22-Dec.jpg", "Weekly/Weekly Monitor - 16 Dec to 22 Dec 2024.pdf"],
+  ["Weekly Monitor - 09 Dec to 15 Dec 2024", "assets/uploads/2024/12/Dec-09-15-Dec_.jpg", "Weekly/Weekly Monitor - 09 Dec to 15 Dec 2024.pdf"],
+  ["Weekly Monitor - 02 Dec to 08 Dec 2024", "assets/uploads/2024/12/Dec-02-08-Dec_.jpg", "Weekly/Weekly Monitor - 02 Dec to 08 Dec 2024.pdf"],
+  ["Weekly Monitor - 25 Nov to 01 Dec 2024", "assets/uploads/2024/12/Nov-25-Dec-01.jpg", "Weekly/Weekly Monitor - 25 Nov to 01 Dec 2024.pdf"],
+  ["Weekly Monitor - 18 Nov to 24 Nov 2024", "assets/uploads/2024/12/Nov-18th-24th1.jpg", "Weekly/Weekly Monitor - 18 Nov to 24 Nov 2024.pdf"],
+  ["Weekly Monitor - 11 Nov to 17 Nov 2024", "assets/uploads/2024/11/Nov-11th-17th.jpg", "Weekly/Weekly Monitor - 11 Nov to 17 Nov 2024.pdf"],
+  ["Weekly Monitor - 04 Nov to 10 Nov 2024", "assets/uploads/2024/11/Nov-4th-10th.jpg", "Weekly/Weekly Monitor - 04 Nov to 10 Nov 2024.pdf"],
+  ["Weekly Monitor - 28 Oct to 03 Nov 2024", "assets/uploads/2024/11/OCT-28-Nov-03.jpg", "Weekly/Weekly Monitor - 28 Oct to 03 Nov 2024.pdf"],
+  ["Weekly Monitor - 21 Oct to 27 Oct 2024", "assets/uploads/2024/11/October-21-27.jpg", "Weekly/Weekly Monitor - 21 Oct to 27 Oct 2024.pdf"],
+  ["Weekly Monitor - 14 Oct to 20 Oct 2024", "assets/uploads/2024/11/October-14-20.jpg", "Weekly/Weekly Monitor - 14 Oct to 20 Oct 2024.pdf"],
+  ["Weekly Monitor - 07 Oct to 13 Oct 2024", "assets/uploads/2024/11/October-7-13.jpg", "Weekly/Weekly Monitor - 07 Oct to 13 Oct 2024.pdf"],
+  ["Weekly Monitor - 30 Sep to 06 Oct 2024", "assets/uploads/2024/11/Sep-30-Oct-06.jpg", "Weekly/Weekly Monitor - 30 Sep to 06 Oct 2024.pdf"],
+  ["Weekly Monitor - 23 Sep to 29 Sep 2024", "assets/uploads/2024/11/September-23-29.jpg", "Weekly/Weekly Monitor - 23 Sep to 29 Sep 2024.pdf"],
+  ["Weekly Monitor - 16 Sep to 22 Sep 2024", "assets/uploads/2024/11/September-16-22.jpg", "Weekly/Weekly Monitor - 16 Sep to 22 Sep 2024.pdf"],
+  ["Weekly Monitor - 09 Sep to 15 Sep 2024", "assets/uploads/2024/11/September-9-15.jpg", "Weekly/Weekly Monitor - 09 Sep to 15 Sep 2024.pdf"],
+  ["Weekly Monitor - 02 Sep to 08 Sep 2024", "assets/uploads/2024/11/September-2-8.jpg", "Weekly/Weekly Monitor - 02 Sep to 08 Sep 2024.pdf"],
+  ["Weekly Monitor - 26 Aug to 01 Sep 2024", "assets/uploads/2024/11/Aug-26-01-Sep.jpg", "Weekly/Weekly Monitor - 26 Aug to 01 Sep 2024.pdf"],
+  ["Weekly Monitor - 19 Aug to 25 Aug 2024", "assets/uploads/2024/11/Aug-19-25.jpg", "Weekly/Weekly Monitor - 19 Aug to 25 Aug 2024.pdf"],
+  ["Weekly Monitor - 12 Aug to 18 Aug 2024", "assets/uploads/2024/09/Aug-12-18.png", "Weekly/Weekly Monitor - 12 Aug to 18 Aug 2024.pdf"],
+  ["Weekly Monitor - 05 Aug to 11 Aug 2024", "assets/uploads/2024/09/Aug-5-11.png", "Weekly/Weekly Monitor - 05 Aug to 11 Aug 2024.pdf"],
+  ["Weekly Monitor - 29 Jul to 04 Aug 2024", "assets/uploads/2024/08/June-Aug-29-4.png", "Weekly/Weekly Monitor - 29 Jul to 04 Aug 2024.pdf"],
+  ["Weekly Monitor - 22 Jul to 28 Jul 2024", "assets/uploads/2024/08/July-22-28.png", "Weekly/Weekly Monitor - 22 Jul to 28 Jul 2024.pdf"],
+  ["Weekly Monitor - 15 Jul to 21 Jul 2024", "assets/uploads/2024/08/Jult-15-21.png", "Weekly/Weekly Monitor - 15 Jul to 21 Jul 2024.pdf"],
   ["Weekly Monitor - 08 Jul to 14 Jul 2024", "Weekly/covers/July-8-14-800x1159.png", "Weekly/Weekly Monitor - 08 Jul to 14 Jul 2024.pdf"],
   ["Weekly Monitor - 01 Jul to 07 Jul 2024", "Weekly/covers/July-1st-7th-800x1159.png", "Weekly/Weekly Monitor - 01 Jul to 07 Jul 2024.pdf"],
   ["Weekly Monitor - 24 Jun to 30 Jun 2024", "Weekly/covers/June-24h-30th-800x1159.png", "Weekly/Weekly Monitor - 24 Jun to 30 Jun 2024.pdf"],

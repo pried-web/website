@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         src.style.display = ''; srcSep.style.display = '';
       } else { src.style.display = 'none'; srcSep.style.display = 'none'; }
       $('art-title').innerHTML = a.title;
-      $('art-body').innerHTML = a.body.map(p => /^[“”]/.test(p) ? '<blockquote>' + p + '</blockquote>' : '<p>' + p + '</p>').join('');
+      $('art-body').innerHTML = a.body.map(p => /^[“”]/.test(p) ? '<blockquote>' + p + '</blockquote>' : '<p>' + p + '</p>').join('') + (a.url ? '<p style=”margin-top:1.5rem”><a href=”' + a.url + '” target=”_blank” rel=”noopener” style=”font-weight:600;color:var(--b)”>Click Here</a> to read the full article.</p>' : '');
       $('art-tags').innerHTML = (a.tags || []).map(t => '<span class="t-chip">' + t + '</span>').join('');
       const rel = (a.related || []).map(s => ARTICLES[s] && Object.assign({ slug: s }, ARTICLES[s])).filter(Boolean);
       $('art-related').innerHTML = rel.map(r =>
