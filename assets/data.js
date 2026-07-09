@@ -815,96 +815,37 @@ const EVENT_ORDER = ['iran-war', 'industrial-electrification', 'pre-budget-2025'
 
 /* ── JOBS ── */
 const JOBS = {
-  'graphic-designer': {
-    title: "Graphic Designer",
-    location: "Islamabad", type: "Full-time", deadline: "31 May 2026", apply: "hrpried@priedpk.org",
+  'research-lead-climate-justice': {
+    title: "Research Lead (Climate Justice)",
+    location: "Islamabad", type: "3–5 yrs experience", deadline: "15 July 2026", apply: "https://forms.gle/hTgUm8GxKn3ZYvBY6",
     body: [
-      { p: `We are hiring a full-time Graphic Designer with a background in Design or Visual Communication to join our Media Communications team. This role offers an exciting opportunity to contribute to the visual identity of a research-driven organization committed to climate justice and a just energy transition through creative, impactful, and data-informed design.` },
+      { p: `PRIED is seeking a Research Lead (Climate Justice) to devise, develop and supervise research on climate change, climate justice, sustainability, just energy transition, coal phaseout and renewable energy.` },
       { h: "Key Responsibilities" },
       {
         ul: [
-          `Create innovative and engaging visualizations for research publications, campaigns and events.`,
-          `Design engaging and innovative data-based graphics, charts and images for research publications, campaigns and events.`,
-          `Design engaging social media content aligned with organizational goals and objectives.`,
-          `Develop user-friendly UI/UX designs for digital platforms.`,
-          `Design reports and documents with strong visual coherence and clarity.`,
-          `Produce print materials for events, outreach, and publications.`
+          `Devise, develop and supervise research projects.`,
+          `Conduct desk and field research on climate change, climate justice, sustainability, just energy transition, coal phaseout and renewable energy.`,
+          `Write, review and edit research papers, policy briefs, climate monitors, and publications.`,
+          `Prepare and disseminate climate and energy monitors.`,
+          `Manage coordination with local, regional and international partners.`,
+          `Conduct training and workshops as needed.`,
+          `Coordinate with government departments, civil society, academia, and international organizations.`,
+          `Organize public events including webinars and seminars.`,
+          `Complete additional duties as assigned.`
         ]
       },
       { h: "Qualifications &amp; Skills" },
       {
         ul: [
-          `Minimum Bachelor's degree (Master's preferred) in Design or a related field.`,
-          `Three to five years of professional experience in digital and print design.`,
-          `Strong portfolio demonstrating versatility in visual storytelling, brand design, and layout.`,
-          `Ability to work collaboratively in a fast-paced, research-oriented environment.`,
-          `Proficiency in Adobe Creative Suite (Illustrator, Photoshop, InDesign, etc.).`,
-          `Sound understanding of design principles, typography, colour theory, and layout techniques.`
+          `Master's, MPhil, or PhD in Environmental Sciences, Climate Change, Public Policy, Development Studies, Energy Studies, Economics, or a related field.`,
+          `Minimum 3–5 years of professional research experience.`,
+          `Demonstrated expertise in research, policy analysis, report writing, and stakeholder engagement.`,
+          `Strong analytical, communication, and project management capabilities.`,
+          `Preferred: background in climate, energy, sustainability, or environmental research.`
         ]
       },
       { h: "Job Details" },
-      { ul: [`Position Type: Full-time`, `Location: Islamabad`, `Salary: Market competitive`] }
-    ]
-  },
-  'modeling-forecasting-specialist': {
-    title: "Modeling and Forecasting Specialist",
-    location: "Islamabad", type: "Full-time", deadline: "31 May 2026", apply: "info@priedpk.org",
-    body: [
-      { p: `PRIED is seeking a Modeling and Forecasting Specialist to develop pathways for Pakistan's low-carbon, just energy transition — modelling the interaction between energy technology shifts, energy finance, and greenhouse gas emission trajectories.` },
-      { h: "Key Responsibilities" },
-      {
-        ul: [
-          `Develop pathways for low-carbon transition, evaluating the interaction between energy technology shifts, availability of energy finance, and greenhouse gas (GHG) emission trajectories.`,
-          `Model various pathways towards a just energy transition, particularly focusing on decentralized solarization hybridized with battery energy storage systems.`,
-          `Develop robust scenarios that consider carbon pricing and levies, renewable energy and battery storage penetration, transition pathways, and shifts in global climate and energy finance and policies.`,
-          `Evaluate the financial and economic parameters of energy projects and their associated climatic and socioenvironmental impacts.`,
-          `Quantify the impact of climate change, such as extreme weather and hydrological shifts, on Pakistan's power sector.`,
-          `Aggregate and analyze primary and secondary climate-related and power-related datasets from official sources to facilitate research and analysis.`,
-          `Manage the preparation and submission of detailed techno-economic and environmental feasibility studies and assessment reports for power projects and associated infrastructure.`,
-          `Liaise with stakeholders, including government bodies, energy departments, environmental agencies, and relevant ministries, and present the findings of the studies carried out at PRIED publicly.`,
-          `Any other tasks assigned by the management and the supervisor.`
-        ]
-      },
-      { h: "Qualifications" },
-      {
-        ul: [
-          `Bachelor's or Master's degree in Energy Economics, Environmental Engineering, Atmospheric Sciences, or Climate Science.`,
-          `Minimum of 4 years of relevant experience, with a focus on energy efficiency, renewable energy, resource conservation, and energy and climate modeling, and prior experience with GIS software for spatial climate analysis.`,
-          `In-depth understanding of power sector expansion models and plans used by the government for power sector long-term planning.`,
-          `Understanding of the IPCC Shared Socioeconomic Pathways (SSPs) and the 2006 IPCC guidelines.`,
-          `Experience with national and international environmental and energy policies and regulations is a plus.`
-        ]
-      }
-    ]
-  },
-  'data-analyst': {
-    title: "Data Analyst / Econometrician",
-    location: "Islamabad", type: "Full-time", deadline: "31 May 2026", apply: "info@priedpk.org",
-    body: [
-      { p: `PRIED is looking for a highly skilled and publicly motivated data analyst who can work on subjects related to energy and climate sectors. If you have a strong educational background in data analytics and have a serious interest in economy, energy, climate and finance, please send your CV to us.` },
-      { p: `The work will require the ability to analyze policy changes and quick developments in the energy and climate sectors. The ideal candidate should have strong experience in data analytics and familiarity with all the relevant software. They should also be able to work in team settings and develop discussion papers, policy briefs, presentations, and other research materials on short notice.` },
-      { p: `If you are passionate about public interest and keen to explore and analyze financial and statistical trends in the energy and climate sectors, you are exactly the person we are looking for!` },
-      { h: "Key Responsibilities" },
-      {
-        ul: [
-          `Plan and implement field surveys and data collection activities for PRIED's energy and climate-related projects.`,
-          `Design and develop sampling design and survey methodology in coordination with PRIED's other staff members.`,
-          `Carry out data cleaning, processing, and organization of raw primary data for research and analysis.`,
-          `Conduct descriptive and advanced statistical analysis of the primary survey data.`,
-          `Identify trends, patterns, and insights from datasets relevant to PRIED's research and advocacy objectives.`,
-          `Prepare visually appealing and easily comprehensible tables, charts, summaries, and presentations to communicate findings effectively.`,
-          `Actively contribute towards the drafting of research reports, briefs, and presentations alongside the research team.`,
-          `Ensure data quality during fieldwork and post-collection stages.`,
-          `Any other tasks assigned by the management and the supervisor.`
-        ]
-      },
-      { h: "Qualifications" },
-      {
-        ul: [
-          `Bachelor's or Master's degree in Economics, Statistics, Data Sciences/Analytics or a related field.`,
-          `Familiarity with econometric tools, survey design methodologies, data analysis and data visualization.`
-        ]
-      }
+      { ul: [`Location: Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad`, `Application Deadline: 15 July 2026`] }
     ]
   }
 };
@@ -922,6 +863,7 @@ const SIXMONTH_MM = [
 ];
 
 const WEEKLY_MM = [
+  ["Weekly Monitor - 29 Jun to 05 Jul 2026", "Weekly/covers/June-29th-5th-800x1159.jpeg", "Weekly/Weekly Monitor - 29 Jun to 05 Jul 2026.pdf"],
   ["Weekly Monitor - 22 Jun to 28 Jun 2026", "Weekly/covers/June22-June28-2026.jpeg", "Weekly/Weekly Monitor - 22 Jun to 28 Jun 2026.pdf"],
   ["Weekly Monitor - 15 Jun to 21 Jun 2026", "Weekly/covers/June 15-June21-2026.jpeg", "Weekly/Weekly Monitor - 15 Jun to 21 Jun 2026.pdf"],
   ["Weekly Monitor - 08 Jun to 14 Jun 2026", "assets/uploads/2026/06/8-14.jpeg", "Weekly/Weekly Monitor - 08 Jun to 14 Jun 2026.pdf"],

@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         src.style.display = ''; srcSep.style.display = '';
       } else { src.style.display = 'none'; srcSep.style.display = 'none'; }
       $('art-title').innerHTML = a.title;
-      $('art-body').innerHTML = a.body.map(p => /^[“”]/.test(p) ? '<blockquote>' + p + '</blockquote>' : '<p>' + p + '</p>').join('') + (a.url ? '<p style=”margin-top:1.5rem”><a href=”' + a.url + '” target=”_blank” rel=”noopener” style=”font-weight:600;color:var(--b)”>Click Here</a> to read the full article.</p>' : '');
+      $('art-body').innerHTML = a.body.map(p => /^[“”]/.test(p) ? '<blockquote>' + p + '</blockquote>' : '<p>' + p + '</p>').join('');
       $('art-tags').innerHTML = (a.tags || []).map(t => '<span class="t-chip">' + t + '</span>').join('');
       const rel = (a.related || []).map(s => ARTICLES[s] && Object.assign({ slug: s }, ARTICLES[s])).filter(Boolean);
       $('art-related').innerHTML = rel.map(r =>
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── JOB DETAIL RENDER ── */
     function renderJob(slug) {
-      const j = JOBS[slug] || JOBS['graphic-designer'];
+      const j = JOBS[slug] || JOBS[Object.keys(JOBS)[0]];
       const $ = id => document.getElementById(id);
       $('job-crumb').textContent = j.title;
       $('job-title').textContent = j.title;
@@ -346,8 +346,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return '<p>' + b.p + '</p>';
       }).join('');
       const mail = $('job-apply-email');
-      mail.textContent = j.apply;
-      mail.href = 'mailto:' + j.apply + '?subject=' + encodeURIComponent(j.title);
+      if (/^https?:\/\//.test(j.apply)) {
+        mail.textContent = 'Application Form ↗';
+        mail.href = j.apply;
+        mail.target = '_blank';
+        mail.rel = 'noopener';
+      } else {
+        mail.textContent = j.apply;
+        mail.href = 'mailto:' + j.apply + '?subject=' + encodeURIComponent(j.title);
+        mail.removeAttribute('target');
+        mail.removeAttribute('rel');
+      }
       $('job-related').innerHTML = Object.keys(JOBS).filter(s => s !== slug).map(s => {
         const o = JOBS[s];
         return '<div class="ra-card" data-job="' + s + '"><div class="ra-body"><div class="ra-tag">' + o.location + ' · ' + o.type + '</div><h5>' + o.title + '</h5></div></div>';
