@@ -157,7 +157,7 @@
     }
 
     .nav-logo {
-      height: 38px;
+      height: 50px;
       width: auto;
       opacity: 0.7;
       transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -264,6 +264,38 @@
     .dropdown-menu a:hover {
       color: var(--b);
       background: var(--bp);
+    }
+
+    /* ── NESTED SUBMENU (e.g. Monitors under Publications) ── */
+    @media (min-width: 961px) {
+      .dropdown-menu .nav-item-dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .dropdown-menu .nav-item-dropdown > .dropdown-trigger .chevron {
+        transform: rotate(-90deg);
+      }
+
+      .dropdown-menu .nav-item-dropdown > .dropdown-menu {
+        top: -6px;
+        left: 100%;
+        transform: translateX(6px);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .dropdown-menu .nav-item-dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(2px);
+      }
     }
 
     .nav-end {

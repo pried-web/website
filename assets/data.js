@@ -3,7 +3,8 @@
 
 /* ── NEWS ARTICLES ── */
 const ARTICLES = {
-  'scooty-ev': {
+  // HIDDEN for now — rename key back to 'scooty-ev' to restore.
+  'scooty-ev-hidden': {
     title: "Scooty for the beti and EV for the biwi",
     tag: "Gender & Energy", date: "17 June 2026",
     author: "Zahra Naeem & Laiba Nayyab",
