@@ -1,1049 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IFI Monitor – Tracking International Financial Institutions in Pakistan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0f1923;
-    --ink-mid: #2d3f50;
-    --ink-light: #5a6e80;
-    --cream: #f7f5f0;
-    --white: #ffffff;
-    --rule: #d6cfc4;
-    --accent: #1a4f6e;
-    --accent-bright: #0e7a9e;
-    --accent-green: #1d5c47;
-    --gold: #b08d4b;
-    --gold-light: #d4ab6a;
-    --shadow-sm: 0 2px 12px rgba(15,25,35,0.07);
-    --shadow-md: 0 8px 32px rgba(15,25,35,0.11);
-    --shadow-lg: 0 20px 60px rgba(15,25,35,0.15);
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFI Monitor – Tracking International Financial Institutions in Pakistan</title>
+  <meta name="description" content="Tracking IMF, World Bank and Asian Development Bank programmes, conditionalities and disbursements in Pakistan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="mono.png">
+  <link rel="apple-touch-icon" href="mono.png">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    /* ── IFI MONITOR — page-scoped styles (built on the shared token set in assets/styles.css) ── */
+    #page-ifi .sec { max-width: 1100px; margin: 0 auto; padding: 64px 48px; }
+    #page-ifi .sec-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    #page-ifi .sec-sub { font-size: .92rem; color: var(--mid); max-width: 640px; line-height: 1.7; margin-bottom: 32px; }
+    #page-ifi .sec-head-row { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 32px; }
+    #page-ifi .sec-meta { font-family: 'Courier Prime', monospace; font-size: .68rem; letter-spacing: 1px; text-transform: uppercase; color: var(--lite); }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* News */
+    .ifi-news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .ifi-news-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; display: flex; flex-direction: column; gap: 14px; transition: box-shadow .2s, transform .2s; text-decoration: none; }
+    .ifi-news-card:hover { box-shadow: 0 10px 28px rgba(28,28,28,.08); transform: translateY(-2px); }
+    .ifi-news-tag { display: inline-flex; align-items: center; gap: 6px; font-family: 'Courier Prime', monospace; font-size: .64rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+    .ifi-news-tag.imf { color: var(--b); }
+    .ifi-news-tag.wb { color: var(--green, #1a9c74); }
+    .ifi-news-tag.adb { color: var(--gold); }
+    .ifi-news-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .ifi-news-headline { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+    .ifi-news-card:hover .ifi-news-headline { color: var(--b); }
+    .ifi-news-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .74rem; color: var(--lite); margin-top: auto; }
+    .ifi-news-arrow { opacity: 0; transform: translateX(-4px); transition: all .2s; color: var(--b); }
+    .ifi-news-card:hover .ifi-news-arrow { opacity: 1; transform: translateX(0); }
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+    /* Stats bar */
+    .ifi-stats-wrap { background: var(--bd); }
+    .ifi-stats { max-width: 1100px; margin: 0 auto; padding: 44px 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .ifi-stats .num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 6px; }
+    .ifi-stats .num span { color: var(--gold-light, #e0b96a); }
+    .ifi-stats .lbl { font-family: 'Courier Prime', monospace; font-size: .64rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.55); }
 
-  body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    overflow-x: hidden;
-    line-height: 1.6;
-  }
+    /* Institution sections */
+    .ifi-inst-section { border-bottom: 1px solid var(--rule); }
+    .ifi-inst-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
+    .ifi-inst-grid.reverse { direction: rtl; }
+    .ifi-inst-grid.reverse > * { direction: ltr; }
+    .ifi-inst-label { font-family: 'Courier Prime', monospace; font-size: .66rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--b); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .ifi-inst-label::before { content: ''; width: 20px; height: 1px; background: currentColor; }
+    .ifi-inst-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 600; color: var(--ink); line-height: 1.15; margin-bottom: 16px; }
+    .ifi-inst-title em { font-style: italic; color: var(--b); }
+    .ifi-inst-desc { font-size: .92rem; line-height: 1.8; color: var(--mid); margin-bottom: 26px; }
+    .ifi-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--b); color: #fff; font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 600; padding: 11px 22px; border-radius: 9px; border: none; cursor: pointer; text-decoration: none; transition: background .2s, transform .2s; }
+    .ifi-btn:hover { background: var(--bd); transform: translateX(2px); }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5vw;
-    height: 64px;
-    background: rgba(247,245,240,0.92);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--rule);
-    transition: box-shadow .3s;
-  }
-  nav.scrolled { box-shadow: var(--shadow-md); }
+    .ifi-badge-panel { max-width: 220px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+    .ifi-badge-panel img { width: 100%; height: 100%; object-fit: contain; }
+    .ifi-badge-mark { aspect-ratio: 1/1; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bpp); border: 1px solid var(--rule); border-radius: 50%; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 2.6rem; letter-spacing: 1px; color: var(--b); text-align: center; line-height: 1.1; }
+    .ifi-badge-mark small { display: block; font-family: 'Courier Prime', monospace; font-size: .6rem; font-weight: 400; letter-spacing: 2px; color: var(--lite); margin-top: 6px; text-transform: uppercase; }
 
-  /* Global navbar styling provided by site-chrome.css */
+    /* EFF / RSF toggle */
+    .ifi-facility-toggle { display: inline-flex; background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 4px; gap: 4px; margin-bottom: 32px; }
+    .ifi-facility-btn { font-family: 'Inter', sans-serif; font-size: .84rem; font-weight: 700; letter-spacing: .5px; padding: 10px 26px; border-radius: 999px; border: none; background: none; color: var(--mid); cursor: pointer; transition: all .2s; }
+    .ifi-facility-btn.active { background: var(--b); color: #fff; }
+    .ifi-facility-panel { display: none; }
+    .ifi-facility-panel.active { display: block; }
 
-  /* ── HERO ── */
-  #hero {
-    position: relative; height: 100vh; min-height: 600px;
-    display: flex; align-items: flex-end;
-    overflow: hidden;
-  }
+    .ifi-reform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
+    .ifi-reform-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; }
+    .ifi-reform-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--bd); margin-bottom: 6px; }
+    .ifi-reform-card .rf-note { font-size: .78rem; color: var(--lite); margin-bottom: 14px; line-height: 1.5; }
+    .ifi-reform-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .ifi-reform-card li { font-size: .84rem; color: var(--ink); line-height: 1.55; padding-left: 16px; position: relative; }
+    .ifi-reform-card li::before { content: '–'; position: absolute; left: 0; color: var(--b); }
 
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(160deg, rgba(10,25,45,0.78) 0%, rgba(26,79,110,0.55) 50%, rgba(29,92,71,0.45) 100%),
-      url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80') center/cover no-repeat;
-    transform: scale(1.05);
-    transition: transform 8s ease;
-  }
-  #hero:hover .hero-bg { transform: scale(1.0); }
+    .ifi-table-wrap { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); overflow: auto; margin-bottom: 12px; }
+    .ifi-table { width: 100%; border-collapse: collapse; }
+    .ifi-table th { text-align: left; font-family: 'Courier Prime', monospace; font-size: .62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); background: var(--bpp); padding: 12px 18px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+    .ifi-table td { padding: 12px 18px; font-size: .82rem; color: var(--ink); border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.55; }
+    .ifi-table tr:last-child td { border-bottom: none; }
+    .ifi-table tr.total td { font-weight: 700; background: var(--bpp); }
+    .ifi-table tr:hover td { background: var(--bpp); }
+    .ifi-pill { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-left: 8px; white-space: nowrap; }
+    .ifi-pill.latest { background: var(--bp); color: var(--b); }
+    .ifi-pill.next { background: #fdf2e3; color: var(--gold); }
+    .ifi-table-note { font-size: .72rem; color: var(--lite); margin-bottom: 36px; line-height: 1.6; }
 
-  /* Geometric grid overlay */
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
+    /* Timeline */
+    .ifi-timeline-title { display: flex; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 8px 0 6px; }
+    .ifi-timeline { position: relative; margin-top: 28px; padding-left: 28px; }
+    .ifi-timeline::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 1px; background: var(--rule); }
+    .ifi-tl-item { position: relative; padding-bottom: 32px; }
+    .ifi-tl-item:last-child { padding-bottom: 0; }
+    .ifi-tl-item::before { content: ''; position: absolute; left: -28px; top: 4px; width: 11px; height: 11px; border-radius: 50%; background: var(--b); border: 2px solid #fff; box-shadow: 0 0 0 1px var(--b); }
+    .ifi-tl-year { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.05rem; color: var(--bd); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .ifi-tl-name { font-size: .78rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 6px; }
+    .ifi-tl-desc { font-size: .86rem; color: var(--ink); line-height: 1.7; max-width: 640px; }
 
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 0 5vw 80px;
-    max-width: 900px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp .9s .3s forwards;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 11px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--gold-light);
-    margin-bottom: 20px;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block;
-    width: 28px; height: 1px; background: var(--gold-light);
-  }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 8vw, 96px);
-    font-weight: 800; line-height: 0.95;
-    color: #fff;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-  }
-  .hero-title em {
-    font-style: italic; font-weight: 400;
-    color: rgba(255,255,255,0.7);
-  }
-
-  .hero-subtitle {
-    font-size: 17px; font-weight: 300; line-height: 1.7;
-    color: rgba(255,255,255,0.75);
-    max-width: 560px;
-    margin-bottom: 40px;
-  }
-
-  .hero-cta-group {
-    display: flex; gap: 14px; flex-wrap: wrap;
-  }
-  .btn-primary {
-    padding: 13px 28px;
-    background: var(--gold);
-    color: var(--ink);
-    font-size: 13px; font-weight: 600; letter-spacing: 0.6px;
-    text-decoration: none; border: none; cursor: pointer;
-    transition: background .2s, transform .15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-  .btn-outline {
-    padding: 12px 26px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.4);
-    color: rgba(255,255,255,0.85);
-    font-size: 13px; font-weight: 500; letter-spacing: 0.6px;
-    text-decoration: none; cursor: pointer;
-    transition: border-color .2s, color .2s;
-    display: inline-block;
-  }
-  .btn-outline:hover { border-color: #fff; color: #fff; }
-
-  .hero-scroll-hint {
-    position: absolute; bottom: 28px; right: 5vw;
-    display: flex; align-items: center; gap: 10px;
-    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    writing-mode: vertical-rl;
-    animation: pulse 2.5s infinite;
-  }
-
-  /* ── SECTION DEFAULTS ── */
-  section { padding: 100px 5vw; }
-
-  .section-label {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 11px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--accent-bright);
-    margin-bottom: 14px;
-  }
-  .section-label::before {
-    content: ''; display: block;
-    width: 22px; height: 1px; background: currentColor;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 46px);
-    font-weight: 700; line-height: 1.15;
-    color: var(--ink);
-    letter-spacing: -0.5px;
-    margin-bottom: 12px;
-  }
-
-  .section-desc {
-    font-size: 17px; font-weight: 300; line-height: 1.75;
-    color: var(--ink-light);
-    max-width: 620px;
-    margin-bottom: 50px;
-  }
-
-  /* ── NEWS SECTION ── */
-  #news { background: var(--white); }
-
-  .news-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    flex-wrap: wrap; gap: 20px;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 30px; margin-bottom: 40px;
-  }
-
-  .news-meta {
-    font-size: 12px; font-weight: 500; letter-spacing: 0.5px;
-    color: var(--ink-light);
-  }
-
-  .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2px;
-  }
-
-  .news-card {
-    position: relative;
-    padding: 28px 28px 24px;
-    background: var(--cream);
-    display: flex; flex-direction: column; gap: 12px;
-    border: 1px solid var(--rule);
-    margin: -1px 0 0 -1px;
-    transition: background .2s, box-shadow .25s, transform .2s;
-    cursor: pointer;
-  }
-  .news-card:hover {
-    background: var(--white);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
-    z-index: 2;
-  }
-
-  .news-tag {
-    display: inline-flex;
-    align-items: center; gap: 6px;
-    font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .news-tag .dot {
-    width: 5px; height: 5px; border-radius: 50%;
-    background: currentColor; flex-shrink: 0;
-  }
-  .news-tag.green { color: var(--accent-green); }
-  .news-tag.gold { color: var(--gold); }
-
-  .news-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; font-weight: 600; line-height: 1.35;
-    color: var(--ink);
-    text-decoration: none;
-    display: block;
-    transition: color .2s;
-  }
-  .news-headline:hover { color: var(--accent-bright); }
-
-  .news-card-footer {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 12px;
-    border-top: 1px solid var(--rule);
-    font-size: 12px; color: var(--ink-light);
-  }
-
-  .news-source { font-weight: 500; }
-  .news-arrow {
-    font-size: 16px; color: var(--accent); opacity: 0;
-    transform: translateX(-4px);
-    transition: opacity .2s, transform .2s;
-  }
-  .news-card:hover .news-arrow { opacity: 1; transform: translateX(0); }
-
-  /* ── INSTITUTION SECTIONS ── */
-  .inst-section {
-    position: relative;
-    overflow: hidden;
-  }
-  .inst-section:nth-child(odd) { background: var(--cream); }
-  .inst-section:nth-child(even) { background: var(--ink); }
-
-  .inst-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .inst-inner.reverse { direction: rtl; }
-  .inst-inner.reverse > * { direction: ltr; }
-
-  .inst-content {}
-
-  .inst-label {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 11px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .inst-label::before {
-    content: ''; display: block;
-    width: 22px; height: 1px; background: currentColor;
-  }
-  .inst-label.light { color: var(--gold); }
-  .inst-label.dark { color: var(--accent-bright); }
-
-  .inst-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 3.5vw, 44px);
-    font-weight: 700; line-height: 1.12;
-    letter-spacing: -0.5px;
-    margin-bottom: 20px;
-  }
-  .inst-title.light { color: #fff; }
-  .inst-title.dark { color: var(--ink); }
-
-  .inst-title em {
-    font-style: italic; font-weight: 400;
-    opacity: 0.65;
-  }
-
-  .inst-desc {
-    font-size: 16px; font-weight: 300; line-height: 1.8;
-    margin-bottom: 32px;
-  }
-  .inst-desc.light { color: rgba(255,255,255,0.65); }
-  .inst-desc.dark { color: var(--ink-light); }
-
-  .btn-read-more {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 13px 28px;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.6px;
-    text-decoration: none; cursor: pointer; border: none;
-    transition: all .2s;
-  }
-  .btn-read-more.gold-btn {
-    background: var(--gold); color: var(--ink);
-  }
-  .btn-read-more.gold-btn:hover {
-    background: var(--gold-light); transform: translateX(3px);
-  }
-  .btn-read-more.accent-btn {
-    background: var(--accent); color: #fff;
-  }
-  .btn-read-more.accent-btn:hover {
-    background: var(--accent-bright); transform: translateX(3px);
-  }
-  .btn-read-more.green-btn {
-    background: var(--accent-green); color: #fff;
-  }
-  .btn-read-more.green-btn:hover { opacity: 0.85; transform: translateX(3px); }
-
-  .btn-arrow { font-size: 16px; transition: transform .2s; }
-  .btn-read-more:hover .btn-arrow { transform: translateX(4px); }
-
-  /* Visual panels */
-  .inst-visual {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-  }
-
-  .inst-visual img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform .6s ease;
-  }
-  .inst-visual:hover img { transform: scale(1.04); }
-
-  .inst-visual::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(26,79,110,0.25) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .inst-stat-badge {
-    position: absolute; bottom: 20px; left: 20px; z-index: 2;
-    background: rgba(15,25,35,0.85);
-    backdrop-filter: blur(8px);
-    padding: 14px 18px;
-    border-left: 3px solid var(--gold);
-  }
-  .stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px; font-weight: 700;
-    color: #fff; line-height: 1;
-    margin-bottom: 4px;
-  }
-  .stat-label {
-    font-size: 11px; font-weight: 500; letter-spacing: 1px;
-    text-transform: uppercase; color: rgba(255,255,255,0.5);
-  }
-
-  /* IMF dark section */
-  #imf { background: var(--ink); }
-  #imf .inst-bg-pattern {
-    position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 80% 50%, rgba(26,79,110,0.3) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  /* World Bank light section */
-  #worldbank { background: var(--cream); }
-
-  /* ADB section */
-  #adb { background: #0f2235; }
-  #adb .inst-bg-pattern {
-    position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 20% 50%, rgba(29,92,71,0.35) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  /* ── KEY STATS BAR ── */
-  #stats {
-    background: var(--accent);
-    padding: 60px 5vw;
-  }
-  .stats-inner {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    text-align: center;
-  }
-  .stat-item {}
-  .stat-item .num {
-    font-family: 'Playfair Display', serif;
-    font-size: 46px; font-weight: 800;
-    color: #fff; line-height: 1;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
-  }
-  .stat-item .num span { color: var(--gold-light); }
-  .stat-item .lbl {
-    font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
-    text-transform: uppercase; color: rgba(255,255,255,0.5);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    color: rgba(255,255,255,0.55);
-    padding: 70px 5vw 40px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 30px;
-  }
-  .footer-brand .brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; font-weight: 700;
-    color: #fff; margin-bottom: 12px;
-  }
-  .footer-brand p {
-    font-size: 14px; font-weight: 300; line-height: 1.7;
-    max-width: 240px;
-  }
-  .footer-col h4 {
-    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
-    text-transform: uppercase; color: rgba(255,255,255,0.35);
-    margin-bottom: 16px;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 10px; }
-  .footer-col ul li a {
-    font-size: 14px; font-weight: 300;
-    color: rgba(255,255,255,0.55);
-    text-decoration: none;
-    transition: color .2s;
-  }
-  .footer-col ul li a:hover { color: var(--gold-light); }
-  .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 12px; flex-wrap: wrap; gap: 10px;
-  }
-  .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
-
-  /* ── BLOG PAGE ── */
-  #blog-page {
-    display: none;
-    position: fixed; inset: 0; z-index: 200;
-    background: var(--cream);
-    overflow-y: auto;
-  }
-  #blog-page.open { display: block; }
-
-  .blog-nav {
-    position: sticky; top: 0;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5vw; height: 64px;
-    background: rgba(247,245,240,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-    z-index: 10;
-  }
-  .blog-back {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
-    color: var(--accent); text-decoration: none; cursor: pointer;
-    transition: gap .2s;
-  }
-  .blog-back:hover { gap: 12px; }
-
-  .blog-hero {
-    width: 100%; aspect-ratio: 21/9;
-    object-fit: cover;
-    display: block;
-  }
-
-  .blog-body {
-    max-width: 740px;
-    margin: 0 auto;
-    padding: 60px 5vw 100px;
-  }
-
-  .blog-category {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 11px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--accent-bright);
-    margin-bottom: 18px;
-  }
-
-  .blog-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 4vw, 52px);
-    font-weight: 700; line-height: 1.1;
-    letter-spacing: -1px; color: var(--ink);
-    margin-bottom: 20px;
-  }
-
-  .blog-byline {
-    display: flex; gap: 20px; align-items: center;
-    flex-wrap: wrap;
-    padding: 18px 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 40px;
-    font-size: 13px; color: var(--ink-light);
-  }
-  .blog-byline strong { color: var(--ink); font-weight: 600; }
-
-  .blog-body p {
-    font-size: 18px; font-weight: 300; line-height: 1.85;
-    color: var(--ink-mid);
-    margin-bottom: 24px;
-  }
-  .blog-body h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px; font-weight: 600;
-    color: var(--ink);
-    margin: 44px 0 16px;
-  }
-  .blog-body blockquote {
-    margin: 36px 0;
-    padding: 20px 0 20px 28px;
-    border-left: 3px solid var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; font-style: italic;
-    color: var(--ink-mid); line-height: 1.6;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 0.45; }
-    50% { opacity: 0.8; }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .7s ease, transform .7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-delay-1 { transition-delay: .1s; }
-  .reveal-delay-2 { transition-delay: .2s; }
-  .reveal-delay-3 { transition-delay: .3s; }
-
-  /* ── MOBILE ── */
-  @media (max-width: 900px) {
-    .inst-inner { grid-template-columns: 1fr; gap: 40px; }
-    .inst-inner.reverse { direction: ltr; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .stats-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
-    .stat-item .num { font-size: 34px; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .news-grid { grid-template-columns: 1fr; }
-    .news-card-footer { flex-wrap: wrap; gap: 6px; }
-    .blog-hero { aspect-ratio: 16 / 9; }
-    .blog-body h2 { font-size: 22px; }
-  }
-  @media (max-width: 400px) {
-    .stats-inner { grid-template-columns: 1fr; }
-    section { padding-left: 16px; padding-right: 16px; }
-  }
-</style>
-<link rel="stylesheet" href="site-chrome.css">
+    @media (max-width: 900px) {
+      .ifi-news-grid { grid-template-columns: repeat(2, 1fr); }
+      .ifi-stats { grid-template-columns: repeat(2, 1fr); }
+      .ifi-inst-grid, .ifi-inst-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .ifi-reform-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .ifi-news-grid { grid-template-columns: 1fr; }
+      .ifi-stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+      #page-ifi .sec { padding: 48px 20px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-brand">
-    <a href="/" style="display:flex;align-items:center;"><img class="nav-logo" src="Pried Logo Blue-01.png" alt="PRIED Logo"></a>
-  </div>
-  <ul class="nav-links">
-    <li class="nav-item-dropdown">
-      <a href="/#about" class="dropdown-trigger">About Us <span class="chevron">▼</span></a>
-      <ul class="dropdown-menu">
-        <li><a href="team">Team</a></li>
-      </ul>
-    </li>
-    <li class="nav-item-dropdown">
-      <a href="/#pillars" class="dropdown-trigger">Our Work <span class="chevron">▼</span></a>
-      <ul class="dropdown-menu">
-        <li><a href="news">News</a></li>
-      </ul>
-    </li>
-    <li class="nav-item-dropdown">
-      <a href="studies" class="dropdown-trigger">Publications <span class="chevron">▼</span></a>
-      <ul class="dropdown-menu">
-        <li><a href="studies">Studies</a></li>
-        <li><a href="briefs">Briefs</a></li>
-        <li class="nav-item-dropdown">
-          <a href="monitors" class="dropdown-trigger">Monitors <span class="chevron">▼</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="media-monitors">Media</a></li>
-            <li><a href="energy-monitors">Energy</a></li>
-            <li><a href="climate-monitors">Climate</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="events">Media</a></li>
-    <li><a href="careers">Career</a></li>
-  </ul>
-  <div class="nav-end">
-    <a href="contact" class="nav-cta">Contact Us</a>
-    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg" id="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Research & Policy Intelligence</p>
-    <h1 class="hero-title">IFI<br><em>Monitor</em></h1>
-    <p class="hero-subtitle">
-      Tracking the activities, programs, and policy conditionalities of the IMF, World Bank,
-      and Asian Development Bank in Pakistan — for researchers, policymakers, and the public.
-    </p>
-    <div class="hero-cta-group">
-      <a href="#news" class="btn-primary">Latest Coverage</a>
-      <a href="#imf" class="btn-outline">Explore Programs</a>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-brand">
+      <a href="/" style="display:flex;align-items:center;"><img class="nav-logo" src="Pried Logo Blue-01.png" alt="PRIED Logo"></a>
     </div>
-  </div>
-  <div class="hero-scroll-hint">Scroll ↓</div>
-</section>
-
-<!-- NEWS -->
-<section id="news">
-  <div class="news-header">
-    <div>
-      <p class="section-label">Monitoring Desk</p>
-      <h2 class="section-title">Latest News</h2>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="/#about" class="dropdown-trigger">About Us <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="team">Team</a></li>
+        </ul>
+      </li>
+      <li><a href="/#pillars">Our Work</a></li>
+      <li class="nav-item-dropdown">
+        <a href="studies" class="dropdown-trigger">Publications <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="studies">Studies</a></li>
+          <li><a href="briefs">Briefs</a></li>
+          <li class="nav-item-dropdown">
+            <a href="monitors" class="dropdown-trigger">Monitors <span class="chevron">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="media-monitors">Media</a></li>
+              <li><a href="energy-monitors">Energy</a></li>
+              <li><a href="climate-monitors">Climate</a></li>
+              <li><a href="ifi-monitor">IFI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="#" class="dropdown-trigger">Media <span class="chevron">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="news">News</a></li>
+          <li><a href="events">Events</a></li>
+        </ul>
+      </li>
+      <li><a href="careers">Career</a></li>
+    </ul>
+    <div class="nav-end">
+      <a href="contact" class="nav-cta">Contact Us</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <span class="news-meta">Updated March 2026</span>
-  </div>
-
-  <div class="news-grid">
-    <!-- Card 1 -->
-    <div class="news-card reveal">
-      <span class="news-tag"><span class="dot"></span> IMF</span>
-      <a class="news-headline" href="https://www.dawn.com/news/1894631" target="_blank" rel="noopener">
-        Pakistan Misses 3 IMF Targets in Latest Programme Review
-      </a>
-      <div class="news-card-footer">
-        <span class="news-source">Dawn</span>
-        <span class="news-arrow">→</span>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="news-card reveal reveal-delay-1">
-      <span class="news-tag green"><span class="dot"></span> World Bank</span>
-      <a class="news-headline" href="https://www.geo.tv/latest/569028-world-bank-approves-500m-loan-for-pakistan" target="_blank" rel="noopener">
-        World Bank Approves $500 Million Emergency Loan for Pakistan's Flood Recovery
-      </a>
-      <div class="news-card-footer">
-        <span class="news-source">Geo News</span>
-        <span class="news-arrow">→</span>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="news-card reveal reveal-delay-2">
-      <span class="news-tag gold"><span class="dot"></span> ADB</span>
-      <a class="news-headline" href="https://www.adb.org/news/pakistan-adb-assistance" target="_blank" rel="noopener">
-        ADB Commits $1.6 Billion for Infrastructure and Climate Projects in FY2025
-      </a>
-      <div class="news-card-footer">
-        <span class="news-source">ADB Newsroom</span>
-        <span class="news-arrow">→</span>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="news-card reveal">
-      <span class="news-tag"><span class="dot"></span> IMF</span>
-      <a class="news-headline" href="https://www.thenews.com.pk/latest/1250000-imf-stand-by-agreement-pakistan" target="_blank" rel="noopener">
-        IMF Board Approves Extended Fund Facility Review; Next Tranche of $1.1B Released
-      </a>
-      <div class="news-card-footer">
-        <span class="news-source">The News</span>
-        <span class="news-arrow">→</span>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="news-card reveal reveal-delay-1">
-      <span class="news-tag green"><span class="dot"></span> World Bank</span>
-      <a class="news-headline" href="https://www.brecorder.com/news/40338523" target="_blank" rel="noopener">
-        Pakistan's Tax Revenue Gap Cited in New World Bank Fiscal Assessment Report
-      </a>
-      <div class="news-card-footer">
-        <span class="news-source">Brecorder</span>
-        <span class="news-arrow">→</span>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="news-card reveal reveal-delay-2">
-      <span class="news-tag"><span class="dot"></span> IMF</span>
-      <a class="news-headline" href="https://www.dawn.com/news/1893000" target="_blank" rel="noopener">
-        Circular Debt Reduction Becomes Key IMF Benchmark for Pakistan Energy Reforms
-      </a>
-      <div class="news-card-footer">
-        <span class="news-source">Dawn</span>
-        <span class="news-arrow">→</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS BAR -->
-<div id="stats">
-  <div class="stats-inner">
-    <div class="stat-item reveal">
-      <div class="num">$<span>7</span>B+</div>
-      <div class="lbl">IMF Programme Value</div>
-    </div>
-    <div class="stat-item reveal reveal-delay-1">
-      <div class="num"><span>24</span></div>
-      <div class="lbl">IMF Programmes Since 1958</div>
-    </div>
-    <div class="stat-item reveal reveal-delay-2">
-      <div class="num">$<span>44</span>B</div>
-      <div class="lbl">World Bank Cumulative Lending</div>
-    </div>
-    <div class="stat-item reveal reveal-delay-3">
-      <div class="num">$<span>38</span>B</div>
-      <div class="lbl">ADB Portfolio (Pakistan)</div>
-    </div>
-  </div>
-</div>
-
-<!-- IMF SECTION -->
-<section id="imf" class="inst-section">
-  <div class="inst-bg-pattern"></div>
-  <div class="inst-inner">
-    <div class="inst-content reveal">
-      <p class="inst-label light">International Monetary Fund</p>
-      <h2 class="inst-title light">IMF Programs<br>in <em>Pakistan</em></h2>
-      <p class="inst-desc light">
-        Pakistan has engaged with the IMF across 24 programmes since 1958, making it one of the
-        Fund's most persistent borrowers. The current Extended Fund Facility (EFF) imposes
-        stringent fiscal consolidation benchmarks — touching everything from energy tariffs to
-        federal tax collection. This section tracks programme conditionalities, review outcomes,
-        and their distributional effects on the Pakistani economy.
-      </p>
-      <a href="#" class="btn-read-more gold-btn" onclick="openBlog('imf'); return false;">
-        Read Full Analysis <span class="btn-arrow">→</span>
-      </a>
-    </div>
-    <div class="inst-visual reveal reveal-delay-1">
-      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80" alt="Financial market data">
-      <div class="inst-stat-badge">
-        <div class="stat-number">$7B</div>
-        <div class="stat-label">Current EFF Programme</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WORLD BANK SECTION -->
-<section id="worldbank" class="inst-section">
-  <div class="inst-inner reverse">
-    <div class="inst-content reveal">
-      <p class="inst-label dark">World Bank Group</p>
-      <h2 class="inst-title dark">World Bank<br>in <em>Pakistan</em></h2>
-      <p class="inst-desc dark">
-        The World Bank maintains one of its largest country programmes in Pakistan, with an active
-        portfolio exceeding $12 billion across sectors including energy, education, social protection,
-        and climate adaptation. The BISP Kafaalat programme — co-financed with the Bank — has become
-        a flagship safety net initiative. This section examines project pipelines, sector strategies,
-        and the Bank's evolving governance conditionalities.
-      </p>
-      <a href="#" class="btn-read-more accent-btn" onclick="openBlog('wb'); return false;">
-        Read Full Analysis <span class="btn-arrow">→</span>
-      </a>
-    </div>
-    <div class="inst-visual reveal reveal-delay-1">
-      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80" alt="Pakistan infrastructure">
-      <div class="inst-stat-badge">
-        <div class="stat-number">$12B+</div>
-        <div class="stat-label">Active Portfolio</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ADB SECTION -->
-<section id="adb" class="inst-section">
-  <div class="inst-bg-pattern"></div>
-  <div class="inst-inner">
-    <div class="inst-content reveal">
-      <p class="inst-label light" style="color: var(--gold);">Asian Development Bank</p>
-      <h2 class="inst-title light">ADB &<br><em>Pakistan</em></h2>
-      <p class="inst-desc light">
-        The Asian Development Bank is Pakistan's largest multilateral development partner by annual
-        commitments, focusing heavily on energy sector reform, transport corridors, and climate
-        resilience. ADB's interventions in the power sector — including circular debt resolution
-        frameworks — intersect directly with IMF conditionalities, creating a complex web of
-        multilateral influence over domestic policy. This section maps those connections.
-      </p>
-      <a href="#" class="btn-read-more green-btn" onclick="openBlog('adb'); return false;">
-        Read Full Analysis <span class="btn-arrow">→</span>
-      </a>
-    </div>
-    <div class="inst-visual reveal reveal-delay-1">
-      <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900&q=80" alt="Pakistan city aerial">
-      <div class="inst-stat-badge">
-        <div class="stat-number">$1.6B</div>
-        <div class="stat-label">FY2025 Approvals</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="f-brand-name">Policy Research Institute for Equitable Development</div>
-      <p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p>
-      <div class="f-contact">
-        <div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div>
-        <div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div>
-        <div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div>
-      </div>
-    </div>
-    <div class="f-col">
-      <div class="f-col-h">Our Work</div>
-      <ul>
-        <li><a href="studies">Research</a></li>
-        <li><a href="/#pillars">Collaboration</a></li>
-        <li><a href="/#pillars">Advocacy</a></li>
-        <li><a href="/#outreach">Outreach</a></li>
-        <li><a href="energy-monitors">Energy Monitor</a></li>
-      </ul>
-    </div>
-    <div class="f-col">
-      <div class="f-col-h">Focus Areas</div>
-      <ul>
-        <li><a href="studies">Climate Justice</a></li>
-        <li><a href="studies">Energy Transition</a></li>
-        <li><a href="studies">Renewable Energy</a></li>
-        <li><a href="studies">Coal Phaseout</a></li>
-        <li><a href="studies">Green Finance</a></li>
-      </ul>
-    </div>
-    <div class="f-col">
-      <div class="f-col-h">Networks</div>
-      <ul>
-        <li><a href="#">ACJCE</a></li>
-        <li><a href="#">PREC</a></li>
-        <li><a href="#">APMDD</a></li>
-        <li><a href="#">GCEN</a></li>
-        <li><a href="studies">All Publications</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="f-bottom">
-    <p>© 2025 Policy Research Institute for Equitable Development (PRIED) · Islamabad, Pakistan</p>
-    <div class="f-soc">
-      <a href="https://twitter.com/priedpk" class="fsb">𝕏</a>
-      <a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a>
-      <a href="#" class="fsb">f</a>
-    </div>
-  </div>
-</footer>
-
-<!-- BLOG PAGE OVERLAY -->
-<div id="blog-page">
-  <nav class="blog-nav">
-    <span class="blog-back" onclick="closeBlog()">← Back to IFI Monitor</span>
-    <span style="font-family:'Playfair Display',serif; font-size:15px; color:var(--ink-light);">IFI Monitor</span>
   </nav>
-  <img id="blog-img" class="blog-hero" src="" alt="Article image">
-  <div class="blog-body">
-    <span id="blog-cat" class="blog-category"></span>
-    <h1 id="blog-title" class="blog-title"></h1>
-    <div class="blog-byline">
-      <span>By <strong>IFI Monitor Research Desk</strong></span>
-      <span>March 2026</span>
-      <span>15 min read</span>
+
+  <div id="page-ifi" class="page active">
+
+    <div class="page-hero">
+      <div class="ph-breadcrumb"><a href="/">Home</a> <span>/</span> Research <span>/</span> IFI Monitor</div>
+      <div class="ph-label">Pakistan · IFI Engagement Tracker</div>
+      <h1>Tracking the <em>IMF, World Bank &amp; ADB</em> in Pakistan</h1>
+      <p>Programmes, conditionalities and disbursement schedules of Pakistan's three largest multilateral lenders — for researchers, policymakers and the public.</p>
     </div>
-    <div id="blog-content"></div>
+
+    <!-- NEWS -->
+    <section class="sec" id="news">
+      <div class="sec-head-row">
+        <div>
+          <div class="sec-title">Latest Coverage</div>
+        </div>
+        <span class="sec-meta">Updated September 2026</span>
+      </div>
+      <div class="ifi-news-grid">
+        <a class="ifi-news-card" href="https://www.dawn.com/news/2005041" target="_blank" rel="noopener">
+          <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
+          <span class="ifi-news-headline">Budget delay</span>
+          <div class="ifi-news-foot"><span>Dawn · 4 Jun 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+        <a class="ifi-news-card" href="https://www.reuters.com/world/asia-pacific/imf-wraps-up-talks-with-pakistan-authorities-reforms-budget-2026-05-20/" target="_blank" rel="noopener">
+          <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
+          <span class="ifi-news-headline">IMF wraps up talks with Pakistan authorities on reforms, budget</span>
+          <div class="ifi-news-foot"><span>Reuters · 20 May 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+        <a class="ifi-news-card" href="https://www.dawn.com/news/1994349" target="_blank" rel="noopener">
+          <span class="ifi-news-tag adb"><span class="dot"></span> ADB</span>
+          <span class="ifi-news-headline">ADB deepens Pakistan engagement with $3.67bn commitments, targets fiscal reform and minerals</span>
+          <div class="ifi-news-foot"><span>Dawn · 23 Apr 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+        <a class="ifi-news-card" href="https://tribune.com.pk/story/2601931/world-bank-cuts-gdp-forecast-to-3" target="_blank" rel="noopener">
+          <span class="ifi-news-tag wb"><span class="dot"></span> World Bank</span>
+          <span class="ifi-news-headline">World Bank cuts GDP forecast to 3%</span>
+          <div class="ifi-news-foot"><span>The Express Tribune · 10 Apr 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+        <a class="ifi-news-card" href="https://tribune.com.pk/story/2599737/imf-reaches-staff-level-deal-with-pakistan-for-1-2bn-tranche-after-third-eff-review" target="_blank" rel="noopener">
+          <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
+          <span class="ifi-news-headline">IMF reaches staff-level deal with Pakistan for $1.2bn tranche after third EFF review</span>
+          <div class="ifi-news-foot"><span>The Express Tribune · 28 Mar 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+        <a class="ifi-news-card" href="https://www.dawn.com/news/1962241" target="_blank" rel="noopener">
+          <span class="ifi-news-tag wb"><span class="dot"></span> World Bank</span>
+          <span class="ifi-news-headline">World Bank approves $700 million for Pakistan's economic stability</span>
+          <div class="ifi-news-foot"><span>Dawn · 20 Dec 2025</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="ifi-stats-wrap">
+      <div class="ifi-stats">
+        <div><div class="num"><span>25</span></div><div class="lbl">IMF Arrangements Since 1958</div></div>
+        <div><div class="num">$<span>7</span>B</div><div class="lbl">Current EFF Programme</div></div>
+        <div><div class="num">$<span>44</span>B</div><div class="lbl">World Bank Cumulative Lending</div></div>
+        <div><div class="num">$<span>3.67</span>B</div><div class="lbl">ADB Commitments (2025)</div></div>
+      </div>
+    </div>
+
+    <!-- IMF -->
+    <section class="sec ifi-inst-section" id="imf">
+      <div class="ifi-inst-grid">
+        <div>
+          <div class="ifi-inst-label">International Monetary Fund</div>
+          <h2 class="ifi-inst-title">IMF Programmes<br>in <em>Pakistan</em></h2>
+          <p class="ifi-inst-desc">Pakistan is the IMF's most frequent borrower, having entered into 25 arrangements since joining the Fund. At present, Pakistan has a $7 billion arrangement with the Fund under the Extended Fund Facility (EFF), along with additional support through the climate-focused Resilience and Sustainability Facility (RSF).</p>
+          <button type="button" class="ifi-btn" onclick="openIfiDetail('imf')">Read More →</button>
+        </div>
+        <div class="ifi-badge-panel">
+          <img src="assets/logos/imf.png" alt="IMF logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ifi-badge-mark" style="display:none">IMF<small>International Monetary Fund</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORLD BANK -->
+    <section class="sec ifi-inst-section" id="worldbank">
+      <div class="ifi-inst-grid reverse">
+        <div>
+          <div class="ifi-inst-label">World Bank Group</div>
+          <h2 class="ifi-inst-title">World Bank<br>in <em>Pakistan</em></h2>
+          <p class="ifi-inst-desc">The World Bank maintains one of its largest country programmes in Pakistan, with an active portfolio exceeding $12 billion across sectors including energy, education, social protection, and climate adaptation. The BISP Kafaalat programme — co-financed with the Bank — has become a flagship safety net initiative. This section examines project pipelines, sector strategies, and the Bank's evolving governance conditionalities.</p>
+          <button type="button" class="ifi-btn" onclick="openIfiDetail('wb')">Read More →</button>
+        </div>
+        <div class="ifi-badge-panel">
+          <img src="assets/logos/worldbank.png" alt="World Bank Group logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ifi-badge-mark" style="display:none">WB<small>World Bank Group</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADB -->
+    <section class="sec ifi-inst-section" id="adb">
+      <div class="ifi-inst-grid">
+        <div>
+          <div class="ifi-inst-label">Asian Development Bank</div>
+          <h2 class="ifi-inst-title">ADB &amp;<br><em>Pakistan</em></h2>
+          <p class="ifi-inst-desc">The Asian Development Bank is Pakistan's largest multilateral development partner by annual commitments, focusing heavily on energy sector reform, transport corridors, and climate resilience. ADB's interventions in the power sector — including circular debt resolution frameworks — intersect directly with IMF conditionalities, creating a complex web of multilateral influence over domestic policy. This section maps those connections.</p>
+          <button type="button" class="ifi-btn" onclick="openIfiDetail('adb')">Read More →</button>
+        </div>
+        <div class="ifi-badge-panel">
+          <img src="assets/logos/adb.png" alt="ADB logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ifi-badge-mark" style="display:none">ADB<small>Asian Development Bank</small></div>
+        </div>
+      </div>
+    </section>
+
   </div>
-</div>
 
-<script>
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+  <!-- ══════════ IMF DETAIL OVERLAY ══════════ -->
+  <!-- ══════════ IMF DETAIL PAGE ══════════ -->
+  <div class="page" id="page-ifi-imf" style="display:none">
+    <div class="page-hero" style="padding-bottom:32px">
+      <div class="ph-breadcrumb"><a href="#" onclick="closeIfiDetail('imf');return false;">Home</a> <span>/</span> <a href="#" onclick="closeIfiDetail('imf');return false;">IFI Monitor</a> <span>/</span> <span>IMF</span></div>
+    </div>
+    <div class="article-layout rv">
+      <div class="article-main">
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80" alt="Financial market data">
+        </div>
+        <div class="article-meta-row">
+          <span class="am-tag">IMF · Programme Analysis</span>
+        </div>
+        <h1>Pakistan and the IMF: 25 Arrangements and Counting</h1>
+        <div class="article-divider"></div>
 
-// Mobile hamburger menu
-const navToggle = document.getElementById('navToggle');
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('nav-open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  nav.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('nav-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
+        <div class="article-body">
+          <p>Pakistan is the world's most frequent IMF-borrower, having engaged with the multilateral lender a record 25 times. It is among the four countries classified by the IMF as "prolonged users" of its resources. Pakistan first turned to the IMF in 1958, signing a Stand-By Arrangement worth 25,000 Special Drawing Rights (SDRs). At present, Pakistan has a $7 billion arrangement with the Fund under the Extended Fund Facility (EFF), along with additional support through the Resilience and Sustainability Facility.</p>
+        </div>
 
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
+        <div class="ifi-facility-toggle" role="tablist">
+          <button type="button" class="ifi-facility-btn active" data-facility="eff" onclick="setFacility('eff')">EFF</button>
+          <button type="button" class="ifi-facility-btn" data-facility="rsf" onclick="setFacility('rsf')">RSF</button>
+        </div>
+
+        <!-- EFF PANEL -->
+        <div class="ifi-facility-panel active" id="panel-eff">
+          <div class="ifi-reform-grid">
+            <div class="ifi-reform-card">
+              <h4>Reforms Undertaken</h4>
+              <div class="rf-note">Detail actions to reduce the government's footprint in the economy.</div>
+              <ul>
+                <li>Introduce a 5 percent FED on fertilizer and pesticide.</li>
+                <li>Push captive gas users on to the electricity grid.</li>
+                <li>Phase out all SEZs and EPZs.</li>
+              </ul>
+            </div>
+            <div class="ifi-reform-card">
+              <h4>Upcoming Reforms</h4>
+              <div class="rf-note">Next steps expected under the programme.</div>
+              <ul>
+                <li>Finalize privatization processes for HESCO and SEPCO.</li>
+                <li>Sugar market liberalization.</li>
+                <li>Amend PPRA rules to eliminate SOE preferences in awarding public procurement contracts without competition.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ifi-table-wrap">
+            <table class="ifi-table">
+              <thead><tr><th>Availability Date</th><th>Amount of Funds Disbursed</th></tr></thead>
+              <tbody>
+                <tr><td>September 2024</td><td>$1 billion</td></tr>
+                <tr><td>March 2025</td><td>$1 billion</td></tr>
+                <tr><td>September 2025</td><td>$1 billion</td></tr>
+                <tr><td>March 2026<span class="ifi-pill latest">Latest Review</span></td><td>$1.1 billion</td></tr>
+                <tr><td>September 2026<span class="ifi-pill next">Next Review</span></td><td>$1.1 billion</td></tr>
+                <tr><td>March 2027</td><td>$1.1 billion</td></tr>
+                <tr><td>September 2027</td><td>$1.1 billion</td></tr>
+                <tr class="total"><td>Total</td><td>~$7.2 billion</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- RSF PANEL -->
+        <div class="ifi-facility-panel" id="panel-rsf">
+          <div class="ifi-table-wrap">
+            <table class="ifi-table">
+              <thead><tr><th>Date</th><th>Amount of Funds</th><th>Reforms</th></tr></thead>
+              <tbody>
+                <tr><td>March 2025</td><td>—</td><td>The programme is approved.</td></tr>
+                <tr><td>September 2025</td><td>$200 million</td><td>RM9: Introduce a supplementary carbon levy on gasoline and diesel.<br>RM10: Introduce EV subsidies and taxes on internal combustion vehicles.</td></tr>
+                <tr><td>March 2026<span class="ifi-pill latest">Last Review</span></td><td>$220 million</td><td>RM7: Issue and adopt climate risk management guidelines for banks.<br>RM8: Adopt a national green finance taxonomy and climate disclosure framework.</td></tr>
+                <tr><td>September 2026<span class="ifi-pill next">Next Review</span></td><td>$220 million</td><td>RM1: Increase the climate change (adaptation and mitigation) weighting in the Public Investment Procedures and Parameters methodology.<br>RM6: Implement the National Disaster Risk Financing Strategy framework.</td></tr>
+                <tr><td>March 2027</td><td>$220 million</td><td>RM5: Introduce irrigation water tariff adjustments to recover costs.<br>RM11: Establish a PPP viability gap funding framework for EV charging infrastructure.<br>RM12: Replace electricity tariff subsidies with targeted support for low-income consumers.</td></tr>
+                <tr><td>September 2027</td><td>—</td><td>RM2: Require climate screening for major infrastructure projects in the PSDP.<br>RM3: Expand the federal climate budget-tagging framework.<br>RM4: Implement the e-Abiana irrigation water charge collection system.<br>RM13: Introduce minimum energy performance standards for electric appliances.</td></tr>
+                <tr class="total"><td>Total</td><td>~$1.1 billion</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ifi-table-note">Note: the September 2027 milestone lists reform measures only — no separate disbursement amount was specified in the source programme documents.</div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="ifi-timeline-title">🌊 Pakistan &amp; the IMF: A Timeline</div>
+        <p class="sec-sub" style="margin-bottom:0">Six decades of recurring engagement, punctuated by political instability, climate disasters, and geopolitical shocks.</p>
+        <div class="ifi-timeline">
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">1958 →</div>
+            <div class="ifi-tl-name">Early Agreements</div>
+            <div class="ifi-tl-desc">Pakistan's early agreements with the IMF were mainly Stand-By Arrangements (SBAs) — short-term loans that provide support to meet urgent financing needs.</div>
+          </div>
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">1988 – 2000</div>
+            <div class="ifi-tl-name">Nine Arrangements in Twelve Years</div>
+            <div class="ifi-tl-desc">A period marked by political instability. Pakistan entered into nine different agreements with the IMF in this window alone.</div>
+          </div>
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">2019</div>
+            <div class="ifi-tl-name">A Longer-Term Fix</div>
+            <div class="ifi-tl-desc">Pakistan entered into an Extended Fund Facility (EFF) — a longer-term programme meant to fix deep and persistent imbalances in the economy.</div>
+          </div>
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">2022 🌊</div>
+            <div class="ifi-tl-name">Off Track</div>
+            <div class="ifi-tl-desc">Political instability — compounded by the devastating 2022 floods — caused the EFF programme to go off track.</div>
+          </div>
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">2023</div>
+            <div class="ifi-tl-name">Back to the Fund</div>
+            <div class="ifi-tl-desc">With reserves running dangerously low, Pakistan once again turned to the IMF, signing another Stand-By Arrangement.</div>
+          </div>
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">2024</div>
+            <div class="ifi-tl-name">A New EFF</div>
+            <div class="ifi-tl-desc">Pakistan entered into another Extended Fund Facility amid continued fiscal and external pressures.</div>
+          </div>
+          <div class="ifi-tl-item">
+            <div class="ifi-tl-year">2025</div>
+            <div class="ifi-tl-name">Climate Finance Added</div>
+            <div class="ifi-tl-desc">Pakistan added the Resilience and Sustainability Facility (RSF) — tying continued Fund support to climate-related reform milestones.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-sidebar">
+        <div class="as-cta-box">
+          <div class="ascb-icon">🏦</div>
+          <h4>Explore PRIED Research</h4>
+          <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
+          <a href="studies" class="as-cta-btn">View Studies →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ WORLD BANK DETAIL PAGE ══════════ -->
+  <div class="page" id="page-ifi-wb" style="display:none">
+    <div class="page-hero" style="padding-bottom:32px">
+      <div class="ph-breadcrumb"><a href="#" onclick="closeIfiDetail('wb');return false;">Home</a> <span>/</span> <a href="#" onclick="closeIfiDetail('wb');return false;">IFI Monitor</a> <span>/</span> <span>World Bank</span></div>
+    </div>
+    <div class="article-layout rv">
+      <div class="article-main">
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80" alt="Pakistan infrastructure">
+        </div>
+        <div class="article-meta-row">
+          <span class="am-tag">World Bank · Portfolio Review</span>
+        </div>
+        <h1>The World Bank in Pakistan: Social Protection, Energy Reform, and Evolving Conditionalities</h1>
+        <div class="article-divider"></div>
+        <div class="article-body">
+          <p>The World Bank Group maintains one of its largest country programmes globally in Pakistan. With a cumulative lending portfolio approaching $44 billion and an active pipeline exceeding $12 billion, the Bank's footprint spans virtually every major sector of the Pakistani economy — from social protection and education to energy, transport, and climate resilience.</p>
+          <p><strong>BISP and the Social Protection Agenda.</strong> Perhaps the Bank's most visible intervention is its co-financing and technical support for the Benazir Income Support Programme (BISP), now rebranded under the Kafaalat framework. The programme reaches approximately 9 million beneficiary families and is increasingly central to Pakistan's strategy for cushioning the social costs of IMF-mandated fiscal adjustment.</p>
+          <p><strong>Energy Sector Lending and Circular Debt.</strong> Energy sector reform accounts for a significant portion of the Bank's active portfolio in Pakistan. The circular debt crisis — a structural accumulation of payment arrears across the power sector — has become a major focus of World Bank policy dialogue and conditioned lending.</p>
+          <p><strong>Climate Finance and IDA21.</strong> Following the catastrophic 2022 floods, the Bank deployed emergency financing and has since committed to scaling climate-related lending under the new IDA21 replenishment cycle. Pakistan is designated as a climate-vulnerable country eligible for enhanced concessional terms.</p>
+          <p style="color:var(--lite);font-size:.85rem">This section is still being finalized — updated data, tables and sourcing to follow.</p>
+        </div>
+      </div>
+      <div class="article-sidebar">
+        <div class="as-cta-box">
+          <div class="ascb-icon">🏦</div>
+          <h4>Explore PRIED Research</h4>
+          <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
+          <a href="studies" class="as-cta-btn">View Studies →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ ADB DETAIL PAGE ══════════ -->
+  <div class="page" id="page-ifi-adb" style="display:none">
+    <div class="page-hero" style="padding-bottom:32px">
+      <div class="ph-breadcrumb"><a href="#" onclick="closeIfiDetail('adb');return false;">Home</a> <span>/</span> <a href="#" onclick="closeIfiDetail('adb');return false;">IFI Monitor</a> <span>/</span> <span>ADB</span></div>
+    </div>
+    <div class="article-layout rv">
+      <div class="article-main">
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=80" alt="Pakistan city aerial">
+        </div>
+        <div class="article-meta-row">
+          <span class="am-tag">Asian Development Bank · Programme Analysis</span>
+        </div>
+        <h1>ADB and Pakistan: Infrastructure Investment, Energy Reform, and Multilateral Coordination</h1>
+        <div class="article-divider"></div>
+        <div class="article-body">
+          <p>The Asian Development Bank is Pakistan's single largest multilateral development partner by annual approved financing. In 2025, the ADB committed approximately $3.67 billion to Pakistan — a 22% increase from the prior year — funding fiscal reform, infrastructure, women's economic empowerment, mineral sector development, and education programmes.</p>
+          <p><strong>Infrastructure and Transport Corridors.</strong> ADB's lending to Pakistan's transport sector has historically focused on national highway upgrades, regional connectivity, and urban mass transit, including co-financing of the Lahore Orange Line Metro project.</p>
+          <p><strong>Energy Sector: Overlap with IMF Conditionalities.</strong> ADB has financed generation capacity, grid upgrades, and distribution efficiency programmes that are conceptually aligned with the IMF's circular debt resolution benchmarks and the World Bank's distribution company reform agenda.</p>
+          <p><strong>Climate Finance and Disaster Resilience.</strong> Following the 2022 floods, the ADB has increased its commitments to climate adaptation and disaster risk reduction in Pakistan under its Climate Change Action Plan.</p>
+          <p style="color:var(--lite);font-size:.85rem">This section is still being finalized — updated data, tables and sourcing to follow.</p>
+        </div>
+      </div>
+      <div class="article-sidebar">
+        <div class="as-cta-box">
+          <div class="ascb-icon">🏦</div>
+          <h4>Explore PRIED Research</h4>
+          <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
+          <a href="studies" class="as-cta-btn">View Studies →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="v8-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-name">Policy Research Institute for Equitable Development</div>
+        <p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing evidence-based research for a sustainable, equitable, and low-carbon future.</p>
+        <div class="f-contact">
+          <div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7 Markaz, Islamabad</span></div>
+          <div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div>
+          <div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div>
+        </div>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Our Work</div>
+        <ul>
+          <li><a href="studies">Research</a></li>
+          <li><a href="/#pillars">Collaboration</a></li>
+          <li><a href="/#pillars">Advocacy</a></li>
+          <li><a href="/#outreach">Outreach</a></li>
+          <li><a href="energy-monitors">Energy Monitor</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Focus Areas</div>
+        <ul>
+          <li><a href="studies">Climate Justice</a></li>
+          <li><a href="studies">Energy Transition</a></li>
+          <li><a href="studies">Renewable Energy</a></li>
+          <li><a href="studies">Coal Phaseout</a></li>
+          <li><a href="studies">Green Finance</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Networks</div>
+        <ul>
+          <li><a href="#">ACJCE</a></li>
+          <li><a href="#">PREC</a></li>
+          <li><a href="#">APMDD</a></li>
+          <li><a href="#">GCEN</a></li>
+          <li><a href="studies">All Publications</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Policy Research Institute for Equitable Development (PRIED) · Islamabad, Pakistan</p>
+      <div class="f-soc">
+        <a href="https://twitter.com/priedpk" class="fsb">𝕏</a>
+        <a href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a>
+        <a href="#" class="fsb">f</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js" defer></script>
+  <script>
+    function openIfiDetail(id) {
+      document.getElementById('page-ifi').style.display = 'none';
+      const target = document.getElementById('page-ifi-' + id);
+      target.style.display = 'block';
+      target.querySelectorAll('.rv').forEach(el => el.classList.add('on'));
+      window.scrollTo(0, 0);
     }
-  });
-}, { threshold: 0.12 });
-revealEls.forEach(el => observer.observe(el));
-
-// Blog data
-const blogs = {
-  imf: {
-    cat: 'IMF · Programme Analysis',
-    title: 'Pakistan and the IMF: A Recurring Relationship and the Terms of the Current EFF',
-    img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80',
-    content: `
-      <p>Pakistan's relationship with the International Monetary Fund is one of the most enduring in the institution's history. Since the country's first Stand-By Arrangement in 1958, Islamabad has returned to the Fund on 24 separate occasions — a record that speaks to the structural fragilities in Pakistan's fiscal and external accounts, and the political economy of reform cycles.</p>
-
-      <h2>The Current Extended Fund Facility</h2>
-      <p>The latest programme — a 37-month Extended Fund Facility approved in July 2023 — carries a total value of approximately $7 billion. Unlike previous short-term arrangements, the EFF is designed to support deeper structural reforms: broadening the tax base, reducing energy sector circular debt, and building foreign exchange reserves toward sustainable levels.</p>
-
-      <blockquote>"Pakistan's fiscal adjustment under the EFF is among the largest consolidations the Fund has required of any borrower in the region."</blockquote>
-
-      <p>The conditionalities attached to the programme are consequential. The government is required to eliminate all fuel and electricity subsidies, bring the FBR tax-to-GDP ratio to 10.6% by end-2025, and maintain a primary surplus — a commitment that constrains development expenditure and social spending at a time of acute inflationary pressure.</p>
-
-      <h2>Benchmarks and Missed Targets</h2>
-      <p>The fourth review, conducted in late 2024, found that Pakistan had missed three of the programme's structural benchmarks — related to the privatisation of state-owned enterprises, NEPRA tariff adjustments, and the alignment of provincial revenue collection with federal targets. Despite these slippages, the IMF Board completed the review and released the next tranche, citing the government's overall commitment to the programme's framework.</p>
-
-      <p>This pattern — missed benchmarks, waiver granted, tranche released — is not new in Pakistan's IMF history. Critics argue that the Fund's flexibility enables a political economy of partial reform: enough compliance to maintain access to liquidity, without the structural transformation that programme designers intended.</p>
-
-      <h2>Distributional Consequences</h2>
-      <p>The compression of public spending under IMF conditionalities has measurable effects on service delivery and welfare. Pakistan's public health expenditure has declined as a share of GDP over the programme period. Development spending — which includes infrastructure, agriculture, and education investment — has been crowded out by the imperative to achieve fiscal targets. The burden of adjustment, in practice, falls disproportionately on lower-income households.</p>
-
-      <p>IFI Monitor will continue to track each programme review, the evolution of benchmarks, and independent assessments of the EFF's distributional and growth impacts.</p>
-    `
-  },
-  wb: {
-    cat: 'World Bank · Portfolio Review',
-    title: 'The World Bank in Pakistan: Social Protection, Energy Reform, and Evolving Conditionalities',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80',
-    content: `
-      <p>The World Bank Group maintains one of its largest country programmes globally in Pakistan. With a cumulative lending portfolio approaching $44 billion and an active pipeline exceeding $12 billion, the Bank's footprint spans virtually every major sector of the Pakistani economy — from social protection and education to energy, transport, and climate resilience.</p>
-
-      <h2>BISP and the Social Protection Agenda</h2>
-      <p>Perhaps the Bank's most visible intervention is its co-financing and technical support for the Benazir Income Support Programme (BISP), now rebranded under the Kafaalat framework. The programme reaches approximately 9 million beneficiary families and is increasingly central to Pakistan's strategy for cushioning the social costs of IMF-mandated fiscal adjustment.</p>
-
-      <blockquote>"Social protection has emerged as both a humanitarian imperative and a political precondition for the structural reforms that multilateral lenders require."</blockquote>
-
-      <p>The Bank's engagement with BISP reflects a broader institutional pivot: development finance institutions have increasingly embedded social protection as a conditionality mitigant — a way to make politically difficult reforms more administratively and socially sustainable.</p>
-
-      <h2>Energy Sector Lending and Circular Debt</h2>
-      <p>Energy sector reform accounts for a significant portion of the Bank's active portfolio in Pakistan. The circular debt crisis — a structural accumulation of payment arrears across the power sector — has become a major focus of World Bank policy dialogue and conditioned lending. Bank-supported reforms have pushed for cost-reflective tariffs, distribution company privatisation, and improved collection efficiency.</p>
-
-      <p>These reforms intersect directly with IMF programme requirements, creating a degree of multilateral convergence on energy policy prescriptions that some analysts describe as leaving limited domestic policy space.</p>
-
-      <h2>Climate Finance and IDA21</h2>
-      <p>Pakistan's climate vulnerability has increasingly shaped the Bank's country engagement strategy. Following the catastrophic 2022 floods, the Bank deployed emergency financing and has since committed to scaling climate-related lending under the new IDA21 replenishment cycle. Pakistan is designated as a climate-vulnerable country eligible for enhanced concessional terms.</p>
-    `
-  },
-  adb: {
-    cat: 'Asian Development Bank · Programme Analysis',
-    title: 'ADB and Pakistan: Infrastructure Investment, Energy Reform, and Multilateral Coordination',
-    img: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=80',
-    content: `
-      <p>The Asian Development Bank is Pakistan's single largest multilateral development partner by annual approved financing. In FY2025 alone, the ADB approved approximately $1.6 billion in loans and grants for Pakistan — funding infrastructure, energy, and climate adaptation programmes that together form a substantial component of Pakistan's public investment programme.</p>
-
-      <h2>Infrastructure and Transport Corridors</h2>
-      <p>ADB's lending to Pakistan's transport sector has historically focused on national highway upgrades, regional connectivity, and urban mass transit. The Bank co-financed key segments of the Lahore Orange Line Metro project and continues to support the National Highway Authority's modernisation agenda. These investments are framed within broader regional connectivity narratives linked to Central and South Asian integration.</p>
-
-      <blockquote>"Infrastructure finance from the ADB fills a genuine gap in Pakistan's public investment envelope — but it also deepens the country's long-term debt obligations to multilateral creditors."</blockquote>
-
-      <h2>Energy Sector: Overlap with IMF Conditionalities</h2>
-      <p>Where the ADB programme becomes most analytically interesting — and politically significant — is in the energy sector. ADB has financed generation capacity, grid upgrades, and distribution efficiency programmes. These technical interventions are conceptually aligned with the IMF's circular debt resolution benchmarks and the World Bank's distribution company reform agenda.</p>
-
-      <p>This creates a multi-institutional reform coalition: three major IFIs effectively coordinating — formally through co-financing and informally through conditionality alignment — on a single sector of the Pakistani economy. The implications for domestic policy autonomy deserve serious analytical attention.</p>
-
-      <h2>Climate Finance and Disaster Resilience</h2>
-      <p>Following the 2022 floods, the ADB has increased its commitments to climate adaptation and disaster risk reduction in Pakistan. The Bank's Climate Change Action Plan allocates a significant share of Pakistan country operations to climate-tagged lending. IFI Monitor tracks these designations and their alignment with Pakistan's nationally determined contributions under the Paris Agreement.</p>
-
-      <p>Future coverage will examine ADB's governance conditionalities, the performance of its lending in energy sector outcomes, and the debt sustainability implications of Pakistan's growing multilateral obligations.</p>
-    `
-  }
-};
-
-function openBlog(id) {
-  const data = blogs[id];
-  document.getElementById('blog-cat').textContent = data.cat;
-  document.getElementById('blog-title').textContent = data.title;
-  document.getElementById('blog-img').src = data.img;
-  document.getElementById('blog-content').innerHTML = data.content;
-  const bp = document.getElementById('blog-page');
-  bp.classList.add('open');
-  bp.scrollTop = 0;
-}
-
-function closeBlog() {
-  document.getElementById('blog-page').classList.remove('open');
-}
-</script>
+    function closeIfiDetail(id) {
+      document.getElementById('page-ifi-' + id).style.display = 'none';
+      document.getElementById('page-ifi').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+    function setFacility(name) {
+      document.querySelectorAll('.ifi-facility-btn').forEach(b => b.classList.toggle('active', b.dataset.facility === name));
+      document.querySelectorAll('.ifi-facility-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-' + name).classList.add('active');
+    }
+  </script>
 </body>
+
 </html>
