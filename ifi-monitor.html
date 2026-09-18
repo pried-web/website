@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/styles.css">
   <style>
     /* ── IFI MONITOR — page-scoped styles (built on the shared token set in assets/styles.css) ── */
+    #page-ifi .page-hero p { max-width: 700px; }
     #page-ifi .sec { max-width: 1100px; margin: 0 auto; padding: 64px 48px; }
     #page-ifi .sec-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     #page-ifi .sec-sub { font-size: .92rem; color: var(--mid); max-width: 640px; line-height: 1.7; margin-bottom: 32px; }
@@ -34,6 +35,11 @@
     .ifi-news-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .74rem; color: var(--lite); margin-top: auto; }
     .ifi-news-arrow { opacity: 0; transform: translateX(-4px); transition: all .2s; color: var(--b); }
     .ifi-news-card:hover .ifi-news-arrow { opacity: 1; transform: translateX(0); }
+    .ifi-news-more { display: none; margin-top: 18px; }
+    .ifi-news-more.is-visible { display: grid; }
+    .ifi-news-loadmore-row { display: flex; justify-content: center; margin-top: 32px; }
+    .ifi-loadmore-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--rule); color: var(--b); font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 600; padding: 11px 26px; border-radius: 999px; cursor: pointer; transition: all .2s; }
+    .ifi-loadmore-btn:hover { background: var(--bpp); border-color: var(--b); }
 
     /* Stats bar */
     .ifi-stats-wrap { background: var(--bd); }
@@ -98,11 +104,22 @@
     .ifi-tl-name { font-size: .78rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 6px; }
     .ifi-tl-desc { font-size: .86rem; color: var(--ink); line-height: 1.7; max-width: 640px; }
 
+    /* Related studies */
+    .ifi-studies { max-width: 1100px; margin: 120px auto 0; padding: 56px 48px 64px; border-top: 1px solid var(--rule); }
+    .ifi-studies-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); margin-bottom: 20px; }
+    .ifi-studies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .ifi-study-card { display: block; background: var(--cream); border-radius: var(--r); padding: 26px; text-decoration: none; transition: box-shadow .2s, transform .2s; }
+    .ifi-study-card:hover { box-shadow: 0 10px 28px rgba(28,28,28,.08); transform: translateY(-2px); }
+    .ifi-study-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--bd); line-height: 1.3; margin-bottom: 10px; }
+    .ifi-study-card p { font-size: .84rem; color: var(--mid); line-height: 1.6; }
+
     @media (max-width: 900px) {
       .ifi-news-grid { grid-template-columns: repeat(2, 1fr); }
       .ifi-stats { grid-template-columns: repeat(2, 1fr); }
       .ifi-inst-grid, .ifi-inst-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
       .ifi-reform-grid { grid-template-columns: 1fr; }
+      .ifi-studies-grid { grid-template-columns: 1fr; }
+      .ifi-studies { padding-left: 20px; padding-right: 20px; }
     }
     @media (max-width: 600px) {
       .ifi-news-grid { grid-template-columns: 1fr; }
@@ -163,8 +180,8 @@
     <div class="page-hero">
       <div class="ph-breadcrumb"><a href="/">Home</a> <span>/</span> Research <span>/</span> IFI Monitor</div>
       <div class="ph-label">Pakistan · IFI Engagement Tracker</div>
-      <h1>Tracking the <em>IMF, World Bank &amp; ADB</em> in Pakistan</h1>
-      <p>Programmes, conditionalities and disbursement schedules of Pakistan's three largest multilateral lenders — for researchers, policymakers and the public.</p>
+      <h1>Tracking the <em>IMF, World Bank &amp; Asian Development Bank</em> in Pakistan</h1>
+      <p>Programmes, conditionalities and disbursement schedules of Pakistan's three major multilateral partners for researchers, policymakers and the public.</p>
     </div>
 
     <!-- NEWS -->
@@ -176,6 +193,16 @@
         <span class="sec-meta">Updated September 2026</span>
       </div>
       <div class="ifi-news-grid">
+        <a class="ifi-news-card" href="https://www.dawn.com/news/2028892" target="_blank" rel="noopener">
+          <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
+          <span class="ifi-news-headline">IMF mission due on Sept 23 for biannual review of Pakistan's economic performance</span>
+          <div class="ifi-news-foot"><span>Dawn · 10 Sep 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
+        <a class="ifi-news-card" href="https://www.dawn.com/news/2013286" target="_blank" rel="noopener">
+          <span class="ifi-news-tag wb"><span class="dot"></span> World Bank</span>
+          <span class="ifi-news-headline">World Bank and fiscal distribution</span>
+          <div class="ifi-news-foot"><span>Dawn · 6 Jul 2026</span><span class="ifi-news-arrow">→</span></div>
+        </a>
         <a class="ifi-news-card" href="https://www.dawn.com/news/2005041" target="_blank" rel="noopener">
           <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
           <span class="ifi-news-headline">Budget delay</span>
@@ -196,6 +223,8 @@
           <span class="ifi-news-headline">World Bank cuts GDP forecast to 3%</span>
           <div class="ifi-news-foot"><span>The Express Tribune · 10 Apr 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
+      </div>
+      <div class="ifi-news-grid ifi-news-more">
         <a class="ifi-news-card" href="https://tribune.com.pk/story/2599737/imf-reaches-staff-level-deal-with-pakistan-for-1-2bn-tranche-after-third-eff-review" target="_blank" rel="noopener">
           <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
           <span class="ifi-news-headline">IMF reaches staff-level deal with Pakistan for $1.2bn tranche after third EFF review</span>
@@ -206,6 +235,9 @@
           <span class="ifi-news-headline">World Bank approves $700 million for Pakistan's economic stability</span>
           <div class="ifi-news-foot"><span>Dawn · 20 Dec 2025</span><span class="ifi-news-arrow">→</span></div>
         </a>
+      </div>
+      <div class="ifi-news-loadmore-row">
+        <button type="button" class="ifi-loadmore-btn" id="ifiNewsLoadMore" onclick="loadMoreIfiNews()">Load More <span>↓</span></button>
       </div>
     </section>
 
@@ -278,16 +310,16 @@
     <div class="article-layout rv">
       <div class="article-main">
         <div class="article-hero-img">
-          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80" alt="Financial market data">
+          <img src="assets/logos/imf-hero-img.png" alt="IMF headquarters">
         </div>
         <div class="article-meta-row">
           <span class="am-tag">IMF · Programme Analysis</span>
         </div>
-        <h1>Pakistan and the IMF: 25 Arrangements and Counting</h1>
+        <h1>Pakistan and the IMF: <br>25 Arrangements and Counting</h1>
         <div class="article-divider"></div>
 
         <div class="article-body">
-          <p>Pakistan is the world's most frequent IMF-borrower, having engaged with the multilateral lender a record 25 times. It is among the four countries classified by the IMF as "prolonged users" of its resources. Pakistan first turned to the IMF in 1958, signing a Stand-By Arrangement worth 25,000 Special Drawing Rights (SDRs). At present, Pakistan has a $7 billion arrangement with the Fund under the Extended Fund Facility (EFF), along with additional support through the Resilience and Sustainability Facility.</p>
+          <p>Pakistan is the world's most frequent IMF-borrower, having engaged with the multilateral lender a record 25 times. It is among the four countries classified by the IMF as "prolonged users" of its resources. Pakistan first turned to the IMF in 1958, just over a decade after independence. At present, Pakistan has a $7 billion arrangement with the Fund under the Extended Fund Facility (EFF), along with additional support through the Resilience and Sustainability Facility (RSF).</p>
         </div>
 
         <div class="ifi-facility-toggle" role="tablist">
@@ -300,20 +332,20 @@
           <div class="ifi-reform-grid">
             <div class="ifi-reform-card">
               <h4>Reforms Undertaken</h4>
-              <div class="rf-note">Detail actions to reduce the government's footprint in the economy.</div>
+              <div class="rf-note">Reforms already undertaken as part of the Extended Fund Facility (EFF) programme.</div>
               <ul>
-                <li>Introduce a 5 percent FED on fertilizer and pesticide.</li>
+                <li>Agricultural Income Tax reforms.</li>
                 <li>Push captive gas users on to the electricity grid.</li>
-                <li>Phase out all SEZs and EPZs.</li>
+                <li>Parliamentary approval of 2026 budget in line with IMF's agreement.</li>
               </ul>
             </div>
             <div class="ifi-reform-card">
               <h4>Upcoming Reforms</h4>
-              <div class="rf-note">Next steps expected under the programme.</div>
+              <div class="rf-note">Next steps mandated under the programme for the release of funds.</div>
               <ul>
-                <li>Finalize privatization processes for HESCO and SEPCO.</li>
-                <li>Sugar market liberalization.</li>
-                <li>Amend PPRA rules to eliminate SOE preferences in awarding public procurement contracts without competition.</li>
+                <li>Privatize the electricity distribution companies of Faisalabad, Islamabad, and Gujranwala (FESCO, IESCO, GEPCO).</li>
+                <li>Liberalization of the sugar market.</li>
+                <li>Reduce the state's footprint in the economy.</li>
               </ul>
             </div>
           </div>
@@ -355,7 +387,7 @@
         </div>
 
         <!-- TIMELINE -->
-        <div class="ifi-timeline-title">🌊 Pakistan &amp; the IMF: A Timeline</div>
+        <div class="ifi-timeline-title">Pakistan &amp; the IMF: A Timeline</div>
         <p class="sec-sub" style="margin-bottom:0">Six decades of recurring engagement, punctuated by political instability, climate disasters, and geopolitical shocks.</p>
         <div class="ifi-timeline">
           <div class="ifi-tl-item">
@@ -403,6 +435,25 @@
           <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
           <a href="studies" class="as-cta-btn">View Studies →</a>
         </div>
+      </div>
+    </div>
+
+    <!-- RELATED STUDIES -->
+    <div class="ifi-studies">
+      <div class="ifi-studies-title">Related PRIED Studies</div>
+      <div class="ifi-studies-grid">
+        <a class="ifi-study-card" href="https://www.priedpk.org/Energy%20Monitor/The%20%20Captive%20Power%20Dilemma.pdf" target="_blank" rel="noopener">
+          <h4>The Captive Power Dilemma</h4>
+          <p>Examines Pakistan's captive power levy and whether shifting industry onto the national grid fixes overcapacity and circular debt, or simply punishes industry.</p>
+        </a>
+        <a class="ifi-study-card" href="https://www.priedpk.org/pdfs/Energy-Monitor.pdf" target="_blank" rel="noopener">
+          <h4>Reform or Bust</h4>
+          <p>Weighs privatization, provincialization and management-contract models for fixing Pakistan's loss-ridden DISCOs, drawing on stakeholder interviews and international precedents.</p>
+        </a>
+        <a class="ifi-study-card" href="https://www.priedpk.org/pdfs/QEM-Electricity-subsidies-in-Pakistan-1.pdf" target="_blank" rel="noopener">
+          <h4>Electricity Subsidies in Pakistan</h4>
+          <p>Traces how IMF-mandated fiscal conditions are driving the phase-out of electricity subsidies, and what that means for Pakistan's most vulnerable consumers.</p>
+        </a>
       </div>
     </div>
   </div>
@@ -545,6 +596,10 @@
       document.querySelectorAll('.ifi-facility-btn').forEach(b => b.classList.toggle('active', b.dataset.facility === name));
       document.querySelectorAll('.ifi-facility-panel').forEach(p => p.classList.remove('active'));
       document.getElementById('panel-' + name).classList.add('active');
+    }
+    function loadMoreIfiNews() {
+      document.querySelector('.ifi-news-more').classList.add('is-visible');
+      document.getElementById('ifiNewsLoadMore').style.display = 'none';
     }
   </script>
 </body>

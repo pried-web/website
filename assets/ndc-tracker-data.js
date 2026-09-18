@@ -169,7 +169,7 @@ const NDC_DATA = {
       "allocation": "PKR 125.1843 billion",
       "funders": "GoP",
       "requirement": "USD 800 million (unconditional)",
-      "outcomes": "Sequester 148.76 MtCO2e by 2030; 500 MtCO2e by 2040",
+      "outcomes": "Sequester 148.76 MtCO2e by 2030; 500 MtCO2e by 2040 (46.66 MtCO2e sequestered to date, per NDC 3.0 progress update)",
       "province": "Khyber Pakhtunkhwa, Punjab"
     },
     {
@@ -257,7 +257,7 @@ const NDC_DATA = {
       "allocation": "Rs 4 billion",
       "funders": "GoP",
       "requirement": "",
-      "outcomes": "",
+      "outcomes": "Achieved 20.44% protected area coverage (terrestrial + marine) — exceeding the original NDC 2.0 goal of 12% → 15% by 2023",
       "province": ""
     },
     {
