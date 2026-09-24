@@ -863,16 +863,23 @@
     }
 
     .mv-icon-ring {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
       background: var(--bp);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      overflow: hidden;
       margin-bottom: 18px;
       flex-shrink: 0;
+    }
+
+    .mv-icon-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .mv-card h3 {
@@ -2193,7 +2200,8 @@
         <div class="about-top-row">
           <div class="about-img-group rv">
             <div class="ai-main">
-              <iframe src="https://www.youtube-nocookie.com/embed/BTitbcGBaGs" title="YouTube video player"
+              <iframe src="https://www.youtube-nocookie.com/embed/Kjh5UomqpZY"
+                title="Motherland | A documentary exploring the coal-development's impact on land in Tharparkar"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
@@ -2262,7 +2270,7 @@
           <div class="mv-card">
             <div class="mv-card-top-line"></div>
             <div class="mv-ghost-num">01</div>
-            <div class="mv-icon-ring">🎯</div>
+            <div class="mv-icon-ring"><img src="painting-icons/08-what-guides-us_winding-road.png" alt="A winding road" loading="lazy"></div>
             <h3>What Guides Us</h3>
             <p>Every Pakistani enjoys equitable access to renewable, reliable, and affordable sources
               of energy.</p>
@@ -2270,7 +2278,7 @@
           <div class="mv-card d1">
             <div class="mv-card-top-line"></div>
             <div class="mv-ghost-num">02</div>
-            <div class="mv-icon-ring">🌏</div>
+            <div class="mv-icon-ring"><img src="painting-icons/09-why-us-why-now_coal-heap.png" alt="A heap of coal" loading="lazy"></div>
             <h3>Why Us, Why Now?</h3>
             <p>We’re here to help accelerate Pakistan’s shift from fossil fuels and large hydro to renewables, and we
               must do it now to ensure the transition is fast, fair, and just for people, the economy, and the climate.
