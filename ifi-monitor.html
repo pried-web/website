@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IFI Monitor – Tracking International Financial Institutions in Pakistan</title>
+  <title>IFI Monitor – Tracking Multilateral Development Banks</title>
   <meta name="description" content="Tracking IMF, World Bank and Asian Development Bank programmes, conditionalities and disbursements in Pakistan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,10 @@
 
     /* News */
     .ifi-news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .ifi-news-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; display: flex; flex-direction: column; gap: 14px; transition: box-shadow .2s, transform .2s; text-decoration: none; }
+    .ifi-news-card { overflow: hidden; background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; display: flex; flex-direction: column; gap: 14px; transition: box-shadow .2s, transform .2s; text-decoration: none; }
+    .ifi-news-thumb { display: block; margin: -22px -22px 0; aspect-ratio: 16 / 9; overflow: hidden; background: var(--cream); }
+    .ifi-news-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .ifi-news-card:hover .ifi-news-thumb img { transform: scale(1.04); }
     .ifi-news-card:hover { box-shadow: 0 10px 28px rgba(28,28,28,.08); transform: translateY(-2px); }
     .ifi-news-tag { display: inline-flex; align-items: center; gap: 6px; font-family: 'Courier Prime', monospace; font-size: .64rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
     .ifi-news-tag.imf { color: var(--b); }
@@ -104,6 +107,10 @@
     .ifi-tl-name { font-size: .78rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 6px; }
     .ifi-tl-desc { font-size: .86rem; color: var(--ink); line-height: 1.7; max-width: 640px; }
 
+    /* Detail pages: full-width article (no sidebar) */
+    #page-ifi-imf .article-layout, #page-ifi-wb .article-layout, #page-ifi-adb .article-layout { grid-template-columns: 1fr; }
+    #page-ifi-imf .article-main, #page-ifi-wb .article-main, #page-ifi-adb .article-main { min-width: 0; }
+
     /* Related studies */
     .ifi-studies { max-width: 1100px; margin: 120px auto 0; padding: 56px 48px 64px; border-top: 1px solid var(--rule); }
     .ifi-studies-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); margin-bottom: 20px; }
@@ -180,7 +187,7 @@
     <div class="page-hero">
       <div class="ph-breadcrumb"><a href="/">Home</a> <span>/</span> Research <span>/</span> IFI Monitor</div>
       <div class="ph-label">Pakistan · IFI Engagement Tracker</div>
-      <h1>Tracking the <em>IMF, World Bank &amp; Asian Development Bank</em> in Pakistan</h1>
+      <h1>Tracking <em>Multilateral Development Banks</em></h1>
       <p>Programmes, conditionalities and disbursement schedules of Pakistan's three major multilateral partners for researchers, policymakers and the public.</p>
     </div>
 
@@ -194,31 +201,37 @@
       </div>
       <div class="ifi-news-grid">
         <a class="ifi-news-card" href="https://www.dawn.com/news/2028892" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/dawn-2028892.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
           <span class="ifi-news-headline">IMF mission due on Sept 23 for biannual review of Pakistan's economic performance</span>
           <div class="ifi-news-foot"><span>Dawn · 10 Sep 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
         <a class="ifi-news-card" href="https://www.dawn.com/news/2013286" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/dawn-2013286.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag wb"><span class="dot"></span> World Bank</span>
           <span class="ifi-news-headline">World Bank and fiscal distribution</span>
           <div class="ifi-news-foot"><span>Dawn · 6 Jul 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
         <a class="ifi-news-card" href="https://www.dawn.com/news/2005041" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/dawn-2005041.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
           <span class="ifi-news-headline">Budget delay</span>
           <div class="ifi-news-foot"><span>Dawn · 4 Jun 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
         <a class="ifi-news-card" href="https://www.reuters.com/world/asia-pacific/imf-wraps-up-talks-with-pakistan-authorities-reforms-budget-2026-05-20/" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/reuters-imf-talks.jpg" alt="" loading="lazy"></span>
           <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
           <span class="ifi-news-headline">IMF wraps up talks with Pakistan authorities on reforms, budget</span>
           <div class="ifi-news-foot"><span>Reuters · 20 May 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
         <a class="ifi-news-card" href="https://www.dawn.com/news/1994349" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/dawn-1994349.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag adb"><span class="dot"></span> ADB</span>
           <span class="ifi-news-headline">ADB deepens Pakistan engagement with $3.67bn commitments, targets fiscal reform and minerals</span>
           <div class="ifi-news-foot"><span>Dawn · 23 Apr 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
         <a class="ifi-news-card" href="https://tribune.com.pk/story/2601931/world-bank-cuts-gdp-forecast-to-3" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/tribune-2601931.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag wb"><span class="dot"></span> World Bank</span>
           <span class="ifi-news-headline">World Bank cuts GDP forecast to 3%</span>
           <div class="ifi-news-foot"><span>The Express Tribune · 10 Apr 2026</span><span class="ifi-news-arrow">→</span></div>
@@ -226,11 +239,13 @@
       </div>
       <div class="ifi-news-grid ifi-news-more">
         <a class="ifi-news-card" href="https://tribune.com.pk/story/2599737/imf-reaches-staff-level-deal-with-pakistan-for-1-2bn-tranche-after-third-eff-review" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/tribune-2599737.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag imf"><span class="dot"></span> IMF</span>
           <span class="ifi-news-headline">IMF reaches staff-level deal with Pakistan for $1.2bn tranche after third EFF review</span>
           <div class="ifi-news-foot"><span>The Express Tribune · 28 Mar 2026</span><span class="ifi-news-arrow">→</span></div>
         </a>
         <a class="ifi-news-card" href="https://www.dawn.com/news/1962241" target="_blank" rel="noopener">
+          <span class="ifi-news-thumb"><img src="assets/ifi-news/dawn-1962241.webp" alt="" loading="lazy"></span>
           <span class="ifi-news-tag wb"><span class="dot"></span> World Bank</span>
           <span class="ifi-news-headline">World Bank approves $700 million for Pakistan's economic stability</span>
           <div class="ifi-news-foot"><span>Dawn · 20 Dec 2025</span><span class="ifi-news-arrow">→</span></div>
@@ -391,7 +406,7 @@
         <p class="sec-sub" style="margin-bottom:0">Six decades of recurring engagement, punctuated by political instability, climate disasters, and geopolitical shocks.</p>
         <div class="ifi-timeline">
           <div class="ifi-tl-item">
-            <div class="ifi-tl-year">1958 →</div>
+            <div class="ifi-tl-year">1958</div>
             <div class="ifi-tl-name">Early Agreements</div>
             <div class="ifi-tl-desc">Pakistan's early agreements with the IMF were mainly Stand-By Arrangements (SBAs) — short-term loans that provide support to meet urgent financing needs.</div>
           </div>
@@ -425,15 +440,6 @@
             <div class="ifi-tl-name">Climate Finance Added</div>
             <div class="ifi-tl-desc">Pakistan added the Resilience and Sustainability Facility (RSF) — tying continued Fund support to climate-related reform milestones.</div>
           </div>
-        </div>
-      </div>
-
-      <div class="article-sidebar">
-        <div class="as-cta-box">
-          <div class="ascb-icon">🏦</div>
-          <h4>Explore PRIED Research</h4>
-          <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
-          <a href="studies" class="as-cta-btn">View Studies →</a>
         </div>
       </div>
     </div>
@@ -481,14 +487,6 @@
           <p style="color:var(--lite);font-size:.85rem">This section is still being finalized — updated data, tables and sourcing to follow.</p>
         </div>
       </div>
-      <div class="article-sidebar">
-        <div class="as-cta-box">
-          <div class="ascb-icon">🏦</div>
-          <h4>Explore PRIED Research</h4>
-          <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
-          <a href="studies" class="as-cta-btn">View Studies →</a>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -513,14 +511,6 @@
           <p><strong>Energy Sector: Overlap with IMF Conditionalities.</strong> ADB has financed generation capacity, grid upgrades, and distribution efficiency programmes that are conceptually aligned with the IMF's circular debt resolution benchmarks and the World Bank's distribution company reform agenda.</p>
           <p><strong>Climate Finance and Disaster Resilience.</strong> Following the 2022 floods, the ADB has increased its commitments to climate adaptation and disaster risk reduction in Pakistan under its Climate Change Action Plan.</p>
           <p style="color:var(--lite);font-size:.85rem">This section is still being finalized — updated data, tables and sourcing to follow.</p>
-        </div>
-      </div>
-      <div class="article-sidebar">
-        <div class="as-cta-box">
-          <div class="ascb-icon">🏦</div>
-          <h4>Explore PRIED Research</h4>
-          <p>Browse our full catalogue of research studies and policy briefs on Pakistan's energy transition and climate justice.</p>
-          <a href="studies" class="as-cta-btn">View Studies →</a>
         </div>
       </div>
     </div>

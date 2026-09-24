@@ -656,14 +656,21 @@
     }
 
     .ac-icon {
-      width: 40px;
-      height: 40px;
+      width: 64px;
+      height: 64px;
       background: var(--bp);
-      border-radius: 10px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--b);
+      overflow: hidden;
+    }
+
+    .ac-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .ac-card h3 {
@@ -970,8 +977,18 @@
     }
 
     .pi-icon {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .pi-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .pi-title {
@@ -1429,7 +1446,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      align-items: center;
+      align-items: stretch;
       margin-top: 52px;
     }
 
@@ -1521,44 +1538,27 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      align-items: start;
+      align-items: stretch;
       margin-top: 52px;
+    }
+
+    .pt-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
     }
 
     .pt-left p {
       font-size: .97rem;
       line-height: 1.9;
       color: #444;
-      margin-bottom: 14px;
+      margin: 0;
     }
 
     .pt-left strong {
       color: var(--ink);
       font-weight: 600;
-    }
-
-    .partner-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .pchip {
-      font-size: .75rem;
-      font-weight: 500;
-      background: #fff;
-      border: 1.5px solid var(--rule);
-      color: var(--mid);
-      padding: 6px 14px;
-      border-radius: 100px;
-      transition: all .2s;
-    }
-
-    .pchip:hover {
-      border-color: var(--b);
-      color: var(--b);
-      background: var(--bp);
     }
 
     .pt-right {
@@ -2216,39 +2216,21 @@
 
         <div class="about-cards rv d2">
           <div class="ac-card">
-            <div class="ac-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                </path>
-              </svg>
-            </div>
+            <div class="ac-icon"><img src="painting-icons/01-write-publish-research_placard.png" alt="People holding placards" loading="lazy"></div>
             <h3>Write and publish research</h3>
             <p>Holding our own in global conversations about transitioning away from fossil fuels, ensuring Pakistan and
               affected communities have a seat at the table.</p>
           </div>
 
           <div class="ac-card">
-            <div class="ac-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                </path>
-              </svg>
-            </div>
+            <div class="ac-icon"><img src="painting-icons/02-bring-people-together_crowd.png" alt="A crowd gathered together" loading="lazy"></div>
             <h3>We bring people together</h3>
             <p>Connecting legislators, policymakers, businesses, activists and communities. The planning and
               decision-making on energy transition touches everyone and should involve everyone.</p>
           </div>
 
           <div class="ac-card">
-            <div class="ac-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                </path>
-              </svg>
-            </div>
+            <div class="ac-icon"><img src="painting-icons/03-empirical-input_power-plant-stack.png" alt="Power plant stack" loading="lazy"></div>
             <h3>Empirical Input</h3>
             <p>Offering empirical, clear and critical feedback to decision-makers. Sometimes that means support,
               sometimes it means
@@ -2320,7 +2302,7 @@
         <div class="pillar-item">
           <div class="pi-num">01</div>
           <div class="pi-meta">
-            <div class="pi-icon">🔬</div>
+            <div class="pi-icon"><img src="painting-icons/04-the-evidence_power-plant.png" alt="Power plant cooling towers" loading="lazy"></div>
             <div class="pi-title">The Evidence</div>
             <div class="pi-tags"><span class="pi-tag">Research Studies</span><span class="pi-tag">Policy Briefs</span>
             </div>
@@ -2336,7 +2318,7 @@
         <div class="pillar-item">
           <div class="pi-num">02</div>
           <div class="pi-meta">
-            <div class="pi-icon">🤝</div>
+            <div class="pi-icon"><img src="painting-icons/05-building-together_village-huts.png" alt="Village huts" loading="lazy"></div>
             <div class="pi-title">Building Together</div>
             <div class="pi-tags"><span class="pi-tag">ACJCE</span><span class="pi-tag">PREC</span><span
                 class="pi-tag">GCEN</span></div>
@@ -2353,7 +2335,7 @@
         <div class="pillar-item">
           <div class="pi-num">03</div>
           <div class="pi-meta">
-            <div class="pi-icon">📢</div>
+            <div class="pi-icon"><img src="painting-icons/06-taking-a-stand_protester.png" alt="A protester" loading="lazy"></div>
             <div class="pi-title">Taking a Stand</div>
             <div class="pi-tags"><span class="pi-tag">Parliament</span><span class="pi-tag">MDB Letters</span></div>
           </div>
@@ -2370,7 +2352,7 @@
         <div class="pillar-item">
           <div class="pi-num">04</div>
           <div class="pi-meta">
-            <div class="pi-icon">🌐</div>
+            <div class="pi-icon"><img src="painting-icons/07-word-out-there_village-well.png" alt="A village well" loading="lazy"></div>
             <div class="pi-title">Getting the Word Out There</div>
             <div class="pi-tags"><span class="pi-tag">Media</span><span class="pi-tag">Communities</span></div>
           </div>
@@ -2711,12 +2693,6 @@
             government representatives and multilateral development banks.
             The letters critique policies, plans, and projects when they fall short of justice.
           </p>
-          <div class="partner-cloud">
-            <span class="pchip">TransitionZero</span><span class="pchip">Urgewald</span><span
-              class="pchip">Recourse</span><span class="pchip">Alt. Law Collective</span><span
-              class="pchip">NUST</span><span class="pchip">Parliamentary Forum</span><span class="pchip">Media
-              Partners</span><span class="pchip">Civil Society Orgs</span>
-          </div>
         </div>
         <div class="pt-right rv d1" id="partnersNetList">
           <div class="pnet-row">
