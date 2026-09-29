@@ -84,6 +84,19 @@
     .ifi-reform-card li { font-size: .84rem; color: var(--ink); line-height: 1.55; padding-left: 16px; position: relative; }
     .ifi-reform-card li::before { content: '–'; position: absolute; left: 0; color: var(--b); }
 
+    /* Section sub-headings within a detail-page article body */
+    .ifi-section-head { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); margin: 40px 0 12px; }
+    .ifi-section-head:first-child { margin-top: 0; }
+
+    /* Ongoing-projects graphic (3 cards) */
+    .ifi-project-block { margin: 28px 0 8px; }
+    .ifi-project-caption { font-family: 'Courier Prime', monospace; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--mid); margin-bottom: 14px; }
+    .ifi-project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .ifi-project-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 20px; text-align: center; }
+    .ipc-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .ifi-project-card h5 { font-size: .86rem; font-weight: 700; color: var(--ink); line-height: 1.4; margin: 0; }
+    .ifi-project-card p { font-size: .78rem; color: var(--mid); margin-top: 6px; line-height: 1.5; }
+
     .ifi-table-wrap { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); overflow: auto; margin-bottom: 12px; }
     .ifi-table { width: 100%; border-collapse: collapse; }
     .ifi-table th { text-align: left; font-family: 'Courier Prime', monospace; font-size: .62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); background: var(--bpp); padding: 12px 18px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
@@ -97,7 +110,7 @@
     .ifi-table-note { font-size: .72rem; color: var(--lite); margin-bottom: 36px; line-height: 1.6; }
 
     /* Timeline */
-    .ifi-timeline-title { display: flex; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 8px 0 6px; }
+    .ifi-timeline-title { display: flex; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 48px 0 6px; }
     .ifi-timeline { position: relative; margin-top: 28px; padding-left: 28px; }
     .ifi-timeline::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 1px; background: var(--rule); }
     .ifi-tl-item { position: relative; padding-bottom: 32px; display: grid; grid-template-columns: 240px 1fr; column-gap: 40px; align-items: start; }
@@ -126,6 +139,7 @@
       .ifi-stats { grid-template-columns: repeat(2, 1fr); }
       .ifi-inst-grid, .ifi-inst-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
       .ifi-reform-grid { grid-template-columns: 1fr; }
+      .ifi-project-grid { grid-template-columns: 1fr; }
       .ifi-studies-grid { grid-template-columns: 1fr; }
       .ifi-studies { padding-left: 20px; padding-right: 20px; }
       .ifi-tl-item { grid-template-columns: 1fr; }
@@ -190,7 +204,7 @@
     <div class="page-hero">
       <div class="ph-breadcrumb"><a href="/">Home</a> <span>/</span> Research <span>/</span> IFI Monitor</div>
       <div class="ph-label">Pakistan · IFI Engagement Tracker</div>
-      <h1>Tracking <em>Multilateral Development Banks</em></h1>
+      <h1>Tracking <em>International Financial Institutions</em></h1>
       <p>Programmes, conditionalities and disbursement schedules of Pakistan's three major multilateral partners for researchers, policymakers and the public.</p>
     </div>
 
@@ -317,6 +331,26 @@
       </div>
     </section>
 
+    <!-- RELATED STUDIES -->
+    <section class="sec" id="related-studies">
+      <div class="sec-title">Related PRIED Studies</div>
+      <div class="sec-sub">Explore our studies examining specific IFI-driven policy reforms in Pakistan, including electricity distribution privatization, electricity subsidy reform, and the captive power levy.</div>
+      <div class="ifi-studies-grid">
+        <a class="ifi-study-card" href="https://www.priedpk.org/Energy%20Monitor/The%20%20Captive%20Power%20Dilemma.pdf" target="_blank" rel="noopener">
+          <h4>The Captive Power Dilemma</h4>
+          <p>Examines Pakistan's captive power levy and whether shifting industry onto the national grid fixes overcapacity and circular debt, or simply punishes industry.</p>
+        </a>
+        <a class="ifi-study-card" href="https://www.priedpk.org/pdfs/Energy-Monitor.pdf" target="_blank" rel="noopener">
+          <h4>Reform or Bust</h4>
+          <p>Weighs privatization, provincialization and management-contract models for fixing Pakistan's loss-ridden DISCOs, drawing on stakeholder interviews and international precedents.</p>
+        </a>
+        <a class="ifi-study-card" href="https://www.priedpk.org/pdfs/QEM-Electricity-subsidies-in-Pakistan-1.pdf" target="_blank" rel="noopener">
+          <h4>Electricity Subsidies in Pakistan</h4>
+          <p>Traces how IMF-mandated fiscal conditions are driving the phase-out of electricity subsidies, and what that means for Pakistan's most vulnerable consumers.</p>
+        </a>
+      </div>
+    </section>
+
   </div>
 
   <!-- ══════════ IMF DETAIL OVERLAY ══════════ -->
@@ -337,7 +371,8 @@
         <div class="article-divider"></div>
 
         <div class="article-body">
-          <p>Pakistan is the world's most frequent IMF-borrower, having engaged with the multilateral lender a record 25 times. It is among the four countries classified by the IMF as "prolonged users" of its resources. Pakistan first turned to the IMF in 1958, just over a decade after independence. At present, Pakistan has a $7 billion arrangement with the Fund under the Extended Fund Facility (EFF), along with additional support through the Resilience and Sustainability Facility (RSF).</p>
+          <p>The International Monetary Fund (IMF, or the Fund) is the lender of last resort for countries facing, or at risk of, balance-of-payments crises. Its lending is conditional: countries must implement agreed policy measures and reforms before funds are released. These conditionalities are one of the principal ways through which the Fund influences economic policy in borrowing countries, with consequences for their citizens, economies, public finances and environment. This makes the Fund's programmes important to scrutinize — not only to track what Pakistan has committed to, but also to examine how these commitments are implemented and what they mean for the country.</p>
+          <p>Pakistan is the world's most frequent IMF borrower, having entered into 25 arrangements with the Fund. It is among the four countries classified by the IMF as "prolonged users" of its resources. Pakistan first turned to the IMF in 1958, just over a decade after independence. At present, Pakistan has a $7 billion arrangement with the Fund under the Extended Fund Facility (EFF), along with additional support through the climate-focused Resilience and Sustainability Facility (RSF).</p>
         </div>
 
         <div class="ifi-facility-toggle" role="tablist">
@@ -394,7 +429,7 @@
                 <tr><td>March 2025</td><td>—</td><td>The programme is approved.</td></tr>
                 <tr><td>September 2025</td><td>$200 million</td><td>RM9: Introduce a supplementary carbon levy on gasoline and diesel.<br>RM10: Introduce EV subsidies and taxes on internal combustion vehicles.</td></tr>
                 <tr><td>March 2026<span class="ifi-pill latest">Last Review</span></td><td>$220 million</td><td>RM7: Issue and adopt climate risk management guidelines for banks.<br>RM8: Adopt a national green finance taxonomy and climate disclosure framework.</td></tr>
-                <tr><td>September 2026<span class="ifi-pill next">Next Review</span></td><td>$220 million</td><td>RM1: Increase the climate change (adaptation and mitigation) weighting in the Public Investment Procedures and Parameters methodology.<br>RM6: Implement the National Disaster Risk Financing Strategy framework.</td></tr>
+                <tr><td>September 2026<span class="ifi-pill next">Next Review</span></td><td>$220 million</td><td>RM1: Increase climate change weighting in public projects.<br>RM6: Implement the National Disaster Risk Financing Strategy framework.</td></tr>
                 <tr><td>March 2027</td><td>$220 million</td><td>RM5: Introduce irrigation water tariff adjustments to recover costs.<br>RM11: Establish a PPP viability gap funding framework for EV charging infrastructure.<br>RM12: Replace electricity tariff subsidies with targeted support for low-income consumers.</td></tr>
                 <tr><td>September 2027</td><td>—</td><td>RM2: Require climate screening for major infrastructure projects in the PSDP.<br>RM3: Expand the federal climate budget-tagging framework.<br>RM4: Implement the e-Abiana irrigation water charge collection system.<br>RM13: Introduce minimum energy performance standards for electric appliances.</td></tr>
                 <tr class="total"><td>Total</td><td>~$1.1 billion</td><td></td></tr>
@@ -483,11 +518,65 @@
         <h1>The World Bank in Pakistan: Social Protection, Energy Reform, and Evolving Conditionalities</h1>
         <div class="article-divider"></div>
         <div class="article-body">
-          <p>The World Bank Group maintains one of its largest country programmes globally in Pakistan. With a cumulative lending portfolio approaching $44 billion and an active pipeline exceeding $12 billion, the Bank's footprint spans virtually every major sector of the Pakistani economy — from social protection and education to energy, transport, and climate resilience.</p>
-          <p><strong>BISP and the Social Protection Agenda.</strong> Perhaps the Bank's most visible intervention is its co-financing and technical support for the Benazir Income Support Programme (BISP), now rebranded under the Kafaalat framework. The programme reaches approximately 9 million beneficiary families and is increasingly central to Pakistan's strategy for cushioning the social costs of IMF-mandated fiscal adjustment.</p>
-          <p><strong>Energy Sector Lending and Circular Debt.</strong> Energy sector reform accounts for a significant portion of the Bank's active portfolio in Pakistan. The circular debt crisis — a structural accumulation of payment arrears across the power sector — has become a major focus of World Bank policy dialogue and conditioned lending.</p>
-          <p><strong>Climate Finance and IDA21.</strong> Following the catastrophic 2022 floods, the Bank deployed emergency financing and has since committed to scaling climate-related lending under the new IDA21 replenishment cycle. Pakistan is designated as a climate-vulnerable country eligible for enhanced concessional terms.</p>
-          <p style="color:var(--lite);font-size:.85rem">This section is still being finalized — updated data, tables and sourcing to follow.</p>
+          <h3 class="ifi-section-head">The World Bank &amp; Pakistan</h3>
+          <p>Pakistan's relationship with the World Bank is one of the longest and most extensive in the developing world. Since joining the institution in 1950, Pakistan has received close to $50 billion in assistance. Today, it has one of the largest active portfolios of the World Bank, with over 100 ongoing projects. These cover areas like energy, water, education, and climate resilience. In 2025, the World Bank and the Government of Pakistan launched a new decade-long <strong>Country Partnership Framework (CPF)</strong>, worth about $20 billion, to support economic stabilization and inclusive growth.</p>
+
+          <div class="ifi-project-block">
+            <div class="ifi-project-caption">World Bank's ongoing projects in Pakistan:</div>
+            <div class="ifi-project-grid">
+              <div class="ifi-project-card">
+                <div class="ipc-icon">⚡</div>
+                <h5>Boosting Energy Security through Transmission (BEST-PAK)</h5>
+              </div>
+              <div class="ifi-project-card">
+                <div class="ipc-icon">💰</div>
+                <h5>Public Resources for Inclusive Development (PRID)</h5>
+                <p>Involves electricity subsidy reform.</p>
+              </div>
+              <div class="ifi-project-card">
+                <div class="ipc-icon">🏞️</div>
+                <h5>Gabral-Kalam Hydropower Project</h5>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="ifi-section-head">History of the World Bank</h3>
+          <p>The World Bank was established in 1944 as the International Bank for Reconstruction and Development (IBRD), alongside the International Monetary Fund (IMF) at Bretton Woods. Initially, its purpose was to rebuild war-torn economies after the Second World War. Over time, however, its focus shifted toward long-term development financing in low- and middle-income countries, guided by its twin goals of ending extreme poverty and promoting shared prosperity. The Bank is now part of a group of five institutions called the World Bank Group (WBG). For developing countries like Pakistan, it mainly works through the IBRD and the International Development Association (IDA), which gives concessional loans and grants.</p>
+
+          <h3 class="ifi-section-head">Early Engagements and Landmark Projects</h3>
+          <p>Pakistan's engagement with the Bank dates back to the early years of its independence.</p>
+          <div class="ifi-timeline">
+            <div class="ifi-tl-item">
+              <div class="ifi-tl-year">1960</div>
+              <div class="ifi-tl-name">The Indus Waters Treaty</div>
+              <div class="ifi-tl-desc">In the 1950s, the World Bank played a crucial mediating role in resolving the Indus Waters dispute between Pakistan and India. This mediation culminated in the Indus Waters Treaty of 1960, which remains a cornerstone of water management and regional stability to this day.</div>
+            </div>
+            <div class="ifi-tl-item">
+              <div class="ifi-tl-year">1970s</div>
+              <div class="ifi-tl-name">The Tarbela Dam</div>
+              <div class="ifi-tl-desc">The Bank helped finance the Tarbela Dam, one of Pakistan's most ambitious infrastructure projects, on the Indus River. While it provided much-needed hydropower and irrigation benefits, it also displaced thousands of people and submerged dozens of villages, raising concerns about the Bank's resettlement and environmental safeguards.</div>
+            </div>
+            <div class="ifi-tl-item">
+              <div class="ifi-tl-year">1988</div>
+              <div class="ifi-tl-name">Private Sector Energy Development Project</div>
+              <div class="ifi-tl-desc">By the late 1980s, Pakistan faced chronic power shortages that constrained economic growth. The World Bank responded by launching the Private Sector Energy Development Project (PSEDP), aimed at attracting private investment to expand power generation capacity.</div>
+            </div>
+            <div class="ifi-tl-item">
+              <div class="ifi-tl-year">1994</div>
+              <div class="ifi-tl-name">Policy Framework for Private Power</div>
+              <div class="ifi-tl-desc">PSEDP laid the groundwork for Pakistan's 1994 Policy Framework and Package of Incentives for Private Sector Power Generation, which offered generous fiscal and tariff guarantees to Independent Power Producers (IPPs). The policy led to the establishment of the country's first major private power plant, HUBCO, and marked the beginning of large-scale private participation in Pakistan's energy sector.</div>
+            </div>
+          </div>
+
+          <h3 class="ifi-section-head">The Costs of Liberalization</h3>
+          <p>While these reforms were meant to mobilize private capital and end energy shortages, they also introduced structural imbalances that continue to burden Pakistan's economy. By the late 1990s, the share of hydropower in electricity generation had fallen from 47% to 29%, while reliance on imported fossil fuels rose sharply. Between 1996 and 2001, electricity tariffs increased by about 60%, and the cost of purchasing power from IPPs came to account for nearly half of WAPDA's operating expenses.</p>
+          <p>The heavy contractual obligations under the Bank-backed policy soon led to disputes. In 1998, the government issued multiple Notices of Intent to Terminate against IPPs on grounds of corruption and technical irregularities, while private producers accused the state of violating contracts. Both sides eventually turned to the World Bank for arbitration, highlighting the tensions between its role as a policy advisor and that of a neutral mediator.</p>
+
+          <h3 class="ifi-section-head">The Energy Paradox</h3>
+          <p>Ironically, while the World Bank's 1990s policy advice helped entrench a carbon-intensive and expensive fuel mix, it now seeks to reverse those very outcomes. Under the new Program for Affordable and Clean Energy (PACE), valued at $40 billion, the Bank aims to reduce generation costs and decarbonize Pakistan's energy sector by promoting renewable energy and efficiency reforms. However, this effort underscores a paradox: the same institution that once encouraged fossil fuel–based private power expansion must now help the country pivot toward cleaner alternatives.</p>
+
+          <h3 class="ifi-section-head">Conclusion</h3>
+          <p>The World Bank has played a defining role in shaping Pakistan's development trajectory, from mediating the Indus Waters Treaty and financing dams to restructuring the power sector and advising on private participation. While its projects have delivered institutional support, they have also produced social, environmental, and fiscal trade-offs. The Bank's challenge now lies in reconciling its historical emphasis on liberalization with the urgent need for inclusive and sustainable growth. To move beyond past missteps, its future engagement must ensure that development financing strengthens not only economic stability but also social equity, environmental resilience, and energy justice in Pakistan.</p>
         </div>
       </div>
     </div>
@@ -509,7 +598,26 @@
         <h1>ADB and Pakistan: Infrastructure Investment, Energy Reform, and Multilateral Coordination</h1>
         <div class="article-divider"></div>
         <div class="article-body">
-          <p>The Asian Development Bank is Pakistan's single largest multilateral development partner by annual approved financing. In 2025, the ADB committed approximately $3.67 billion to Pakistan — a 22% increase from the prior year — funding fiscal reform, infrastructure, women's economic empowerment, mineral sector development, and education programmes.</p>
+          <p>Pakistan has been a member of the Asian Development Bank (ADB) since 1966 and is one of the institution's largest recipients of development financing. As of end-2025, ADB had committed $45.8 billion through 789 public-sector loans, grants, guarantees and technical assistance to Pakistan. Its support spans infrastructure, energy, agriculture, social protection, public finance and private-sector development. ADB recently launched a new Country Partnership Strategy (CPS) for Pakistan covering 2026–2030.</p>
+
+          <div class="ifi-project-block">
+            <div class="ifi-project-caption">ADB's projects in Pakistan:</div>
+            <div class="ifi-project-grid">
+              <div class="ifi-project-card">
+                <div class="ipc-icon">🔋</div>
+                <h5>Grid-Integrated Battery Energy Storage System</h5>
+              </div>
+              <div class="ifi-project-card">
+                <div class="ipc-icon">🏭</div>
+                <h5>Jamshoro Coal Power Plant</h5>
+              </div>
+              <div class="ifi-project-card">
+                <div class="ipc-icon">💧</div>
+                <h5>Chashma Right Bank Irrigation Project</h5>
+              </div>
+            </div>
+          </div>
+
           <p><strong>Infrastructure and Transport Corridors.</strong> ADB's lending to Pakistan's transport sector has historically focused on national highway upgrades, regional connectivity, and urban mass transit, including co-financing of the Lahore Orange Line Metro project.</p>
           <p><strong>Energy Sector: Overlap with IMF Conditionalities.</strong> ADB has financed generation capacity, grid upgrades, and distribution efficiency programmes that are conceptually aligned with the IMF's circular debt resolution benchmarks and the World Bank's distribution company reform agenda.</p>
           <p><strong>Climate Finance and Disaster Resilience.</strong> Following the 2022 floods, the ADB has increased its commitments to climate adaptation and disaster risk reduction in Pakistan under its Climate Change Action Plan.</p>

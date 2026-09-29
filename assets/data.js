@@ -16,7 +16,7 @@ const ARTICLES = {
     ],
     tags: ["Women", "EVs", "Electric Mobility", "Gender", "Energy Transition", "PAVE", "Mobility"],
     authorDesc: "Zahra Naeem and Laiba Nayyab are researchers at PRIED covering energy, gender and climate justice in Pakistan.",
-    related: ["solar-gender", "net-metering", "distributed-solar"]
+    related: ["net-metering", "distributed-solar", "sahiwal"]
   },
   'crossroads': {
     title: "Pakistan at energy crossroads",
@@ -41,23 +41,7 @@ const ARTICLES = {
       `The stated rationale behind this development — which could mean longer payback periods and lower overnight returns — is the need to address the technical, financial and equity concerns that have emerged from the mushrooming growth of solar power in Pakistan over the last couple of years. Under the changes, the buyback rate for electricity exported to the grid by solarised consumers has been reduced from the existing Rs26 per unit to Rs11 per unit. The new export rate broadly reflects the national average energy purchase price at which the government purchases electricity from power plants.`
     ],
     tags: ["Net Metering", "Solar", "Prosumers", "Tariffs", "Policy"],
-    related: ["solar-gender", "33gw", "taxing-solar"]
-  },
-  'solar-gender': {
-    title: "Pakistan's solar shift has a <em>gender problem</em>",
-    tag: "Gender & Energy", date: "24 December 2025",
-    author: "Zahra Naeem",
-    url: "https://www.dawn.com/news/1962618/pakistans-solar-shift-has-a-gender-problem", sourceName: "Dawn",
-    img: "assets/uploads/2025/12/2317433207e27f0.jpeg",
-    body: [
-      `In a quiet Rawalpindi neighbourhood, where the power grid often dictates the rhythm of life, one family has transitioned from stopgap solutions to a more sun-powered reality. Their journey into solar energy was not just a financial calculation, but a response to a two-decade fight with an unreliable power supply.`,
-      `"It was one hour off and one hour on," recalls Rubab, a 40-year-old housewife and resident of the Marir Hassan neighbourhood. After struggling with frail UPS batteries for years, she finally invested in solar panels about a year and a half ago — at a high personal cost.`,
-      `"I sold my gold to buy these solar panels for our home," she tells Dawn. "Women are expected to make these sacrifices for the household. Even my sister had to install solar on installments, that is the only way families like ours can afford it."`,
-      `The decision to shift to solar, she recounts, was both hers and her husband's, influenced by relatives who had already made the transition. Their purchase, however, was isolated from their understanding of the technical system they had scrambled to secure.`
-    ],
-    tags: ["Solar", "Gender & Energy", "Energy Access", "Distributed Solar"],
-    authorDesc: "Zahra Naeem is a journalist and researcher covering energy, climate and gender in Pakistan. This article was originally published in Dawn.",
-    related: ["33gw", "distributed-solar", "net-metering"]
+    related: ["33gw", "taxing-solar", "sahiwal"]
   },
   'sahiwal': {
     title: "Sahiwal's Megawatts of Betrayal",
@@ -112,7 +96,7 @@ const ARTICLES = {
       `PRIED's survey, however, reveals that 33.35 GW of imported panels have been installed across residential, commercial, industrial, and agricultural sectors, including 19 GW of non-net-metered and 8.3 GW of off-grid systems. In households, adoption rises with income — 38% among low spenders versus 88% among high spenders — reflecting affordability gaps. In contrast, agricultural uptake is highest among low-income farmers (85%), driven by the need for reliable and cheaper power.`
     ],
     tags: ["Solar", "Distributed Solar", "Research", "Data", "TransitionZero"],
-    related: ["33gw", "solarisation", "solar-gender"]
+    related: ["33gw", "solarisation", "net-metering"]
   },
   'climate-justice': {
     title: "Climate Justice: holding the green house elite accountable",
