@@ -327,7 +327,6 @@
       padding: 120px 48px 56px;
       max-width: 1100px;
       margin: 0 auto;
-      border-bottom: 1px solid var(--rule);
     }
 
     .ph-breadcrumb {

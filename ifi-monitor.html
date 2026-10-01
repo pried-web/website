@@ -33,6 +33,40 @@
     .ifi-news-tag.wb { color: var(--green, #1a9c74); }
     .ifi-news-tag.adb { color: var(--gold); }
     .ifi-news-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+    /* Project locations map */
+    .ifi-map-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 18px; align-items: stretch; grid-auto-rows: 520px; }
+    .ifi-map-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; min-width: 0; display: flex; flex-direction: column; }
+    .ifi-map-list-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; min-width: 0; overflow-y: auto; }
+    .ifi-map-list-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .07em; color: var(--mid); font-weight: 600; margin-bottom: 14px; }
+    .ifi-map-list-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid var(--rule); }
+    .ifi-map-list-item:first-child { border-top: none; padding-top: 0; }
+    .imli-tag { flex-shrink: 0; font-family: 'Courier Prime', monospace; font-size: .6rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; white-space: nowrap; margin-top: 2px; }
+    .imli-tag.imf { color: var(--b); background: rgba(29,110,181,.1); }
+    .imli-tag.wb { color: #1a9c74; background: rgba(26,156,116,.1); }
+    .imli-tag.adb { color: var(--gold); background: rgba(200,149,12,.12); }
+    .imli-name { font-weight: 600; font-size: .86rem; color: var(--ink); line-height: 1.35; margin-bottom: 2px; }
+    .imli-meta { font-size: .76rem; color: var(--mid); }
+    .ifi-map-svg { width: 100%; flex: 1; min-height: 0; display: block; overflow: visible; }
+    .ifi-map-province { stroke: #fff; stroke-width: 3; }
+    .ifi-map-province.disputed { fill: #f2f2f0; stroke-dasharray: 6 5; stroke: var(--rule); }
+    .ifi-marker { cursor: pointer; }
+    .ifi-marker .im-shape { stroke: #fff; stroke-width: 3; transition: transform .15s ease, filter .15s ease; transform-box: fill-box; transform-origin: center; }
+    .ifi-marker:hover .im-shape { transform: scale(1.25); filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)); }
+    .ifi-marker.imf .im-shape { fill: var(--b); }
+    .ifi-marker.wb .im-shape { fill: #1a9c74; }
+    .ifi-marker.adb .im-shape { fill: var(--gold); }
+    .ifi-map-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .78rem; color: var(--mid); }
+    .ifi-map-legend-item { display: flex; align-items: center; gap: 7px; }
+    .ifi-map-legend-item svg { flex-shrink: 0; }
+    .ifi-map-tooltip { position: fixed; z-index: 500; pointer-events: none; background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; box-shadow: 0 10px 28px rgba(28,28,28,.14); font-size: .8rem; max-width: 220px; opacity: 0; transition: opacity .12s ease; }
+    .ifi-map-tooltip.show { opacity: 1; }
+    .ifi-map-tooltip .imt-org { font-family: 'Courier Prime', monospace; font-size: .62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+    .ifi-map-tooltip .imt-org.imt-imf { color: var(--b); }
+    .ifi-map-tooltip .imt-org.imt-wb { color: #1a9c74; }
+    .ifi-map-tooltip .imt-org.imt-adb { color: var(--gold); }
+    .ifi-map-tooltip .imt-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; line-height: 1.3; }
+    .ifi-map-tooltip .imt-meta { color: var(--mid); }
     .ifi-news-headline { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
     .ifi-news-card:hover .ifi-news-headline { color: var(--b); }
     .ifi-news-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .74rem; color: var(--lite); margin-top: auto; }
@@ -92,7 +126,8 @@
     .ifi-project-block { margin: 28px 0 8px; }
     .ifi-project-caption { font-family: 'Courier Prime', monospace; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--mid); margin-bottom: 14px; }
     .ifi-project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .ifi-project-card { background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 20px; text-align: center; }
+    .ifi-project-card { display: block; background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 20px; text-align: center; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
+    a.ifi-project-card:hover { box-shadow: 0 8px 22px rgba(28,28,28,.08); transform: translateY(-2px); }
     .ipc-icon { font-size: 1.8rem; margin-bottom: 10px; }
     .ifi-project-card h5 { font-size: .86rem; font-weight: 700; color: var(--ink); line-height: 1.4; margin: 0; }
     .ifi-project-card p { font-size: .78rem; color: var(--mid); margin-top: 6px; line-height: 1.5; }
@@ -144,6 +179,9 @@
       .ifi-studies { padding-left: 20px; padding-right: 20px; }
       .ifi-tl-item { grid-template-columns: 1fr; }
       .ifi-tl-desc { grid-column: 1; grid-row: auto; }
+      .ifi-map-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+      .ifi-map-card { height: 380px; }
+      .ifi-map-list-card { max-height: 420px; }
     }
     @media (max-width: 600px) {
       .ifi-news-grid { grid-template-columns: 1fr; }
@@ -282,6 +320,27 @@
         <div><div class="num">$<span>3.67</span>B</div><div class="lbl">ADB Commitments (2025)</div></div>
       </div>
     </div>
+
+    <!-- PROJECT LOCATIONS MAP -->
+    <section class="sec" id="project-map">
+      <div class="sec-title">Where Multilateral Finance Meets Pakistan</div>
+      <div class="sec-sub">A map of named IMF, World Bank and ADB-funded projects referenced in this tracker. Hover a marker for details.</div>
+      <div class="ifi-map-grid">
+        <div class="ifi-map-card">
+          <svg class="ifi-map-svg" id="ifiMap" viewBox="0 0 2750 2000" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="ifi-map-legend">
+            <div class="ifi-map-legend-item"><svg width="16" height="16" viewBox="0 0 20 20"><polygon points="10,2 18,17 2,17" fill="var(--b)"/></svg> IMF</div>
+            <div class="ifi-map-legend-item"><svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="#1a9c74"/></svg> World Bank</div>
+            <div class="ifi-map-legend-item"><svg width="16" height="16" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2" fill="var(--gold)"/></svg> ADB</div>
+          </div>
+        </div>
+        <div class="ifi-map-list-card">
+          <div class="ifi-map-list-title">All Projects</div>
+          <div id="ifiMapList"></div>
+        </div>
+      </div>
+    </section>
+    <div class="ifi-map-tooltip" id="ifiMapTooltip"></div>
 
     <!-- IMF -->
     <section class="sec ifi-inst-section" id="imf">
@@ -526,15 +585,17 @@
               <div class="ifi-project-card">
                 <div class="ipc-icon">⚡</div>
                 <h5>Boosting Energy Security through Transmission (BEST-PAK)</h5>
+                <p>Focused on expanding and upgrading Pakistan's electricity transmission network — $375.9 million.</p>
               </div>
               <div class="ifi-project-card">
                 <div class="ipc-icon">💰</div>
                 <h5>Public Resources for Inclusive Development (PRID)</h5>
-                <p>Involves electricity subsidy reform.</p>
+                <p>Supporting reforms in public-resource management, including electricity subsidy reform — $700 million.</p>
               </div>
               <div class="ifi-project-card">
                 <div class="ipc-icon">🏞️</div>
                 <h5>Gabral-Kalam Hydropower Project</h5>
+                <p>Development of an 88 MW hydropower project in Swat.</p>
               </div>
             </div>
           </div>
@@ -604,16 +665,19 @@
             <div class="ifi-project-grid">
               <div class="ifi-project-card">
                 <div class="ipc-icon">🔋</div>
-                <h5>Grid-Integrated Battery Energy Storage System</h5>
+                <h5>Grid-Integrated Battery System</h5>
+                <p>Proposed utility-scale battery storage installations along Pakistan's transmission network — $250 million.</p>
               </div>
               <div class="ifi-project-card">
                 <div class="ipc-icon">🏭</div>
-                <h5>Jamshoro Coal Power Plant</h5>
+                <h5>Jamshoro Power Plant</h5>
+                <p>Construction of a 600 MW coal-fired power unit at Jamshoro, Sindh — $691 million.</p>
               </div>
-              <div class="ifi-project-card">
+              <a class="ifi-project-card" href="https://www.adb.org/projects/46528-002/main" target="_blank" rel="noopener">
                 <div class="ipc-icon">💧</div>
-                <h5>Chashma Right Bank Irrigation Project</h5>
-              </div>
+                <h5>Jalalpur Irrigation Project</h5>
+                <p>Development of irrigation infrastructure in Jalalpur Sharif, Punjab — $273 million.</p>
+              </a>
             </div>
           </div>
           <p style="color:var(--lite);font-size:.85rem">This section is still being finalized — updated data, tables and sourcing to follow.</p>
@@ -674,6 +738,7 @@
     </div>
   </footer>
 
+  <script src="assets/ifi-map-data.js"></script>
   <script src="assets/site.js" defer></script>
   <script>
     function openIfiDetail(id) {
@@ -697,6 +762,74 @@
       document.querySelector('.ifi-news-more').classList.add('is-visible');
       document.getElementById('ifiNewsLoadMore').style.display = 'none';
     }
+
+    /* ── Project locations map ── */
+    (function renderIfiMap() {
+      const mapEl = document.getElementById('ifiMap');
+      if (!mapEl || typeof IFI_MAP === 'undefined') return;
+      const paths = IFI_MAP.paths;
+      const provinceOrder = ["IAJK", "Siachen", "GB", "AJK", "KPK", "Punjab", "Sindh", "Balochistan", "ICT"];
+      const fills = { Punjab: "var(--bp)", Sindh: "var(--bpp)", Balochistan: "var(--cream)", KPK: "var(--warm)", AJK: "#f2f2f0", GB: "#f2f2f0", ICT: "var(--bp)", IAJK: "#f7f7f5", Siachen: "#f7f7f5" };
+      let svg = '';
+      provinceOrder.forEach(id => {
+        if (!paths[id]) return;
+        const cls = (id === 'IAJK' || id === 'Siachen') ? 'ifi-map-province disputed' : 'ifi-map-province';
+        svg += `<path class="${cls}" d="${paths[id]}" fill="${fills[id]}"></path>`;
+      });
+      const orgLabel = { imf: 'IMF', wb: 'World Bank', adb: 'ADB' };
+      const orgLabelShort = { imf: 'IMF', wb: 'WB', adb: 'ADB' };
+      IFI_MAP.projects.forEach((p, i) => {
+        const x = p.x, y = p.y;
+        let shape = '';
+        if (p.org === 'imf') shape = `<polygon class="im-shape" points="${x},${y - 32} ${x - 28},${y + 20} ${x + 28},${y + 20}"></polygon>`;
+        else if (p.org === 'wb') shape = `<circle class="im-shape" cx="${x}" cy="${y}" r="26"></circle>`;
+        else shape = `<rect class="im-shape" x="${x - 23}" y="${y - 23}" width="46" height="46" rx="6"></rect>`;
+        svg += `<g class="ifi-marker ${p.org}" data-i="${i}">${shape}</g>`;
+      });
+      mapEl.innerHTML = svg;
+
+      const listEl = document.getElementById('ifiMapList');
+      if (listEl) {
+        listEl.innerHTML = IFI_MAP.projects.map(p => `
+          <div class="ifi-map-list-item">
+            <span class="imli-tag ${p.org}">${orgLabelShort[p.org]}</span>
+            <div>
+              <div class="imli-name">${p.name}</div>
+              <div class="imli-meta">${p.type} · ${p.location}</div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const tooltip = document.getElementById('ifiMapTooltip');
+      function showTooltip(e, p) {
+        tooltip.innerHTML = `
+          <div class="imt-org imt-${p.org}">${orgLabel[p.org]}</div>
+          <div class="imt-name">${p.name}</div>
+          <div class="imt-meta">${p.type} · ${p.location}</div>
+        `;
+        tooltip.classList.add('show');
+        moveTooltip(e);
+      }
+      function moveTooltip(e) {
+        const pad = 16;
+        let left = e.clientX + pad, top = e.clientY + pad;
+        const tw = tooltip.offsetWidth || 220, th = tooltip.offsetHeight || 70;
+        if (left + tw > window.innerWidth - 10) left = e.clientX - tw - pad;
+        if (top + th > window.innerHeight - 10) top = e.clientY - th - pad;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+      }
+      function hideTooltip() { tooltip.classList.remove('show'); }
+
+      mapEl.querySelectorAll('.ifi-marker').forEach(g => {
+        const p = IFI_MAP.projects[+g.dataset.i];
+        g.addEventListener('mouseenter', e => showTooltip(e, p));
+        g.addEventListener('mousemove', moveTooltip);
+        g.addEventListener('mouseleave', hideTooltip);
+        g.addEventListener('touchstart', e => { showTooltip(e.touches[0], p); }, { passive: true });
+      });
+    })();
   </script>
 </body>
 

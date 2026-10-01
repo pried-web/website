@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const pager = document.getElementById('mmPagination');
       const chips = document.querySelectorAll('#mm-filter .filter-chip');
       const esc = s => String(s).replace(/"/g, '&quot;');
-      const weekly = WEEKLY_MM.map(r => ({ t: mmTitle(r[0]), y: (r[0].match(/20\d\d/) || [''])[0], img: r[1], pdf: r[2], type: 'Weekly Media Monitor', cat: 'weekly' }));
+      const weekly = WEEKLY_MM.map(r => ({ t: mmTitle(r[0]), y: (r[0].match(/20\d\d/) || [''])[0], img: r[1], pdf: r[2], detail: r[3] || null, type: 'Weekly Media Monitor', cat: 'weekly' }));
       const biweekly = BIWEEKLY_MM.map(r => ({ t: mmTitle(r[0]), y: (r[0].match(/20\d\d/) || [''])[0], img: r[1], pdf: r[2], type: 'Bi-Weekly Media Monitor', cat: 'biweekly' }));
       const six = SIXMONTH_MM.map(o => Object.assign({ type: 'Six-Monthly Media Monitor', cat: 'six' }, o));
       const all = weekly.concat(biweekly).concat(six);
@@ -379,10 +379,13 @@ document.addEventListener('DOMContentLoaded', () => {
       let filter = 'all', query = '', page = 1; const perPage = 15;
 
       function monCard(o) {
-        return '<a class="study-card mon-card" href="' + o.pdf + '" target="_blank" rel="noopener">' +
+        const href = o.detail ? ('media-monitor?slug=' + o.detail) : o.pdf;
+        const target = o.detail ? '' : ' target="_blank" rel="noopener"';
+        const label = o.detail ? 'View Details →' : '↓ PDF';
+        return '<a class="study-card mon-card" href="' + href + '"' + target + '>' +
           '<div class="study-card-img"><img src="' + o.img + '" alt="' + esc(o.t) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><div class="study-card-img-placeholder" style="display:none"><span>📰</span></div></div>' +
           '<div class="study-card-body"><div class="sc-type">' + o.type + '</div><h3>' + o.t + '</h3>' +
-          '<div class="sc-footer"><span class="sc-year">' + (o.y || '') + '</span><span class="sc-dl">↓ PDF</span></div></div></a>';
+          '<div class="sc-footer"><span class="sc-year">' + (o.y || '') + '</span><span class="sc-dl">' + label + '</span></div></div></a>';
       }
       function list() {
         let L = filter === 'all' ? all : all.filter(x => x.cat === filter);

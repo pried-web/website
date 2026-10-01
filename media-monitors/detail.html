@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Media Monitor — PRIED</title>
+<meta name="description" content="PRIED's Weekly Media Monitor — a breakdown of Pakistani media coverage of energy and climate issues, by sector.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/mono.png">
+<link rel="apple-touch-icon" href="/mono.png">
+<link rel="stylesheet" href="/assets/styles.css">
+<style>
+  /* ── WEEKLY MEDIA MONITOR — page-scoped styles (built on the shared token set in assets/styles.css) ── */
+  #page-mm { overflow-x: hidden; }
+  #page-mm .wrap { max-width: 1100px; margin: 0 auto; padding-left: 48px; padding-right: 48px; }
+
+  /* Hero — built on the shared .page-hero pattern used sitewide */
+  .mm-hero-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+  .mm-date-pill { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 10px 20px; font-size: .88rem; font-weight: 600; color: var(--ink); box-shadow: 0 2px 10px rgba(28,28,28,.04); }
+  .mm-hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .mm-dl-btn { display: inline-flex; align-items: center; gap: 7px; font-size: .82rem; font-weight: 600; color: var(--b); padding: 8px 4px; }
+  .mm-dl-btn:hover { text-decoration: underline; }
+  /* Highlights */
+  .mm-sec { padding: 56px 0; }
+  .mm-highlights { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+  .mm-h-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--ink); margin-bottom: 18px; }
+  .mm-h-nav { display: flex; align-items: center; gap: 10px; }
+  .mm-h-nav button { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--rule); background: #fff; cursor: pointer; font-size: .9rem; color: var(--ink); transition: all .2s; }
+  .mm-h-nav button:hover { border-color: var(--b); color: var(--b); }
+  .mm-h-counter { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--mid); }
+  .mm-h-counter strong { color: var(--ink); font-weight: 700; }
+  .mm-h-text { font-size: 1.05rem; line-height: 1.75; color: var(--ink); min-height: 4.5em; }
+  .mm-h-progress { display: flex; gap: 6px; margin-top: 22px; }
+  .mm-h-progress span { flex: 1; height: 3px; border-radius: 3px; background: var(--rule); overflow: hidden; cursor: pointer; }
+  .mm-h-progress span i { display: block; height: 100%; width: 0; background: var(--b); }
+
+  /* Sector breakdown */
+  .mm-sec-title { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: rgb(43,43,43); margin-bottom: 6px; }
+  .mm-sub { font-size: .9rem; color: var(--mid); margin: 0 0 28px; }
+  .mm-sector-grid { display: grid; grid-template-columns: minmax(0,0.7fr) minmax(0,1.8fr) minmax(0,0.7fr); grid-template-areas: "re donut ef" "coal donut cc" ". og ."; gap: 24px; align-items: center; }
+  .mm-sector-grid .s-renewable { grid-area: re; }
+  .mm-sector-grid .s-energy-finance { grid-area: ef; }
+  .mm-sector-grid .s-coal { grid-area: coal; }
+  .mm-sector-grid .s-climate { grid-area: cc; }
+  .mm-sector-grid .s-oil { grid-area: og; }
+  .mm-donut-wrap { grid-area: donut; position: relative; width: 100%; max-width: 820px; margin: 0 auto; align-self: center; padding: 10px 0; }
+  .mm-donut-svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .mm-donut-wedge { cursor: pointer; transform-origin: 240px 240px; opacity: 0; transform: scale(.55) rotate(-6deg); transition: transform .5s cubic-bezier(.22,1.3,.36,1), filter .15s ease, opacity .5s ease; }
+  .mm-donut-wedge.revealed { opacity: 1; transform: scale(1) rotate(0deg); }
+  .mm-donut-wedge.revealed:hover, .mm-donut-wedge.revealed.active { transform: scale(1.045) rotate(0deg); filter: brightness(1.08); }
+  .mm-donut-pct-outside { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; fill: #999; opacity: 0; transition: opacity .4s ease, transform .4s ease; transform: translateY(4px); }
+  .mm-donut-pct-outside.revealed { opacity: 1; transform: translateY(0); }
+  .mm-donut-bg-circle { opacity: 0; transition: opacity .5s ease .4s; }
+  .mm-donut-bg-circle.revealed { opacity: 1; }
+  .mm-donut-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+  .mm-donut-center-inner { width: 42%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; opacity: 0; transform: scale(.85); transition: opacity .5s ease .5s, transform .5s cubic-bezier(.22,1.3,.36,1) .5s; }
+  .mm-donut-center-inner.revealed { opacity: 1; transform: scale(1); }
+  .mm-donut-center img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 10px; }
+  .mm-donut-center strong { font-family: 'Fraunces', Georgia, serif; font-size: 21px; font-weight: 600; color: rgb(43,43,43); line-height: 1.25; }
+  .mm-donut-center span { display: block; font-family: 'Inter', sans-serif; font-size: 15px; color: #666; margin-top: 4px; }
+  .mm-donut-center .mm-dc-pct { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 600; line-height: 1; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+  .mm-donut-center .mm-dc-name { font-family: 'Fraunces', Georgia, serif; font-size: 21px; font-weight: 600; color: rgb(43,43,43); }
+  .mm-donut-center .mm-dc-sub { font-family: 'Inter', sans-serif; font-size: 15px; color: #777; margin-top: 4px; }
+
+  .mm-sector-card { background: #fbfaf8; border-radius: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); min-width: 0; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .25s ease, transform .25s ease; }
+  .mm-sector-card.flash-hover { box-shadow: 0 6px 20px rgba(30,107,184,.15), 0 0 0 2px var(--bp); transform: translateY(-3px); }
+  .mm-sector-card:hover { box-shadow: 0 6px 20px rgba(30,107,184,.12), 0 0 0 2px var(--bp); transform: translateY(-3px); }
+  .mm-sc-head { padding: 22px 22px 18px; }
+  .mm-sc-name { display: flex; align-items: center; gap: 9px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20px; color: rgb(43,43,43); margin-bottom: 6px; }
+  .mm-sc-name .dot { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
+  .mm-sc-count { font-family: 'Inter', sans-serif; font-size: 13px; color: #777; margin-bottom: 14px; }
+  .mm-sc-pct { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 40px; color: #1e6bb8; line-height: 1; margin-bottom: 14px; font-variant-numeric: tabular-nums; }
+  .mm-sc-bar { height: 6px; border-radius: 3px; background: #ebe9e4; overflow: hidden; }
+  .mm-sc-bar i { display: block; height: 100%; border-radius: 3px; width: 0; transition: width 1.1s cubic-bezier(.22,1,.36,1); }
+  .mm-sc-divider { border-top: 1px solid #e4e2dc; }
+  .mm-sc-viewlinks-wrap { padding: 16px 22px 20px; }
+  .mm-sc-viewlinks { display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%; background: #fff; border: 1px solid #e4e2dc; color: #1e6bb8; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 600; padding: 10px 16px; border-radius: 8px; cursor: pointer; transition: background .2s, border-color .2s; }
+  .mm-sc-viewlinks:hover { background: var(--bpp); border-color: #1e6bb8; }
+  .mm-sector-card.flash { animation: mmFlash 1.1s ease; }
+  @keyframes mmFlash { 0%, 100% { box-shadow: 0 1px 4px rgba(0,0,0,.05); } 30% { box-shadow: 0 0 0 3px var(--bp); } }
+
+  /* Links modal */
+  .mm-modal-overlay { position: fixed; inset: 0; background: rgba(20,20,20,.5); display: none; align-items: center; justify-content: center; z-index: 500; padding: 24px; }
+  .mm-modal-overlay.open { display: flex; }
+  .mm-modal { background: #fff; border-radius: 16px; width: 100%; max-width: 560px; max-height: 80vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+  .mm-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 20px 24px; border-bottom: 1px solid #e4e2dc; }
+  .mm-modal-title { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20px; color: rgb(43,43,43); }
+  .mm-modal-title .dot { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
+  .mm-modal-close { width: 32px; height: 32px; border-radius: 8px; border: none; background: #f2f1ec; font-size: 18px; line-height: 1; cursor: pointer; color: #555; flex-shrink: 0; }
+  .mm-modal-close:hover { background: #e7e5df; }
+  .mm-modal-sub { padding: 12px 24px 0; font-family: 'Inter', sans-serif; font-size: 13px; color: #777; }
+  .mm-modal-list { padding: 8px 24px 20px; overflow-y: auto; }
+  .mm-modal-item { display: block; padding: 14px 0; border-bottom: 1px solid rgb(236,235,230); text-decoration: none; }
+  .mm-modal-item:last-child { border-bottom: none; }
+  .mm-modal-item.mm-modal-item-nolink { cursor: default; opacity: .75; }
+  .mm-modal-item .t { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; line-height: 1.45; color: #2b2b2b; }
+  .mm-modal-item .m { font-family: 'Inter', sans-serif; font-size: 12.5px; color: #888; margin-top: 4px; }
+
+  /* Archive */
+  .mm-archive-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+  .mm-archive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .mm-archive-more { display: flex; justify-content: center; margin-top: 28px; }
+
+  @media (max-width: 980px) {
+    .mm-sector-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "donut donut" "re ef" "coal cc" "og og"; }
+    .mm-archive-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .mm-highlights { grid-template-columns: 1fr; gap: 20px; }
+    .mm-sector-grid { grid-template-columns: 1fr; grid-template-areas: "donut" "re" "ef" "coal" "cc" "og"; }
+    .mm-archive-grid { grid-template-columns: 1fr; }
+    #page-mm .wrap, .mm-sec { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <a href="/" style="display:flex;align-items:center;"><img class="nav-logo" src="/Pried Logo Blue-01.png" alt="PRIED Logo"></a>
+  </div>
+  <ul class="nav-links">
+    <li class="nav-item-dropdown">
+      <a href="/#about" class="dropdown-trigger">About Us <span class="chevron">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/team">Team</a></li>
+      </ul>
+    </li>
+    <li><a href="/#pillars">Our Work</a></li>
+    <li class="nav-item-dropdown">
+      <a href="/studies" class="dropdown-trigger">Publications <span class="chevron">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/studies">Studies</a></li>
+        <li><a href="/briefs">Briefs</a></li>
+        <li class="nav-item-dropdown">
+          <a href="/monitors" class="dropdown-trigger">Monitors <span class="chevron">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/media-monitors">Media</a></li>
+            <li><a href="/energy-monitors">Energy</a></li>
+            <li><a href="/climate-monitors">Climate</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item-dropdown">
+      <a href="#" class="dropdown-trigger">Media <span class="chevron">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/news">News</a></li>
+        <li><a href="/events">Events</a></li>
+      </ul>
+    </li>
+    <li><a href="/careers">Career</a></li>
+  </ul>
+  <div class="nav-end">
+    <a href="/contact" class="nav-cta">Contact Us</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div id="page-mm" class="page active">
+
+  <div class="page-hero">
+    <div class="ph-breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/monitors">Monitors</a>
+      <span>/</span> <a href="/media-monitors">Media Monitors</a> <span>/</span> Weekly Monitor
+    </div>
+    <div class="ph-label">Monitor · Weekly</div>
+    <h1>Weekly Media <em>Monitor</em></h1>
+    <p>A breakdown of this week's Pakistani media coverage of energy and climate issues, by sector — highlights,
+      sector shares, and the headlines behind them.</p>
+    <div class="mm-hero-row">
+      <div class="mm-hero-actions">
+        <div class="mm-date-pill">📅 <span id="mmDateRange"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <section class="mm-sec wrap" id="mmHighlights">
+    <div class="mm-highlights">
+      <div>
+        <div class="mm-h-title">Highlights</div>
+        <div class="mm-h-nav">
+          <button type="button" id="mmHPrev" aria-label="Previous highlight">←</button>
+          <button type="button" id="mmHNext" aria-label="Next highlight">→</button>
+          <span class="mm-h-counter"><strong id="mmHNum">01</strong> / <span id="mmHTotal">05</span></span>
+        </div>
+      </div>
+      <div>
+        <div class="mm-h-text" id="mmHText"></div>
+        <div class="mm-h-progress" id="mmHProgress"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTOR BREAKDOWN -->
+  <section class="mm-sec wrap">
+    <div class="mm-sec-title">Percentage of media coverage given to energy sector</div>
+    <div class="mm-sub">Hover a slice or a sector card to see its share — click "View Links" for the headlines behind it.</div>
+    <div class="mm-sector-grid" id="mmSectorGrid">
+      <div class="mm-donut-wrap">
+        <svg id="mmDonut" class="mm-donut-svg" viewBox="0 0 480 480"></svg>
+        <div class="mm-donut-center">
+          <div class="mm-donut-center-inner">
+            <img src="/mono.png" alt="PRIED">
+            <strong id="mmDonutTotal"></strong>
+            <span id="mmDonutRange"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section class="mm-sec wrap">
+    <div class="mm-archive-head">
+      <div class="mm-h-title" style="margin-bottom:0">More Weekly Monitors</div>
+      <a href="/media-monitors" class="mm-dl-btn">View Full Archive →</a>
+    </div>
+    <div class="mm-archive-grid" id="mmArchiveGrid"></div>
+  </section>
+
+  <footer class="v8-footer" style="margin-top:0">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-name">Policy Research Institute for Equitable Development</div>
+        <p class="f-desc">An independent public interest think-tank based in Islamabad, Pakistan — developing
+          evidence-based research for a sustainable, equitable, and low-carbon future.</p>
+        <div class="f-contact">
+          <div class="fci"><span class="fci-icon">📍</span><span>Second Floor, Plot No. 5-N, Sitara Market, G-7
+              Markaz, Islamabad</span></div>
+          <div class="fci"><span class="fci-icon">📞</span><span>051-8440512</span></div>
+          <div class="fci"><span class="fci-icon">✉️</span><span>info@priedpk.org</span></div>
+        </div>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Our Work</div>
+        <ul>
+          <li><a href="/studies">Research</a></li>
+          <li><a href="/#pillars">Collaboration</a></li>
+          <li><a href="/#pillars">Advocacy</a></li>
+          <li><a href="/#outreach">Outreach</a></li>
+          <li><a href="/energy-monitors">Energy Monitor</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Focus Areas</div>
+        <ul>
+          <li><a href="/studies">Climate Justice</a></li>
+          <li><a href="/studies">Energy Transition</a></li>
+          <li><a href="/studies">Renewable Energy</a></li>
+          <li><a href="/studies">Coal Phaseout</a></li>
+          <li><a href="/studies">Green Finance</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-h">Networks</div>
+        <ul>
+          <li><a href="#">ACJCE</a></li>
+          <li><a href="#">PREC</a></li>
+          <li><a href="#">APMDD</a></li>
+          <li><a href="#">GCEN</a></li>
+          <li><a href="/studies">All Publications</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 PRIED · Islamabad, Pakistan</p>
+      <div class="f-soc"><a href="https://twitter.com/priedpk" class="fsb">𝕏</a><a
+          href="https://pk.linkedin.com/company/priedpk" class="fsb">in</a><a href="#" class="fsb">f</a></div>
+    </div>
+  </footer>
+
+  <!-- VIEW LINKS MODAL -->
+  <div class="mm-modal-overlay" id="mmModalOverlay">
+    <div class="mm-modal" role="dialog" aria-modal="true" aria-labelledby="mmModalName">
+      <div class="mm-modal-head">
+        <div class="mm-modal-title"><span class="dot" id="mmModalDot"></span><span id="mmModalName"></span></div>
+        <button type="button" class="mm-modal-close" id="mmModalClose" aria-label="Close">×</button>
+      </div>
+      <div class="mm-modal-sub" id="mmModalSub"></div>
+      <div class="mm-modal-list" id="mmModalList"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/data.js?v=5" defer></script>
+<script src="/assets/media-monitor-data.js?v=3" defer></script>
+<script src="/assets/site.js?v=5" defer></script>
+<script>
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+  function animateNumber(fromVal, toVal, decimals, duration, onFrame) {
+    const start = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const val = fromVal + (toVal - fromVal) * ease(t);
+      onFrame(val.toFixed(decimals));
+      if (t < 1) requestAnimationFrame(tick);
+      else onFrame(toVal.toFixed(decimals));
+    }
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    const slug = new URLSearchParams(location.search).get('slug') || Object.keys(MEDIA_MONITOR_ISSUES)[0];
+    const data = MEDIA_MONITOR_ISSUES[slug] || MEDIA_MONITOR_ISSUES[Object.keys(MEDIA_MONITOR_ISSUES)[0]];
+    if (!data) return;
+
+    document.getElementById('mmDateRange').textContent = data.dateRange;
+    const shortRange = data.dateRange.replace(/, 2\d{3}/g, '').replace(' – ', ' – ');
+
+    /* ── Highlights carousel ── */
+    const H = data.highlights;
+    let hIdx = 0;
+    document.getElementById('mmHTotal').textContent = String(H.length).padStart(2, '0');
+    document.getElementById('mmHProgress').innerHTML = H.map(() => '<span><i></i></span>').join('');
+    function catSlug(name) { return 's-' + name.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, ''); }
+    const areaClass = { 'Oil and Gas': 's-oil', 'Energy and Finance': 's-energy-finance', 'Renewable Energy': 's-renewable', 'Climate Change': 's-climate', 'Coal': 's-coal' };
+    const H_DURATION = 8000;
+    function renderHighlight() {
+      const h = H[hIdx];
+      document.getElementById('mmHNum').textContent = String(hIdx + 1).padStart(2, '0');
+      document.getElementById('mmHText').textContent = h.text;
+      [...document.getElementById('mmHProgress').children].forEach((el, i) => {
+        const bar = el.querySelector('i');
+        bar.style.transition = 'none';
+        if (i < hIdx) {
+          bar.style.width = '100%';
+        } else if (i === hIdx) {
+          bar.style.width = '0%';
+          void bar.offsetWidth;
+          bar.style.transition = `width ${H_DURATION}ms linear`;
+          bar.style.width = '100%';
+        } else {
+          bar.style.width = '0%';
+        }
+      });
+    }
+    let hTimer = null;
+    function startAutoAdvance() {
+      clearInterval(hTimer);
+      hTimer = setInterval(() => { hIdx = (hIdx + 1) % H.length; renderHighlight(); }, H_DURATION);
+    }
+    function goTo(i) { hIdx = (i + H.length) % H.length; renderHighlight(); startAutoAdvance(); }
+    document.getElementById('mmHPrev').addEventListener('click', () => goTo(hIdx - 1));
+    document.getElementById('mmHNext').addEventListener('click', () => goTo(hIdx + 1));
+    [...document.getElementById('mmHProgress').children].forEach((el, i) => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => goTo(i));
+    });
+    renderHighlight();
+    startAutoAdvance();
+
+    /* ── Links modal ── */
+    const modalOverlay = document.getElementById('mmModalOverlay');
+    function openLinksModal(s) {
+      document.getElementById('mmModalDot').style.background = s.color;
+      document.getElementById('mmModalName').textContent = s.name;
+      document.getElementById('mmModalSub').textContent = s.headlines.length + ' headline' + (s.headlines.length === 1 ? '' : 's') + ' · ' + s.pct + '% of this week\'s coverage';
+      document.getElementById('mmModalList').innerHTML = s.headlines.map(h =>
+        h.url
+          ? `<a class="mm-modal-item" href="${esc(h.url)}" target="_blank" rel="noopener"><div class="t">${esc(h.title)}</div><div class="m">${esc(h.source)}, ${esc(h.date)}</div></a>`
+          : `<div class="mm-modal-item mm-modal-item-nolink"><div class="t">${esc(h.title)}</div><div class="m">${esc(h.source)}, ${esc(h.date)}</div></div>`
+      ).join('');
+      modalOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLinksModal() {
+      modalOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('mmModalClose').addEventListener('click', closeLinksModal);
+    modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeLinksModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLinksModal(); });
+
+    /* ── Sector cards + donut ── */
+    const grid = document.getElementById('mmSectorGrid');
+    const maxPct = Math.max(...data.sectors.map(s => s.pct));
+    const donutOrder = ['Coal', 'Oil and Gas', 'Renewable Energy', 'Energy and Finance', 'Climate Change'];
+    const bySectorName = {}; data.sectors.forEach(s => bySectorName[s.name] = s);
+    const ordered = donutOrder.map(n => bySectorName[n]).filter(Boolean);
+
+    function flashCard(name) {
+      const el = document.querySelector('.' + (areaClass[name] || ''));
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
+    }
+
+    data.sectors.forEach(s => {
+      const card = document.createElement('div');
+      card.className = 'mm-sector-card ' + catSlug(s.name) + ' ' + (areaClass[s.name] || '');
+      card.dataset.idx = ordered.indexOf(s);
+      const barWidth = (s.pct / maxPct) * 92.7231;
+      const decimals = (String(s.pct).split('.')[1] || '').length;
+      card.innerHTML = `
+        <div class="mm-sc-head">
+          <div class="mm-sc-name"><span class="dot" style="background:${s.color}"></span>${esc(s.name)}</div>
+          <div class="mm-sc-count">${s.headlines.length} headline${s.headlines.length === 1 ? '' : 's'}</div>
+          <div class="mm-sc-pct" data-target="${s.pct}" data-decimals="${decimals}">0%</div>
+          <div class="mm-sc-bar"><i data-width="${barWidth}" style="background:${s.color}"></i></div>
+        </div>
+        <div class="mm-sc-divider"></div>
+        <div class="mm-sc-viewlinks-wrap">
+          <button type="button" class="mm-sc-viewlinks">View Links <span>→</span></button>
+        </div>
+      `;
+      card.querySelector('.mm-sc-viewlinks').addEventListener('click', () => openLinksModal(s));
+      card.addEventListener('mouseenter', () => setActive(+card.dataset.idx));
+      card.addEventListener('mouseleave', () => setActive(null));
+      grid.appendChild(card);
+    });
+
+    // Donut: true annulus-wedge paths (outer r176 / inner r118, 480x480 viewBox), 1.2° gap between slices
+    const CX = 240, CY = 240, OUTER_R = 176, INNER_R = 118, LABEL_R = 210, GAP = 1.2;
+    function polar(r, deg) {
+      const rad = deg * Math.PI / 180;
+      return { x: CX + r * Math.sin(rad), y: CY - r * Math.cos(rad) };
+    }
+    function wedgePath(startDeg, endDeg) {
+      const large = (endDeg - startDeg) > 180 ? 1 : 0;
+      const oStart = polar(OUTER_R, startDeg), oEnd = polar(OUTER_R, endDeg);
+      const iStart = polar(INNER_R, startDeg), iEnd = polar(INNER_R, endDeg);
+      return `M${oStart.x.toFixed(2)} ${oStart.y.toFixed(2)} A${OUTER_R} ${OUTER_R} 0 ${large} 1 ${oEnd.x.toFixed(2)} ${oEnd.y.toFixed(2)} L${iEnd.x.toFixed(2)} ${iEnd.y.toFixed(2)} A${INNER_R} ${INNER_R} 0 ${large} 0 ${iStart.x.toFixed(2)} ${iStart.y.toFixed(2)} Z`;
+    }
+    const availableDeg = 360 - ordered.length * GAP;
+    let cursor = GAP / 2, paths = '', outsideLabels = '';
+    ordered.forEach((s, idx) => {
+      const sweep = (s.pct / 100) * availableDeg;
+      const startDeg = cursor, endDeg = cursor + sweep;
+      paths += `<path class="mm-donut-wedge" data-idx="${idx}" d="${wedgePath(startDeg, endDeg)}" fill="${s.color}"></path>`;
+      const midDeg = (startDeg + endDeg) / 2;
+      const midRad = midDeg * Math.PI / 180;
+      const lx = CX + LABEL_R * Math.sin(midRad), ly = CY - LABEL_R * Math.cos(midRad);
+      const dx = LABEL_R * Math.sin(midRad);
+      const anchor = Math.abs(dx) < 20 ? (dx >= 0 ? 'start' : 'end') : 'middle';
+      outsideLabels += `<text class="mm-donut-pct-outside" data-idx="${idx}" x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" text-anchor="${anchor}" dominant-baseline="middle">${s.pct}%</text>`;
+      cursor = endDeg + GAP;
+    });
+    const bgCircle = `<circle class="mm-donut-bg-circle" cx="${CX}" cy="${CY}" r="104" fill="#fbfaf8" stroke="#e4e2dc"></circle>`;
+    document.getElementById('mmDonut').innerHTML = paths + bgCircle + outsideLabels;
+
+    const centerInner = document.querySelector('.mm-donut-center-inner');
+    function renderCenterDefault(animate) {
+      centerInner.innerHTML = `<img src="/mono.png" alt="PRIED"><strong><span id="mmTotalNum">${animate ? 0 : data.totalHeadlines}</span> headlines</strong><span>${shortRange}</span>`;
+      if (animate) {
+        const el = document.getElementById('mmTotalNum');
+        animateNumber(0, data.totalHeadlines, 0, 900, v => { el.textContent = v; });
+      }
+    }
+    function renderCenterSector(s, animate) {
+      const decimals = (String(s.pct).split('.')[1] || '').length;
+      centerInner.innerHTML = `<strong class="mm-dc-pct" style="color:${s.color}"><span id="mmSectorPctNum">${animate ? '0' : s.pct}</span>%</strong><span class="mm-dc-name">${esc(s.name)}</span><span class="mm-dc-sub">${s.headlines.length} headline${s.headlines.length === 1 ? '' : 's'}</span>`;
+      if (animate) {
+        const el = document.getElementById('mmSectorPctNum');
+        animateNumber(0, s.pct, decimals, 400, v => { el.textContent = v; });
+      }
+    }
+    renderCenterDefault(false);
+
+    const wedgeEls = [...document.querySelectorAll('.mm-donut-wedge')];
+    const cardEls = [...document.querySelectorAll('.mm-sector-card')];
+    function setActive(idx) {
+      wedgeEls.forEach(el => el.classList.toggle('active', +el.dataset.idx === idx));
+      cardEls.forEach(el => el.classList.toggle('flash-hover', +el.dataset.idx === idx));
+      if (idx === null) renderCenterDefault(false);
+      else renderCenterSector(ordered[idx], true);
+    }
+    wedgeEls.forEach(el => {
+      const idx = +el.dataset.idx;
+      el.addEventListener('mouseenter', () => setActive(idx));
+      el.addEventListener('mouseleave', () => setActive(null));
+      el.addEventListener('click', () => flashCard(ordered[idx].name));
+    });
+
+    /* ── Entrance animation: donut pop-in, labels fade, percentages + bars count up ── */
+    function playEntrance() {
+      wedgeEls.forEach((el, i) => {
+        el.style.transitionDelay = (i * 90) + 'ms';
+        requestAnimationFrame(() => el.classList.add('revealed'));
+        el.addEventListener('transitionend', () => { el.style.transitionDelay = ''; }, { once: true });
+      });
+      document.querySelectorAll('.mm-donut-pct-outside').forEach((el, i) => {
+        el.style.transitionDelay = (420 + i * 70) + 'ms';
+        requestAnimationFrame(() => el.classList.add('revealed'));
+      });
+      document.querySelector('.mm-donut-bg-circle').classList.add('revealed');
+      centerInner.classList.add('revealed');
+      renderCenterDefault(true);
+
+      cardEls.forEach((card, i) => {
+        const delay = i * 90;
+        const pctEl = card.querySelector('.mm-sc-pct');
+        const barEl = card.querySelector('.mm-sc-bar i');
+        const target = parseFloat(pctEl.dataset.target);
+        const decimals = +pctEl.dataset.decimals;
+        const width = parseFloat(barEl.dataset.width);
+        setTimeout(() => {
+          barEl.style.width = width + '%';
+          animateNumber(0, target, decimals, 900, v => { pctEl.textContent = v + '%'; });
+        }, delay);
+      });
+    }
+    if ('IntersectionObserver' in window) {
+      const sectorObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { playEntrance(); sectorObserver.disconnect(); } });
+      }, { threshold: 0.2 });
+      sectorObserver.observe(grid);
+    } else {
+      playEntrance();
+    }
+
+    /* ── Archive (reuses WEEKLY_MM already loaded via data.js) ── */
+    const archiveGrid = document.getElementById('mmArchiveGrid');
+    if (typeof WEEKLY_MM !== 'undefined' && archiveGrid) {
+      const items = WEEKLY_MM.filter(r => !(r[3] && r[3] === slug)).slice(0, 3);
+      archiveGrid.innerHTML = items.map(r => {
+        const href = r[3] ? ('/media-monitors/detail?slug=' + r[3]) : ('/' + r[2]);
+        const target = r[3] ? '' : ' target="_blank" rel="noopener"';
+        const label = r[3] ? 'View Details →' : '↓ PDF';
+        return '<a class="study-card mon-card" href="' + href + '"' + target + '>' +
+          '<div class="study-card-img"><img src="/' + r[1] + '" alt="' + esc(r[0]) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><div class="study-card-img-placeholder" style="display:none"><span>📰</span></div></div>' +
+          '<div class="study-card-body"><div class="sc-type">Weekly Media Monitor</div><h3>' + esc(r[0]) + '</h3>' +
+          '<div class="sc-footer"><span class="sc-year">' + ((r[0].match(/20\d\d/) || [''])[0]) + '</span><span class="sc-dl">' + label + '</span></div></div></a>';
+      }).join('');
+    }
+  });
+</script>
+</body>
+
+</html>
