@@ -19,12 +19,13 @@
 
   /* Hero — built on the shared .page-hero pattern used sitewide */
   .mm-hero-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
-  .mm-date-pill { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 10px 20px; font-size: .88rem; font-weight: 600; color: var(--ink); box-shadow: 0 2px 10px rgba(28,28,28,.04); }
+  .mm-date-pill { display: inline-flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 14px 24px; font-size: 1rem; font-weight: 600; color: var(--ink); box-shadow: 0 2px 10px rgba(28,28,28,.04); }
   .mm-hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
   .mm-dl-btn { display: inline-flex; align-items: center; gap: 7px; font-size: .82rem; font-weight: 600; color: var(--b); padding: 8px 4px; }
   .mm-dl-btn:hover { text-decoration: underline; }
   /* Highlights */
   .mm-sec { padding: 56px 0; }
+  .mm-highlights-box { background: #fbfaf8; border-radius: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); padding: 36px; }
   .mm-highlights { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
   .mm-h-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--ink); margin-bottom: 18px; }
   .mm-h-nav { display: flex; align-items: center; gap: 10px; }
@@ -39,7 +40,45 @@
 
   /* Sector breakdown */
   .mm-sec-title { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: rgb(43,43,43); margin-bottom: 6px; }
-  .mm-sub { font-size: .9rem; color: var(--mid); margin: 0 0 28px; }
+  .mm-sub { font-size: .9rem; color: var(--mid); margin: 0; }
+  .mm-sec-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+  .mm-view-toggle { display: inline-flex; gap: 4px; background: #efece5; border-radius: 10px; padding: 4px; flex-shrink: 0; }
+  .mm-view-btn { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 600; color: #777; background: transparent; border: none; padding: 9px 18px; border-radius: 7px; cursor: pointer; transition: background .2s, color .2s; }
+  .mm-view-btn.active { background: #fff; color: #1e6bb8; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .mm-view-btn:not(.active):hover { color: #444; }
+
+  /* Week-over-week comparison chart */
+  .mm-compare-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 26px; }
+  .mm-compare-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; position: relative; }
+  .mm-compare-controls label { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 600; color: #777; flex-shrink: 0; }
+  .mm-compare-combo { position: relative; width: 260px; }
+  .mm-compare-combo input { width: 100%; font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 600; color: #1e6bb8; background: #fff; border: 1px solid #e4e2dc; border-radius: 8px; padding: 9px 34px 9px 14px; cursor: pointer; }
+  .mm-compare-combo input::placeholder { color: #1e6bb8; opacity: 1; }
+  .mm-compare-combo::after { content: '▾'; position: absolute; right: 13px; top: 50%; transform: translateY(-50%); color: #1e6bb8; font-size: .7rem; pointer-events: none; }
+  .mm-compare-options { position: absolute; top: calc(100% + 6px); right: 0; width: 320px; max-height: 280px; overflow-y: auto; background: #fff; border: 1px solid #e4e2dc; border-radius: 10px; box-shadow: 0 12px 32px rgba(0,0,0,.12); z-index: 20; display: none; }
+  .mm-compare-options.open { display: block; }
+  .mm-compare-option { display: block; width: 100%; text-align: left; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 500; color: #2b2b2b; background: none; border: none; cursor: pointer; border-bottom: 1px solid #f1efe9; }
+  .mm-compare-option:last-child { border-bottom: none; }
+  .mm-compare-option:hover, .mm-compare-option.highlight { background: var(--bpp); }
+  .mm-compare-option .tag { display: inline-block; margin-left: 8px; font-size: .68rem; font-weight: 700; color: #2bb3a3; text-transform: uppercase; letter-spacing: .4px; }
+  .mm-compare-option .no-data { color: #aaa; }
+  .mm-compare-no-match { padding: 14px; font-family: 'Inter', sans-serif; font-size: .82rem; color: #999; text-align: center; }
+  .mm-compare-legend { display: flex; gap: 22px; flex-wrap: wrap; }
+  .mm-compare-legend span { display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 600; color: #444; }
+  .mm-compare-legend i { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+  .mm-compare-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 18px; padding: 14px 0; border-bottom: 1px solid #ebe9e4; }
+  .mm-compare-row:last-child { border-bottom: none; }
+  .mm-compare-label { font-family: 'Fraunces', Georgia, serif; font-size: 16px; font-weight: 600; color: rgb(43,43,43); }
+  .mm-compare-bars { display: flex; flex-direction: column; gap: 6px; }
+  .mm-compare-bar { display: flex; align-items: center; gap: 10px; }
+  .mm-compare-bar .track { flex: 1; height: 16px; border-radius: 4px; background: #f0eee8; overflow: hidden; }
+  .mm-compare-bar .track i { display: block; height: 100%; width: 0; border-radius: 4px; transition: width 1s cubic-bezier(.22,1,.36,1); }
+  .mm-compare-bar.prev .track i { background: #2bb3a3; }
+  .mm-compare-bar.curr .track i { background: #1e6bb8; }
+  .mm-compare-bar .val { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 700; color: #444; width: 54px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .mm-compare-empty { padding: 48px 24px; text-align: center; background: #fbfaf8; border-radius: 16px; }
+  .mm-compare-empty .t { font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 600; color: rgb(43,43,43); margin-bottom: 6px; }
+  .mm-compare-empty .d { font-family: 'Inter', sans-serif; font-size: .85rem; color: #888; }
   .mm-sector-grid { display: grid; grid-template-columns: minmax(0,0.7fr) minmax(0,1.8fr) minmax(0,0.7fr); grid-template-areas: "re donut ef" "coal donut cc" ". og ."; gap: 24px; align-items: center; }
   .mm-sector-grid .s-renewable { grid-area: re; }
   .mm-sector-grid .s-energy-finance { grid-area: ef; }
@@ -58,7 +97,7 @@
   .mm-donut-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
   .mm-donut-center-inner { width: 42%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; opacity: 0; transform: scale(.85); transition: opacity .5s ease .5s, transform .5s cubic-bezier(.22,1.3,.36,1) .5s; }
   .mm-donut-center-inner.revealed { opacity: 1; transform: scale(1); }
-  .mm-donut-center img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 10px; }
+  .mm-donut-center img { width: 120px; height: 120px; object-fit: contain; transform: translateX(-6px); }
   .mm-donut-center strong { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: rgb(43,43,43); line-height: 1.25; }
   .mm-donut-center span { display: block; font-family: 'Inter', sans-serif; font-size: 15px; color: #666; margin-top: 4px; }
   .mm-donut-center .mm-dc-pct { font-family: 'Fraunces', Georgia, serif; font-size: 58px; font-weight: 600; line-height: 1; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
@@ -102,7 +141,12 @@
 
   /* Archive */
   .mm-archive-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
-  .mm-archive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .mm-archive-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .mm-archive-grid .study-card-img { height: 190px; }
+  .mm-archive-grid .study-card-body { padding: 14px; }
+  .mm-archive-grid .sc-type { font-size: .5rem; margin-bottom: 6px; }
+  .mm-archive-grid .study-card-body h3 { font-size: .85rem; line-height: 1.3; }
+  .mm-archive-grid .sc-footer { margin-top: 10px; padding-top: 10px; }
   .mm-archive-more { display: flex; justify-content: center; margin-top: 28px; }
 
   @media (max-width: 980px) {
@@ -110,6 +154,7 @@
     .mm-archive-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 680px) {
+    .mm-highlights-box { padding: 24px; }
     .mm-highlights { grid-template-columns: 1fr; gap: 20px; }
     .mm-sector-grid { grid-template-columns: 1fr; grid-template-areas: "donut" "re" "ef" "coal" "cc" "og"; }
     .mm-archive-grid { grid-template-columns: 1fr; }
@@ -171,55 +216,77 @@
     </div>
     <div class="ph-label">Monitor · Weekly</div>
     <h1>Weekly Media <em>Monitor</em></h1>
-    <p>A breakdown of this week's Pakistani media coverage of energy and climate issues, by sector — highlights,
-      sector shares, and the headlines behind them.</p>
+    <p>A breakdown of this week’s Pakistani media coverage of energy and climate issues by sector, highlighting key stories, sector-wise shares, and the headlines driving the conversation, with a comparison against previous weeks’ media coverage.</p>
     <div class="mm-hero-row">
       <div class="mm-hero-actions">
         <div class="mm-date-pill">📅 <span id="mmDateRange"></span></div>
+        <a class="btn-b" id="mmPdfBtn" href="#" target="_blank" rel="noopener">Download Full PDF ↓</a>
       </div>
     </div>
   </div>
 
   <!-- HIGHLIGHTS -->
   <section class="mm-sec wrap" id="mmHighlights">
-    <div class="mm-highlights">
-      <div>
-        <div class="mm-h-title">Highlights</div>
-        <div class="mm-h-nav">
-          <button type="button" id="mmHPrev" aria-label="Previous highlight">←</button>
-          <button type="button" id="mmHNext" aria-label="Next highlight">→</button>
-          <span class="mm-h-counter"><strong id="mmHNum">01</strong> / <span id="mmHTotal">05</span></span>
+    <div class="mm-highlights-box">
+      <div class="mm-highlights">
+        <div>
+          <div class="mm-h-title">Highlights</div>
+          <div class="mm-h-nav">
+            <button type="button" id="mmHPrev" aria-label="Previous highlight">←</button>
+            <button type="button" id="mmHNext" aria-label="Next highlight">→</button>
+            <span class="mm-h-counter"><strong id="mmHNum">01</strong> / <span id="mmHTotal">05</span></span>
+          </div>
         </div>
-      </div>
-      <div>
-        <div class="mm-h-text" id="mmHText"></div>
-        <div class="mm-h-progress" id="mmHProgress"></div>
+        <div>
+          <div class="mm-h-text" id="mmHText"></div>
+          <div class="mm-h-progress" id="mmHProgress"></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SECTOR BREAKDOWN -->
   <section class="mm-sec wrap">
-    <div class="mm-sec-title">Percentage of media coverage given to energy sector</div>
-    <div class="mm-sub">Hover a slice or a sector card to see its share — click "View Links" for the headlines behind it.</div>
+    <div class="mm-sec-head">
+      <div>
+        <div class="mm-sec-title">Media Monitor</div>
+        <div class="mm-sub" id="mmViewSub">Hover a slice or a sector card to see its share — click "View Links" for the news items.</div>
+      </div>
+      <div class="mm-view-toggle" id="mmViewToggle">
+        <button type="button" class="mm-view-btn active" data-view="donut">Breakdown</button>
+        <button type="button" class="mm-view-btn" data-view="compare">Compare</button>
+      </div>
+    </div>
     <div class="mm-sector-grid" id="mmSectorGrid">
       <div class="mm-donut-wrap">
         <svg id="mmDonut" class="mm-donut-svg" viewBox="0 0 480 480"></svg>
         <div class="mm-donut-center">
-          <div class="mm-donut-center-inner">
-            <img src="/mono.png" alt="PRIED">
-            <strong id="mmDonutTotal"></strong>
-            <span id="mmDonutRange"></span>
+          <div class="mm-donut-center-inner"></div>
+        </div>
+      </div>
+    </div>
+    <div id="mmCompareChart" style="display:none">
+      <div class="mm-compare-head">
+        <div class="mm-compare-legend">
+          <span id="mmComparePrevItem"><i style="background:#2bb3a3"></i> <span id="mmComparePrevLabel"></span></span>
+          <span><i style="background:#1e6bb8"></i> <span id="mmCompareCurrLabel"></span></span>
+        </div>
+        <div class="mm-compare-controls">
+          <label for="mmCompareSearch">Compare against</label>
+          <div class="mm-compare-combo">
+            <input type="text" id="mmCompareSearch" placeholder="Search monitors…" autocomplete="off">
+            <div class="mm-compare-options" id="mmCompareOptions"></div>
           </div>
         </div>
       </div>
+      <div id="mmCompareRows"></div>
     </div>
   </section>
 
   <!-- ARCHIVE -->
   <section class="mm-sec wrap">
     <div class="mm-archive-head">
-      <div class="mm-h-title" style="margin-bottom:0">More Weekly Monitors</div>
+      <div class="mm-h-title" style="margin-bottom:0">Weekly Monitors Archive</div>
       <a href="/media-monitors" class="mm-dl-btn">View Full Archive →</a>
     </div>
     <div class="mm-archive-grid" id="mmArchiveGrid"></div>
@@ -290,7 +357,7 @@
 </div>
 
 <script src="/assets/data.js?v=5" defer></script>
-<script src="/assets/media-monitor-data.js?v=3" defer></script>
+<script src="/assets/media-monitor-data.js?v=5" defer></script>
 <script src="/assets/site.js?v=5" defer></script>
 <script>
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
@@ -314,7 +381,7 @@
     if (!data) return;
 
     document.getElementById('mmDateRange').textContent = data.dateRange;
-    const shortRange = data.dateRange.replace(/, 2\d{3}/g, '').replace(' – ', ' – ');
+    document.getElementById('mmPdfBtn').href = '/' + data.pdf;
 
     /* ── Highlights carousel ── */
     const H = data.highlights;
@@ -446,12 +513,8 @@
     document.getElementById('mmDonut').innerHTML = paths + bgCircle + outsideLabels;
 
     const centerInner = document.querySelector('.mm-donut-center-inner');
-    function renderCenterDefault(animate) {
-      centerInner.innerHTML = `<img src="/mono.png" alt="PRIED"><strong><span id="mmTotalNum">${animate ? 0 : data.totalHeadlines}</span> headlines</strong><span>${shortRange}</span>`;
-      if (animate) {
-        const el = document.getElementById('mmTotalNum');
-        animateNumber(0, data.totalHeadlines, 0, 900, v => { el.textContent = v; });
-      }
+    function renderCenterDefault() {
+      centerInner.innerHTML = `<img src="/mono.png" alt="PRIED">`;
     }
     function renderCenterSector(s, animate) {
       const decimals = (String(s.pct).split('.')[1] || '').length;
@@ -461,14 +524,14 @@
         animateNumber(0, s.pct, decimals, 400, v => { el.textContent = v; });
       }
     }
-    renderCenterDefault(false);
+    renderCenterDefault();
 
     const wedgeEls = [...document.querySelectorAll('.mm-donut-wedge')];
     const cardEls = [...document.querySelectorAll('.mm-sector-card')];
     function setActive(idx) {
       wedgeEls.forEach(el => el.classList.toggle('active', +el.dataset.idx === idx));
       cardEls.forEach(el => el.classList.toggle('flash-hover', +el.dataset.idx === idx));
-      if (idx === null) renderCenterDefault(false);
+      if (idx === null) renderCenterDefault();
       else renderCenterSector(ordered[idx], true);
     }
     wedgeEls.forEach(el => {
@@ -491,7 +554,7 @@
       });
       document.querySelector('.mm-donut-bg-circle').classList.add('revealed');
       centerInner.classList.add('revealed');
-      renderCenterDefault(true);
+      renderCenterDefault();
 
       cardEls.forEach((card, i) => {
         const delay = i * 90;
@@ -515,10 +578,101 @@
       playEntrance();
     }
 
+    /* ── Comparison view: search and pick any monitor from the archive ── */
+    const viewToggle = document.getElementById('mmViewToggle');
+    const compareChart = document.getElementById('mmCompareChart');
+    const viewSub = document.getElementById('mmViewSub');
+    const comparisonsByTitle = {};
+    if (data.comparisons) Object.values(data.comparisons).forEach(c => { comparisonsByTitle[c.label] = c; });
+
+    if (typeof WEEKLY_MM !== 'undefined') {
+      const monitorTitles = WEEKLY_MM.filter(r => r[2] !== data.pdf).map(r => r[0]);
+      const rows = document.getElementById('mmCompareRows');
+      const search = document.getElementById('mmCompareSearch');
+      const options = document.getElementById('mmCompareOptions');
+      const currShort = data.dateRange.replace(/, 2\d{3}/g, '');
+
+      function renderOptions(filterText) {
+        const q = (filterText || '').toLowerCase();
+        const matches = monitorTitles.filter(t => t.toLowerCase().includes(q));
+        if (!matches.length) {
+          options.innerHTML = `<div class="mm-compare-no-match">No monitors match "${esc(filterText)}"</div>`;
+          return;
+        }
+        options.innerHTML = matches.map(t => {
+          const hasData = !!comparisonsByTitle[t];
+          return `<button type="button" class="mm-compare-option" data-title="${esc(t)}">${esc(t)}${hasData ? '<span class="tag">Data</span>' : '<span class="tag no-data">No data</span>'}</button>`;
+        }).join('');
+      }
+
+      function selectMonitor(title) {
+        search.value = title;
+        options.classList.remove('open');
+        const other = comparisonsByTitle[title];
+        document.getElementById('mmCompareCurrLabel').textContent = 'This week · ' + currShort;
+        const prevItem = document.getElementById('mmComparePrevItem');
+        if (!other) {
+          prevItem.style.visibility = 'hidden';
+          rows.innerHTML = `<div class="mm-compare-empty"><div class="t">No sector breakdown yet for this issue</div><div class="d">We haven't pulled sector-level data from "${esc(title)}" yet — try one marked "Data" in the search list.</div></div>`;
+          return;
+        }
+        prevItem.style.visibility = 'visible';
+        const otherShort = other.dateRange.replace(/, 2\d{3}/g, '');
+        document.getElementById('mmComparePrevLabel').textContent = otherShort;
+        const maxCompare = Math.max(...ordered.map(s => Math.max(s.pct, other.sectors[s.name] ?? 0)));
+        rows.innerHTML = ordered.map(s => {
+          const otherPct = other.sectors[s.name] ?? 0;
+          return `
+            <div class="mm-compare-row">
+              <div class="mm-compare-label">${esc(s.name)}</div>
+              <div class="mm-compare-bars">
+                <div class="mm-compare-bar prev"><div class="track"><i data-width="${(otherPct / maxCompare) * 100}"></i></div><span class="val">${otherPct.toFixed(2)}%</span></div>
+                <div class="mm-compare-bar curr"><div class="track"><i data-width="${(s.pct / maxCompare) * 100}"></i></div><span class="val">${s.pct}%</span></div>
+              </div>
+            </div>`;
+        }).join('');
+        requestAnimationFrame(() => {
+          rows.querySelectorAll('.track i').forEach(i => { i.style.width = i.dataset.width + '%'; });
+        });
+      }
+
+      search.addEventListener('focus', () => { renderOptions(''); options.classList.add('open'); search.select(); });
+      search.addEventListener('input', () => { renderOptions(search.value); options.classList.add('open'); });
+      options.addEventListener('click', e => {
+        const opt = e.target.closest('.mm-compare-option');
+        if (opt) selectMonitor(opt.dataset.title);
+      });
+      document.addEventListener('click', e => {
+        if (!e.target.closest('.mm-compare-combo')) options.classList.remove('open');
+      });
+
+      const defaultTitle = (data.comparisons && Object.values(data.comparisons)[0] && Object.values(data.comparisons)[0].label) || monitorTitles[0];
+
+      function showView(view) {
+        [...viewToggle.children].forEach(btn => btn.classList.toggle('active', btn.dataset.view === view));
+        if (view === 'compare') {
+          grid.style.display = 'none';
+          compareChart.style.display = 'block';
+          viewSub.textContent = 'How this week\'s coverage shares compare against another issue, by sector.';
+          if (!search.value) selectMonitor(defaultTitle);
+        } else {
+          grid.style.display = '';
+          compareChart.style.display = 'none';
+          viewSub.textContent = 'Hover a slice or a sector card to see its share — click "View Links" for the news items.';
+        }
+      }
+      viewToggle.addEventListener('click', e => {
+        const btn = e.target.closest('.mm-view-btn');
+        if (btn) showView(btn.dataset.view);
+      });
+    } else {
+      viewToggle.style.display = 'none';
+    }
+
     /* ── Archive (reuses WEEKLY_MM already loaded via data.js) ── */
     const archiveGrid = document.getElementById('mmArchiveGrid');
     if (typeof WEEKLY_MM !== 'undefined' && archiveGrid) {
-      const items = WEEKLY_MM.filter(r => !(r[3] && r[3] === slug)).slice(0, 3);
+      const items = WEEKLY_MM.filter(r => !(r[3] && r[3] === slug)).slice(0, 5);
       archiveGrid.innerHTML = items.map(r => {
         const href = r[3] ? ('/media-monitors/detail?slug=' + r[3]) : ('/' + r[2]);
         const target = r[3] ? '' : ' target="_blank" rel="noopener"';

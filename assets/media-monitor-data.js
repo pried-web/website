@@ -7,6 +7,16 @@ const MEDIA_MONITOR_ISSUES = {
     dateRange: "Sep 14th, 2026 – Sep 20th, 2026",
     pdf: "Weekly/Weekly Monitor - 14 Sep to 20 Sep 2026.pdf",
     totalHeadlines: 75,
+    /* Other issues available to compare against in the "Compare" view. Add an entry here
+       (keyed by the other issue's slug) whenever real sector-share data has been pulled
+       from that week's PDF — only weeks listed here are selectable in the comparison dropdown. */
+    comparisons: {
+      '2026-09-07': {
+        label: "Weekly Monitor - 07 Sep to 13 Sep 2026",
+        dateRange: "Sep 7th, 2026 – Sep 13th, 2026",
+        sectors: { "Coal": 0.00, "Oil and Gas": 50.00, "Renewable Energy": 6.00, "Energy and Finance": 30.00, "Climate Change": 14.00 }
+      }
+    },
     highlights: [
       { category: "Oil and Gas", text: "The Petroleum Minister, Ali Pervaiz Malik, warns that fuel prices could reach 1,000 rupees per litre if shortages emerge. Petrol prices in Pakistan have already risen by 50 per cent amid global oil market disruptions." },
       { category: "Energy and Finance", text: "The Ministry of Energy launches Pakistan's first 400MW electricity wheeling auction under the competitive power market. A total of 800MW is planned to be auctioned over the next five years." },
