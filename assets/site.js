@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let filter = 'all', query = '', page = 1; const perPage = 15;
 
       function monCard(o) {
-        const href = o.detail ? ('media-monitor?slug=' + o.detail) : o.pdf;
+        const href = o.detail ? ('/media-monitors/detail?slug=' + o.detail) : o.pdf;
         const target = o.detail ? '' : ' target="_blank" rel="noopener"';
         const label = o.detail ? 'View Details →' : '↓ PDF';
         return '<a class="study-card mon-card" href="' + href + '"' + target + '>' +

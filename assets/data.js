@@ -18,6 +18,36 @@ const ARTICLES = {
     authorDesc: "Zahra Naeem and Laiba Nayyab are researchers at PRIED covering energy, gender and climate justice in Pakistan.",
     related: ["net-metering", "distributed-solar", "sahiwal"]
   },
+  'swarm-grids': {
+    title: "A case for swarm grids",
+    tag: "Solar Policy", date: "12 October 2026",
+    author: "Amina Shahab",
+    url: "https://www.thenews.pk/magazine/money-matters/1442397-a-case-for-swarm-grids", sourceName: "The News",
+    img: "assets/news/1442397_7389522_m1_magazine.jpg",
+    body: [
+      `Pakistan's solar boom has happened largely because ordinary people took matters into their own hands. Faced with expensive, unreliable electricity, households and businesses have put solar panels on rooftops and batteries in basements.`,
+      `What began as a way to reduce electricity bills has created something truly remarkable: millions of people are now producing some of their own electricity. However, the solar revolution has come about without a plan to share its benefits with everyone, especially those who may not have access to it.`,
+      `Imagine, then, a neighbourhood where homes with solar panels can share their extra electricity with homes that need it. A household doesn't have to consume or produce all the electricity it needs on its own. Instead, people in the neighbourhood can use what they have collectively.`,
+      `This is the basic idea behind what is called a swarm-grid, or peer-to-peer electricity trading. In such a network, if one house produces more electricity than it needs, it could sell the extra power to another nearby house instead of wasting it. Batteries could also be shared in this way, allowing electricity produced during the day to be stored for later use.`
+    ],
+    tags: ["Swarm Grids", "Peer-to-Peer Trading", "Solar", "Distributed Solar", "NEPRA", "Energy Access"],
+    related: ["rooftop-solar-transition", "net-metering", "distributed-solar"]
+  },
+  'rooftop-solar-transition': {
+    title: "Rooftop solar isn't energy transition",
+    tag: "Energy Transition", date: "28 August 2026",
+    author: "Amina Shahab",
+    url: "https://www.brecorder.com/news/40436507/rooftop-solar-isnt-energy-transition", sourceName: "Business Recorder",
+    img: "assets/news/25212917e5572ef.webp",
+    body: [
+      `Drive through Lahore, Karachi or Peshawar today and the rooftops tell their own story: blue panels catching sunlight over car parks, small factories, shopfronts, entire housing colonies. Ask around and most people will tell you Pakistan is in the middle of an energy transition.`,
+      `Look more closely and a harder question surfaces: are we transforming the power system, or are millions of consumers simply finding a private way out of a grid whose tariffs they can no longer afford?`,
+      `That distinction matters more than it sounds. Putting a panel on your roof and rebuilding a national electricity system are related projects, but they are not the same project. One is a household decision, made in a weekend. The other is the work of a decade: generation, transmission, storage and markets, rebuilt around cheaper and cleaner power instead of imported fuel.`,
+      `Pakistan has made real progress on the first. It has barely begun the second, and that gap between the two is exactly where the country's energy debate has gotten stuck.`
+    ],
+    tags: ["Rooftop Solar", "Energy Transition", "Grid", "Storage", "Utility-Scale Solar", "Pakistan"],
+    related: ["swarm-grids", "33gw", "crossroads"]
+  },
   'crossroads': {
     title: "Pakistan at energy crossroads",
     tag: "Energy", date: "14 May 2026",
@@ -848,9 +878,11 @@ const SIXMONTH_MM = [
 ];
 
 const WEEKLY_MM = [
-  ["Weekly Monitor - 21 Sep to 27 Sep 2026", "Weekly/covers/September-21st-27th-800x1159.jpg", "Weekly/Weekly Monitor - 21 Sep to 27 Sep 2026.pdf"],
-  ["Weekly Monitor - 14 Sep to 20 Sep 2026", "Weekly/covers/September-14th-20th-800x1159.jpg", "Weekly/Weekly Monitor - 14 Sep to 20 Sep 2026.pdf"],
-  ["Weekly Monitor - 07 Sep to 13 Sep 2026", "Weekly/covers/6 Sep to 13 Sep 2026.jpeg", "Weekly/Weekly Monitor - 07 Sep to 13 Sep 2026.pdf"],
+  ["Weekly Monitor - 05 Oct to 11 Oct 2026", "Weekly/covers/Oct-5 to Oct-11-800x1159.jpeg", "Weekly/Weekly Monitor - 05 Oct to 11 Oct 2026.pdf", "2026-10-05"],
+  ["Weekly Monitor - 28 Sep to 04 Oct 2026", "Weekly/covers/Sep-27 to Oct-4-800x1159.jpeg", "Weekly/Weekly Monitor - 28 Sep to 04 Oct 2026.pdf", "2026-09-28"],
+  ["Weekly Monitor - 21 Sep to 27 Sep 2026", "Weekly/covers/September-21st-27th-800x1159.jpg", "Weekly/Weekly Monitor - 21 Sep to 27 Sep 2026.pdf", "2026-09-21"],
+  ["Weekly Monitor - 14 Sep to 20 Sep 2026", "Weekly/covers/September-14th-20th-800x1159.jpg", "Weekly/Weekly Monitor - 14 Sep to 20 Sep 2026.pdf", "2026-09-14"],
+  ["Weekly Monitor - 07 Sep to 13 Sep 2026", "Weekly/covers/6 Sep to 13 Sep 2026.jpeg", "Weekly/Weekly Monitor - 07 Sep to 13 Sep 2026.pdf", "2026-09-07"],
   ["Weekly Monitor - 31 Aug to 06 Sep 2026", "Weekly/covers/August 31-September 6.jpeg", "Weekly/Weekly Monitor - 31 Aug to 06 Sep 2026.pdf"],
   ["Weekly Monitor - 3 Aug to 9 Aug 2026", "Weekly/covers/3 Aug to 9 Aug 2026.jpeg", "Weekly/Weekly Monitor - 3 Aug to 9 Aug 2026.pdf"],
   ["Weekly Monitor - 20 Jul to 26 Jul 2026", "Weekly/covers/July-20th-26th-800x1159.jpeg", "Weekly/Weekly Monitor - 20 Jul to 26 Jul 2026.pdf"],
