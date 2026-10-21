@@ -878,11 +878,12 @@ const SIXMONTH_MM = [
 ];
 
 const WEEKLY_MM = [
-  ["Weekly Monitor - 05 Oct to 11 Oct 2026", "Weekly/covers/Oct-5 to Oct-11-800x1159.jpeg", "Weekly/Weekly Monitor - 05 Oct to 11 Oct 2026.pdf", "2026-10-05"],
-  ["Weekly Monitor - 28 Sep to 04 Oct 2026", "Weekly/covers/Sep-27 to Oct-4-800x1159.jpeg", "Weekly/Weekly Monitor - 28 Sep to 04 Oct 2026.pdf", "2026-09-28"],
-  ["Weekly Monitor - 21 Sep to 27 Sep 2026", "Weekly/covers/September-21st-27th-800x1159.jpg", "Weekly/Weekly Monitor - 21 Sep to 27 Sep 2026.pdf", "2026-09-21"],
-  ["Weekly Monitor - 14 Sep to 20 Sep 2026", "Weekly/covers/September-14th-20th-800x1159.jpg", "Weekly/Weekly Monitor - 14 Sep to 20 Sep 2026.pdf", "2026-09-14"],
-  ["Weekly Monitor - 07 Sep to 13 Sep 2026", "Weekly/covers/6 Sep to 13 Sep 2026.jpeg", "Weekly/Weekly Monitor - 07 Sep to 13 Sep 2026.pdf", "2026-09-07"],
+  ["Weekly Monitor - 12 Oct to 18 Oct 2026", "Weekly/covers/Oct-12 to Oct-18-800x1159.jpeg", "Weekly/Weekly Monitor - 12 Oct to 18 Oct 2026.pdf"],
+  ["Weekly Monitor - 05 Oct to 11 Oct 2026", "Weekly/covers/Oct-5 to Oct-11-800x1159.jpeg", "Weekly/Weekly Monitor - 05 Oct to 11 Oct 2026.pdf"],
+  ["Weekly Monitor - 28 Sep to 04 Oct 2026", "Weekly/covers/Sep-27 to Oct-4-800x1159.jpeg", "Weekly/Weekly Monitor - 28 Sep to 04 Oct 2026.pdf"],
+  ["Weekly Monitor - 21 Sep to 27 Sep 2026", "Weekly/covers/September-21st-27th-800x1159.jpg", "Weekly/Weekly Monitor - 21 Sep to 27 Sep 2026.pdf"],
+  ["Weekly Monitor - 14 Sep to 20 Sep 2026", "Weekly/covers/September-14th-20th-800x1159.jpg", "Weekly/Weekly Monitor - 14 Sep to 20 Sep 2026.pdf"],
+  ["Weekly Monitor - 07 Sep to 13 Sep 2026", "Weekly/covers/6 Sep to 13 Sep 2026.jpeg", "Weekly/Weekly Monitor - 07 Sep to 13 Sep 2026.pdf"],
   ["Weekly Monitor - 31 Aug to 06 Sep 2026", "Weekly/covers/August 31-September 6.jpeg", "Weekly/Weekly Monitor - 31 Aug to 06 Sep 2026.pdf"],
   ["Weekly Monitor - 3 Aug to 9 Aug 2026", "Weekly/covers/3 Aug to 9 Aug 2026.jpeg", "Weekly/Weekly Monitor - 3 Aug to 9 Aug 2026.pdf"],
   ["Weekly Monitor - 20 Jul to 26 Jul 2026", "Weekly/covers/July-20th-26th-800x1159.jpeg", "Weekly/Weekly Monitor - 20 Jul to 26 Jul 2026.pdf"],

@@ -6,6 +6,89 @@
 function mmRows(rows) { return rows.map(([title, source, date, url]) => ({ title, source, date, url })); }
 
 const MEDIA_MONITOR_ISSUES = {
+  '2026-10-12': {
+    dateRange: "Oct 12th, 2026 – Oct 18th, 2026",
+    pdf: "Weekly/Weekly Monitor - 12 Oct to 18 Oct 2026.pdf",
+    highlights: [
+      { category: "Energy and Finance", text: "The Power Division projects a 2.56 rupees per unit Fuel Cost Adjustment (FCA) for September 2026, adding 32.7 billion rupees to November bills." },
+      { category: "Energy and Finance", text: "The Central Power Purchasing Agency (CPPA) reports a 37.5 per cent year-on-year rise in September's average power fuel cost to 10.02 rupees per unit. A drop in LNG and nuclear, plus higher use of costly imported coal and HSD, drove the increase." },
+      { category: "Oil and Gas", text: "Pakistan plans 22 LNG cargoes worth approximately 1.29 billion dollars from November 2026 to February 2027." },
+      { category: "Energy and Finance", text: "Exporters oppose proposed 5–10 per cent electricity tariff hikes by distribution companies (DISCOs), warning that higher fixed charges and pass-through costs will hurt Pakistan's export competitiveness." },
+      { category: "Energy and Finance", text: "The Federation of Pakistan Chambers of Commerce and Industry (FPCCI) urges NEPRA to reject 268 billion rupees in DISCOs' disputed prior-year tariff adjustments." },
+      { category: "Oil and Gas", text: "Petroleum Minister Ali Pervaiz Malik urges refineries to explore Libyan crude to diversify supply, while a Turkish seismic vessel will start Indus Basin data acquisition next month." },
+      { category: "Climate Change", text: "Fair Finance Pakistan (FFP) says seven major banks have weak climate and biodiversity policies. Climate policy coverage is only 13.8 per cent and biodiversity 26.8 per cent, despite the SBP's push for climate-risk integration." }
+    ],
+    sectors: [
+      {
+        name: "Oil and Gas", pct: 53.49, color: "#1e6bb8",
+        headlines: mmRows([
+          ["Pakistan seeks Libyan crude as it diversifies oil supplies amid Middle East supply disruptions", "Business Recorder", "12 October, 2026", "https://www.brecorder.com/news/40443789/pakistan-seeks-libyan-crude-as-it-diversifies-oil-supplies-amid-middle-east-supply-disruptions"],
+          ["The oil price — Pakistan and the US", "Business Recorder", "12 October, 2026", "https://www.brecorder.com/news/40443718/the-oil-price-pakistan-and-the-us"],
+          ["Fuel costs keep squeezing household budgets", "Express Tribune", "12 October, 2026", "https://tribune.com.pk/story/2634334/fuel-costs-keep-squeezing-household-budgets"],
+          ["Fuel costs raise food prices", "Express Tribune", "12 October, 2026", "https://tribune.com.pk/story/2634370/fuel-costs-raise-food-prices"],
+          ["Govt decreases petrol price by Rs2.93, increases diesel's by Re0.61 per litre", "Business Recorder", "12 October, 2026", "https://www.brecorder.com/news/40443836/govt-decreases-petrol-price-by-rs293-increases-diesels-by-re061-per-litre"],
+          ["When an oil shock becomes a time shock", "Pakistan Today", "12 October, 2026", "https://www.pakistantoday.com.pk/2026/10/12/when-an-oil-shock-becomes-a-time-shock"],
+          ["Privatizing gas", "Pakistan Today", "12 October, 2026", "https://www.pakistantoday.com.pk/2026/10/12/privatizing-gas"],
+          ["Pakistan cuts petrol by Re0.66, raises diesel by Re0.52 per litre", "Pakistan Today", "12 October, 2026", "https://www.pakistantoday.com.pk/2026/10/12/pakistan-cuts-petrol-by-re066-raises-diesel-by-re052-per-litre"],
+          ["Economy holds up amid oil shock", "DAWN", "13 October, 2026", "https://www.dawn.com/news/2036754/economy-holds-up-amid-oil-shock"],
+          ["LNG imports to cost over $1b in winter", "Express Tribune", "13 October, 2026", "https://tribune.com.pk/story/2634542/lng-imports-to-cost-over-1b-in-winter"],
+          ["Govt seeks 15-year Saudi oil facility", "Express Tribune", "14 October, 2026", "https://tribune.com.pk/story/2634682/govt-seeks-15-year-saudi-oil-facility"],
+          ["JI urges parliament to abolish petroleum levy", "Express Tribune", "14 October, 2026", "https://tribune.com.pk/story/2634705/ji-urges-parliament-to-abolish-petroleum-levy"],
+          ["Govt raises petrol price by Rs1.20, decreases diesel's by Re0.17 per litre", "Business Recorder", "14 October, 2026", "https://www.brecorder.com/news/40444216/govt-raises-petrol-price-by-rs120-decreases-diesels-by-re017-per-litre"],
+          ["Petrol price set at Rs393.86, HSD at Rs396.65 per litre under latest revision", "The News", "15 October, 2026", "https://www.thenews.pk/print/1443046-petrol-price-set-at-rs393-86-hsd-at-rs396-65-per-litre-under-latest-revision"],
+          ["Governor calls for uninterrupted gas supply to KP", "The News", "15 October, 2026", "https://www.thenews.pk/print/1442953-governor-calls-for-uninterrupted-gas-supply-to-kp"],
+          ["Extraction & POL price fixing", "Business Recorder", "16 October, 2026", "https://www.brecorder.com/news/40444436/extraction-amp-pol-price-fixing"],
+          ["Govt cuts petrol price by Rs3.63, increases diesel's by Re0.31 per litre", "Business Recorder", "16 October, 2026", "https://www.brecorder.com/news/40444404/govt-cuts-petrol-price-by-rs363-increases-diesels-by-re031-per-litre"],
+          ["PM rejects LPG auction sans legal cover, policy", "DAWN", "16 October, 2026", "https://www.dawn.com/news/2037473/pm-rejects-lpg-auction-sans-legal-cover-policy"],
+          ["Two firms ink MoU for Rs20bn gas investment", "DAWN", "16 October, 2026", "https://www.dawn.com/news/2037472/two-firms-ink-mou-for-rs20bn-gas-investment"],
+          ["September FPA capped at Rs2.56/unit", "Express Tribune", "16 October, 2026", "https://tribune.com.pk/story/2635096/september-fpa-capped-at-rs256unit"],
+          ["Refineries produce 92,482 tonnes of LPG in July-August", "The News", "16 October, 2026", "https://www.thenews.pk/print/1443071-refineries-produce-92-482-tonnes-of-lpg-in-july-august"],
+          ["Govt moves to curb LPG hoarding ahead of winter", "DAWN", "18 October, 2026", "https://www.dawn.com/news/2037906/govt-moves-to-curb-lpg-hoarding-ahead-of-winter"],
+          ["No gas queues, no shortage: FinMin", "Express Tribune", "18 October, 2026", "https://tribune.com.pk/story/2635410/no-gas-queues-no-shortage-finmin"]
+        ])
+      },
+      {
+        name: "Energy and Finance", pct: 34.88, color: "#8fbbe4",
+        headlines: mmRows([
+          ["Rs268bn power tariff burden on consumers opposed", "DAWN", "12 October, 2026", "https://www.dawn.com/news/2036506/rs268bn-power-tariff-burden-on-consumers-opposed"],
+          ["Thieves steal conductors of 24 power poles in Sibi", "DAWN", "12 October, 2026", "https://www.dawn.com/news/2036503/thieves-steal-conductors-of-24-power-poles-in-sibi"],
+          ["Cheap at noon, dear at night", "Business Recorder", "13 October, 2026", "https://www.brecorder.com/news/40443907/cheap-at-noon-dear-at-night"],
+          ["Malik calls for stronger Saudi energy cooperation", "Express Tribune", "13 October, 2026", "https://tribune.com.pk/story/2634490/malik-calls-for-stronger-saudi-energy-cooperation"],
+          ["Old claims, new tariffs", "Business Recorder", "14 October, 2026", "https://www.brecorder.com/news/40444038/old-claims-new-tariffs"],
+          ["Pakistan eyes US energy imports, Boeing aircraft financing", "Business Recorder", "14 October, 2026", "https://www.brecorder.com/news/40444153/pakistan-eyes-us-energy-imports-boeing-aircraft-financing"],
+          ["DISCOs tariffs: Export industries oppose proposed hike", "Business Recorder", "15 October, 2026", "https://www.brecorder.com/news/40444301/discos-tariffs-export-industries-oppose-proposed-hike"],
+          ["Allocation of functions: PPMC-NGC dispute again lands on power regulator's table", "Business Recorder", "15 October, 2026", "https://www.brecorder.com/news/40444308/allocation-of-functions-ppmc-ngc-dispute-again-lands-on-power-regulators-table"],
+          ["Lawmakers, govt differ over Discos' privatization", "DAWN", "15 October, 2026", "https://www.dawn.com/news/2037237/lawmakers-govt-differ-over-discos-privatisation"],
+          ["Retired Lt Gen Zafar Iqbal made SAPM on energy", "DAWN", "15 October, 2026", "https://www.dawn.com/news/2037218/retired-lt-gen-zafar-iqbal-made-sapm-on-energy"],
+          ["Restructuring of regulatory bodies soon", "Express Tribune", "15 October, 2026", "https://tribune.com.pk/story/2634887/restructuring-of-regulatory-bodies-soon"],
+          ["Power users face Rs33bn FCA hit in Nov bills", "DAWN", "16 October, 2026", "https://www.dawn.com/news/2037506/power-users-face-rs33bn-fca-hit-in-nov-bills"],
+          ["SPI stays in double digits on costly fuel", "Express Tribune", "17 October, 2026", "https://tribune.com.pk/story/2635304/spi-stays-in-double-digits-on-costly-fuel"],
+          ["Hyd's crumbling power network puts lives at risk", "Express Tribune", "17 October, 2026", "https://tribune.com.pk/story/2635273/hyds-crumbling-power-network-puts-lives-at-risk"],
+          ["Pakistan has enough energy supplies to last through Nov: Aurangzeb", "Business Recorder", "18 October, 2026", "https://www.brecorder.com/news/40444766/pakistan-has-enough-energy-supplies-to-last-through-nov-aurangzeb"]
+        ])
+      },
+      {
+        name: "Climate Change", pct: 6.98, color: "#b3cfea",
+        headlines: mmRows([
+          ["Rich nations must pay climate debt", "Express Tribune", "12 October, 2026", "https://tribune.com.pk/story/2634308/rich-nations-must-pay-climate-debt"],
+          ["Minister for joint efforts to cope with climate challenge", "The News", "13 October, 2026", "https://www.thenews.pk/print/1442612-minister-for-joint-efforts-to-cope-with-climate-challenge"],
+          ["Banks ignore climate in project financing", "DAWN", "14 October, 2026", "https://www.dawn.com/news/2037007/banks-ignore-climate-in-project-financing"]
+        ])
+      },
+      {
+        name: "Renewable Energy", pct: 2.33, color: "#5b9ad4",
+        headlines: mmRows([
+          ["Electric buses JV: Pakistani firm signs MoU with Chinese co", "Business Recorder", "15 October, 2026", "https://www.brecorder.com/news/40444298/electric-buses-jv-pakistani-firm-signs-mou-with-chinese-co"]
+        ])
+      },
+      {
+        name: "Coal", pct: 2.33, color: "#0f3f70",
+        headlines: mmRows([
+          ["Expensive fuel pushes Sept power costs up 37.5pc", "DAWN", "17 October, 2026", "https://www.dawn.com/news/2037776/expensive-fuel-pushes-sept-power-costs-up-375pc"]
+        ])
+      }
+    ]
+  },
   '2026-10-05': {
     dateRange: "Oct 5th, 2026 – Oct 11th, 2026",
     pdf: "Weekly/Weekly Monitor - 05 Oct to 11 Oct 2026.pdf",
@@ -454,6 +537,8 @@ const MEDIA_MONITOR_ISSUES = {
 
 /* The latest five weekly issues, newest first — these get the "Compare" options and the
    archive slider on the detail page. When a new issue lands: add its entry to
-   MEDIA_MONITOR_ISSUES above, put its slug at the front here, drop the last slug, and add
-   the slug as the 4th item of its WEEKLY_MM row in data.js. */
-const MEDIA_MONITOR_LATEST = ['2026-10-05', '2026-09-28', '2026-09-21', '2026-09-14', '2026-09-07'];
+   MEDIA_MONITOR_ISSUES above, put its slug at the front here and drop the last slug.
+   The detail page is still in progress and is NOT linked from the public listing: WEEKLY_MM
+   rows in data.js have no 4th "slug" item, so cards open the PDF. Add the slug there only
+   when the new UI goes live. */
+const MEDIA_MONITOR_LATEST = ['2026-10-12', '2026-10-05', '2026-09-28', '2026-09-21', '2026-09-14'];
