@@ -6,17 +6,113 @@
 function mmRows(rows) { return rows.map(([title, source, date, url]) => ({ title, source, date, url })); }
 
 const MEDIA_MONITOR_ISSUES = {
+  '2026-10-19': {
+    dateRange: "Oct 19th, 2026 – Oct 25th, 2026",
+    pdf: "Weekly/Weekly Monitor - 19 Oct to 25 Oct 2026.pdf",
+    highlights: [
+      { category: "Renewable Energy", text: "Prime Minister Shehbaz Sharif approves the draft Auto Policy 2026–31, which lowers vehicle import tariffs, incentivises electric vehicle adoption and aims to increase the global competitiveness of the local auto industry." },
+      { category: "Coal", text: "The National Electric Power Regulatory Authority (Nepra) faces pressure to reject a further extension of Port Qasim Electric Power Company's interim coal procurement arrangement, since fresh bidding can potentially lower power generation costs." },
+      { category: "Energy and Finance", text: "Chinese power projects under the China-Pakistan Economic Corridor (CPEC) are owed 498 billion rupees by the Central Power Purchasing Agency-Guarantee (CPPA-G), including 79 billion rupees owed to Port Qasim Electric Power Company and around 80 billion rupees to the Sahiwal coal-fired power plant." },
+      { category: "Energy and Finance", text: "The Power and Petroleum Divisions inform the National Assembly that power-sector circular debt rose by 34 billion rupees to 1.675 trillion rupees, and gas-sector circular debt increased by 344 billion rupees to 3.631 trillion rupees, by June 2026." },
+      { category: "Oil and Gas", text: "The Petroleum Division urges the government to approve the import of 22 LNG cargoes worth nearly 2 billion dollars for November 2026 to February 2027, warning that a delay could force gas cuts to industry, power and fertiliser sectors during peak winter demand." }
+    ],
+    sectors: [
+      {
+        name: "Oil and Gas", pct: 49.15, color: "#1e6bb8",
+        headlines: mmRows([
+          ["PSO clears renewed SPA with PARCO?", "Business Recorder", "19 October, 2026", "https://www.brecorder.com/news/40444861/pso-clears-renewed-spa-with-parco"],
+          ["LPG stakeholders seek daily pricing amid soaring rates", "DAWN", "19 October, 2026", "https://www.dawn.com/news/2038194/lpg-stakeholders-seek-daily-pricing-amid-soaring-rates"],
+          ["Govt cuts petrol price by Rs5.16, diesel by Rs7.69 per litre", "Business Recorder", "19 October, 2026", "https://www.brecorder.com/news/40444964/govt-cuts-petrol-price-by-rs516-diesel-by-rs769-per-litre"],
+          ["Reforms discussed to make gas sector viable", "DAWN", "20 October, 2026", "https://www.dawn.com/news/2038418/reforms-discussed-to-make-gas-sector-viable"],
+          ["Gas deregulation plan heads to PM", "Express Tribune", "20 October, 2026", "https://tribune.com.pk/story/2635773/gas-deregulation-plan-heads-to-pm"],
+          ["Govt cuts petrol price by Rs5.16, diesel by Rs7.69", "Pakistan Today", "20 October, 2026", "https://www.pakistantoday.com.pk/2026/10/20/govt-cuts-petrol-price-by-rs516-diesel-by-rs769"],
+          ["POL: Strong earnings, mixed production", "Business Recorder", "21 October, 2026", "https://www.brecorder.com/news/40445152/pol-strong-earnings-mixed-production"],
+          ["LPG hits record Rs600 a kg amid shortages", "DAWN", "21 October, 2026", "https://www.dawn.com/news/2038646/lpg-hits-record-rs600-a-kg-amid-shortages"],
+          ["Refinery margins slashed further", "Express Tribune", "21 October, 2026", "https://tribune.com.pk/story/2635985/refinery-margins-slashed-further"],
+          ["SNGPL fixes gas supply faults in Peshawar", "The News", "21 October, 2026", "https://www.thenews.pk/print/1444145-sngpl-fixes-gas-supply-faults-in-peshawar"],
+          ["Govt reduces petrol price by Rs2.71, raises diesel's Re0.31 per litre", "Business Recorder", "21 October, 2026", "https://www.brecorder.com/news/40445292/govt-reduces-petrol-price-by-rs271-raises-diesels-re031-per-litre"],
+          ["Govt raises petrol price by Rs0.88, diesel by Rs0.53 per litre", "Pakistan Today", "21 October, 2026", "https://profit.pakistantoday.com.pk/2026/10/21/govt-raises-petrol-price-by-rs088-diesel-by-rs053-per-litre"],
+          ["Govt mulls $2b LNG import decision", "Express Tribune", "22 October, 2026", "https://tribune.com.pk/story/2636186/govt-mulls-2b-lng-import-decision"],
+          ["LPG prices hit Rs580/kg amid gas shortages", "Express Tribune", "22 October, 2026", "https://tribune.com.pk/story/2636253/lpg-prices-hit-rs580kg-amid-gas-shortages"],
+          ["Second Qatar LNG cargo offers relief to strained gas supply", "The News", "22 October, 2026", "https://www.thenews.pk/print/1444424-second-qatar-lng-cargo-offers-relief-to-strained-gas-supply"],
+          ["Govt raises diesel price by Rs1.64, cuts petrol by Rs1.60 per litre", "Business Recorder", "22 October, 2026", "https://www.brecorder.com/news/40445476/govt-raises-diesel-price-by-rs164-cuts-petrol-by-rs160-per-litre"],
+          ["Jamaat, govt to hold talks on petroleum levy", "DAWN", "23 October, 2026", "https://www.dawn.com/news/2039149/jamaat-govt-to-hold-talks-on-petroleum-levy"],
+          ["LPG crisis deepens as OGRA delays op", "Express Tribune", "23 October, 2026", "https://tribune.com.pk/story/2636417/lpg-crisis-deepens-as-ogra-delays-op"],
+          ["Qualified expert sought for gas firm", "Express Tribune", "23 October, 2026", "https://tribune.com.pk/story/2636397/qualified-expert-sought-for-gas-firm"],
+          ["OGDC starts gas, condensate production from Bitrism East-1 Well in Sindh", "The News", "23 October, 2026", "https://www.thenews.pk/print/1444473-ogdc-starts-gas-condensate-production-from-bitrism-east-1-well-in-sindh"],
+          ["Petrol price maintained; HSD's hiked by Rs1.91", "Business Recorder", "24 October, 2026", "https://www.brecorder.com/news/40445734/petrol-price-maintained-hsds-hiked-by-rs191"],
+          ["LPG shortage worsens after supply issues", "Business Recorder", "24 October, 2026", "https://www.brecorder.com/news/40445724/lpg-shortage-worsens-after-supply-issues"],
+          ["Fuel dealers urge consumers to avoid 'panic buying'", "DAWN", "24 October, 2026", "https://www.dawn.com/news/2039363/fuel-dealers-urge-consumers-to-avoid-panic-buying"],
+          ["Govt insists supply 'stable' as fuel fears echo in Senate", "DAWN", "24 October, 2026", "https://www.dawn.com/news/2039366/govt-insists-supply-stable-as-fuel-fears-echo-in-senate"],
+          ["JI launches third phase of protest campaign against petroleum levy", "Express Tribune", "24 October, 2026", "https://tribune.com.pk/story/2636598/ji-launches-third-phase-of-protest-campaign-against-petroleum-levy"],
+          ["Fuel fears dominate Senate as winter looms", "Express Tribune", "24 October, 2026", "https://tribune.com.pk/story/2636649/fuel-fears-dominate-senate-as-winter-looms"],
+          ["High fuel prices add to households' woes", "Express Tribune", "24 October, 2026", "https://tribune.com.pk/story/2636748/high-fuel-prices-add-to-households-woes"],
+          ["LPG dealers' strike leaves consumers scrambling for cooking fuel", "Express Tribune", "24 October, 2026", "https://tribune.com.pk/story/2636747/lpg-dealers-strike-leaves-consumers-scrambling-for-cooking-fuel"],
+          ["31,000 consumers denied petrol subsidy", "Express Tribune", "24 October, 2026", "https://tribune.com.pk/story/2636735/31000-consumers-denied-petrol-subsidy"]
+        ])
+      },
+      {
+        name: "Energy and Finance", pct: 27.12, color: "#8fbbe4",
+        headlines: mmRows([
+          ["CPEC power projects await Rs498bn dues from CPPA-G", "Business Recorder", "19 October, 2026", "https://www.brecorder.com/news/40444862/cpec-power-projects-await-rs498bn-dues-from-cppa-g"],
+          ["SEPCO Board opts for regular CEO despite PD's concerns", "Business Recorder", "19 October, 2026", "https://www.brecorder.com/news/40444863/sepco-board-opts-for-regular-ceo-despite-pds-concerns"],
+          ["Power tariff for computers", "Pakistan Today", "19 October, 2026", "https://www.pakistantoday.com.pk/2026/10/19/power-tariff-for-computers"],
+          ["Govt unveils hi-tech system to manage loadshedding", "DAWN", "19 October, 2026", "https://www.dawn.com/news/2038438/govt-unveils-hi-tech-system-to-manage-loadshedding"],
+          ["Power sector circular debt rises to Rs1,675bn, gas Rs3,631bn, NA told", "The News", "20 October, 2026", "https://www.thenews.pk/print/1444040-power-sector-circulardebt-rises-to-rs1-675bn-gas-rs3-631bn-na-told"],
+          ["Iesco urges consumers to avoid construction near power lines", "The News", "20 October, 2026", "https://www.thenews.pk/print/1443925-iesco-urges-consumers-to-avoid-construction-near-power-lines"],
+          ["PPIB holds talks with stakeholders: USD2.3bn project to deploy 16.2m AMI meters envisaged", "Business Recorder", "21 October, 2026", "https://www.brecorder.com/news/40445205/ppib-holds-talks-with-stakeholders-usd23bn-project-to-deploy-162m-ami-meters-envisaged"],
+          ["Power firm draws flak for seeking tariff hike", "Express Tribune", "21 October, 2026", "https://tribune.com.pk/story/2635987/power-firm-draws-flak-for-seeking-tariff-hike"],
+          ["Iesco privatisation draws interest from 10 domestic, international investors", "The News", "21 October, 2026", "https://www.thenews.pk/story/1438604-iesco-privatisation-draws-interest-from-10-domestic-international-investors"],
+          ["Attention must be sustained", "Business Recorder", "22 October, 2026", "https://www.brecorder.com/news/40445306/attention-must-be-sustained"],
+          ["Power theft", "Business Recorder", "22 October, 2026", "https://www.brecorder.com/news/40445304/power-theft"],
+          ["Distribution networks: PC proposes power sector restructuring", "Business Recorder", "22 October, 2026", "https://www.brecorder.com/news/40445398/distribution-networks-pc-proposes-power-sector-restructuring"],
+          ["DISCOs, ZTBL and State Life privatization: PC advances key transactions, approves major decisions", "Business Recorder", "23 October, 2026", "https://www.brecorder.com/news/40445559/discos-ztbl-and-state-life-privatization-pc-advances-key-transactions-approves-major-decisions"],
+          ["Pakistan pre-qualifies 10 bidders for Iesco", "The News", "23 October, 2026", "https://www.thenews.pk/print/1444620-pakistan-pre-qualifies-10-bidders-for-iesco"],
+          ["Leghari warns Discos against arbitrary billing", "DAWN", "24 October, 2026"],
+          ["DISCOs warned over detection bills", "Express Tribune", "24 October, 2026", "https://tribune.com.pk/story/2636643/discos-warned-over-detection-bills"]
+        ])
+      },
+      {
+        name: "Renewable Energy", pct: 13.56, color: "#5b9ad4",
+        headlines: mmRows([
+          ["Solar is our saviour, capacity charge our drain", "Express Tribune", "19 October, 2026", "https://tribune.com.pk/story/2635596/solar-is-our-saviour-capacity-charge-our-drain"],
+          ["China proposes export controls on solar-manufacturing technologies", "Express Tribune", "19 October, 2026", "https://tribune.com.pk/story/2635576/china-proposes-export-controls-on-solar-manufacturing-technologies"],
+          ["Draft auto policy sent to cabinet", "DAWN", "21 October, 2026", "https://www.dawn.com/news/2038648/draft-auto-policy-sent-to-cabinet"],
+          ["PM okays 1% sales tax on battery EVs", "Express Tribune", "21 October, 2026", "https://tribune.com.pk/story/2635989/pm-okays-1-sales-tax-on-battery-evs"],
+          ["Pakistan plans tax relief for electric vehicles, higher levies on petrol cars under new auto policy", "Pakistan Today", "21 October, 2026", "https://profit.pakistantoday.com.pk/2026/10/20/pakistan-plans-tax-relief-for-electric-vehicles-higher-levies-on-petrol-cars-under-new-auto-policy"],
+          ["NA told: Govt plans 3,000 EV charging facilities", "Business Recorder", "23 October, 2026", "https://www.brecorder.com/news/40445540/na-told-govt-plans-3000-ev-charging-facilities"],
+          ["Govt outlines new energy vehicles policy in NA", "The News", "23 October, 2026", "https://www.thenews.pk/print/1444621-govt-outlines-new-energy-vehicles-policy-in-na"],
+          ["Geely enters Pakistan through Bestway Group, unveils three NEVs", "Business Recorder", "24 October, 2026", "https://www.brecorder.com/news/40445757/geely-enters-pakistan-through-bestway-group-unveils-three-nevs"]
+        ])
+      },
+      {
+        name: "Climate Change", pct: 6.78, color: "#b3cfea",
+        headlines: mmRows([
+          ["Mangrove loss raises flood, erosion risks along Karachi coast", "DAWN", "19 October, 2026", "https://www.dawn.com/news/2038190/mangrove-loss-raises-flood-erosion-risks-along-karachi-coast"],
+          ["Climate exodus", "DAWN", "19 October, 2026", "https://www.dawn.com/news/2038152/climate-exodus"],
+          ["Pakistan needs $565b by 2035 to meet climate targets amid financing crunch", "Pakistan Today", "21 October, 2026", "https://www.pakistantoday.com.pk/2026/10/21/pakistan-needs-dollar565b-by-2035-to-meet-climate-targets-amid-financing-crunch"],
+          ["UNIDO plans to mobilise $40m for Sindh's climate-resilient uplift", "The News", "23 October, 2026", "https://www.thenews.pk/print/1444574-unido-plans-to-mobilise-40m-for-sindh-s-climate-resilient-uplift"]
+        ])
+      },
+      {
+        name: "Coal", pct: 3.39, color: "#0f3f70",
+        headlines: mmRows([
+          ["Experts urge govt to explore metallurgical coal potential", "Business Recorder", "20 October, 2026", "https://www.brecorder.com/news/40444958/experts-urge-govt-to-explore-metallurgical-coal-potential"],
+          ["Nepra faces dilemma over PQEPCL's coal procurement extension", "Business Recorder", "23 October, 2026", "https://www.brecorder.com/news/40445553/nepra-faces-dilemma-over-pqepcls-coal-procurement-extension"]
+        ])
+      }
+    ]
+  },
   '2026-10-12': {
     dateRange: "Oct 12th, 2026 – Oct 18th, 2026",
     pdf: "Weekly/Weekly Monitor - 12 Oct to 18 Oct 2026.pdf",
     highlights: [
-      { category: "Energy and Finance", text: "The Power Division projects a 2.56 rupees per unit Fuel Cost Adjustment (FCA) for September 2026, adding 32.7 billion rupees to November bills." },
-      { category: "Energy and Finance", text: "The Central Power Purchasing Agency (CPPA) reports a 37.5 per cent year-on-year rise in September's average power fuel cost to 10.02 rupees per unit. A drop in LNG and nuclear, plus higher use of costly imported coal and HSD, drove the increase." },
-      { category: "Oil and Gas", text: "Pakistan plans 22 LNG cargoes worth approximately 1.29 billion dollars from November 2026 to February 2027." },
-      { category: "Energy and Finance", text: "Exporters oppose proposed 5–10 per cent electricity tariff hikes by distribution companies (DISCOs), warning that higher fixed charges and pass-through costs will hurt Pakistan's export competitiveness." },
-      { category: "Energy and Finance", text: "The Federation of Pakistan Chambers of Commerce and Industry (FPCCI) urges NEPRA to reject 268 billion rupees in DISCOs' disputed prior-year tariff adjustments." },
-      { category: "Oil and Gas", text: "Petroleum Minister Ali Pervaiz Malik urges refineries to explore Libyan crude to diversify supply, while a Turkish seismic vessel will start Indus Basin data acquisition next month." },
-      { category: "Climate Change", text: "Fair Finance Pakistan (FFP) says seven major banks have weak climate and biodiversity policies. Climate policy coverage is only 13.8 per cent and biodiversity 26.8 per cent, despite the SBP's push for climate-risk integration." }
+      { category: "Energy and Finance", text: "The Power Division projects a fuel cost adjustment (FCA) of 2.56 rupees per unit for September 2026, adding 32.7 billion rupees to November electricity bills." },
+      { category: "Energy and Finance", text: "The Central Power Purchasing Agency (CPPA) says the average fuel cost of electricity generation increased by 37.5 per cent year-on-year to 10.02 rupees per unit in September. The increase came as LNG and nuclear power generation declined, while the use of expensive imported coal and high-speed diesel increased." },
+      { category: "Oil and Gas", text: "Pakistan plans to import 22 LNG cargoes worth approximately 1.29 billion dollars from November 2026 to February 2027." },
+      { category: "Energy and Finance", text: "Exporters oppose proposed 5–10 per cent electricity tariff increases by distribution companies (DISCOs), warning that higher fixed charges and pass-through costs will undermine Pakistan's export competitiveness." },
+      { category: "Energy and Finance", text: "The Federation of Pakistan Chambers of Commerce and Industry (FPCCI) urges NEPRA to reject 268 billion rupees in disputed prior-year tariff adjustments claimed by DISCOs." },
+      { category: "Climate Change", text: "Fair Finance Pakistan (FFP) says seven major banks have weak climate and biodiversity policies, with coverage at just 13.8 per cent for climate and 26.8 per cent for biodiversity, despite the State Bank of Pakistan's efforts to address climate risks in the banking sector." }
     ],
     sectors: [
       {
@@ -541,4 +637,4 @@ const MEDIA_MONITOR_ISSUES = {
    The detail page is still in progress and is NOT linked from the public listing: WEEKLY_MM
    rows in data.js have no 4th "slug" item, so cards open the PDF. Add the slug there only
    when the new UI goes live. */
-const MEDIA_MONITOR_LATEST = ['2026-10-12', '2026-10-05', '2026-09-28', '2026-09-21', '2026-09-14'];
+const MEDIA_MONITOR_LATEST = ['2026-10-19', '2026-10-12', '2026-10-05', '2026-09-28', '2026-09-21'];

@@ -878,6 +878,7 @@ const SIXMONTH_MM = [
 ];
 
 const WEEKLY_MM = [
+  ["Weekly Monitor - 19 Oct to 25 Oct 2026", "Weekly/covers/Oct-19 to Oct-25-800x1159.jpeg", "Weekly/Weekly Monitor - 19 Oct to 25 Oct 2026.pdf"],
   ["Weekly Monitor - 12 Oct to 18 Oct 2026", "Weekly/covers/Oct-12 to Oct-18-800x1159.jpeg", "Weekly/Weekly Monitor - 12 Oct to 18 Oct 2026.pdf"],
   ["Weekly Monitor - 05 Oct to 11 Oct 2026", "Weekly/covers/Oct-5 to Oct-11-800x1159.jpeg", "Weekly/Weekly Monitor - 05 Oct to 11 Oct 2026.pdf"],
   ["Weekly Monitor - 28 Sep to 04 Oct 2026", "Weekly/covers/Sep-27 to Oct-4-800x1159.jpeg", "Weekly/Weekly Monitor - 28 Sep to 04 Oct 2026.pdf"],
